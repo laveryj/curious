@@ -1,0 +1,16 @@
+{
+    "siteName": "Ocean Wonders",
+    "logoPath": "logo.png",
+    "theme": {
+      "backgroundColor": "#D83B01",
+      "headerColor": "#BF3300",
+      "textColor": "#FFFFFF",
+      "linkColor": "#FFD7B5"
+    },
+    "features": {
+    },
+    "contactInfo": {
+      "email": "contact@oceanwonders.com",
+      "phone": "+44 1234 567890"
+    }
+  }

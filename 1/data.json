@@ -1,0 +1,48 @@
+{
+    "exhibits": [
+      {
+        "id": 1,
+        "name": "Wave Tank",
+        "audioFile": "wave-tank-audio.mp3",
+        "species": [
+          {
+            "id": "1",
+            "commonName": "Atlantic Cod",
+            "scientificName": "Gadus morhua",
+            "shortDescription": "A cold-water fish known for its commercial value.",
+            "longDescription": "Atlantic cod is a species of fish that lives in colder waters and deeper sea regions throughout the North Atlantic. It has a significant impact on fisheries and marine ecosystems.",
+            "conservationStatus": "LC",
+            "imageURL": "cod.jpg",
+            "audioURL": "atlantic-cod-audio.mp3"
+          },
+          {
+            "id": "532",
+            "commonName": "Thornback Ray",
+            "scientificName": "Raja clavata",
+            "shortDescription": "A cartilaginous fish found in coastal waters.",
+            "longDescription": "Thornback rays are a species of ray commonly found in shallow coastal waters. They are known for their unique shape and patterns on their dorsal surface.",
+            "conservationStatus": "NT",
+            "imageURL": "thornback-ray.jpg",
+            "audioURL": "thornback-ray-audio.mp3"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "name": "Ray Lagoon",
+        "audioFile": null,
+        "species": [
+          {
+            "id": "3",
+            "commonName": "Blue Spotted Ray",
+            "scientificName": "Taeniura lymma",
+            "shortDescription": "A brightly colored ray found in coral reefs.",
+            "longDescription": "The blue-spotted ray is known for its vibrant blue spots that serve as a warning to predators. It prefers warm, shallow waters near coral reefs.",
+            "conservationStatus": "VU",
+            "imageURL": "blue-spotted-ray.jpg",
+            "audioURL": null
+          }
+        ]
+      }
+    ]
+  }
