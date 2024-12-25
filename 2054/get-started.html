@@ -34,15 +34,42 @@
   </header> -->
 
   <header>
-    <a href="get-started.html">
-      <img id="site-logo" alt="Site Logo" style="display: none;">
-    </a>
-    <h1 id="exhibit-title">Explore Species</h1>
+    <img id="site-logo" alt="Site Logo" style="display: none;">
+    <h1 id="welcome-title">Get Started</h1>
   </header>
 
   <main>
-    <div id="content"></div>
+    <h2>Welcome to [sitename]</h2>
+    <p>
+      Curious makes exploring exhibits fun and interactive! Follow these simple steps to begin your journey:
+    </p>
+    <ol style="text-align: left; display: inline-block;">
+      <li>Look for the QR code or NFC tag beside an exhibit.</li>
+      <li>Scan the QR code with your phone camera, or tap the NFC tag.</li>
+      <li>Explore detailed information about the exhibit and the animals within!</li>
+    </ol>
+    <p>
+      Curious works on any modern smartphone with no need to download additional apps.
+    </p>
+
+    <button id="open-camera">Start Scanning</button>
+
+  <script>
+    document.getElementById("open-camera").addEventListener("click", () => {
+      document.getElementById("capture-input").click();
+    });
+
+    document.getElementById("capture-input").addEventListener("change", (event) => {
+      const file = event.target.files[0];
+      if (file) {
+        console.log("Image captured:", file);
+        // You can handle the captured file here
+      }
+    });
+  </script>
+
   </main>
+
 
   <footer>
     <a href="/about.html">

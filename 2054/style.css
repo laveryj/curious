@@ -104,7 +104,8 @@
       visibility: visible; /* Show content after loading */
     }
 
-    /* Styling for portal.html table format for exhibit list */
+
+/* Styling for portal.html table format for exhibit list */
 #exhibits-table {
   /* width: 100%; Expand the table to fill the available width */
   margin: 10px 0; /* Add vertical margin only */
@@ -135,7 +136,7 @@
 }
 
 #exhibits-table td:last-child {
-  width: 20%; /* Medium width for Active Species column */
+  width: 15%; /* Medium width for Active Species column */
   text-align: center; /* Center align content in the last column */
 }
 
@@ -200,4 +201,40 @@ select:focus {
 select option {
   background-color: var(--background-color, #D83B01); /* Dropdown menu background */
   color: var(--text-color, #FFFFFF); /* Dropdown menu text color */
+}
+
+/* Styling for Portal Login form */
+body.hidden {
+  background-color: #D83B01; /* This should be your theme's background color */
+  visibility: hidden; /* Hide until authenticated */
+}
+header {
+  background-color: #BF3300; /* Theme header color */
+  color: #FFFFFF; /* Theme text color */
+}
+a {
+  color: #FFD7B5; /* Theme link color */
+}
+#login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+#login-container input {
+  margin: 10px 0;
+  padding: 10px;
+  font-size: 1rem;
+}
+#login-container button {
+  padding: 10px 20px;
+  background-color: #18236e;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+}
+#login-container button:hover {
+  background-color: #142054;
 }

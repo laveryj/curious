@@ -13,6 +13,8 @@
           "longDescription": "Atlantic cod is a species of fish that lives in colder waters and deeper sea regions throughout the North Atlantic. It has a significant impact on fisheries and marine ecosystems.",
           "funFact": "Atlantic cod can live up to 25 years.",
           "conservationStatus": "Least Concern",
+          "fishBaseURL": "",
+          "externalURL": "",
           "imageURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Pollachius_pollachius_aquarium.jpg/440px-Pollachius_pollachius_aquarium.jpg",
           "audioURL": "atlantic-cod-audio.mp3"
         },
@@ -24,6 +26,8 @@
           "longDescription": "Thornback rays are a species of ray commonly found in shallow coastal waters. They are known for their unique shape and patterns on their dorsal surface.",
           "funFact": "Thornback rays can change their coloration to blend into their surroundings.",
           "conservationStatus": "Not Threatened",
+          "fishBaseURL": "",
+          "externalURL": "",
           "imageURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Atlantic_Cod%2C_Atlantischer_Kabeljau_%28Gadus_morhua%29.jpg/480px-Atlantic_Cod%2C_Atlantischer_Kabeljau_%28Gadus_morhua%29.jpg",
           "audioURL": "thornback-ray-audio.mp3"
         }
@@ -42,6 +46,8 @@
           "longDescription": "The long-spined sea urchin is known for its sharp spines that provide excellent defense against predators.",
           "funFact": "Its spines can grow up to 30 centimeters long.",
           "conservationStatus": "Least Concern",
+          "fishBaseURL": "",
+          "externalURL": "",
           "imageURL": "https://example.com/long-spined-urchin.jpg",
           "audioURL": null
         },
@@ -53,6 +59,8 @@
           "longDescription": "Bubble tip anemones are known for their vibrant colors and ability to host clownfish.",
           "funFact": "It can retract its tentacles when feeling threatened.",
           "conservationStatus": "Least Concern",
+          "fishBaseURL": "",
+          "externalURL": "",
           "imageURL": "https://example.com/bubble-tip-anemone.jpg",
           "audioURL": null
         },
@@ -64,6 +72,8 @@
           "longDescription": "Clownfish are well-known for their symbiotic relationship with sea anemones.",
           "funFact": "Clownfish can change gender during their lifetime.",
           "conservationStatus": "Least Concern",
+          "fishBaseURL": "",
+          "externalURL": "",
           "imageURL": "https://example.com/clownfish.jpg",
           "audioURL": null
         },
@@ -75,6 +85,8 @@
           "longDescription": "The regal tang is a reef fish popularized by its appearance in movies.",
           "funFact": "Regal tangs can play dead to avoid predators.",
           "conservationStatus": "Least Concern",
+          "fishBaseURL": "",
+          "externalURL": "",
           "imageURL": "https://example.com/regal-tang.jpg",
           "audioURL": null
         },
@@ -86,6 +98,8 @@
           "longDescription": "Moorish idols are difficult to keep in captivity due to their specific diet.",
           "funFact": "The Moorish idol is named after the Moors, who believed the fish brought happiness.",
           "conservationStatus": "Not Threatened",
+          "fishBaseURL": "",
+          "externalURL": "",
           "imageURL": "https://example.com/moorish-idol.jpg",
           "audioURL": null
         }
@@ -115,6 +129,8 @@
           "longDescription": "The giraffe catfish is native to Africa and known for its distinctive markings.",
           "funFact": "It is named after its resemblance to a giraffe's coat.",
           "conservationStatus": "Least Concern",
+          "fishBaseURL": "",
+          "externalURL": "",
           "imageURL": "https://example.com/giraffe-catfish.jpg",
           "audioURL": null
         },
@@ -126,6 +142,8 @@
           "longDescription": "Freshwater pufferfish are known for their ability to inflate when threatened.",
           "funFact": "Their teeth grow continuously and require trimming in captivity.",
           "conservationStatus": "Vulnerable",
+          "fishBaseURL": "",
+          "externalURL": "",
           "imageURL": "https://example.com/freshwater-pufferfish.jpg",
           "audioURL": null
         },
@@ -137,6 +155,8 @@
           "longDescription": "Black pacus are herbivorous and often kept in large aquariums.",
           "funFact": "They are sometimes called 'vegetarian piranhas.'",
           "conservationStatus": "Not Threatened",
+          "fishBaseURL": "",
+          "externalURL": "",
           "imageURL": "https://example.com/black-pacu.jpg",
           "audioURL": null
         }

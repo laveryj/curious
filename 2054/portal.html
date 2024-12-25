@@ -6,111 +6,124 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Curious | Admin Portal</title>
 
-  <!-- Inline Critical Theme Styles -->
-  <style>
-    body.hidden {
-      background-color: #D83B01; /* This should be your theme's background color */
-      visibility: hidden; /* Hide until the script removes 'hidden' */
-    }
-    header {
-      background-color: #BF3300; /* Theme header color */
-      color: #FFFFFF; /* Theme text color */
-    }
-    a {
-      color: #FFD7B5; /* Theme link color */
-    }
-  </style>
-
   <!-- Import the fallback styles -->
   <link rel="stylesheet" href="style.css">
   
   <!-- Include the script to load the dynamic theme -->
-  <script src="config.js" defer></script>
+  <script src="assets/scripts/config.js" defer></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
 </head>
 
 <body class="hidden">
-  <!-- <header>
-    <h1 id="exhibit-title">Exhibit</h1>
-  </header> -->
+  <div id="login-container" class="hidden">
+    <img src="/assets/logo-dark.png" alt="Curious Logo" style="width: 200px; height: auto;">
+    <br>
+    <br>
+    <br>
+    <h2>Portal Login</h2>
+    <input type="text" id="username" placeholder="Username">
+    <input type="password" id="password" placeholder="Password">
+    <br>
+    <button id="login-button">Login</button>
+    <p id="login-error" style="color: red; display: none;">Invalid username or password.</p>
+  </div>
 
-  <header>
-    <img id="site-logo" alt="Site Logo" style="display: none;">
-    <h1 id="portal-title">Admin Portal</h1>
-  </header>
+  <div id="portal-content" style="display: none;">
+    <!-- <header>
+      <img id="site-logo" alt="Site Logo" style="display: none;">
+      <h1 id="portal-title">Admin Portal</h1>
+    </header> -->
 
-  <main>
-    <section id="site-info">
-      <h2>Site Information</h2>
-      <div id="site-info-content">
-        <!-- Content dynamically loaded from config.json -->
+    <header>
+      <img id="site-logo" alt="Site Logo" style="display: none;">
+      <h1 id="portal-title">Admin Portal</h1>
+    </header>
+
+    <main>
+      <section id="site-info">
+        <h2>Site Information</h2>
+        <div id="site-info-content">
+          <!-- Content dynamically loaded from config.json -->
+        </div>
+        <br>
+      </section>
+  
+      <section id="exhibit-list">
+        <h2>Exhibit Overview</h2>
+        <table id="exhibits-table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Exhibit</th>
+              <th>Species</th>
+            </tr>
+          </thead>
+          <tbody id="exhibits-table-body">
+            <!-- Rows will be dynamically populated here -->
+          </tbody>
+        </table>
+        <br>
+      </section>
+  
+      <section id="payment-info">
+        <h2>Payment History</h2>
+        <p><i>[Placeholder for Xero API data, such as invoices, due dates, and payment status.]</i></p>
+        <br>
+      </section>
+  
+      <section id="actions">
+        <h2>System Update</h2>
+        <p>Any changes to your species information, along with exhibit allocations, will be applied within 4 hours. If you need to force an update, for example to quickly fix an error, you can do that here.</p>
+        <button id="force-update" disabled>Force Update</button>
+        <br>
+        <br>
+        <br>
+      </section>
+  
+      <section id="qrcodes">
+      <h2>Generate QR Codes</h2>
+      <p>Generate a set of QR codes for all exhibits here:</p>
+      <button id="generate-all-qr">Generate QR Codes for All Exhibits</button>
+      <br>
+      <br>
+      <p>Generate a QR code for a specific exhibit below:</p>
+      <div>
+        <!-- <label for="exhibit-select">Select Exhibit:</label> -->
+        <select id="exhibit-select">
+          <option value="">-- Select an Exhibit --</option>
+        </select>
+        <button id="generate-qr" disabled>Generate QR Code</button>
       </div>
       <br>
+      <canvas id="qr-code"></canvas>
+      <br>
+      <button id="download-qr" style="display: none;">Download this QR Code</button>
     </section>
+    </main>
 
-    <section id="exhibit-list">
-      <h2>Exhibit Overview</h2>
-      <table id="exhibits-table">
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Exhibit</th>
-            <th>Species</th>
-          </tr>
-        </thead>
-        <tbody id="exhibits-table-body">
-          <!-- Rows will be dynamically populated here -->
-        </tbody>
-      </table>
+    <footer>
+      <a href="/about.html">
+        <img src="/assets/logo.png" alt="Site Logo">
+      </a>
       <br>
-    </section>
+      <sub>Powered by Curious. All rights reserved.</sub>
+    </footer>
+  
+    <!-- <footer>
+      <sub><i>Powered by</i></sub><br><br>
+      <a href="/about.html">
+        <img src="/assets/logo.png" alt="Site Logo">
+      </a>
+    </footer> -->
 
-    <section id="payment-info">
-      <h2>Payment Information</h2>
-      <p><i>[Placeholder for Xero API data, such as invoices, due dates, and payment status.]</i></p>
-      <br>
-    </section>
+    <!-- Reference to local QRious script -->
+    <script src="/scripts/qrious.min.js"></script>
+    <script src="assets/scripts/fetch.js" defer></script>
+    <script src="assets/scripts/auth.js"></script>
+    <script src="assets/scripts/portal.js"></script>
+  </div>
 
-    <section id="actions">
-      <h2>Force Update</h2>
-      <p>If you've recently updated your species information or exhibit allocation, the changes will be applied within the next 4 hours. If you need to force an update, you can do here.</p>
-      <button id="force-update" disabled>Force Update</button>
-      <br>
-      <br>
-      <br>
-    </section>
-
-    <section id="qrcodes">
-    <h2>Generate QR Codes</h2>
-    <p>Generate a set of QR codes for all exhibits here:</p>
-    <button id="generate-all-qr">Generate QR Codes for All Exhibits</button>
-    <br>
-    <br>
-    <p>Generate a QR code for a specific exhibit below:</p>
-    <div>
-      <!-- <label for="exhibit-select">Select Exhibit:</label> -->
-      <select id="exhibit-select">
-        <option value="">-- Select an Exhibit --</option>
-      </select>
-      <button id="generate-qr" disabled>Generate QR Code</button>
-    </div>
-    <br>
-    <canvas id="qr-code"></canvas>
-    <br>
-    <button id="download-qr" style="display: none;">Download this QR Code</button>
-  </section>
-  </main>
-
-  <footer>
-    <a href="/about.html">
-      <img src="/assets/logo.png" alt="Site Logo">
-    </a>
-    <br>
-    <sub>Powered by Curious. All rights reserved.</sub>
-  </footer>
-
-  <!-- Reference to local QRious script -->
-  <script src="/scripts/qrious.min.js"></script>
-  <script src="fetch.js" defer></script>
-  <script src="portal.js"></script>
 </body>
 </html>
