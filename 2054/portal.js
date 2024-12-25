@@ -113,3 +113,113 @@ document.addEventListener("DOMContentLoaded", () => {
       tableBody.appendChild(row);
     });
   }
+
+  //Function to download QR Codes
+    document.addEventListener("DOMContentLoaded", () => {
+      const configUrl = "./data.json"; // Path to the data.json file
+      const exhibitSelect = document.getElementById("exhibit-select");
+      const generateQrButton = document.getElementById("generate-qr");
+      const generateAllQrButton = document.getElementById("generate-all-qr");
+      const qrCodeCanvas = document.getElementById("qr-code");
+      const downloadQrButton = document.getElementById("download-qr");
+
+      // Load exhibits from the data.json file
+      fetch(configUrl)
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+          }
+          return response.json();
+        })
+        .then((data) => {
+          populateExhibits(data.exhibits);
+        })
+        .catch((error) => {
+          console.error("Error loading exhibits:", error);
+        });
+
+      function populateExhibits(exhibits) {
+        exhibits.forEach((exhibit) => {
+          const option = document.createElement("option");
+          option.value = exhibit["exhibit-id"];
+          option.textContent = exhibit["exhibit-name"];
+          exhibitSelect.appendChild(option);
+        });
+
+        exhibitSelect.disabled = false;
+      }
+
+      // Enable button only when an exhibit is selected
+      exhibitSelect.addEventListener("change", () => {
+        generateQrButton.disabled = exhibitSelect.value === "";
+      });
+
+      // Generate QR code for the selected exhibit
+      generateQrButton.addEventListener("click", () => {
+        const exhibitId = exhibitSelect.value;
+        if (!exhibitId) {
+          alert("Please select an exhibit.");
+          return;
+        }
+
+        // Define the URL for the selected exhibit
+        const url = `${window.location.origin}/2054/index.html?exhibit-id=${exhibitId}`;
+        console.log("Generating QR code for:", url);
+
+        // Create QR code
+        const qr = new QRious({
+          element: qrCodeCanvas,
+          value: url,
+          size: 200,
+        });
+
+        // Show the download button
+        downloadQrButton.style.display = "block";
+      });
+
+      // Allow downloading the QR code as an image
+      downloadQrButton.addEventListener("click", () => {
+      const exhibitId = exhibitSelect.value; // Get the selected exhibit ID
+      const selectedOption = exhibitSelect.options[exhibitSelect.selectedIndex]; // Get the selected option
+      const exhibitName = selectedOption.text; // Extract the exhibit name
+
+      const dataUrl = qrCodeCanvas.toDataURL("image/png");
+      const link = document.createElement("a");
+      link.href = dataUrl;
+      link.download = `Curious-QRCode-${exhibitId}-${exhibitName.replace(/ /g, "_")}.png`; // Dynamically name the file
+      link.click();
+      });
+
+      // Generate QR codes for all exhibits and create a zip file
+      generateAllQrButton.addEventListener("click", () => {
+        fetch(configUrl)
+          .then((response) => response.json())
+          .then((data) => {
+            const zip = new JSZip();
+            const exhibitPromises = data.exhibits.map((exhibit) => {
+              return new Promise((resolve) => {
+                const qrCanvas = document.createElement("canvas");
+                new QRious({
+                  element: qrCanvas,
+                  value: `${window.location.origin}/2054/index.html?exhibit-id=${exhibit["exhibit-id"]}`,
+                  size: 200,
+                });
+
+                qrCanvas.toBlob((blob) => {
+                    zip.file(`Curious-QRCode-${exhibit["exhibit-id"]}-${exhibit["exhibit-name"].replace(/ /g, "_")}.png`, blob);
+                    resolve();
+                });
+              });
+            });
+
+            Promise.all(exhibitPromises).then(() => {
+              zip.generateAsync({ type: "blob" }).then((content) => {
+                saveAs(content, "Curious-QRCodes.zip");
+              });
+            });
+          })
+          .catch((error) => {
+            console.error("Error generating QR codes:", error);
+          });
+      });
+    });

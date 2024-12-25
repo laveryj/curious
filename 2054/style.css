@@ -147,3 +147,57 @@
 #exhibits-table td a:hover {
   text-decoration: underline; /* Underline links on hover */
 }
+
+/* Stying for buttons */
+button {
+  border-radius: 8px; /* Rounded corners */
+  padding: 10px 20px; /* Add some padding */
+  color: #FFFFFF; /* Disabled text color */
+  font-size: 1rem; /* Standard font size */
+  font-family: 'Open Sans', sans-serif; /* Match theme font */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth hover effect */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+}
+
+button:hover {
+  filter: brightness(1.1); /* Slightly brighter on hover */
+  transform: scale(1.05); /* Slightly larger on hover */
+}
+
+button:disabled {
+  background-color: #E0E0E0; /* Disabled state color */
+  color: #A0A0A0; /* Disabled text color */
+  cursor: not-allowed; /* Disable pointer cursor */
+  box-shadow: none; /* Remove shadow */
+}
+
+button:active {
+  transform: scale(0.98); /* Pressed button effect */
+}
+
+/* Styling for the drop down */
+select {
+  color: var(--text-color, #000000); /* Match text color */
+  border-radius: 8px; /* Rounded corners */
+  padding: 10px 20px; /* Match button padding */
+  font-size: 1rem; /* Match button font size */
+  cursor: pointer; /* Pointer cursor for interactivity */
+  appearance: none; /* Remove default dropdown styling */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth hover effect */
+}
+
+select:hover {
+  filter: brightness(1.1); /* Slightly brighter on hover */
+  transform: scale(1.02); /* Slightly larger on hover */
+}
+
+select:focus {
+  outline: none; /* Remove default focus outline */
+  box-shadow: 0 0 5px var(--header-color, #BF3300); /* Add focus glow */
+}
+
+select option {
+  background-color: var(--background-color, #D83B01); /* Dropdown menu background */
+  color: var(--text-color, #FFFFFF); /* Dropdown menu text color */
+}

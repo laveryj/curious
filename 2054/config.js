@@ -61,5 +61,37 @@ function applyTheme(theme) {
     footer.style.backgroundColor = theme.headerColor;
   }
 
+  // Apply button styles
+  const buttons = document.querySelectorAll("button");
+  buttons.forEach((button) => {
+    button.style.backgroundColor = theme.headerColor; // Match button background to header
+    // button.style.color = theme.textColor; // Set button text color
+    button.style.border = `1px solid ${theme.headerColor}`; // Optional: Border matches header
+    button.style.borderRadius = "8px"; // Rounded corners
+    button.style.padding = "10px 20px"; // Add some padding
+    button.style.fontSize = "1rem"; // Match font size
+    button.style.cursor = "pointer"; // Pointer cursor
+    button.style.transition = "background-color 0.3s ease, transform 0.2s ease"; // Smooth hover effect
+
+    // Add hover and active effects
+    button.addEventListener("mouseover", () => {
+      button.style.filter = "brightness(1.1)"; // Slightly brighter on hover
+      button.style.transform = "scale(1.05)"; // Slightly larger
+    });
+
+    button.addEventListener("mouseout", () => {
+      button.style.filter = "brightness(1.0)";
+      button.style.transform = "scale(1.0)";
+    });
+
+    button.addEventListener("mousedown", () => {
+      button.style.transform = "scale(0.98)"; // Slightly smaller on click
+    });
+
+    button.addEventListener("mouseup", () => {
+      button.style.transform = "scale(1.0)";
+    });
+  });
+
   console.log("Theme applied:", theme); // Debug: Log the applied theme
 }

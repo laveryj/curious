@@ -48,7 +48,7 @@
     </section>
 
     <section id="exhibit-list">
-      <h2>Exhibits</h2>
+      <h2>Exhibit Overview</h2>
       <table id="exhibits-table">
         <thead>
           <tr>
@@ -72,22 +72,32 @@
 
     <section id="actions">
       <h2>Force Update</h2>
-      <p>If you've recently updated your species information or exhibit allocation, the changes will be applied within the next 4 hours. If you need to force an update, you can do that with the button below.</p>
+      <p>If you've recently updated your species information or exhibit allocation, the changes will be applied within the next 4 hours. If you need to force an update, you can do here.</p>
+      <button id="force-update" disabled>Force Update</button>
       <br>
-      <h2>Generate QR Codes</h2>
-      <p>To generate the QR code for your exhibit, use the button below.</p>
+      <br>
       <br>
     </section>
 
-    <section id="support">
-      <h2>Support</h2>
-      <p>If you need assistance, please contact the Curious team:</p>
-      <ul>
-        <li>Email: <a href="mailto:support@getcurious.com">support@getcurious.com</a></li>
-        <li>Phone: +44 1234 987654</li>
-        <li>Working Hours: Monday to Friday, 9:00 AM - 5:00 PM (GMT)</li>
-      </ul>
-    </section>
+    <section id="qrcodes">
+    <h2>Generate QR Codes</h2>
+    <p>Generate a set of QR codes for all exhibits here:</p>
+    <button id="generate-all-qr">Generate QR Codes for All Exhibits</button>
+    <br>
+    <br>
+    <p>Generate a QR code for a specific exhibit below:</p>
+    <div>
+      <!-- <label for="exhibit-select">Select Exhibit:</label> -->
+      <select id="exhibit-select">
+        <option value="">-- Select an Exhibit --</option>
+      </select>
+      <button id="generate-qr" disabled>Generate QR Code</button>
+    </div>
+    <br>
+    <canvas id="qr-code"></canvas>
+    <br>
+    <button id="download-qr" style="display: none;">Download this QR Code</button>
+  </section>
   </main>
 
   <footer>
@@ -98,6 +108,8 @@
     <sub>Powered by Curious. All rights reserved.</sub>
   </footer>
 
+  <!-- Reference to local QRious script -->
+  <script src="/scripts/qrious.min.js"></script>
   <script src="fetch.js" defer></script>
   <script src="portal.js"></script>
 </body>
