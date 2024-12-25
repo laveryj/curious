@@ -163,6 +163,26 @@
           "audioURL": ""
         }
       ]
+    },
+    {
+      "exhibit-id": "4",
+      "exhibit-name": "Reef",
+      "exhibit-mode": "standard",
+      "species": [
+        {
+          "species-id": "12",
+          "commonName": "test",
+          "scientificName": "test",
+          "shortDescription": "test",
+          "longDescription": "test",
+          "funFact": "test",
+          "conservationStatus": "test",
+          "fishBaseURL": "test",
+          "externalURL": "test",
+          "imageURL": "test",
+          "audioURL": ""
+        }
+      ]
     }
   ]
 }
