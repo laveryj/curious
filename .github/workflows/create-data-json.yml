@@ -1,0 +1,33 @@
+name: Generate JSON from Google Sheet
+
+on:
+  workflow_dispatch: # Manually trigger the workflow from the Actions tab
+  push:              # Trigger on push to the repository
+    paths:
+      - scripts/convert_to_json.js # Run when the script changes
+      - .github/workflows/generate-json.yml
+
+jobs:
+  generate-json:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '16'
+
+    - name: Install dependencies
+      run: npm install papaparse
+
+    - name: Run JSON generation script
+      run: node scripts/convert_to_json.js
+
+    - name: Push updated data.json files
+      uses: stefanzweifel/git-auto-commit-action@v4
+      with:
+        commit_message: "Update data.json files"
+        file_pattern: "2054/data.json"
