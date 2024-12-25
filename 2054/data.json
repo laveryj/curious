@@ -1,0 +1,146 @@
+{
+  "exhibits": [
+    {
+      "exhibit-id": "1",
+      "exhibit-name": "Wave Tank",
+      "exhibit-mode": "standard",
+      "species": [
+        {
+          "species-id": "1",
+          "commonName": "Atlantic Cod",
+          "scientificName": "Gadus morhua",
+          "shortDescription": "A cold-water fish known for its commercial value.",
+          "longDescription": "Atlantic cod is a species of fish that lives in colder waters and deeper sea regions throughout the North Atlantic. It has a significant impact on fisheries and marine ecosystems.",
+          "funFact": "Atlantic cod can live up to 25 years.",
+          "conservationStatus": "Least Concern",
+          "imageURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Pollachius_pollachius_aquarium.jpg/440px-Pollachius_pollachius_aquarium.jpg",
+          "audioURL": "atlantic-cod-audio.mp3"
+        },
+        {
+          "species-id": "2",
+          "commonName": "Thornback Ray",
+          "scientificName": "Raja clavata",
+          "shortDescription": "A cartilaginous fish found in coastal waters.",
+          "longDescription": "Thornback rays are a species of ray commonly found in shallow coastal waters. They are known for their unique shape and patterns on their dorsal surface.",
+          "funFact": "Thornback rays can change their coloration to blend into their surroundings.",
+          "conservationStatus": "Not Threatened",
+          "imageURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Atlantic_Cod%2C_Atlantischer_Kabeljau_%28Gadus_morhua%29.jpg/480px-Atlantic_Cod%2C_Atlantischer_Kabeljau_%28Gadus_morhua%29.jpg",
+          "audioURL": "thornback-ray-audio.mp3"
+        }
+      ]
+    },
+    {
+      "exhibit-id": "2",
+      "exhibit-name": "Ray Lagoon",
+      "exhibit-mode": "standard",
+      "species": [
+        {
+          "species-id": "3",
+          "commonName": "Long Spined Sea Urchin",
+          "scientificName": "Diadema setosum",
+          "shortDescription": "A spiny creature found in warm coastal waters.",
+          "longDescription": "The long-spined sea urchin is known for its sharp spines that provide excellent defense against predators.",
+          "funFact": "Its spines can grow up to 30 centimeters long.",
+          "conservationStatus": "Least Concern",
+          "imageURL": "https://example.com/long-spined-urchin.jpg",
+          "audioURL": null
+        },
+        {
+          "species-id": "4",
+          "commonName": "Bubble Tip Anemone",
+          "scientificName": "Entacmaea quadricolor",
+          "shortDescription": "A popular sea anemone in aquariums.",
+          "longDescription": "Bubble tip anemones are known for their vibrant colors and ability to host clownfish.",
+          "funFact": "It can retract its tentacles when feeling threatened.",
+          "conservationStatus": "Least Concern",
+          "imageURL": "https://example.com/bubble-tip-anemone.jpg",
+          "audioURL": null
+        },
+        {
+          "species-id": "5",
+          "commonName": "Common Clownfish",
+          "scientificName": "Amphiprion ocellaris",
+          "shortDescription": "A small, brightly colored fish.",
+          "longDescription": "Clownfish are well-known for their symbiotic relationship with sea anemones.",
+          "funFact": "Clownfish can change gender during their lifetime.",
+          "conservationStatus": "Least Concern",
+          "imageURL": "https://example.com/clownfish.jpg",
+          "audioURL": null
+        },
+        {
+          "species-id": "6",
+          "commonName": "Regal Tang",
+          "scientificName": "Paracanthurus hepatus",
+          "shortDescription": "A bright blue fish with a yellow tail.",
+          "longDescription": "The regal tang is a reef fish popularized by its appearance in movies.",
+          "funFact": "Regal tangs can play dead to avoid predators.",
+          "conservationStatus": "Least Concern",
+          "imageURL": "https://example.com/regal-tang.jpg",
+          "audioURL": null
+        },
+        {
+          "species-id": "7",
+          "commonName": "Moorish Idol",
+          "scientificName": "Zanclus cornutus",
+          "shortDescription": "A tropical fish with striking black, white, and yellow stripes.",
+          "longDescription": "Moorish idols are difficult to keep in captivity due to their specific diet.",
+          "funFact": "The Moorish idol is named after the Moors, who believed the fish brought happiness.",
+          "conservationStatus": "Not Threatened",
+          "imageURL": "https://example.com/moorish-idol.jpg",
+          "audioURL": null
+        }
+      ]
+    },
+    {
+      "exhibit-id": "3",
+      "exhibit-name": "Freshwater Wonders",
+      "exhibit-mode": "standard",
+      "species": [
+        {
+          "species-id": "8",
+          "commonName": "Red Tail Catfish",
+          "scientificName": "Phractocephalus hemioliopterus",
+          "shortDescription": "A large catfish native to South America.",
+          "longDescription": "The red tail catfish is a popular species among aquarium enthusiasts for its striking appearance.",
+          "funFact": "It can grow up to 1.8 meters in length.",
+          "conservationStatus": "Least Concern",
+          "imageURL": "https://example.com/red-tail-catfish.jpg",
+          "audioURL": null
+        },
+        {
+          "species-id": "9",
+          "commonName": "Giraffe Catfish",
+          "scientificName": "Auchenoglanis occidentalis",
+          "shortDescription": "A catfish species with unique spotted patterns.",
+          "longDescription": "The giraffe catfish is native to Africa and known for its distinctive markings.",
+          "funFact": "It is named after its resemblance to a giraffe's coat.",
+          "conservationStatus": "Least Concern",
+          "imageURL": "https://example.com/giraffe-catfish.jpg",
+          "audioURL": null
+        },
+        {
+          "species-id": "10",
+          "commonName": "Freshwater Pufferfish",
+          "scientificName": "Tetraodon mbu",
+          "shortDescription": "A pufferfish species found in African rivers.",
+          "longDescription": "Freshwater pufferfish are known for their ability to inflate when threatened.",
+          "funFact": "Their teeth grow continuously and require trimming in captivity.",
+          "conservationStatus": "Vulnerable",
+          "imageURL": "https://example.com/freshwater-pufferfish.jpg",
+          "audioURL": null
+        },
+        {
+          "species-id": "11",
+          "commonName": "Black Pacu",
+          "scientificName": "Colossoma macropomum",
+          "shortDescription": "A large freshwater fish related to piranhas.",
+          "longDescription": "Black pacus are herbivorous and often kept in large aquariums.",
+          "funFact": "They are sometimes called 'vegetarian piranhas.'",
+          "conservationStatus": "Not Threatened",
+          "imageURL": "https://example.com/black-pacu.jpg",
+          "audioURL": null
+        }
+      ]
+    }
+  ]
+}

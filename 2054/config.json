@@ -1,0 +1,21 @@
+{
+  "siteName": "Sealife Adventure",
+  "siteid": "2054",
+  "company": "Miller Leisure Ltd",
+  "address": "Eastern Esplanade, Southend-on-Sea, SS1 2ER",
+  "contact": "Marc Miller",
+  "tier": "Free",
+  "user": "admin",
+  "password": "admin",
+  "language": "English",
+  "email": "contact@oceanwonders.com",
+  "phone": "+44 1234 567890",
+  "theme": {
+      "logoPath": "assets/images/site-logo.png",
+      "backgroundColor": "#9ce2fc",
+      "headerColor": "#18236e",
+      "cardColor": "#92c0d1",      
+      "textColor": "#18236e",
+      "linkColor": "#18236e"
+  }
+}

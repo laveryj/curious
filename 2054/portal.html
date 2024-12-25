@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Curious | Admin Portal</title>
+
+  <!-- Inline Critical Theme Styles -->
+  <style>
+    body.hidden {
+      background-color: #D83B01; /* This should be your theme's background color */
+      visibility: hidden; /* Hide until the script removes 'hidden' */
+    }
+    header {
+      background-color: #BF3300; /* Theme header color */
+      color: #FFFFFF; /* Theme text color */
+    }
+    a {
+      color: #FFD7B5; /* Theme link color */
+    }
+  </style>
+
+  <!-- Import the fallback styles -->
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- Include the script to load the dynamic theme -->
+  <script src="config.js" defer></script>
+</head>
+
+<body class="hidden">
+  <!-- <header>
+    <h1 id="exhibit-title">Exhibit</h1>
+  </header> -->
+
+  <header>
+    <img id="site-logo" alt="Site Logo" style="display: none;">
+    <h1 id="portal-title">Admin Portal</h1>
+  </header>
+
+  <main>
+    <section id="site-info">
+      <h2>Site Information</h2>
+      <div id="site-info-content">
+        <!-- Content dynamically loaded from config.json -->
+      </div>
+      <br>
+    </section>
+
+    <section id="payment-info">
+      <h2>Payment Information</h2>
+      <p><i>[Placeholder for Xero API data, such as invoices, due dates, and payment status.]</i></p>
+      <br>
+    </section>
+
+    <section id="actions">
+      <h2>Force Update</h2>
+      <p>If you've recently updated your species information or exhibit allocation, the changes will be applied within the next 4 hours. If you need to force an update, you can do that with the button below.</p>
+      <br>
+      <h2>Generate QR Codes</h2>
+      <p>To generate the QR code for your exhibit, use the button below.</p>
+      <br>
+    </section>
+
+    <section id="support">
+      <h2>Support</h2>
+      <p>If you need assistance, please contact the Curious team:</p>
+      <ul>
+        <li>Email: <a href="mailto:support@getcurious.com">support@getcurious.com</a></li>
+        <li>Phone: +44 1234 987654</li>
+        <li>Working Hours: Monday to Friday, 9:00 AM - 5:00 PM (GMT)</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <a href="/about.html">
+      <img src="/assets/logo.png" alt="Site Logo">
+    </a>
+    <br>
+    <sub>Powered by Curious. All rights reserved.</sub>
+  </footer>
+
+  <script src="fetch.js" defer></script>
+  <script src="portal.js"></script>
+</body>
+</html>

@@ -1,0 +1,105 @@
+    body {
+      font-family: 'Open Sans', sans-serif;
+      background-color: #D83B01;
+      color: #ffffff;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    
+    header {
+      background-color: #BF3300;
+      color: #ffffff;
+      padding: 15px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+    }
+
+    header {
+      display: flex;
+      align-items: center; /* Vertically align items */
+      justify-content: flex-start; /* Align items to the left */
+    }
+    
+    #site-logo {
+      max-height: 100px;
+      margin-right: 15px;
+    }
+
+    header img {
+      max-height: 40px;
+      margin-right: 10px;
+      vertical-align: middle;
+    }
+    header h1 {
+      display: inline;
+      font-size: 1.5rem;
+    }
+    main {
+      padding: 20px;
+      flex: 1;
+    }
+    .card {
+      background: #BF3300;
+      padding: 15px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+    img {
+      width: 100px;
+      height: auto;
+      border-radius: 0px;
+      /* float: left; */
+      float: center;
+      margin-right: 0px;
+    }
+    footer {
+      background-color: #BF3300;
+      color: #ffffff;
+      text-align: center;
+      padding: 10px;
+      position: relative;
+    }
+
+    /* Styling for portal.html table format for site info */
+    table {
+      width: 35%; /* Narrower table width */
+      margin: 10px 0; /* Add vertical margin only */
+      border-collapse: collapse;
+      font-size: 1rem;
+      text-align: left; /* Align the table to the left */
+    }
+    
+    table th, table td {
+      padding: 10px;
+      border: 1px solid #ddd;
+    }
+    
+    table td:first-child {
+      font-weight: bold; /* Bold text for the left column */
+      width: 25%; /* Slightly narrower for the heading column */
+      text-align: right; /* Align content to the left */
+    }
+    
+    table td:last-child {
+      width: 70%; /* Wider for content */
+    }
+    
+    #site-info-content {
+      margin-bottom: 20px; /* Add space below the table */
+    }
+    
+    #payment-info {
+      clear: both; /* Ensure payment info appears below floated content */
+    }
+
+    body.loading {
+      visibility: hidden; /* Hide everything while loading */
+    }
+    
+    body.loaded {
+      visibility: visible; /* Show content after loading */
+    }
