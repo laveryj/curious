@@ -39,5 +39,5 @@ jobs:
     - name: Push updated data.json files
       uses: stefanzweifel/git-auto-commit-action@v4
       with:
-        commit_message: "Update data.json files"
+        commit_message: "Auto-update of data.json files"
         file_pattern: "**/data.json" # Adjust for all data.json files
