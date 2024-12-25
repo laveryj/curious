@@ -15,7 +15,7 @@
           "conservationStatus": "Vulnerable",
           "fishBaseURL": "https://www.fishbase.se/summary/Gadus-morhua.html",
           "externalURL": "",
-          "imageURL": "https://upload.wikimedia.org/wikipedia/commons/2/2c/Gadus_morhua_Cod-2b-Atlanterhavsparken-Norway.JPG",
+          "imageURL": "https://www.fishbase.se/images/thumbnails/jpg/tn_Gamor_u3.jpg",
           "audioURL": ""
         },
         {
@@ -28,7 +28,7 @@
           "conservationStatus": "Near Threatened",
           "fishBaseURL": "https://www.fishbase.se/summary/Raja-clavata.html",
           "externalURL": "",
-          "imageURL": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Raja_clavata.jpg",
+          "imageURL": "https://www.fishbase.se/images/thumbnails/jpg/tn_Racla_u4.jpg",
           "audioURL": ""
         },
         {
@@ -41,7 +41,7 @@
           "conservationStatus": "Least Concern",
           "fishBaseURL": "https://www.fishbase.se/summary/Diadema-setosum.html",
           "externalURL": "",
-          "imageURL": "https://upload.wikimedia.org/wikipedia/commons/d/d2/Diadema_setosum.jpg",
+          "imageURL": "",
           "audioURL": ""
         },
         {
@@ -67,7 +67,7 @@
           "conservationStatus": "Least Concern",
           "fishBaseURL": "https://www.fishbase.se/summary/Amphiprion-ocellaris.html",
           "externalURL": "",
-          "imageURL": "https://upload.wikimedia.org/wikipedia/commons/2/2a/Amphiprion_ocellaris.jpg",
+          "imageURL": "https://www.fishbase.se/images/thumbnails/jpg/tn_Amoce_u0.jpg",
           "audioURL": ""
         }
       ]
@@ -87,7 +87,7 @@
           "conservationStatus": "Least Concern",
           "fishBaseURL": "https://www.fishbase.se/summary/Asterias-rubens.html",
           "externalURL": "",
-          "imageURL": "https://upload.wikimedia.org/wikipedia/commons/5/5f/Asterias_rubens.jpg",
+          "imageURL": "",
           "audioURL": ""
         },
         {
@@ -100,7 +100,7 @@
           "conservationStatus": "Least Concern",
           "fishBaseURL": "https://www.fishbase.se/summary/Pleuronectes-platessa.html",
           "externalURL": "",
-          "imageURL": "https://upload.wikimedia.org/wikipedia/commons/2/2d/Pleuronectes_platessa.jpg",
+          "imageURL": "",
           "audioURL": ""
         }
       ]
@@ -120,7 +120,7 @@
           "conservationStatus": "Least Concern",
           "fishBaseURL": "https://www.fishbase.se/summary/Asterias-rubens.html",
           "externalURL": "",
-          "imageURL": "https://upload.wikimedia.org/wikipedia/commons/5/5f/Asterias_rubens.jpg",
+          "imageURL": "",
           "audioURL": ""
         },
         {
@@ -133,7 +133,7 @@
           "conservationStatus": "Least Concern",
           "fishBaseURL": "https://www.fishbase.se/summary/Parablennius-gattorugine.html",
           "externalURL": "",
-          "imageURL": "https://upload.wikimedia.org/wikipedia/commons/a/aa/Parablennius_gattorugine.jpg",
+          "imageURL": "",
           "audioURL": ""
         }
       ]
@@ -153,7 +153,7 @@
           "conservationStatus": "Least Concern",
           "fishBaseURL": "https://www.fishbase.se/summary/Asterias-rubens.html",
           "externalURL": "",
-          "imageURL": "https://upload.wikimedia.org/wikipedia/commons/5/5f/Asterias_rubens.jpg",
+          "imageURL": "",
           "audioURL": ""
         },
         {
@@ -166,7 +166,7 @@
           "conservationStatus": "Least Concern",
           "fishBaseURL": "https://www.fishbase.se/summary/Echinus-esculentus.html",
           "externalURL": "",
-          "imageURL": "https://upload.wikimedia.org/wikipedia/commons/e/e1/Echinus_esculentus.jpg",
+          "imageURL": "",
           "audioURL": ""
         }
       ]
@@ -186,7 +186,7 @@
           "conservationStatus": "Near Threatened",
           "fishBaseURL": "https://www.fishbase.se/summary/Hippocampus-guttulatus.html",
           "externalURL": "",
-          "imageURL": "https://upload.wikimedia.org/wikipedia/commons/2/24/Hippocampus_guttulatus.jpg",
+          "imageURL": "",
           "audioURL": ""
         },
         {
@@ -199,7 +199,7 @@
           "conservationStatus": "Least Concern",
           "fishBaseURL": "https://www.fishbase.se/summary/Echinaster-sepositus.html",
           "externalURL": "",
-          "imageURL": "https://upload.wikimedia.org/wikipedia/commons/8/86/Echinaster_sepositus.jpg",
+          "imageURL": "",
           "audioURL": ""
         },
         {
@@ -212,7 +212,7 @@
           "conservationStatus": "Least Concern",
           "fishBaseURL": "https://www.fishbase.se/summary/Syngnathus-typhle.html",
           "externalURL": "",
-          "imageURL": "https://upload.wikimedia.org/wikipedia/commons/c/c2/Syngnathus_typhle.jpg",
+          "imageURL": "",
           "audioURL": ""
         }
       ]
@@ -232,7 +232,7 @@
           "conservationStatus": "Least Concern",
           "fishBaseURL": "https://www.fishbase.se/summary/Trisopterus-minutus.html",
           "externalURL": "",
-          "imageURL": "https://upload.wikimedia.org/wikipedia/commons/3/33/Trisopterus_minutus.jpg",
+          "imageURL": "",
           "audioURL": ""
         },
         {
@@ -245,7 +245,7 @@
           "conservationStatus": "Least Concern",
           "fishBaseURL": "https://www.fishbase.se/summary/Homarus-gammarus.html",
           "externalURL": "",
-          "imageURL": "https://upload.wikimedia.org/wikipedia/commons/4/45/Homarus_gammarus.jpg",
+          "imageURL": "",
           "audioURL": ""
         },
         {
@@ -258,7 +258,7 @@
           "conservationStatus": "Least Concern",
           "fishBaseURL": "https://www.fishbase.se/summary/Henricia-oculata.html",
           "externalURL": "",
-          "imageURL": "https://upload.wikimedia.org/wikipedia/commons/1/19/Henricia_oculata.jpg",
+          "imageURL": "",
           "audioURL": ""
         },
         {
@@ -271,7 +271,7 @@
           "conservationStatus": "Least Concern",
           "fishBaseURL": "https://www.fishbase.se/summary/Lytechinus-variegatus.html",
           "externalURL": "",
-          "imageURL": "https://upload.wikimedia.org/wikipedia/commons/6/65/Lytechinus_variegatus.jpg",
+          "imageURL": "",
           "audioURL": ""
         }
       ]
@@ -291,7 +291,7 @@
           "conservationStatus": "Least Concern",
           "fishBaseURL": "https://www.fishbase.se/summary/Paracanthurus-hepatus.html",
           "externalURL": "",
-          "imageURL": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Paracanthurus_hepatus.jpg",
+          "imageURL": "https://www.fishbase.se/images/thumbnails/jpg/tn_Pahep_ur.jpg",
           "audioURL": ""
         },
         {
@@ -304,7 +304,7 @@
           "conservationStatus": "Near Threatened",
           "fishBaseURL": "https://www.fishbase.se/summary/Zanclus-cornutus.html",
           "externalURL": "",
-          "imageURL": "https://upload.wikimedia.org/wikipedia/commons/8/87/Zanclus_cornutus.jpg",
+          "imageURL": "https://www.fishbase.se/images/thumbnails/jpg/tn_Zacor_ua.jpg",
           "audioURL": ""
         }
       ]
@@ -324,7 +324,7 @@
           "conservationStatus": "Least Concern",
           "fishBaseURL": "https://www.fishbase.se/summary/Phractocephalus-hemioliopterus.html",
           "externalURL": "",
-          "imageURL": "https://upload.wikimedia.org/wikipedia/commons/d/d2/Phractocephalus_hemioliopterus.jpg",
+          "imageURL": "",
           "audioURL": ""
         },
         {
@@ -337,7 +337,7 @@
           "conservationStatus": "Least Concern",
           "fishBaseURL": "https://www.fishbase.se/summary/Auchenoglanis-occidentalis.html",
           "externalURL": "",
-          "imageURL": "https://upload.wikimedia.org/wikipedia/commons/7/7b/Auchenoglanis_occidentalis.jpg",
+          "imageURL": "",
           "audioURL": ""
         },
         {
@@ -350,7 +350,7 @@
           "conservationStatus": "Vulnerable",
           "fishBaseURL": "https://www.fishbase.se/summary/Tetraodon-mbu.html",
           "externalURL": "",
-          "imageURL": "https://upload.wikimedia.org/wikipedia/commons/5/5c/Tetraodon_mbu.jpg",
+          "imageURL": "https://www.fishbase.se/images/thumbnails/jpg/tn_Tembu_u1.jpg",
           "audioURL": ""
         },
         {
@@ -363,7 +363,7 @@
           "conservationStatus": "Near Threatened",
           "fishBaseURL": "https://www.fishbase.se/summary/Colossoma-macropomum.html",
           "externalURL": "",
-          "imageURL": "https://upload.wikimedia.org/wikipedia/commons/1/15/Colossoma_macropomum.jpg",
+          "imageURL": "https://www.fishbase.se/images/thumbnails/jpg/tn_Comac_u1.jpg",
           "audioURL": ""
         }
       ]
