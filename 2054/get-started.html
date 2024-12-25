@@ -29,10 +29,6 @@
 </head>
 
 <body class="hidden">
-  <!-- <header>
-    <h1 id="exhibit-title">Exhibit</h1>
-  </header> -->
-
   <header>
     <img id="site-logo" alt="Site Logo" style="display: none;">
     <h1 id="welcome-title">Get Started</h1>
@@ -53,23 +49,23 @@
     </p>
 
     <button id="open-camera">Start Scanning</button>
+    <!-- Add the missing input element -->
+    <input type="file" id="capture-input" accept="image/*" capture="environment" style="display: none;">
 
-  <script>
-    document.getElementById("open-camera").addEventListener("click", () => {
-      document.getElementById("capture-input").click();
-    });
+    <script>
+      document.getElementById("open-camera").addEventListener("click", () => {
+        document.getElementById("capture-input").click();
+      });
 
-    document.getElementById("capture-input").addEventListener("change", (event) => {
-      const file = event.target.files[0];
-      if (file) {
-        console.log("Image captured:", file);
-        // You can handle the captured file here
-      }
-    });
-  </script>
-
+      document.getElementById("capture-input").addEventListener("change", (event) => {
+        const file = event.target.files[0];
+        if (file) {
+          console.log("Image captured:", file);
+          // You can handle the captured file here
+        }
+      });
+    </script>
   </main>
-
 
   <footer>
     <a href="/about.html">
@@ -81,4 +77,5 @@
 
   <script src="assets/scripts/fetch.js" defer></script>
 </body>
+
 </html>
