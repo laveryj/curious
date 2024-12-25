@@ -10,13 +10,13 @@
           "commonName": "Atlantic Cod",
           "scientificName": "Gadus morhua",
           "shortDescription": "A cold-water fish known for its commercial value.",
-          "longDescription": "Atlantic cod is a species of fish that lives in colder waters and deeper sea regions throughout the North Atlantic. It has a significant impact on fisheries and marine ecosystems.",
+          "longDescription": "Atlantic cod is a species of fish that lives in colder waters and deeper sea regions throughout the North Atlantic. It has a significant impact on fisheries and ecosystems.",
           "funFact": "Atlantic cod can live up to 25 years.",
-          "conservationStatus": "Least Concern",
-          "fishBaseURL": "",
+          "conservationStatus": "Vulnerable",
+          "fishBaseURL": "https://www.fishbase.se/summary/Gadus-morhua.html",
           "externalURL": "",
-          "imageURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Pollachius_pollachius_aquarium.jpg/440px-Pollachius_pollachius_aquarium.jpg",
-          "audioURL": "atlantic-cod-audio.mp3"
+          "imageURL": "https://upload.wikimedia.org/wikipedia/commons/2/2c/Gadus_morhua_Cod-2b-Atlanterhavsparken-Norway.JPG",
+          "audioURL": ""
         },
         {
           "species-id": "2",
@@ -24,20 +24,13 @@
           "scientificName": "Raja clavata",
           "shortDescription": "A cartilaginous fish found in coastal waters.",
           "longDescription": "Thornback rays are a species of ray commonly found in shallow coastal waters. They are known for their unique shape and patterns on their dorsal surface.",
-          "funFact": "Thornback rays can change their coloration to blend into their surroundings.",
-          "conservationStatus": "Not Threatened",
-          "fishBaseURL": "",
+          "funFact": "Thornback rays can change coloration.",
+          "conservationStatus": "Near Threatened",
+          "fishBaseURL": "https://www.fishbase.se/summary/Raja-clavata.html",
           "externalURL": "",
-          "imageURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Atlantic_Cod%2C_Atlantischer_Kabeljau_%28Gadus_morhua%29.jpg/480px-Atlantic_Cod%2C_Atlantischer_Kabeljau_%28Gadus_morhua%29.jpg",
-          "audioURL": "thornback-ray-audio.mp3"
-        }
-      ]
-    },
-    {
-      "exhibit-id": "2",
-      "exhibit-name": "Ray Lagoon",
-      "exhibit-mode": "standard",
-      "species": [
+          "imageURL": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Raja_clavata.jpg",
+          "audioURL": ""
+        },
         {
           "species-id": "3",
           "commonName": "Long Spined Sea Urchin",
@@ -46,10 +39,10 @@
           "longDescription": "The long-spined sea urchin is known for its sharp spines that provide excellent defense against predators.",
           "funFact": "Its spines can grow up to 30 centimeters long.",
           "conservationStatus": "Least Concern",
-          "fishBaseURL": "",
+          "fishBaseURL": "https://www.fishbase.se/summary/Diadema-setosum.html",
           "externalURL": "",
-          "imageURL": "https://example.com/long-spined-urchin.jpg",
-          "audioURL": null
+          "imageURL": "https://upload.wikimedia.org/wikipedia/commons/d/d2/Diadema_setosum.jpg",
+          "audioURL": ""
         },
         {
           "species-id": "4",
@@ -57,12 +50,12 @@
           "scientificName": "Entacmaea quadricolor",
           "shortDescription": "A popular sea anemone in aquariums.",
           "longDescription": "Bubble tip anemones are known for their vibrant colors and ability to host clownfish.",
-          "funFact": "It can retract its tentacles when feeling threatened.",
+          "funFact": "It can retract its tentacles when threatened.",
           "conservationStatus": "Least Concern",
           "fishBaseURL": "",
           "externalURL": "",
-          "imageURL": "https://example.com/bubble-tip-anemone.jpg",
-          "audioURL": null
+          "imageURL": "https://upload.wikimedia.org/wikipedia/commons/a/a9/Bubble_Tip_Anemone.jpg",
+          "audioURL": ""
         },
         {
           "species-id": "5",
@@ -72,11 +65,18 @@
           "longDescription": "Clownfish are well-known for their symbiotic relationship with sea anemones.",
           "funFact": "Clownfish can change gender during their lifetime.",
           "conservationStatus": "Least Concern",
-          "fishBaseURL": "",
+          "fishBaseURL": "https://www.fishbase.se/summary/Amphiprion-ocellaris.html",
           "externalURL": "",
-          "imageURL": "https://example.com/clownfish.jpg",
-          "audioURL": null
-        },
+          "imageURL": "https://upload.wikimedia.org/wikipedia/commons/2/2a/Amphiprion_ocellaris.jpg",
+          "audioURL": ""
+        }
+      ]
+    },
+    {
+      "exhibit-id": "2",
+      "exhibit-name": "Ray Bay",
+      "exhibit-mode": "standard",
+      "species": [
         {
           "species-id": "6",
           "commonName": "Regal Tang",
@@ -85,10 +85,10 @@
           "longDescription": "The regal tang is a reef fish popularized by its appearance in movies.",
           "funFact": "Regal tangs can play dead to avoid predators.",
           "conservationStatus": "Least Concern",
-          "fishBaseURL": "",
+          "fishBaseURL": "https://www.fishbase.se/summary/Paracanthurus-hepatus.html",
           "externalURL": "",
-          "imageURL": "https://example.com/regal-tang.jpg",
-          "audioURL": null
+          "imageURL": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Paracanthurus_hepatus.jpg",
+          "audioURL": ""
         },
         {
           "species-id": "7",
@@ -96,18 +96,18 @@
           "scientificName": "Zanclus cornutus",
           "shortDescription": "A tropical fish with striking black, white, and yellow stripes.",
           "longDescription": "Moorish idols are difficult to keep in captivity due to their specific diet.",
-          "funFact": "The Moorish idol is named after the Moors, who believed the fish brought happiness.",
-          "conservationStatus": "Not Threatened",
-          "fishBaseURL": "",
+          "funFact": "The Moorish idol is named after the Moors.",
+          "conservationStatus": "Near Threatened",
+          "fishBaseURL": "https://www.fishbase.se/summary/Zanclus-cornutus.html",
           "externalURL": "",
-          "imageURL": "https://example.com/moorish-idol.jpg",
-          "audioURL": null
+          "imageURL": "https://upload.wikimedia.org/wikipedia/commons/8/87/Zanclus_cornutus.jpg",
+          "audioURL": ""
         }
       ]
     },
     {
       "exhibit-id": "3",
-      "exhibit-name": "Freshwater Wonders",
+      "exhibit-name": "Swamp",
       "exhibit-mode": "standard",
       "species": [
         {
@@ -118,8 +118,10 @@
           "longDescription": "The red tail catfish is a popular species among aquarium enthusiasts for its striking appearance.",
           "funFact": "It can grow up to 1.8 meters in length.",
           "conservationStatus": "Least Concern",
-          "imageURL": "https://example.com/red-tail-catfish.jpg",
-          "audioURL": null
+          "fishBaseURL": "https://www.fishbase.se/summary/Phractocephalus-hemioliopterus.html",
+          "externalURL": "",
+          "imageURL": "https://upload.wikimedia.org/wikipedia/commons/d/d2/Phractocephalus_hemioliopterus.jpg",
+          "audioURL": ""
         },
         {
           "species-id": "9",
@@ -127,12 +129,12 @@
           "scientificName": "Auchenoglanis occidentalis",
           "shortDescription": "A catfish species with unique spotted patterns.",
           "longDescription": "The giraffe catfish is native to Africa and known for its distinctive markings.",
-          "funFact": "It is named after its resemblance to a giraffe's coat.",
+          "funFact": "It is named after its resemblance to a giraffe’s coat.",
           "conservationStatus": "Least Concern",
-          "fishBaseURL": "",
+          "fishBaseURL": "https://www.fishbase.se/summary/Auchenoglanis-occidentalis.html",
           "externalURL": "",
-          "imageURL": "https://example.com/giraffe-catfish.jpg",
-          "audioURL": null
+          "imageURL": "https://upload.wikimedia.org/wikipedia/commons/7/7b/Auchenoglanis_occidentalis.jpg",
+          "audioURL": ""
         },
         {
           "species-id": "10",
@@ -142,10 +144,10 @@
           "longDescription": "Freshwater pufferfish are known for their ability to inflate when threatened.",
           "funFact": "Their teeth grow continuously and require trimming in captivity.",
           "conservationStatus": "Vulnerable",
-          "fishBaseURL": "",
+          "fishBaseURL": "https://www.fishbase.se/summary/Tetraodon-mbu.html",
           "externalURL": "",
-          "imageURL": "https://example.com/freshwater-pufferfish.jpg",
-          "audioURL": null
+          "imageURL": "https://upload.wikimedia.org/wikipedia/commons/5/5c/Tetraodon_mbu.jpg",
+          "audioURL": ""
         },
         {
           "species-id": "11",
@@ -153,12 +155,12 @@
           "scientificName": "Colossoma macropomum",
           "shortDescription": "A large freshwater fish related to piranhas.",
           "longDescription": "Black pacus are herbivorous and often kept in large aquariums.",
-          "funFact": "They are sometimes called 'vegetarian piranhas.'",
-          "conservationStatus": "Not Threatened",
-          "fishBaseURL": "",
+          "funFact": "They are sometimes called ‘vegetarian piranhas.’",
+          "conservationStatus": "Near Threatened",
+          "fishBaseURL": "https://www.fishbase.se/summary/Colossoma-macropomum.html",
           "externalURL": "",
-          "imageURL": "https://example.com/black-pacu.jpg",
-          "audioURL": null
+          "imageURL": "https://upload.wikimedia.org/wikipedia/commons/1/15/Colossoma_macropomum.jpg",
+          "audioURL": ""
         }
       ]
     }
