@@ -21,13 +21,18 @@ jobs:
         node-version: '16'
 
     - name: Install dependencies
-      run: npm install papaparse
+      run: npm install papaparse follow-redirects
 
     - name: Run JSON generation script
+      env:
+        OUTPUT_DIR: ${{ github.workspace }}/../ # Set the correct output path if needed
       run: node scripts/convert_to_json.js
+
+    - name: Debug generated files
+      run: ls -R ${{ github.workspace }}/..
 
     - name: Push updated data.json files
       uses: stefanzweifel/git-auto-commit-action@v4
       with:
         commit_message: "Update data.json files"
-        file_pattern: "2054/data.json"
+        file_pattern: "**/data.json" # Adjust for all data.json files
