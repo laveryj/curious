@@ -103,3 +103,47 @@
     body.loaded {
       visibility: visible; /* Show content after loading */
     }
+
+    /* Styling for portal.html table format for exhibit list */
+#exhibits-table {
+  /* width: 100%; Expand the table to fill the available width */
+  margin: 10px 0; /* Add vertical margin only */
+  border-collapse: collapse;
+  font-size: 1rem;
+  text-align: left; /* Default alignment for table content */
+}
+
+#exhibits-table th, #exhibits-table td {
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+#exhibits-table th {
+  text-align: center; /* Center align the table headers */
+  /* background-color: #f2f2f2; Optional: Add a light background for headers */
+  font-weight: bold; /* Bold text for headers */
+}
+
+#exhibits-table td:first-child {
+  width: 15%; /* Narrow width for ID column */
+  text-align: center; /* Center align content in the first column */
+}
+
+#exhibits-table td:nth-child(2) {
+  width: 50%; /* Wider width for Exhibit column */
+  text-align: left; /* Center align content in the first column */
+}
+
+#exhibits-table td:last-child {
+  width: 20%; /* Medium width for Active Species column */
+  text-align: center; /* Center align content in the last column */
+}
+
+#exhibits-table td a {
+  color: #1e90ff; /* Color for links */
+  /* text-decoration: none; Remove underline from links */
+}
+
+#exhibits-table td a:hover {
+  text-decoration: underline; /* Underline links on hover */
+}
