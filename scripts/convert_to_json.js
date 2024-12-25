@@ -3,7 +3,8 @@ const fs = require("fs");
 const https = require("https");
 const path = require("path");
 
-const sheetUrl = "https://docs.google.com/spreadsheets/d/<SHEET_ID>/gviz/tq?tqx=out:csv"; // Replace <SHEET_ID>
+// const sheetUrl = "https://docs.google.com/spreadsheets/d/<SHEET_ID>/gviz/tq?tqx=out:csv"; // Replace <SHEET_ID>
+const sheetUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQN7Vc3sLFfDaVF-7eRmR9Z_mvAiLwcB6K5slycdF2rajSNMMIRDo9mkvk4SNr7RFckWuTUD_2X2Khy/pub?output=csv";
 
 https.get(sheetUrl, (response) => {
   let csvData = "";
