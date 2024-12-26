@@ -87,7 +87,7 @@ https.get(sheetUrl, (response) => {
         console.log("Data processing complete. Writing data.json files...");
 
         const writePromises = Object.keys(siteExhibits).map(async (siteId) => {
-          const siteFolder = path.resolve(__dirname, "..", siteId);
+          const siteFolder = path.resolve(__dirname, "assets", "data", siteId);
 
           try {
             await fs.mkdir(siteFolder, { recursive: true });

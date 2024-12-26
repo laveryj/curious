@@ -8,7 +8,7 @@ on:
       - .github/workflows/generate-json.yml
   schedule:
     # Run the workflow every 6 hours
-    - cron: "0 */2 * * *"
+    - cron: "0 */6 * * *"
 
 jobs:
   generate-json:
@@ -19,7 +19,7 @@ jobs:
       uses: actions/checkout@v3
       with:
         persist-credentials: true
-    
+
     - name: Set up Node.js
       uses: actions/setup-node@v3
       with:
@@ -30,14 +30,14 @@ jobs:
 
     - name: Run JSON generation script
       env:
-        OUTPUT_DIR: ${{ github.workspace }}/../ # Set the correct output path if needed
+        OUTPUT_DIR: ${{ github.workspace }} # Set workspace for processing files
       run: node scripts/convert_to_json.js
 
     - name: Debug generated files
-      run: ls -R ${{ github.workspace }}/..
+      run: ls -R ${{ github.workspace }}
 
     - name: Push updated data.json files
       uses: stefanzweifel/git-auto-commit-action@v4
       with:
         commit_message: "Auto-update of data.json files"
-        file_pattern: "**/data.json" # Adjust for all data.json files
+        file_pattern: "**/assets/data/data.json"

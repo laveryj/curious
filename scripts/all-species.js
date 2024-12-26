@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     const speciesListContainer = document.getElementById("species-list");
-    const dataUrl = "./data.json";
-  
+    const dataUrl = "./assets/data/data.json";
+
     fetch(dataUrl)
       .then((response) => {
         if (!response.ok) {

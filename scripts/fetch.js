@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const urlParams = new URLSearchParams(window.location.search);
   const exhibitId = urlParams.get("exhibit-id");
   const speciesId = urlParams.get("species-id"); // Fixed species-id parameter
-  const dataUrl = "./data.json";
+  const dataUrl = "./assets/data/data.json";
   const configUrl = "./config.json";
 
   console.log("URL Parameters:", { exhibitId, speciesId }); // Debug: Check URL parameters
