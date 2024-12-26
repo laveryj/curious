@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const exhibitId = urlParams.get("exhibit-id");
   const speciesId = urlParams.get("species-id"); // Fixed species-id parameter
   const dataUrl = "./assets/data/data.json";
-  const configUrl = "./config.json";
+  const configUrl = "./assets/data/config.json";
 
   console.log("URL Parameters:", { exhibitId, speciesId }); // Debug: Check URL parameters
   console.log("Fetching data from:", dataUrl); // Debug: Confirm the path to the JSON file
@@ -137,7 +137,7 @@ function renderExhibit(species, exhibitId) {
   });
 
   // Reapply the theme to include newly created cards
-  fetch("./config.json")
+  fetch("./assets/data/config.json")
     .then((response) => response.json())
     .then((config) => {
       console.log("Reapplying theme for cards");
@@ -162,7 +162,7 @@ function renderSpecies(species) {
   `;
 
   // Reapply the theme to include the newly created card
-  fetch("./config.json")
+  fetch("./assets/data/config.json")
     .then((response) => response.json())
     .then((config) => {
       console.log("Reapplying theme for species card");

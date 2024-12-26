@@ -81,7 +81,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
   <script>
     document.addEventListener("DOMContentLoaded", () => {
-      const sheetUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQN7Vc3sLFfDaVF-7eRmR9Z_mvAiLwcB6K5slycdF2rajSNMMIRDo9mkvk4SNr7RFckWuTUD_2X2Khy/pub?output=csv";
+      // const sheetUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQN7Vc3sLFfDaVF-7eRmR9Z_mvAiLwcB6K5slycdF2rajSNMMIRDo9mkvk4SNr7RFckWuTUD_2X2Khy/pub?output=csv";
+      const sheetUrl = `https://docs.google.com/spreadsheets/d/e/${databaseid}/pub?output=csv`;
       const exhibitList = document.getElementById("exhibit-list");
 
       Papa.parse(sheetUrl, {

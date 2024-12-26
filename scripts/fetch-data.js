@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   const exhibitName = "Wave"; // The current exhibit name
-  const sheetUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQN7Vc3sLFfDaVF-7eRmR9Z_mvAiLwcB6K5slycdF2rajSNMMIRDo9mkvk4SNr7RFckWuTUD_2X2Khy/pub?output=csv";
+  // const sheetUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQN7Vc3sLFfDaVF-7eRmR9Z_mvAiLwcB6K5slycdF2rajSNMMIRDo9mkvk4SNr7RFckWuTUD_2X2Khy/pub?output=csv";
+  const sheetUrl = `https://docs.google.com/spreadsheets/d/e/${databaseid}/pub?output=csv`;
 
   Papa.parse(sheetUrl, {
     download: true,

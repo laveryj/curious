@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const configUrl = "./config.json"; // Path to the config.json file
+  const configUrl = "./assets/data/config.json"; // Path to the config.json file
   const dataUrl = "./assets/data/data.json"; // Path to the data.json file
   const exhibitSelect = document.getElementById("exhibit-select");
   const generateQrButton = document.getElementById("generate-qr");

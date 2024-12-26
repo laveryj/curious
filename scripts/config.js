@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const configUrl = "./config.json"; // Path to the config.json file
+  const configUrl = "./assets/data/config.json"; // Path to the config.json file
 
   fetch(configUrl)
     .then((response) => {
