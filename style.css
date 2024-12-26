@@ -1,7 +1,7 @@
     body {
       font-family: 'Open Sans', sans-serif;
-      background-color: #D83B01;
-      color: #ffffff;
+      background-color: #d3ccc4;
+      color: #292929;
       margin: 0;
       padding: 0;
       display: flex;
@@ -10,7 +10,7 @@
     }
     
     header {
-      background-color: #BF3300;
+      background-color: #d35c18;
       color: #ffffff;
       padding: 15px;
       text-align: center;
@@ -43,7 +43,7 @@
       flex: 1;
     }
     .card {
-      background: #BF3300;
+      background: #d35c18;
       padding: 15px;
       border-radius: 8px;
       margin-bottom: 20px;
@@ -57,7 +57,7 @@
       margin-right: 0px;
     }
     footer {
-      background-color: #BF3300;
+      background-color: #d35c18;
       color: #ffffff;
       text-align: center;
       padding: 10px;
@@ -201,40 +201,4 @@ select:focus {
 select option {
   background-color: var(--background-color, #D83B01); /* Dropdown menu background */
   color: var(--text-color, #FFFFFF); /* Dropdown menu text color */
-}
-
-/* Styling for Portal Login form */
-body.hidden {
-  background-color: #D83B01; /* This should be your theme's background color */
-  visibility: hidden; /* Hide until authenticated */
-}
-header {
-  background-color: #BF3300; /* Theme header color */
-  color: #FFFFFF; /* Theme text color */
-}
-a {
-  color: #FFD7B5; /* Theme link color */
-}
-#login-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-}
-#login-container input {
-  margin: 10px 0;
-  padding: 10px;
-  font-size: 1rem;
-}
-#login-container button {
-  padding: 10px 20px;
-  background-color: #18236e;
-  color: #fff;
-  border: none;
-  cursor: pointer;
-  font-size: 1rem;
-}
-#login-container button:hover {
-  background-color: #142054;
 }
