@@ -238,3 +238,9 @@ a {
 #login-container button:hover {
   background-color: #142054;
 }
+
+/* Styling for the audio guide */
+#audio-container {
+  text-align: left;
+}
+

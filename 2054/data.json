@@ -371,14 +371,14 @@
     {
       "exhibit-id": "20",
       "exhibit-name": "Test Audio",
-      "exhibit-mode": "standard",
+      "exhibit-mode": "audio",
       "species": [
         {
           "species-id": "unknown-25",
           "commonName": "Unknown",
           "scientificName": "Unknown",
           "shortDescription": "",
-          "longDescription": "",
+          "longDescription": "Our exhibit took five months to build. This is the story of how we did it.",
           "funFact": "",
           "conservationStatus": "Unknown",
           "fishBaseURL": "",

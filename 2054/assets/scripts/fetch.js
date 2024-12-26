@@ -67,8 +67,14 @@ function handleExhibitView(data, exhibitId) {
   console.log("Matching Exhibit Data:", exhibitData); // Debug log
 
   if (exhibitData) {
-    updateTitleAndContent(`Species in the ${exhibitData["exhibit-name"]}`);
-    renderExhibit(exhibitData.species, exhibitId);
+    if (exhibitData["exhibit-mode"] === "audio") {
+      // updateTitleAndContent(`Listening: ${exhibitData["exhibit-name"]}`);
+      updateTitleAndContent(`Audio Guide`);
+      renderAudio(exhibitData);
+    } else {
+      updateTitleAndContent(`Species in the ${exhibitData["exhibit-name"]}`);
+      renderExhibit(exhibitData.species, exhibitId);
+    }
   } else {
     console.error(`No exhibit found with ID: ${exhibitId}`);
     updateTitleAndContent("Exhibit Not Found", `No exhibit found with ID: ${exhibitId}.`);
@@ -165,4 +171,76 @@ function renderSpecies(species) {
     .catch((error) => {
       console.error("Error reapplying theme:", error);
     });
+}
+
+function renderAudio(exhibit) {
+  const content = document.querySelector("#content");
+
+  // Extract the audioURL and longDescription from the first species in the array
+  const audioURL = exhibit.species.length > 0 ? exhibit.species[0].audioURL : "";
+  const longDescription = exhibit.species.length > 0 ? exhibit.species[0].longDescription : "";
+
+  // Clear existing content and render the exhibit name and long description
+  content.innerHTML = `
+    <h2>You're listening to the audio guide for ${exhibit["exhibit-name"]}</h2>
+    <p>${longDescription || "We recomend using headphones to get the most out of this audio guide."}</p>
+  `;
+
+  const audioContainer = document.querySelector("#audio-container");
+  const audioPlayer = document.querySelector("#audio-player");
+  const audioSource = document.querySelector("#audio-source");
+  const playButton = document.querySelector("#play-audio");
+  const pauseButton = document.querySelector("#pause-audio");
+  const restartButton = document.querySelector("#restart-audio");
+  const audioStatus = document.querySelector("#audio-status");
+
+  if (audioURL) {
+    audioSource.src = audioURL;
+    audioPlayer.load(); // Reload audio with the new source
+
+    // Show the audio controls
+    audioContainer.style.display = "block";
+
+    // Play button logic
+    playButton.addEventListener("click", () => {
+      audioPlayer.play().then(() => {
+        audioStatus.textContent = "Now playing...";
+        playButton.style.display = "none"; // Hide play button
+        pauseButton.style.display = "inline-block"; // Show pause button
+        restartButton.style.display = "inline-block"; // Show restart button
+      }).catch((error) => {
+        console.error("Error playing audio:", error);
+        audioStatus.textContent = "Unable to play audio. Please check your browser settings.";
+      });
+    });
+
+    // Pause button logic
+    pauseButton.addEventListener("click", () => {
+      if (audioPlayer.paused) {
+        audioPlayer.play().then(() => {
+          audioStatus.textContent = "Now playing...";
+          pauseButton.textContent = "⏸ Pause"; // Update button text
+        });
+      } else {
+        audioPlayer.pause();
+        audioStatus.textContent = "Paused.";
+        pauseButton.textContent = "▶ Resume"; // Update button text
+      }
+    });
+
+    // Restart button logic
+    restartButton.addEventListener("click", () => {
+      audioPlayer.currentTime = 0;
+      audioPlayer.play().then(() => {
+        audioStatus.textContent = "Restarted and now playing...";
+        pauseButton.textContent = "⏸ Pause"; // Reset button text
+      }).catch((error) => {
+        console.error("Error restarting audio:", error);
+        audioStatus.textContent = "Unable to restart audio.";
+      });
+    });
+  } else {
+    content.innerHTML += `<p>No audio available for this exhibit.</p>`;
+    audioContainer.style.display = "none";
+  }
 }
