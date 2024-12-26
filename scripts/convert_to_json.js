@@ -5,7 +5,7 @@ const path = require("path");
 
 (async () => {
   // Load config.json
-  const configPath = path.resolve(__dirname, "assets", "data", "config.json");
+  const configPath = path.resolve(__dirname, "..", "2054", "assets", "data", "config.json");
   let config;
 
   try {
@@ -104,7 +104,7 @@ const path = require("path");
           console.log("Data processing complete. Writing data.json files...");
 
           const writePromises = Object.keys(siteExhibits).map(async (siteId) => {
-            const siteFolder = path.resolve(__dirname, "assets", "data", siteId);
+            const siteFolder = path.resolve(__dirname, "..", siteId, "assets", "data");
 
             try {
               await fs.mkdir(siteFolder, { recursive: true });

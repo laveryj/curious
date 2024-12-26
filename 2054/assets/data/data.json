@@ -371,7 +371,7 @@
     {
       "exhibit-id": "20",
       "exhibit-name": "Test Audio",
-      "exhibit-mode": "standard",
+      "exhibit-mode": "audio",
       "species": [
         {
           "species-id": "unknown-25",
@@ -385,6 +385,46 @@
           "externalURL": "",
           "imageURL": "",
           "audioURL": "https://www2.cs.uic.edu/~i101/SoundFiles/BabyElephantWalk60.wav"
+        }
+      ]
+    },
+    {
+      "exhibit-id": "21",
+      "exhibit-name": "Test Audio",
+      "exhibit-mode": "audio",
+      "species": [
+        {
+          "species-id": "unknown-26",
+          "commonName": "Unknown",
+          "scientificName": "Unknown",
+          "shortDescription": "",
+          "longDescription": "",
+          "funFact": "",
+          "conservationStatus": "Unknown",
+          "fishBaseURL": "",
+          "externalURL": "",
+          "imageURL": "",
+          "audioURL": "https://www2.cs.uic.edu/~i101/SoundFiles/BabyElephantWalk60.wav"
+        }
+      ]
+    },
+    {
+      "exhibit-id": "22",
+      "exhibit-name": "Test 2",
+      "exhibit-mode": "standard",
+      "species": [
+        {
+          "species-id": "32",
+          "commonName": "Bloody Henry Starfish",
+          "scientificName": "Henricia oculata",
+          "shortDescription": "A starfish species with bright red coloration.",
+          "longDescription": "The Bloody Henry starfish is a vividly colored echinoderm found in rocky coastal waters. Its striking red and purple hues help it camouflage among algae and corals. This species is known for its ability to regenerate lost limbs and is a key grazer in its marine habitat.",
+          "funFact": "They feed by absorbing nutrients through their body.",
+          "conservationStatus": "Least Concern",
+          "fishBaseURL": "https://www.fishbase.se/summary/Henricia-oculata.html",
+          "externalURL": "",
+          "imageURL": "",
+          "audioURL": ""
         }
       ]
     }
