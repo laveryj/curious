@@ -35,7 +35,7 @@
   </header>
 
   <main>
-    <h2>Welcome to [sitename]</h2>
+    <h2 id="site-name">Welcome to [sitename]</h2>
     <p>
       Curious makes exploring exhibits fun and interactive! Follow these simple steps to begin your journey:
     </p>
@@ -48,8 +48,7 @@
       Curious works on any modern smartphone with no need to download additional apps.
     </p>
 
-    <button id="open-camera">Start Scanning</button>
-    <!-- Add the missing input element -->
+    <!-- <button id="open-camera">Start Scanning</button>
     <input type="file" id="capture-input" accept="image/*" capture="environment" style="display: none;">
 
     <script>
@@ -60,11 +59,10 @@
       document.getElementById("capture-input").addEventListener("change", (event) => {
         const file = event.target.files[0];
         if (file) {
-          console.log("Image captured:", file);
-          // You can handle the captured file here
+          console.log("Image captured:", file); // You can handle the captured file here
         }
       });
-    </script>
+    </script> -->
   </main>
 
   <footer>

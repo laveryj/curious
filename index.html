@@ -1,130 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Exhibit</title>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <title>Loading...</title>
+
+  <!-- Inline Critical Theme Styles -->
   <style>
-    body {
-      font-family: 'Open Sans', sans-serif;
-      background-color: #D83B01;
-      color: #ffffff;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
+    body.hidden {
+      background-color: #D83B01; /* This should be your theme's background color */
+      visibility: hidden; /* Hide until the script removes 'hidden' */
     }
     header {
-      background-color: #BF3300;
-      padding: 15px;
-      text-align: center;
-      position: sticky;
-      top: 0;
+      background-color: #BF3300; /* Theme header color */
+      color: #FFFFFF; /* Theme text color */
     }
-    header img {
-      max-height: 40px;
-      margin-right: 10px;
-      vertical-align: middle;
-    }
-    header h1 {
-      display: inline;
-      font-size: 1.5rem;
-    }
-    main {
-      padding: 20px;
-      flex: 1;
-    }
-    .card {
-      background: #BF3300;
-      padding: 15px;
-      border-radius: 8px;
-      margin-bottom: 20px;
-    }
-    img {
-      width: 120px;
-      height: auto;
-      border-radius: 8px;
-      float: left;
-      margin-right: 15px;
-    }
-    footer {
-      background-color: #BF3300;
-      color: #ffffff;
-      text-align: center;
-      padding: 10px;
-      position: relative;
+    a {
+      color: #FFD7B5; /* Theme link color */
     }
   </style>
+
+  <!-- Import the fallback styles -->
+  <link rel="stylesheet" href="/style.css">
+  
+  <!-- Include the script to load the dynamic theme -->
+  <script src="/scripts/config.js" defer></script>
 </head>
-<body>
+
+<body class="hidden">
   <header>
-    <img src="logo.png" alt="Site Logo">
-    <h1 id="exhibit-title">Exhibit</h1>
+    <!-- <img id="site-logo" alt="Site Logo" style="display: none;"> -->
+    <img src="/assets/logo.png" alt="Curious Logo" style="width: 180px; height: auto;">
+    <!-- <h1 id="welcome-title">Get Started</h1> -->
   </header>
+
   <main>
-    <div id="content"></div>
+    <h2>What is Curious?</h2>
+    <p>
+      Curious is a modern, interactive digital interpretation system designed specifically for zoos and aquariums. It allows visitors to explore detailed information about animals and exhibits by scanning QR codes or tapping NFC tags with their phones.
+    </p>
+
+    <h2>How Does It Work?</h2>
+    <p>
+      Visitors simply scan a QR code or tap an NFC tag at an exhibit. They are instantly directed to a dedicated page with information about the exhibit, including detailed species profiles, photos, and fun facts.
+    </p>
+
+    <h2>Why Choose Curious?</h2>
+    <ul>
+      <li>Accessible: Works on any smartphone without requiring additional apps.</li>
+      <li>Customizable: Fully customizable for each zoo or aquarium, with your branding.</li>
+      <li>Sustainability: Reduces the need for printed materials, promoting eco-friendly practices.</li>
+      <li>Interactive: Provides engaging content such as images, videos, and conservation status.</li>
+    </ul>
+
+    <h2>Contact Us</h2>
+    <p>
+      To learn more about Curious or to schedule a demo, email us at <a href="mailto:info@curious.com">info@curious.com</a>.
+    </p>
   </main>
+
   <footer>
-    <p>&copy; 2024 <a href="about.html" style="color: inherit; text-decoration: none;">Curious</a>. All rights reserved.</p>  </footer>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const urlParams = new URLSearchParams(window.location.search);
-      const exhibitId = urlParams.get('id'); // Use Exhibit ID from query parameter
-      const sheetUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQN7Vc3sLFfDaVF-7eRmR9Z_mvAiLwcB6K5slycdF2rajSNMMIRDo9mkvk4SNr7RFckWuTUD_2X2Khy/pub?output=csv";
+    <a href="/about.html">
+      <img src="/assets/logo.png" alt="Curious Logo">
+    </a>
+    <br>
+    <sub>Powered by Curious. All rights reserved.</sub>
+  </footer>
 
-      if (!exhibitId) {
-        document.getElementById("exhibit-title").textContent = "No Exhibit Selected";
-        document.querySelector("#content").innerHTML = `<p>Please scan an exhibit QR code to start.</p>`;
-        return;
-      }
-
-      Papa.parse(sheetUrl, {
-        download: true,
-        header: true,
-        complete: (results) => {
-          const data = results.data;
-
-          // Find the exhibit details
-          const exhibitData = data.find(item => item['Exhibit ID'] == exhibitId);
-          if (exhibitData) {
-            // Set the header title to the exhibit name
-            document.getElementById("exhibit-title").textContent = exhibitData['Exhibit Name'];
-
-            // Filter rows for animals in this exhibit
-            const filteredData = data.filter(item => item['Exhibit ID'] == exhibitId && item['Common Name']);
-            renderData(filteredData);
-          } else {
-            document.getElementById("exhibit-title").textContent = "Exhibit Not Found";
-            document.querySelector("#content").innerHTML = `<p>No exhibit found with ID: ${exhibitId}.</p>`;
-          }
-        }
-      });
-    });
-
-    function renderData(data) {
-      const content = document.querySelector("#content");
-
-      if (data.length === 0) {
-        content.innerHTML = `<p>No animals found for this exhibit.</p>`;
-        return;
-      }
-
-      data.forEach(item => {
-        const card = document.createElement("div");
-        card.classList.add("card");
-        card.innerHTML = `
-          <a href="species.html?species=${encodeURIComponent(item['Common Name'])}" style="text-decoration: none; color: inherit;">
-            <img src="${item['Image URL'] || 'placeholder.png'}" alt="${item['Common Name']}">
-            <h3>${item['Common Name']} (<em>${item['Scientific Name']}</em>)</h3>
-            <p>${item['Short Description']}</p>
-          </a>
-        `;
-        content.appendChild(card);
-      });
-    }
-  </script>
+  <script src="assets/scripts/fetch.js" defer></script>
 </body>
+
 </html>

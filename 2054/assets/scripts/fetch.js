@@ -3,9 +3,28 @@ document.addEventListener("DOMContentLoaded", () => {
   const exhibitId = urlParams.get("exhibit-id");
   const speciesId = urlParams.get("species-id"); // Fixed species-id parameter
   const dataUrl = "./data.json";
+  const configUrl = "./config.json";
 
   console.log("URL Parameters:", { exhibitId, speciesId }); // Debug: Check URL parameters
   console.log("Fetching data from:", dataUrl); // Debug: Confirm the path to the JSON file
+
+  // Fetch site name from config and update the header
+  fetch(configUrl)
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      return response.json();
+    })
+    .then((config) => {
+      const siteName = config.siteName || "Curious";
+      console.log("Fetched site name:", siteName);
+      updateSiteName(siteName);
+    })
+    .catch((error) => {
+      console.error("Error loading site name:", error);
+      updateSiteName("Curious"); // Fallback name
+    });
 
   if (!exhibitId) {
     console.log("No exhibit ID provided in the URL."); // Debug
@@ -34,6 +53,14 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
+function updateSiteName(siteName) {
+  const siteNameElement = document.getElementById("site-name");
+  if (siteNameElement) {
+    siteNameElement.textContent = `Welcome to ${siteName}`;
+  }
+  document.title = siteName;
+}
+
 function handleExhibitView(data, exhibitId) {
   const exhibitData = data.exhibits.find((exhibit) => exhibit["exhibit-id"] == exhibitId);
 
@@ -55,8 +82,7 @@ function handleSpeciesView(data, exhibitId, speciesId) {
     const speciesData = exhibitData.species.find((species) => species["species-id"] == speciesId);
 
     if (speciesData) {
-      // updateTitleAndContent(speciesData.commonName);
-      updateTitleAndContent('Species Factfile');
+      updateTitleAndContent("Species Factfile");
       renderSpecies(speciesData);
     } else {
       console.error(`Species with ID ${speciesId} not found.`);
@@ -90,13 +116,13 @@ function renderExhibit(species, exhibitId) {
   }
 
   content.innerHTML = ""; // Clear previous content
-  species.forEach(item => {
+  species.forEach((item) => {
     console.log("Species item:", item); // Debug each species item
     const card = document.createElement("div");
     card.classList.add("card");
     card.innerHTML = `
       <a href="index.html?exhibit-id=${exhibitId}&species-id=${item["species-id"]}" style="text-decoration: none; color: inherit;">
-        <img src="${item.imageURL || 'placeholder.png'}" alt="${item.commonName}">
+        <img src="${item.imageURL || "placeholder.png"}" alt="${item.commonName}">
         <h3>${item.commonName} (<em>${item.scientificName}</em>)</h3>
         <p>${item.shortDescription}</p>
       </a>
@@ -121,7 +147,7 @@ function renderSpecies(species) {
   const content = document.querySelector("#content");
   content.innerHTML = `
     <div class="card">
-      <img src="${species.imageURL || 'placeholder.png'}" alt="${species.commonName}">
+      <img src="${species.imageURL || "placeholder.png"}" alt="${species.commonName}">
       <h2>${species.commonName} (<em>${species.scientificName}</em>)</h2>
       <p>${species.longDescription}</p>
       <p><b>Did you know? </b>${species.funFact}</p>
