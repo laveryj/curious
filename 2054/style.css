@@ -107,7 +107,7 @@
 
 /* Styling for portal.html table format for exhibit list */
 #exhibits-table {
-  /* width: 100%; Expand the table to fill the available width */
+  width: 35%; Expand the table to fill the available width
   margin: 10px 0; /* Add vertical margin only */
   border-collapse: collapse;
   font-size: 1rem;
@@ -304,4 +304,30 @@ a {
   margin-top: 10px;
   color: gray;
   font-size: 14px;
+}
+
+/* Styling for the all-species grid on the Portal */
+.species-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  justify-items: center;
+}
+
+.species-card {
+  text-align: center;
+  width: 150px;
+}
+
+.species-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.species-card h3 {
+  font-size: 1em;
+  margin-top: 10px;
+  color: #333;
 }

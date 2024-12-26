@@ -155,3 +155,12 @@ document.addEventListener("DOMContentLoaded", () => {
           });
   });
 });
+
+// Added functionality to open the full species list from the Portal button
+document.addEventListener("DOMContentLoaded", () => {
+    const viewAllSpeciesButton = document.getElementById("view-all-species");
+  
+    viewAllSpeciesButton.addEventListener("click", () => {
+      window.location.href = "all-species.html"; // Redirect to a new page
+    });
+  });
