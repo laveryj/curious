@@ -47,6 +47,7 @@ https.get(sheetUrl, (response) => {
         results.data.forEach((row, index) => {
           const siteId = row["Site ID"]?.trim();
           const exhibitId = row["Exhibit ID"]?.trim();
+          const exhibitMode = row["Exhibit Mode"]?.trim() || "standard";
 
           if (!siteId || !exhibitId) {
             console.warn(`Skipping row ${index + 1}: Missing Site ID or Exhibit ID. Row:`, row);
@@ -63,7 +64,7 @@ https.get(sheetUrl, (response) => {
             siteExhibits[siteId][exhibitId] = {
               "exhibit-id": exhibitId,
               "exhibit-name": row["Exhibit Name"] || "Unnamed Exhibit",
-              "exhibit-mode": "standard",
+              "exhibit-mode": exhibitMode, // Add exhibit mode here
               species: [],
             };
           }
