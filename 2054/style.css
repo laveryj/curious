@@ -254,7 +254,7 @@ a {
 .play-button {
   font-size: 24px;
   padding: 20px 60px;
-  width: 400px;
+  width: 350px;
   height: 150px;
   display: block;
   margin: 20px auto;
@@ -283,7 +283,7 @@ a {
 .pause-restart-button {
   font-size: 18px;
   padding: 15px 40px;
-  width: 190px;
+  width: 175px;
   height: 150px;
   cursor: pointer;
   background-color: #bf3300;

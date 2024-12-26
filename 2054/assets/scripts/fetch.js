@@ -180,13 +180,26 @@ function renderAudio(exhibit) {
   const audioURL = exhibit.species.length > 0 ? exhibit.species[0].audioURL : "";
   const longDescription = exhibit.species.length > 0 ? exhibit.species[0].longDescription : "";
 
-  // Clear existing content and render the exhibit name and long description
-  content.innerHTML = `
-    <h2>You're listening to the audio guide for ${exhibit["exhibit-name"]}</h2>
-    <p>${longDescription || "We recomend using headphones to get the most out of this audio guide."}</p>
-  `;
+  // Clear existing content
+  content.innerHTML = "";
 
+  // Add exhibit name
+  const title = document.createElement("h2");
+  title.textContent = `You're listening to the audio guide for ${exhibit["exhibit-name"]}`;
+  content.appendChild(title);
+
+  // Add the audio controls container
   const audioContainer = document.querySelector("#audio-container");
+  audioContainer.style.display = "block"; // Ensure it's visible
+  content.appendChild(audioContainer); // Move it inside the content container
+
+  // Add the description below the audio container
+  const description = document.createElement("p");
+  description.textContent = longDescription || "We recommend using headphones to get the most out of this audio guide.";
+  description.style.marginTop = "20px"; // Optional: Add some spacing
+  content.appendChild(description);
+
+  // Audio functionality
   const audioPlayer = document.querySelector("#audio-player");
   const audioSource = document.querySelector("#audio-source");
   const playButton = document.querySelector("#play-audio");
@@ -197,9 +210,6 @@ function renderAudio(exhibit) {
   if (audioURL) {
     audioSource.src = audioURL;
     audioPlayer.load(); // Reload audio with the new source
-
-    // Show the audio controls
-    audioContainer.style.display = "block";
 
     // Play button logic
     playButton.addEventListener("click", () => {
@@ -240,7 +250,7 @@ function renderAudio(exhibit) {
       });
     });
   } else {
-    content.innerHTML += `<p>No audio available for this exhibit</p>`;
     audioContainer.style.display = "none";
+    description.textContent = "No audio available for this exhibit.";
   }
 }
