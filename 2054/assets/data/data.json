@@ -371,7 +371,7 @@
     {
       "exhibit-id": "20",
       "exhibit-name": "Test Audio",
-      "exhibit-mode": "audio",
+      "exhibit-mode": "standard",
       "species": [
         {
           "species-id": "unknown-25",
