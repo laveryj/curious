@@ -431,10 +431,30 @@
     {
       "exhibit-id": "23",
       "exhibit-name": "Test 3",
-      "exhibit-mode": "standard",
+      "exhibit-mode": "audio",
       "species": [
         {
-          "species-id": "32",
+          "species-id": "33",
+          "commonName": "Bloody Henry Starfish",
+          "scientificName": "Henricia oculata",
+          "shortDescription": "A starfish species with bright red coloration.",
+          "longDescription": "The Bloody Henry starfish is a vividly colored echinoderm found in rocky coastal waters. Its striking red and purple hues help it camouflage among algae and corals. This species is known for its ability to regenerate lost limbs and is a key grazer in its marine habitat.",
+          "funFact": "They feed by absorbing nutrients through their body.",
+          "conservationStatus": "Least Concern",
+          "fishBaseURL": "https://www.fishbase.se/summary/Henricia-oculata.html",
+          "externalURL": "",
+          "imageURL": "",
+          "audioURL": ""
+        }
+      ]
+    },
+    {
+      "exhibit-id": "24",
+      "exhibit-name": "Test 3",
+      "exhibit-mode": "audio",
+      "species": [
+        {
+          "species-id": "34",
           "commonName": "Bloody Henry Starfish",
           "scientificName": "Henricia oculata",
           "shortDescription": "A starfish species with bright red coloration.",
