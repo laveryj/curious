@@ -45,18 +45,20 @@
     <div id="content"></div>
   
     <!-- Custom audio play prompt -->
-    <div id="audio-container" style="display: none;">
-      <br>
-      <button id="play-audio" style="font-size: 16px; padding: 10px 20px; cursor: pointer;">
+    <div id="audio-container" class="center-container" style="display: none;">
+      <button id="play-audio" class="play-button">
         ▶ Play Audio
       </button>
-      <button id="pause-audio" style="font-size: 16px; padding: 10px 20px; cursor: pointer; display: none;">
-        ⏸ Pause
-      </button>
-      <button id="restart-audio" style="font-size: 16px; padding: 10px 20px; cursor: pointer; display: none;">
-        🔄 Restart
-      </button>
-      <p id="audio-status" style="margin-top: 10px; color: gray;"></p>
+      <div class="pause-restart-group">
+        <button id="pause-audio" class="pause-restart-button" style="display: none;">
+          ⏸ Pause
+        </button>
+        <button id="restart-audio" class="pause-restart-button" style="display: none;">
+          🔄 Restart
+        </button>
+      </div>
+      <br>
+      <p id="audio-status" class="status-text"></p>
     </div>
   
     <!-- Hidden audio player -->

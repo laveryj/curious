@@ -223,7 +223,7 @@ function renderAudio(exhibit) {
         });
       } else {
         audioPlayer.pause();
-        audioStatus.textContent = "Paused.";
+        audioStatus.textContent = "Paused";
         pauseButton.textContent = "▶ Resume"; // Update button text
       }
     });
@@ -232,15 +232,15 @@ function renderAudio(exhibit) {
     restartButton.addEventListener("click", () => {
       audioPlayer.currentTime = 0;
       audioPlayer.play().then(() => {
-        audioStatus.textContent = "Restarted and now playing...";
+        audioStatus.textContent = "Restarted, now playing...";
         pauseButton.textContent = "⏸ Pause"; // Reset button text
       }).catch((error) => {
         console.error("Error restarting audio:", error);
-        audioStatus.textContent = "Unable to restart audio.";
+        audioStatus.textContent = "Unable to restart audio";
       });
     });
   } else {
-    content.innerHTML += `<p>No audio available for this exhibit.</p>`;
+    content.innerHTML += `<p>No audio available for this exhibit</p>`;
     audioContainer.style.display = "none";
   }
 }
