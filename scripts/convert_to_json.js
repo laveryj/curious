@@ -103,8 +103,24 @@ https.get(sheetUrl, (response) => {
           const filePath = path.join(siteFolder, "data.json");
 
           try {
-            await fs.writeFile(filePath, JSON.stringify(siteData, null, 2));
-            console.log(`Overwritten: ${filePath}`);
+            // Check if file exists and compare contents
+            let existingData = null;
+            try {
+              const fileContent = await fs.readFile(filePath, "utf-8");
+              existingData = JSON.parse(fileContent);
+            } catch {
+              console.log(`No existing data.json found at ${filePath}. It will be created.`);
+            }
+
+            const newData = JSON.stringify(siteData, null, 2);
+
+            // Only write file if the content is different
+            if (existingData && JSON.stringify(existingData, null, 2) === newData) {
+              console.log(`No changes detected for ${filePath}. Skipping file write.`);
+            } else {
+              await fs.writeFile(filePath, newData);
+              console.log(`Updated: ${filePath}`);
+            }
           } catch (error) {
             console.error(`Error writing to ${filePath}:`, error.message);
           }
@@ -112,7 +128,7 @@ https.get(sheetUrl, (response) => {
 
         await Promise.all(writePromises);
 
-        console.log("All data.json files written successfully.");
+        console.log("All data.json files processed successfully.");
       },
       error: (error) => {
         console.error("Error parsing CSV:", error.message);
