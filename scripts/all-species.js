@@ -11,11 +11,17 @@ document.addEventListener("DOMContentLoaded", () => {
     })
     .then((data) => {
       const allSpecies = [];
+      const uniqueSpeciesIds = new Set(); // To track unique species IDs
       
       // Flatten species from exhibits where "exhibit-mode" is "standard"
       data.exhibits.forEach((exhibit) => {
         if (exhibit["exhibit-mode"] === "standard") {
-          allSpecies.push(...exhibit.species);
+          exhibit.species.forEach((species) => {
+            if (!uniqueSpeciesIds.has(species["species-id"])) {
+              uniqueSpeciesIds.add(species["species-id"]);
+              allSpecies.push(species);
+            }
+          });
         }
       });
 
