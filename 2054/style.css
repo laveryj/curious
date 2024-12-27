@@ -340,19 +340,24 @@ a {
   justify-content: center;
   padding: 30px;
   gap: 40px; /* Adjust gap between image and text */
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
 }
 
+/* Styling for the species image */
 .species-image {
   flex-shrink: 0;
   width: 400px;
+  max-width: 100%; /* Make the image responsive */
   height: auto;
   object-fit: cover;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow for better appearance */
 }
 
+/* Styling for the species details */
 .species-details {
   max-width: 600px;
+  width: 100%; /* Full width on smaller screens */
 }
 
 .species-details h2 {
@@ -366,6 +371,7 @@ a {
   font-size: 16px;
 }
 
+/* Styling for action buttons */
 .action-button {
   display: inline-block;
   margin: 15px 10px 0 0; /* Add margin between buttons */
@@ -377,6 +383,7 @@ a {
   border-radius: 8px;
   text-align: center;
   transition: background-color 0.3s ease;
+  width: auto; /* Allow dynamic sizing on desktop */
 }
 
 .action-button:hover {
@@ -398,12 +405,10 @@ a {
 }
 
 #image-modal img {
-  max-width: 100%;
-  max-height: 100%;
+  max-width: 90%;
+  max-height: 90%;
   border-radius: 10px;
   object-fit: contain; /* Ensures the image maintains its aspect ratio */
-  width: auto; /* Ensures it scales correctly */
-  height: auto; /* Ensures it scales correctly */
   display: block;
   margin: auto; /* Center the image inside the modal */
 }
@@ -415,4 +420,36 @@ a {
   color: white;
   font-size: 30px;
   cursor: pointer;
+}
+
+/* Responsive styling for mobile devices */
+@media (max-width: 768px) {
+  .species-info-container {
+    flex-direction: column; /* Stack items vertically on smaller screens */
+    align-items: center;
+    text-align: center; /* Center-align text for mobile */
+  }
+
+  .species-image {
+    width: 90%; /* Adjust image width for smaller screens */
+  }
+
+  .species-details {
+    max-width: 90%; /* Reduce width on smaller screens */
+  }
+
+  .species-details h2 {
+    font-size: 24px; /* Adjust title size for mobile */
+  }
+
+  .species-details p {
+    font-size: 14px; /* Reduce font size slightly for smaller screens */
+    line-height: 1.6; /* Adjust line spacing */
+  }
+
+  .action-button {
+    width: 90%; /* Full-width buttons on mobile */
+    margin: 10px auto; /* Center-align and add spacing between buttons */
+    display: block;
+  }
 }
