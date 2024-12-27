@@ -332,87 +332,101 @@ a {
   color: #333;
 }
 
-/* Styling for the species card */
+/* Styling for the species card ensuring the species info layout is responsive */
 .species-info-container {
   display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: center;
-  padding: 30px;
-  gap: 40px; /* Adjust gap between image and text */
+  flex-wrap: wrap;
+  align-items: left;
+  justify-content: left;
+  padding: 20px;
+  gap: 20px; /* Space between the image and text */
 }
 
 .species-image {
-  flex-shrink: 0;
-  width: 400px;
+  max-width: 100%; /* Ensure image scales well on smaller screens */
   height: auto;
-  object-fit: cover;
+  object-fit: contain;
   border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow for better appearance */
 }
 
 .species-details {
-  max-width: 600px;
+  max-width: 100%;
+  text-align: center; /* Center-align text for smaller screens */
 }
 
 .species-details h2 {
-  font-size: 28px;
-  margin-bottom: 15px;
+  font-size: 22px;
 }
 
 .species-details p {
-  margin-bottom: 20px; /* Add space between paragraphs */
-  line-height: 1.8;
   font-size: 16px;
+  margin-bottom: 15px;
+  line-height: 1.6;
 }
 
+/* Action buttons */
 .action-button {
   display: inline-block;
-  margin: 15px 10px 0 0; /* Add margin between buttons */
-  padding: 12px 20px;
+  margin: 10px 5px;
+  padding: 10px 20px;
   font-size: 16px;
   background-color: #357edd;
   color: white;
   text-decoration: none;
-  border-radius: 8px;
-  text-align: center;
-  transition: background-color 0.3s ease;
+  border-radius: 5px;
+  text-align: left;
 }
 
 .action-button:hover {
   background-color: #285eb8;
 }
 
-/* Styling for the species info pop up image */
+/* Modal styling for mobile */
 #image-modal {
   display: none;
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   background-color: rgba(0, 0, 0, 0.8);
+  justify-content: left;
+  align-items: left;
   z-index: 1000;
-  justify-content: center;
-  align-items: center;
 }
 
 #image-modal img {
-  max-width: 100%;
-  max-height: 100%;
+  max-width: 95%;
+  max-height: 95%;
   border-radius: 10px;
-  object-fit: contain; /* Ensures the image maintains its aspect ratio */
-  width: auto; /* Ensures it scales correctly */
-  height: auto; /* Ensures it scales correctly */
+  object-fit: contain;
+  width: auto;
+  height: auto;
   display: block;
-  margin: auto; /* Center the image inside the modal */
+  margin: auto;
 }
 
-#image-modal span {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  color: white;
-  font-size: 30px;
-  cursor: pointer;
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .species-info-container {
+    flex-direction: column; /* Stack image and details vertically */
+  }
+
+  .species-details {
+    text-align: left; /* Align text to the left for better readability */
+    padding: 10px;
+  }
+
+  .species-details h2 {
+    font-size: 20px; /* Slightly smaller for mobile */
+  }
+
+  .species-details p {
+    font-size: 14px;
+  }
+
+  .action-button {
+    width: 100%; /* Buttons span full width on mobile */
+    font-size: 14px;
+  }
 }
