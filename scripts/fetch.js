@@ -226,8 +226,8 @@ function renderSpecies(species) {
     modal.style.height = "100%";
     modal.style.backgroundColor = "rgba(0, 0, 0, 0.8)";
     modal.style.zIndex = "1000";
-    modal.style.justifyContent = "left";
-    modal.style.alignItems = "left";
+    modal.style.justifyContent = "center";
+    modal.style.alignItems = "center";
 
     const modalImage = document.createElement("img");
     modalImage.id = "modal-image";
