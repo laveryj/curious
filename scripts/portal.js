@@ -164,3 +164,21 @@ document.addEventListener("DOMContentLoaded", () => {
       window.location.href = "all-species.html"; // Redirect to a new page
     });
   });
+
+  // Added functionality to force an update of the database 
+  document.getElementById('force-update').addEventListener('click', async () => {
+    try {
+      const response = await fetch('https://api.render.com/deploy/srv-ctn116q3esus739td220?key=xiK4ROOyFdk', {
+        method: 'POST',
+      });
+  
+      if (response.ok) {
+        alert('Update triggered successfully!');
+      } else {
+        alert('Failed to trigger update. Please try again.');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      alert('An error occurred. Please try again.');
+    }
+  });
