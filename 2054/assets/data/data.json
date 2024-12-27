@@ -32,52 +32,6 @@
           "audioURL": ""
         },
         {
-          "species-id": "3",
-          "commonName": "Long Spined Sea Urchin",
-          "scientificName": "Diadema setosum",
-          "shortDescription": "A spiny creature found in warm coastal waters.",
-          "longDescription": "The long-spined sea urchin is a striking creature found in warm coastal waters. Its black spines, which can grow up to 30 cm, serve as a formidable defense mechanism. These urchins play a vital role in controlling algae on coral reefs. While intimidating in appearance, they are an essential part of the marine ecosystem, maintaining reef health.",
-          "funFact": "Its spines can grow up to 30 centimeters long.",
-          "conservationStatus": "Least Concern",
-          "fishBaseURL": "https://www.fishbase.se/summary/Diadema-setosum.html",
-          "externalURL": "",
-          "imageURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Diadema_setosum_Oman.JPG/440px-Diadema_setosum_Oman.JPG",
-          "audioURL": ""
-        },
-        {
-          "species-id": "4",
-          "commonName": "Bubble Tip Anemone",
-          "scientificName": "Entacmaea quadricolor",
-          "shortDescription": "A popular sea anemone in aquariums.",
-          "longDescription": "Bubble tip anemones are vibrant creatures known for their symbiotic relationship with clownfish. Found in coral reefs, they retract their tentacles when threatened, creating a bubble-like appearance. They add color and life to their habitats, whether in the wild or aquariums, and thrive in stable, nutrient-rich environments.",
-          "funFact": "It can retract its tentacles when threatened.",
-          "conservationStatus": "Least Concern",
-          "fishBaseURL": "https://upload.wikimedia.org/wikipedia/commons/a/a9/Bubble_Tip_Anemone.jpg",
-          "externalURL": "",
-          "imageURL": "https://www.fishi-pedia.com/wp-content/uploads/2024/03/Entacmaea-Quadricolor.jpeg",
-          "audioURL": ""
-        },
-        {
-          "species-id": "5",
-          "commonName": "Common Clownfish",
-          "scientificName": "Amphiprion ocellaris",
-          "shortDescription": "A small, brightly colored fish.",
-          "longDescription": "Clownfish are small, brightly colored fish recognized for their close association with sea anemones. They inhabit shallow reefs in the Indo-Pacific and are beloved for their vibrant orange bodies and white stripes. Known for their ability to change gender, clownfish play a crucial role in maintaining the health of their anemone hosts by cleaning and feeding them.",
-          "funFact": "Clownfish can change gender during their lifetime.",
-          "conservationStatus": "Least Concern",
-          "fishBaseURL": "https://www.fishbase.se/summary/Amphiprion-ocellaris.html",
-          "externalURL": "",
-          "imageURL": "https://static.wikia.nocookie.net/beastwarstransformers/images/5/51/Amphiprion_ocellaris.jpg/revision/latest/scale-to-width-down/800?cb=20160602091937",
-          "audioURL": ""
-        }
-      ]
-    },
-    {
-      "exhibit-id": "2",
-      "exhibit-name": "Cliff Tank",
-      "exhibit-mode": "standard",
-      "species": [
-        {
           "species-id": "12",
           "commonName": "Common Starfish",
           "scientificName": "Asterias rubens",
@@ -273,6 +227,32 @@
           "externalURL": "",
           "imageURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Erizo_de_mar_violáceo_%28Sphaerechinus_granularis%29%2C_Madeira%2C_Portugal%2C_2019-05-31%2C_DD_40.jpg/1200px-Erizo_de_mar_violáceo_%28Sphaerechinus_granularis%29%2C_Madeira%2C_Portugal%2C_2019-05-31%2C_DD_40.jpg",
           "audioURL": ""
+        },
+        {
+          "species-id": "21",
+          "commonName": "Bloody Henry Starfish",
+          "scientificName": "Henricia oculata",
+          "shortDescription": "A starfish species with bright red coloration.",
+          "longDescription": "The Bloody Henry starfish is a vividly colored echinoderm found in rocky coastal waters. Its striking red and purple hues help it camouflage among algae and corals. This species is known for its ability to regenerate lost limbs and is a key grazer in its marine habitat.",
+          "funFact": "They feed by absorbing nutrients through their body.",
+          "conservationStatus": "Least Concern",
+          "fishBaseURL": "https://www.fishbase.se/summary/Henricia-oculata.html",
+          "externalURL": "",
+          "imageURL": "https://www.marlin.ac.uk/assets/images/marlin/species/web/o_glang20110121.jpg",
+          "audioURL": ""
+        },
+        {
+          "species-id": "22",
+          "commonName": "Pincushion Urchins",
+          "scientificName": "Lytechinus variegatus",
+          "shortDescription": "A small sea urchin known for its rounded shape.",
+          "longDescription": "Pincushion urchins are spherical echinoderms covered in short spines, found in tropical coral reefs and rocky seabeds. They graze on algae, playing a vital role in maintaining reef health. Their spines provide protection from predators, making them a fascinating example of marine defense mechanisms.",
+          "funFact": "They are known for their algae-cleaning capabilities.",
+          "conservationStatus": "Least Concern",
+          "fishBaseURL": "https://www.fishbase.se/summary/Lytechinus-variegatus.html",
+          "externalURL": "",
+          "imageURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Erizo_de_mar_violáceo_%28Sphaerechinus_granularis%29%2C_Madeira%2C_Portugal%2C_2019-05-31%2C_DD_40.jpg/1200px-Erizo_de_mar_violáceo_%28Sphaerechinus_granularis%29%2C_Madeira%2C_Portugal%2C_2019-05-31%2C_DD_40.jpg",
+          "audioURL": ""
         }
       ]
     },
@@ -281,6 +261,45 @@
       "exhibit-name": "Ray Bay",
       "exhibit-mode": "standard",
       "species": [
+        {
+          "species-id": "3",
+          "commonName": "Long Spined Sea Urchin",
+          "scientificName": "Diadema setosum",
+          "shortDescription": "A spiny creature found in warm coastal waters.",
+          "longDescription": "The long-spined sea urchin is a striking creature found in warm coastal waters. Its black spines, which can grow up to 30 cm, serve as a formidable defense mechanism. These urchins play a vital role in controlling algae on coral reefs. While intimidating in appearance, they are an essential part of the marine ecosystem, maintaining reef health.",
+          "funFact": "Its spines can grow up to 30 centimeters long.",
+          "conservationStatus": "Least Concern",
+          "fishBaseURL": "https://www.fishbase.se/summary/Diadema-setosum.html",
+          "externalURL": "",
+          "imageURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Diadema_setosum_Oman.JPG/440px-Diadema_setosum_Oman.JPG",
+          "audioURL": ""
+        },
+        {
+          "species-id": "4",
+          "commonName": "Bubble Tip Anemone",
+          "scientificName": "Entacmaea quadricolor",
+          "shortDescription": "A popular sea anemone in aquariums.",
+          "longDescription": "Bubble tip anemones are vibrant creatures known for their symbiotic relationship with clownfish. Found in coral reefs, they retract their tentacles when threatened, creating a bubble-like appearance. They add color and life to their habitats, whether in the wild or aquariums, and thrive in stable, nutrient-rich environments.",
+          "funFact": "It can retract its tentacles when threatened.",
+          "conservationStatus": "Least Concern",
+          "fishBaseURL": "https://upload.wikimedia.org/wikipedia/commons/a/a9/Bubble_Tip_Anemone.jpg",
+          "externalURL": "",
+          "imageURL": "https://www.fishi-pedia.com/wp-content/uploads/2024/03/Entacmaea-Quadricolor.jpeg",
+          "audioURL": ""
+        },
+        {
+          "species-id": "5",
+          "commonName": "Common Clownfish",
+          "scientificName": "Amphiprion ocellaris",
+          "shortDescription": "A small, brightly colored fish.",
+          "longDescription": "Clownfish are small, brightly colored fish recognized for their close association with sea anemones. They inhabit shallow reefs in the Indo-Pacific and are beloved for their vibrant orange bodies and white stripes. Known for their ability to change gender, clownfish play a crucial role in maintaining the health of their anemone hosts by cleaning and feeding them.",
+          "funFact": "Clownfish can change gender during their lifetime.",
+          "conservationStatus": "Least Concern",
+          "fishBaseURL": "https://www.fishbase.se/summary/Amphiprion-ocellaris.html",
+          "externalURL": "",
+          "imageURL": "https://static.wikia.nocookie.net/beastwarstransformers/images/5/51/Amphiprion_ocellaris.jpg/revision/latest/scale-to-width-down/800?cb=20160602091937",
+          "audioURL": ""
+        },
         {
           "species-id": "6",
           "commonName": "Regal Tang",
@@ -370,11 +389,11 @@
     },
     {
       "exhibit-id": "20",
-      "exhibit-name": "Test Audio",
+      "exhibit-name": "Plant Room",
       "exhibit-mode": "audio",
       "species": [
         {
-          "species-id": "unknown-25",
+          "species-id": "unknown-27",
           "commonName": "Unknown",
           "scientificName": "Unknown",
           "shortDescription": "",
@@ -385,86 +404,6 @@
           "externalURL": "",
           "imageURL": "",
           "audioURL": "https://www2.cs.uic.edu/~i101/SoundFiles/BabyElephantWalk60.wav"
-        }
-      ]
-    },
-    {
-      "exhibit-id": "21",
-      "exhibit-name": "Test Audio",
-      "exhibit-mode": "audio",
-      "species": [
-        {
-          "species-id": "unknown-26",
-          "commonName": "Unknown",
-          "scientificName": "Unknown",
-          "shortDescription": "",
-          "longDescription": "",
-          "funFact": "",
-          "conservationStatus": "Unknown",
-          "fishBaseURL": "",
-          "externalURL": "",
-          "imageURL": "",
-          "audioURL": "https://www2.cs.uic.edu/~i101/SoundFiles/BabyElephantWalk60.wav"
-        }
-      ]
-    },
-    {
-      "exhibit-id": "22",
-      "exhibit-name": "Test 2",
-      "exhibit-mode": "standard",
-      "species": [
-        {
-          "species-id": "32",
-          "commonName": "Bloody Henry Starfish",
-          "scientificName": "Henricia oculata",
-          "shortDescription": "A starfish species with bright red coloration.",
-          "longDescription": "The Bloody Henry starfish is a vividly colored echinoderm found in rocky coastal waters. Its striking red and purple hues help it camouflage among algae and corals. This species is known for its ability to regenerate lost limbs and is a key grazer in its marine habitat.",
-          "funFact": "They feed by absorbing nutrients through their body.",
-          "conservationStatus": "Least Concern",
-          "fishBaseURL": "https://www.fishbase.se/summary/Henricia-oculata.html",
-          "externalURL": "",
-          "imageURL": "",
-          "audioURL": ""
-        }
-      ]
-    },
-    {
-      "exhibit-id": "23",
-      "exhibit-name": "Test 3",
-      "exhibit-mode": "audio",
-      "species": [
-        {
-          "species-id": "33",
-          "commonName": "Bloody Henry Starfish",
-          "scientificName": "Henricia oculata",
-          "shortDescription": "A starfish species with bright red coloration.",
-          "longDescription": "The Bloody Henry starfish is a vividly colored echinoderm found in rocky coastal waters. Its striking red and purple hues help it camouflage among algae and corals. This species is known for its ability to regenerate lost limbs and is a key grazer in its marine habitat.",
-          "funFact": "They feed by absorbing nutrients through their body.",
-          "conservationStatus": "Least Concern",
-          "fishBaseURL": "https://www.fishbase.se/summary/Henricia-oculata.html",
-          "externalURL": "",
-          "imageURL": "",
-          "audioURL": ""
-        }
-      ]
-    },
-    {
-      "exhibit-id": "24",
-      "exhibit-name": "Test 3",
-      "exhibit-mode": "audio",
-      "species": [
-        {
-          "species-id": "34",
-          "commonName": "Bloody Henry Starfish",
-          "scientificName": "Henricia oculata",
-          "shortDescription": "A starfish species with bright red coloration.",
-          "longDescription": "The Bloody Henry starfish is a vividly colored echinoderm found in rocky coastal waters. Its striking red and purple hues help it camouflage among algae and corals. This species is known for its ability to regenerate lost limbs and is a key grazer in its marine habitat.",
-          "funFact": "They feed by absorbing nutrients through their body.",
-          "conservationStatus": "Least Concern",
-          "fishBaseURL": "https://www.fishbase.se/summary/Henricia-oculata.html",
-          "externalURL": "",
-          "imageURL": "",
-          "audioURL": ""
         }
       ]
     }
