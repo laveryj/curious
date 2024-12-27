@@ -1,0 +1,39 @@
+name: Generate Site List
+
+on:
+  workflow_dispatch: # Allow manual triggering
+  push:              # Trigger on push to the repository
+    paths:
+      - scripts/generate-site-list.js
+      - .github/workflows/generate-site-list.yml
+  schedule:
+    # Run the workflow every 6 hours
+    - cron: "0 */6 * * *"
+
+jobs:
+  generate-sites-list:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+      with:
+        persist-credentials: true
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '16'
+
+    - name: Run Sites List Generator
+      run: node scripts/generate-site-list.js
+
+    - name: Debug generated files
+      run: ls -R ${{ github.workspace }}
+
+    - name: Push updated sites-list.json
+      uses: stefanzweifel/git-auto-commit-action@v4
+      with:
+        commit_message: "Auto-update of sites-list.json"
+        file_pattern: |
+          **/assets/data/sites-list.json
