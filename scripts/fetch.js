@@ -151,17 +151,59 @@ function renderExhibit(species, exhibitId) {
 function renderSpecies(species) {
   console.log("Rendering species:", species); // Debug: Log species being rendered
   const content = document.querySelector("#content");
-  content.innerHTML = `
-    <div class="card">
-      <img src="${species.imageURL || "placeholder.png"}" alt="${species.commonName}">
-      <h2>${species.commonName} (<em>${species.scientificName}</em>)</h2>
-      <p>${species.longDescription}</p>
-      <p><b>Did you know? </b>${species.funFact}</p>
-      <p><strong>Conservation Status:</strong> ${species.conservationStatus}</p>
-    </div>
+
+  // Clear the existing content
+  content.innerHTML = "";
+
+  // Create a container for species information
+  const speciesContainer = document.createElement("div");
+  speciesContainer.classList.add("species-info-container");
+
+  // Add the image with a clickable event for the modal
+  const image = document.createElement("img");
+  image.src = species.imageURL || "placeholder.png";
+  image.alt = species.commonName;
+  image.classList.add("species-image");
+  image.style.cursor = "pointer"; // Indicate the image is clickable
+  image.addEventListener("click", () => openImageModal(species.imageURL || "placeholder.png"));
+  speciesContainer.appendChild(image);
+
+  // Add species details
+  const details = document.createElement("div");
+  details.classList.add("species-details");
+  details.innerHTML = `
+    <h2>${species.commonName} (<em>${species.scientificName}</em>)</h2>
+    <p><b>Conservation Status:</b> ${species.conservationStatus || "Not Evaluated"}</p>
+    <p>${species.longDescription || "Detailed information about this species is not available."}</p>
+    <p><b>Did you know?</b> ${species.funFact || "No fun fact available for this species."}</p>
   `;
 
-  // Reapply the theme to include the newly created card
+  // Add external links
+  if (species.externalURL) {
+    const learnMoreButton = document.createElement("a");
+    learnMoreButton.href = species.externalURL;
+    learnMoreButton.textContent = "Learn More";
+    learnMoreButton.classList.add("action-button");
+    learnMoreButton.target = "_blank"; // Open link in a new tab
+    details.appendChild(learnMoreButton);
+  }
+
+  if (species.fishBaseURL) {
+    const fishBaseButton = document.createElement("a");
+    fishBaseButton.href = species.fishBaseURL;
+    fishBaseButton.textContent = "Learn more on FishBase";
+    fishBaseButton.classList.add("action-button");
+    fishBaseButton.target = "_blank"; // Open link in a new tab
+    details.appendChild(fishBaseButton);
+  }
+
+  // Append the details to the container
+  speciesContainer.appendChild(details);
+
+  // Add the container to the content
+  content.appendChild(speciesContainer);
+
+  // Reapply the theme
   fetch("./assets/data/config.json")
     .then((response) => response.json())
     .then((config) => {
@@ -171,6 +213,54 @@ function renderSpecies(species) {
     .catch((error) => {
       console.error("Error reapplying theme:", error);
     });
+
+  // Add modal container to the page
+  if (!document.getElementById("image-modal")) {
+    const modal = document.createElement("div");
+    modal.id = "image-modal";
+    modal.style.display = "none";
+    modal.style.position = "fixed";
+    modal.style.top = "0";
+    modal.style.left = "0";
+    modal.style.width = "100%";
+    modal.style.height = "100%";
+    modal.style.backgroundColor = "rgba(0, 0, 0, 0.8)";
+    modal.style.zIndex = "1000";
+    modal.style.justifyContent = "center";
+    modal.style.alignItems = "center";
+
+    const modalImage = document.createElement("img");
+    modalImage.id = "modal-image";
+    modalImage.style.maxWidth = "90%";
+    modalImage.style.maxHeight = "90%";
+    modalImage.style.borderRadius = "10px";
+
+    const closeModal = document.createElement("span");
+    closeModal.textContent = "✖";
+    closeModal.style.position = "absolute";
+    closeModal.style.top = "20px";
+    closeModal.style.right = "20px";
+    closeModal.style.color = "white";
+    closeModal.style.fontSize = "30px";
+    closeModal.style.cursor = "pointer";
+
+    closeModal.addEventListener("click", () => {
+      modal.style.display = "none";
+    });
+
+    modal.appendChild(modalImage);
+    modal.appendChild(closeModal);
+    document.body.appendChild(modal);
+  }
+}
+
+// Function to open the image in a modal
+function openImageModal(imageUrl) {
+  const modal = document.getElementById("image-modal");
+  const modalImage = document.getElementById("modal-image");
+
+  modalImage.src = imageUrl;
+  modal.style.display = "flex";
 }
 
 function renderAudio(exhibit) {
