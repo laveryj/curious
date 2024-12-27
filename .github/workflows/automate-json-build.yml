@@ -4,7 +4,7 @@ on:
   workflow_dispatch: # Manually trigger the workflow from the Actions tab
   push:              # Trigger on push to the repository
     paths:
-      - scripts/convert_to_json.js # Run when the script changes
+      - scripts/data-json_builder.js # Run when the script changes
       - .github/workflows/generate-json.yml
   schedule:
     # Run the workflow every 6 hours
@@ -31,7 +31,7 @@ jobs:
     - name: Run JSON generation script
       env:
         OUTPUT_DIR: ${{ github.workspace }} # Set workspace for processing files
-      run: node scripts/convert_to_json.js
+      run: node scripts/data-json_builder.js
 
     - name: Debug generated files
       run: ls -R ${{ github.workspace }}
