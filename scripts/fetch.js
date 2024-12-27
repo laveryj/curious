@@ -72,7 +72,7 @@ function handleExhibitView(data, exhibitId) {
       updateTitleAndContent(`Audio Guide`);
       renderAudio(exhibitData);
     } else {
-      updateTitleAndContent(`Species in the ${exhibitData["exhibit-name"]}`);
+      updateTitleAndContent(`Species Explorer: ${exhibitData["exhibit-name"]}`);
       renderExhibit(exhibitData.species, exhibitId);
     }
   } else {
@@ -254,3 +254,15 @@ function renderAudio(exhibit) {
     description.textContent = "No audio available for this exhibit.";
   }
 }
+
+// Function to only show the back button on the species info page
+document.addEventListener("DOMContentLoaded", () => {
+  const urlParams = new URLSearchParams(window.location.search);
+  const speciesId = urlParams.get("species-id");
+
+  // Show the back button only if species-id is present
+  const backButtonContainer = document.getElementById("back-button-container");
+  if (speciesId) {
+    backButtonContainer.style.display = "block";
+  }
+});
