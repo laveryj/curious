@@ -440,6 +440,13 @@ a {
 
   .species-details h2 {
     font-size: 24px; /* Adjust title size for mobile */
+    margin-bottom: 8px; /* Reduce space below the common name */
+  }
+
+  .species-details h3 {
+    font-size: 20px; /* Adjust title size for mobile */
+    margin-top: 0; /* Remove space above the scientific name */
+    margin-bottom: 10px; /* Reduce space below the common name */
   }
 
   .species-details p {
@@ -452,4 +459,59 @@ a {
     margin: 10px auto; /* Center-align and add spacing between buttons */
     display: block;
   }
+}
+
+/* Styling for advert cards eg talk times and experiences */
+.advert-card {
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  margin: 10px auto;
+  max-width: 400px; /* Reduced width for the card */
+}
+
+/* Table styling */
+.advert-card table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.advert-card th,
+.advert-card td {
+  border: 1px solid transparent; /* Invisible border */
+  text-align: left;
+  padding: 8px;
+}
+
+/* Adjust column widths */
+.advert-card th:first-child,
+.advert-card td:first-child {
+  width: 40%; /* Left column wider */
+}
+
+.advert-card th:last-child,
+.advert-card td:last-child {
+  width: 35%; /* Right column less wide */
+}
+
+.advert-card th {
+  font-weight: bold;
+  /* background-color: #f4f4f4; Optional: Light background for headers */
+}
+
+.advert-card tr:nth-child(even) {
+  /* background-color: #f9f9f9; Subtle stripe for even rows */
+}
+
+.advert-card tr:hover {
+  /* background-color: #f1f1f1; Slightly darker background on hover */
+}
+
+/* Styling for messages above and below exhibit list on index.html */
+.exhibit-message {
+  text-align: center;
+  font-size: 1.2rem;
+  margin: 20px 0;
+  /* color: #333; Adjust color to match your theme */
 }

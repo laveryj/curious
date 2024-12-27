@@ -116,12 +116,21 @@ function renderExhibit(species, exhibitId) {
   console.log("Rendering exhibit. Exhibit ID:", exhibitId); // Debug log
   const content = document.querySelector("#content");
 
+  // Clear previous content
+  content.innerHTML = "";
+
+  // Add a message at the top
+  // const topMessage = document.createElement("p");
+  // topMessage.classList.add("exhibit-message");
+  // topMessage.innerHTML = "<h4>Click on a species card below!</h4>";
+  // content.appendChild(topMessage);
+
   if (!species || species.length === 0) {
-    content.innerHTML = `<p>No species found in this exhibit.</p>`;
+    content.innerHTML += `<p>There are no species assigned to this exhibit.</p>`;
     return;
   }
 
-  content.innerHTML = ""; // Clear previous content
+  // Render species cards
   species.forEach((item) => {
     console.log("Species item:", item); // Debug each species item
     const card = document.createElement("div");
@@ -135,6 +144,12 @@ function renderExhibit(species, exhibitId) {
     `;
     content.appendChild(card);
   });
+
+  // Add a message at the bottom
+  const bottomMessage = document.createElement("p");
+  bottomMessage.classList.add("exhibit-message");
+  bottomMessage.innerHTML = "<h4>Keep scanning to learn more!</h4>";
+  content.appendChild(bottomMessage);
 
   // Reapply the theme to include newly created cards
   fetch("./assets/data/config.json")
@@ -172,7 +187,9 @@ function renderSpecies(species) {
   const details = document.createElement("div");
   details.classList.add("species-details");
   details.innerHTML = `
-    <h2>${species.commonName} (<em>${species.scientificName}</em>)</h2>
+    <h2>${species.commonName}</h2>
+    <h3><i>${species.scientificName}</i></h3>
+    <br>
     <p><b>Conservation Status:</b> ${species.conservationStatus || "Not Evaluated"}</p>
     <p>${species.longDescription || "Detailed information about this species is not available."}</p>
     <p><b>Did you know?</b> ${species.funFact || "No fun fact available for this species."}</p>

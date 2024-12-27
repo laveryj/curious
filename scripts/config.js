@@ -10,13 +10,65 @@ document.addEventListener("DOMContentLoaded", () => {
     })
     .then((config) => {
       applyTheme(config.theme);
-      document.body.classList.remove("hidden"); // Show the page after theme is applied
+      displaySiteInfo(config);
+      document.body.classList.remove("hidden"); // Show the page after content is loaded
     })
     .catch((error) => {
       console.error("Error loading configuration:", error);
       document.body.classList.remove("hidden"); // Show the page even if there’s an error
     });
 });
+
+function displaySiteInfo(config) {
+  const talkTimesTable = document.getElementById("talk-times-table");
+  const experiencesTable = document.getElementById("experiences-table");
+
+  // Populate Talk Times
+  if (config.talkTimes && config.talkTimes.length > 0) {
+    talkTimesTable.innerHTML = `
+      <thead>
+        <tr>
+        </tr>
+      </thead>
+      <tbody>
+        ${config.talkTimes
+          .map(
+            (talk) =>
+              `<tr>
+                <td>${talk.name}</td>
+                <td>${talk.time}</td>
+              </tr>`
+          )
+          .join("")}
+      </tbody>
+    `;
+  } else {
+    talkTimesTable.innerHTML = `<p>No talk times available.</p>`;
+  }
+
+  // Populate Experiences
+  if (config.experiences && config.experiences.length > 0) {
+    experiencesTable.innerHTML = `
+      <thead>
+        <tr>
+        </tr>
+      </thead>
+      <tbody>
+        ${config.experiences
+          .map(
+            (experience) =>
+              `<tr>
+                <td>${experience.name}</td>
+                <td>${experience.price}</td>
+              </tr>`
+          )
+          .join("")}
+      </tbody>
+    `;
+  } else {
+    experiencesTable.innerHTML = `<p>No experiences available.</p>`;
+  }
+}
 
 function applyTheme(theme) {
   if (!theme) {
@@ -62,10 +114,10 @@ function applyTheme(theme) {
   }
 
   // Apply button styles
-  const buttons = document.querySelectorAll("button");
+  const buttons = document.querySelectorAll(".action-button, button");
   buttons.forEach((button) => {
     button.style.backgroundColor = theme.headerColor; // Match button background to header
-    // button.style.color = theme.textColor; // Set button text color
+    button.style.color = theme.buttonTextColor; // Set button text color
     button.style.border = `1px solid ${theme.headerColor}`; // Optional: Border matches header
     button.style.borderRadius = "8px"; // Rounded corners
     button.style.padding = "10px 20px"; // Add some padding
