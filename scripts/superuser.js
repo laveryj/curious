@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const configUrl = "/2054/assets/data/config.json"; // Ensure the correct path
+  const configUrl = "/assets/data/su-config.json"; // Ensure the correct path
   const loginContainer = document.getElementById("login-container");
   const portalContent = document.getElementById("portal-content");
   const loginButton = document.getElementById("login-button");

@@ -100,16 +100,17 @@ function handleSpeciesView(data, exhibitId, speciesId) {
   }
 }
 
-function updateTitleAndContent(title, content = "") {
-  const titleElement = document.getElementById("exhibit-title");
-  if (titleElement) {
-    titleElement.textContent = title;
+function updateTitleAndContent(content) {
+  // Check if the #content element exists
+  const contentElement = document.querySelector("#content");
+  
+  if (!contentElement) {
+    console.error("Error: '#content' element not found in the DOM.");
+    return; // Exit the function if the element doesn't exist
   }
-  document.title = title;
 
-  if (content) {
-    document.querySelector("#content").innerHTML = `<p>${content}</p>`;
-  }
+  // Safely update the innerHTML if the element exists
+  contentElement.innerHTML = `<p>${content}</p>`;
 }
 
 function renderExhibit(species, exhibitId) {

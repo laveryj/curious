@@ -20,53 +20,82 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function displaySiteInfo(config) {
+  // Locate the table elements
   const talkTimesTable = document.getElementById("talk-times-table");
   const experiencesTable = document.getElementById("experiences-table");
 
   // Populate Talk Times
-  if (config.talkTimes && config.talkTimes.length > 0) {
-    talkTimesTable.innerHTML = `
-      <thead>
-        <tr>
-        </tr>
-      </thead>
-      <tbody>
-        ${config.talkTimes
-          .map(
-            (talk) =>
-              `<tr>
-                <td>${talk.name}</td>
-                <td>${talk.time}</td>
-              </tr>`
-          )
-          .join("")}
-      </tbody>
-    `;
+  if (talkTimesTable) {
+    if (config.talkTimes && config.talkTimes.length > 0) {
+      talkTimesTable.innerHTML = `
+        <thead>
+          <tr>
+          </tr>
+        </thead>
+        <tbody>
+          ${config.talkTimes
+            .map(
+              (talk) =>
+                `<tr>
+                  <td>${talk.name}</td>
+                  <td>${talk.time}</td>
+                </tr>`
+            )
+            .join("")}
+        </tbody>
+      `;
+    } else {
+      talkTimesTable.innerHTML = `
+        <thead>
+          <tr>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td colspan="2">No talk times available</td>
+          </tr>
+        </tbody>
+      `;
+    }
   } else {
-    talkTimesTable.innerHTML = `<p>No talk times available.</p>`;
+    console.error("Error: 'talk-times-table' element not found in the DOM.");
   }
 
   // Populate Experiences
-  if (config.experiences && config.experiences.length > 0) {
-    experiencesTable.innerHTML = `
-      <thead>
-        <tr>
-        </tr>
-      </thead>
-      <tbody>
-        ${config.experiences
-          .map(
-            (experience) =>
-              `<tr>
-                <td>${experience.name}</td>
-                <td>${experience.price}</td>
-              </tr>`
-          )
-          .join("")}
-      </tbody>
-    `;
+  if (experiencesTable) {
+    if (config.experiences && config.experiences.length > 0) {
+      experiencesTable.innerHTML = `
+        <thead>
+          <tr>
+          </tr>
+        </thead>
+        <tbody>
+          ${config.experiences
+            .map(
+              (experience) =>
+                `<tr>
+                  <td>${experience.name}</td>
+                  <td>${experience.price}</td>
+                </tr>`
+            )
+            .join("")}
+        </tbody>
+      `;
+    } else {
+      experiencesTable.innerHTML = `
+        <thead>
+          <tr>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td colspan="2">No experiences available</td>
+          </tr>
+        </tbody>
+      `;
+    }
   } else {
-    experiencesTable.innerHTML = `<p>No experiences available.</p>`;
+    console.error("Error: 'experiences-table' element not found in the DOM.");
   }
 }
 
