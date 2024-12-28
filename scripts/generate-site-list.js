@@ -18,8 +18,8 @@ const path = require("path");
     // Ensure the data directory exists
     await fs.promises.mkdir(dataDir, { recursive: true });
 
-    // Write the sites-list.json file
-    const sitesListPath = path.join(dataDir, "sites-list.json");
+    // Write the site-list.json file
+    const sitesListPath = path.join(dataDir, "site-list.json");
     await fs.promises.writeFile(
       sitesListPath,
       JSON.stringify({ sites: siteFolders }, null, 2),
@@ -28,7 +28,7 @@ const path = require("path");
 
     console.log(`Successfully generated ${sitesListPath}`);
   } catch (error) {
-    console.error("Error generating sites list:", error);
+    console.error("Error generating site list:", error);
     process.exit(1);
   }
 })();

@@ -107,7 +107,7 @@
 
 /* Styling for portal.html table format for exhibit list */
 #exhibits-table {
-  width: 35%; Expand the table to fill the available width
+  width: 35%; /*Expand the table to fill the available width */
   margin: 10px 0; /* Add vertical margin only */
   border-collapse: collapse;
   font-size: 1rem;
@@ -514,4 +514,120 @@ a {
   font-size: 1.2rem;
   margin: 20px 0;
   /* color: #333; Adjust color to match your theme */
+}
+
+/* Styling for superuser dashboard */
+.su-site-info-content {
+  margin: 20px auto;
+  /* max-width: 1500px; Adjust width as needed */
+  overflow-x: auto; /* Add horizontal scrolling for smaller screens */
+}
+
+/* Styling for the table */
+.su-site-info-content table {
+  width: 50%; /* Full table width */
+  border-collapse: collapse;
+  font-family: Arial, sans-serif;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  border-radius: 8px; /* Rounded corners */
+  table-layout: fixed; /* Respect column widths */
+}
+
+.su-site-info-content colgroup col:nth-child(1) {
+  width: 5%; /* ID */
+}
+
+.su-site-info-content colgroup col:nth-child(2) {
+  width: 25%; /* Site Name / Company */
+}
+
+.su-site-info-content colgroup col:nth-child(3) {
+  width: 15%; /* Contact */
+}
+
+.su-site-info-content colgroup col:nth-child(4) {
+  /* width: 15%; Email */
+}
+
+.su-site-info-content colgroup col:nth-child(5) {
+  width: 20%; /* Address */
+}
+
+.su-site-info-content colgroup col:nth-child(6) {
+  width: 5%; /* Phone */
+}
+
+.su-site-info-content colgroup col:nth-child(7) {
+  width: 5%; /* Tier */
+}
+
+.su-site-info-content colgroup col:nth-child(8) {
+  width: 5%; /* Status */
+}
+
+.su-site-info-content colgroup col:nth-child(9) {
+  width: 5%; /* DB Link */
+}
+
+/* Optional: Adjust table for small screens */
+@media (max-width: 768px) {
+  .su-site-info-content table {
+    font-size: 12px; /* Reduce font size for smaller screens */
+  }
+}
+
+/* Table header styling */
+.su-site-info-content th {
+  /* background-color: #357edd; */
+  color: #ffffff;
+  font-weight: bold;
+  text-align: left;
+  padding: 12px;
+  text-transform: uppercase; /* Optional: Make header text uppercase */
+  font-size: 14px;
+}
+
+/* Table row styling */
+.su-site-info-content td {
+  /* border: 1px solid #ddd; Subtle border between cells */
+  text-align: left;
+  padding: 10px;
+  font-size: 14px;
+}
+
+/* Alternating row colors */
+.su-site-info-content tr:nth-child(even) {
+  /* background-color: #f9f9f9; Light gray for even rows */
+}
+
+.su-site-info-content tr:nth-child(odd) {
+  /* background-color: #ffffff; White for odd rows */
+}
+
+/* Row hover effect */
+.su-site-info-content tr:hover {
+  /* background-color: #f1f1f1; Slightly darker gray on hover */
+  cursor: pointer; /* Pointer cursor to indicate interactivity */
+}
+
+/* Links in the table */
+.su-site-info-content a {
+  color: #ffffff; /* Link color */
+  text-decoration: none;
+}
+
+.su-site-info-content a:hover {
+  text-decoration: underline; /* Underline on hover */
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .su-site-info-content table {
+    font-size: 12px; /* Reduce font size on smaller screens */
+  }
+
+  .su-site-info-content th,
+  .su-site-info-content td {
+    padding: 8px; /* Adjust padding for smaller screens */
+  }
 }

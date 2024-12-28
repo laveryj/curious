@@ -11,7 +11,7 @@ on:
     - cron: "0 */6 * * *"
 
 jobs:
-  generate-sites-list:
+  generate-site-list:
     runs-on: ubuntu-latest
 
     steps:
@@ -31,9 +31,9 @@ jobs:
     - name: Debug generated files
       run: ls -R ${{ github.workspace }}
 
-    - name: Push updated sites-list.json
+    - name: Push updated site-list.json
       uses: stefanzweifel/git-auto-commit-action@v4
       with:
-        commit_message: "Auto-update of sites-list.json"
+        commit_message: "Auto-update of site-list.json"
         file_pattern: |
-          **/assets/data/sites-list.json
+          **/assets/data/site-list.json
