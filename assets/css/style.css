@@ -202,3 +202,63 @@ select option {
   background-color: var(--background-color, #D83B01); /* Dropdown menu background */
   color: var(--text-color, #FFFFFF); /* Dropdown menu text color */
 }
+
+/* Container for QR cards */
+.qr-cards-container {
+  display: flex;
+  justify-content: center; /* Center the cards horizontally */
+  gap: 20px; /* Add spacing between the cards */
+  margin: 20px auto; /* Add top and bottom margins */
+  flex-wrap: wrap; /* Allow cards to wrap on smaller screens */
+}
+
+/* Styling for each QR card */
+.qr-card {
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+  padding: 20px;
+  max-width: 300px; /* Adjust width for side-by-side layout */
+  text-align: center;
+  flex: 1; /* Allow cards to shrink or grow equally */
+  min-width: 200px; /* Ensure a minimum width for smaller screens */
+}
+
+/* Styling for QR code images */
+.qr-code-container img {
+  width: 150px;
+  height: auto;
+  margin-top: 10px;
+}
+
+/* Styling for headings */
+.qr-card h3 {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.qr-card h3 span {
+  font-size: 14px;
+  color: #777;
+}
+
+/* Styling for paragraphs */
+.qr-card p {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #555;
+  margin: 0;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .qr-cards-container {
+    flex-direction: column; /* Stack cards vertically */
+    gap: 15px;
+  }
+
+  .qr-card {
+    max-width: 100%; /* Take full width on smaller screens */
+  }
+}
