@@ -72,7 +72,7 @@ function handleExhibitView(data, exhibitId) {
       updateTitleAndContent(`Audio Guide`);
       renderAudio(exhibitData);
     } else {
-      updateTitleAndContent(`Species Explorer: ${exhibitData["exhibit-name"]}`);
+      updateTitleAndContent(`Explore: ${exhibitData["exhibit-name"]}`);
       renderExhibit(exhibitData.species, exhibitId);
     }
   } else {
@@ -92,7 +92,7 @@ function handleSpeciesView(data, exhibitId, speciesId) {
       renderSpecies(speciesData);
     } else {
       console.error(`Species with ID ${speciesId} not found.`);
-      updateTitleAndContent("Species Not Found", `No species found with ID: ${speciesId}.`);
+      updateTitleAndContent("Object Not Found", `No objects found with ID: ${speciesId}.`);
     }
   } else {
     console.error(`Exhibit with ID ${exhibitId} not found.`);
@@ -113,6 +113,18 @@ function updateTitleAndContent(content) {
   contentElement.innerHTML = `<p>${content}</p>`;
 }
 
+function updateTitleAndContent(title, content = "") {
+  const titleElement = document.getElementById("exhibit-title");
+  if (titleElement) {
+    titleElement.textContent = title;
+  }
+  document.title = title;
+
+  if (content) {
+    document.querySelector("#content").innerHTML = `<p>${content}</p>`;
+  }
+}
+
 function renderExhibit(species, exhibitId) {
   console.log("Rendering exhibit. Exhibit ID:", exhibitId); // Debug log
   const content = document.querySelector("#content");
@@ -127,7 +139,7 @@ function renderExhibit(species, exhibitId) {
   // content.appendChild(topMessage);
 
   if (!species || species.length === 0) {
-    content.innerHTML += `<p>There are no species assigned to this exhibit.</p>`;
+    content.innerHTML += `<p>There are no objects assigned to this exhibit.</p>`;
     return;
   }
 
@@ -293,7 +305,7 @@ function renderAudio(exhibit) {
 
   // Add exhibit name
   const title = document.createElement("h2");
-  title.textContent = `You're listening to the audio guide for ${exhibit["exhibit-name"]}`;
+  title.textContent = `You're listening to the audio guide for: "${exhibit["exhibit-name"]}"`;
   content.appendChild(title);
 
   // Add the audio controls container
