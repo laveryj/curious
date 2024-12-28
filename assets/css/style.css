@@ -1,6 +1,6 @@
     body {
       font-family: 'Open Sans', sans-serif;
-      background-color: #d3ccc4;
+      background-color: #f2f2f2;
       color: #292929;
       margin: 0;
       padding: 0;
@@ -10,7 +10,7 @@
     }
     
     header {
-      background-color: #d35c18;
+      background-color: #ba3d09;
       color: #ffffff;
       padding: 15px;
       text-align: center;
@@ -57,7 +57,7 @@
       margin-right: 0px;
     }
     footer {
-      background-color: #d35c18;
+      background-color: #ba3d09;
       color: #ffffff;
       text-align: center;
       padding: 10px;
