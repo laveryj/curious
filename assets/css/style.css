@@ -203,6 +203,7 @@ select option {
   color: var(--text-color, #FFFFFF); /* Dropdown menu text color */
 }
 
+
 /* Container for QR cards */
 .qr-cards-container {
   display: flex;
@@ -260,5 +261,83 @@ select option {
 
   .qr-card {
     max-width: 100%; /* Take full width on smaller screens */
+  }
+}
+
+
+
+/* Container for project cards */
+.project-cards-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Three cards wide */
+  gap: 20px; /* Space between cards */
+  padding: 20px; /* Padding around the container */
+  margin: 0 auto; /* Center the container */
+  max-width: 1200px; /* Limit the container width */
+}
+
+/* Styling for each project card */
+.project-card {
+  display: flex;
+  flex-direction: column; /* Stack heading and subheading */
+  justify-content: space-between; /* Distribute space evenly */
+  align-items: flex-start; /* Align text to the left */
+  padding: 20px;
+  border-radius: 10px; /* Rounded corners */
+  height: 150px; /* Balanced height for the cards */
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  background-color: #f9f9f9; /* Default background */
+  font-family: Arial, sans-serif;
+  transition: transform 0.2s, box-shadow 0.2s; /* Add smooth hover effects */
+}
+
+/* Project card hover effect */
+.project-card:hover {
+  transform: translateY(-5px); /* Lift the card slightly */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
+}
+
+/* Styling for project card headings */
+.project-card h3 {
+  margin: 0 0 3px 0; /* Reduced space below the heading */
+  font-size: 20px; /* Slightly smaller heading */
+  font-weight: bold;
+  color: #333; /* Darker text colour */
+}
+
+/* Styling for project card subheadings */
+.project-card b {
+  margin: 0;
+  font-size: 16px;
+  color: #555; /* Muted text colour */
+  line-height: 1.5;
+}
+
+/* Styling for project card subheadings */
+.project-card p {
+  margin: 0;
+  font-size: 16px;
+  color: #555; /* Muted text colour */
+  line-height: 1.5;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .project-cards-container {
+    grid-template-columns: repeat(2, 1fr); /* Two cards wide on smaller screens */
+  }
+
+  .project-card {
+    height: 170px; /* Adjust height for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .project-cards-container {
+    grid-template-columns: 1fr; /* One card wide on very small screens */
+  }
+
+  .project-card {
+    height: auto; /* Allow height to adjust for smaller screens */
   }
 }
