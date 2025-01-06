@@ -393,7 +393,7 @@
       "exhibit-mode": "audio",
       "species": [
         {
-          "species-id": "unknown-27",
+          "species-id": "unknown-29",
           "commonName": "Unknown",
           "scientificName": "Unknown",
           "shortDescription": "",
@@ -404,6 +404,46 @@
           "externalURL": "",
           "imageURL": "",
           "audioURL": "https://www.warwickdc.gov.uk/multimedia/2491/2491.mp3"
+        }
+      ]
+    },
+    {
+      "exhibit-id": "OC1",
+      "exhibit-name": "Swamp",
+      "exhibit-mode": "standard",
+      "species": [
+        {
+          "species-id": "77",
+          "commonName": "Test",
+          "scientificName": "testicle testum",
+          "shortDescription": "",
+          "longDescription": "",
+          "funFact": "",
+          "conservationStatus": "Unknown",
+          "fishBaseURL": "",
+          "externalURL": "",
+          "imageURL": "",
+          "audioURL": ""
+        }
+      ]
+    },
+    {
+      "exhibit-id": "W1",
+      "exhibit-name": "Swamp",
+      "exhibit-mode": "standard",
+      "species": [
+        {
+          "species-id": "78",
+          "commonName": "Test",
+          "scientificName": "testicle testum",
+          "shortDescription": "",
+          "longDescription": "",
+          "funFact": "",
+          "conservationStatus": "Unknown",
+          "fishBaseURL": "",
+          "externalURL": "",
+          "imageURL": "",
+          "audioURL": ""
         }
       ]
     }
