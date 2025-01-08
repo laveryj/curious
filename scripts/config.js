@@ -74,7 +74,11 @@ function displaySiteInfo(config) {
             .map(
               (experience) =>
                 `<tr>
-                  <td>${experience.name}</td>
+                  <td>
+                    ${experience.link 
+                      ? `<a href="${experience.link}" target="_blank">${experience.name}</a>` 
+                      : experience.name}
+                  </td>
                   <td>${experience.price}</td>
                 </tr>`
             )
@@ -94,6 +98,14 @@ function displaySiteInfo(config) {
         </tbody>
       `;
     }
+
+    
+  // Add "Book Today!" subheading below the table
+  const bookTodaySubheading = document.createElement("h3");
+  bookTodaySubheading.textContent = "Click the link & book today!";
+  bookTodaySubheading.style.textAlign = "center"; // Centre the text
+  experiencesTable.parentElement.appendChild(bookTodaySubheading);
+
   } else {
     console.error("Error: 'experiences-table' element not found in the DOM.");
   }
@@ -127,8 +139,17 @@ function applyTheme(theme) {
   // Apply link color
   const links = document.querySelectorAll("a");
   links.forEach((link) => {
-    link.style.color = theme.linkColor;
+    link.style.setProperty("color", theme.linkColor, "important");
   });
+
+  // Add styles for pseudo-classes
+  const linkStyle = document.createElement("style");
+  linkStyle.textContent = `
+    a { color: ${theme.linkColor} !important; }
+    a:visited { color: ${theme.linkColor} !important; }
+    a:hover { color: ${theme.linkColor} !important; }
+  `;
+  document.head.appendChild(linkStyle);
 
   // Apply card color
   const cards = document.querySelectorAll(".card");

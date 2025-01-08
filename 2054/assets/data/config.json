@@ -27,8 +27,8 @@
     { "name": "Piranhas", "time": "15:00" }
   ],
   "experiences": [
-    { "name": "Penguin feed", "price": "£50.00" },
     { "name": "Otter feed", "price": "£50.00" },
-    { "name": "Meerkat experience", "price": "£50.00" }
+    { "name": "Penguin feed", "price": "£50.00", "link": "https://buy.myonlinebooking.co.uk/sealife/sessions.aspx?tid=94" },
+    { "name": "Meerkat experience", "price": "£50.00", "link": "https://buy.myonlinebooking.co.uk/sealife/sessions.aspx?tid=88" }
   ]
 }
