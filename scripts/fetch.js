@@ -133,10 +133,10 @@ function renderExhibit(species, exhibitId) {
   content.innerHTML = "";
 
   // Add a message at the top
-  // const topMessage = document.createElement("p");
-  // topMessage.classList.add("exhibit-message");
-  // topMessage.innerHTML = "<h4>Click on a species card below!</h4>";
-  // content.appendChild(topMessage);
+  const topMessage = document.createElement("p");
+  topMessage.classList.add("exhibit-message");
+  topMessage.innerHTML = "<h4>Tap a species card below...</h4>";
+  content.appendChild(topMessage);
 
   if (!species || species.length === 0) {
     content.innerHTML += `<p>There are no objects assigned to this exhibit.</p>`;
@@ -204,8 +204,8 @@ function renderSpecies(species) {
     <h3><i>${species.scientificName}</i></h3>
     <br>
     <p><b>Conservation Status:</b> ${species.conservationStatus || "Not Evaluated"}</p>
-    <p>${species.longDescription || "Detailed information about this species is not available."}</p>
-    <p><b>Did you know?</b> ${species.funFact || "No fun fact available for this species."}</p>
+    <p>${species.longDescription || "Detailed information is not available."}</p>
+    <p><b>Did you know?</b> ${species.funFact || "No fun fact available."}</p>
   `;
 
   // Add external links
