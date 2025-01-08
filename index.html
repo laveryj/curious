@@ -167,13 +167,43 @@
     </p> -->
     <!-- <br> -->
 
-    <!-- <h2>Pricing</h2>
-    <p>
-      We charge a flat rate of <b>£249/month for unlimited usage</b>. In practice, that means you can have as many exhibits, species, and visitor page views as you like. Simply subscribe to the service, configure your exhibits and species, then print out your QR codes and start using the platform straight away! 
-    </p>
-    <br> -->
 
+    <h2>Pricing</h2>
 
+    <p>We charge a flat rate of <b>£149/month for unlimited usage</b>. In practice, that means you can have as many exhibits, species, and visitor page views as you like. Simply subscribe to the service, configure your exhibits and species, then print out your QR codes and start using the platform straight away! If you're a smaller collection and don't mind our branding, then you can use our free tier!</p>
+    <br>
+    <div class="pricing-cards-container">
+      <!-- Free Plan -->
+      <div class="pricing-card">
+        <h3>Basic</h3>
+        <p>Free</p>
+        <ul>
+          <li><i class="fas fa-check-circle"></i> Up to 15 exhibits</li>
+          <li><i class="fas fa-check-circle"></i> Easy setup process</li>
+          <li><i class="fas fa-check-circle"></i> Built-in audio guide</li>
+          <li><i class="fas fa-check-circle"></i> Curious branding</li>
+        </ul>
+        <br>
+        <a href="signup-basic.html" class="button">Get Started</a>
+      </div>
+      
+      <!-- Standard Plan -->
+      <div class="pricing-card">
+        <h3>Standard</h3>
+        <p>£149/month</p>
+        <ul>
+          <li><i class="fas fa-check-circle"></i> Everything in Basic, plus:</li>
+          <li><i class="fas fa-check-circle"></i> Unlimited exhibits</li>
+          <li><i class="fas fa-check-circle"></i> Advanced analytics</li>
+          <li><i class="fas fa-check-circle"></i> Your own branding</li>
+        </ul>
+        <br>
+        <a href="signup-standard.html" class="button">Get Started</a>
+      </div>
+    </div>
+    
+    <br>
+    <br>
 
     <h2>Get Curious</h2>
     <p>
@@ -193,32 +223,5 @@
   </footer>
 
 </body>
-
-<script>
-  document.getElementById('exhibits').addEventListener('input', function () {
-    const exhibits = parseInt(this.value) || 0;
-    const basePrice = 49; // Base price for up to 15 exhibits
-    const additionalCost = 2.5; // Cost per exhibit beyond 15
-    const includedExhibits = 10; // Number of exhibits included in the base price
-
-    let totalPrice;
-
-    if (exhibits <= includedExhibits) {
-      totalPrice = basePrice;
-    } else {
-      totalPrice = basePrice + (exhibits - includedExhibits) * additionalCost;
-    }
-
-    document.getElementById('price').textContent = `£${totalPrice.toFixed(2)}`;
-  });
-
-  // Add functionality to the Get Started button
-  document.getElementById('get-started-button').addEventListener('click', function () {
-    const exhibits = document.getElementById('exhibits').value || 0;
-    alert(`You selected ${exhibits} exhibits. Redirecting to sign-up...`);
-    // You can add a redirect or sign-up logic here
-  });
-</script>
-
 
 </html>
