@@ -2,8 +2,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const urlParams = new URLSearchParams(window.location.search);
   const exhibitId = urlParams.get("exhibit-id");
   const speciesId = urlParams.get("species-id"); // Fixed species-id parameter
-  const dataUrl = "./assets/data/data.json";
-  const configUrl = "./assets/data/config.json";
+  const dataUrl = "/assets/data/data.json";
+  const configUrl = "/assets/data/config.json";
 
   console.log("URL Parameters:", { exhibitId, speciesId }); // Debug: Check URL parameters
   console.log("Fetching data from:", dataUrl); // Debug: Confirm the path to the JSON file
