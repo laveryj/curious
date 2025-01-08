@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loading...</title>
+
+<!-- Import the fallback styles -->
+<link rel="stylesheet" href="/assets/css/style.css">
+
+<!-- Import the quiz CSS style -->
+<link rel="stylesheet" href="/assets/css/quiz.css">
+  
+<!-- Include the script to load the dynamic theme -->
+<script src="/scripts/config.js" defer></script>
+<script src="/scripts/fetch.js" defer></script>
+
+</head>
+
+<body class="hidden">
+  <header style="display: flex; justify-content: center; align-items: center;">
+    <img src="/assets/images/logo.png" alt="Curious Logo" style="width: 120px; height: auto;">
+</header>
+
+<main>
+
+<div class="quiz-card">
+  <h1>Know your stuff?</h1>
+  <button id="start-button">Start Quiz</button>
+
+  <div class="quiz-container" id="quiz-container">
+    <div class="question" id="question"></div>
+    <div class="options" id="options"></div>
+    <div class="results" id="results"></div>
+  </div>
+  <canvas class="confetti" id="confetti"></canvas>
+</div>
+
+<!-- Import the quiz javascript -->
+<script src="/quiz/quiz.js"></script>
+
+</main>
+
+<footer>
+  <small><b>Curious</b> is a trading name of <b>Josxph Limited</b> (15145694), incorporated in England and Wales at the registered address 82a James Carter Road, Mildenhall, Bury St. Edmunds, England, IP28 7DE.</small>
+</footer>
+
+</body>
+</html>
