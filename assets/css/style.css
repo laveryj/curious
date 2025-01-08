@@ -10,7 +10,7 @@
     }
     
     header {
-      background-color: #d35c18;
+      background-color: #ba3d09;
       color: #ffffff;
       padding: 15px;
       text-align: center;
@@ -43,7 +43,7 @@
       flex: 1;
     }
     .card {
-      background: #d35c18;
+      background: #ba3d09;
       padding: 15px;
       border-radius: 8px;
       margin-bottom: 20px;
@@ -57,7 +57,7 @@
       margin-right: 0px;
     }
     footer {
-      background-color: #d35c18;
+      background-color: #ba3d09;
       color: #ffffff;
       text-align: center;
       padding: 10px;
