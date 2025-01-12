@@ -262,6 +262,55 @@ function renderSpecies(species) {
       console.error("Error reapplying theme:", error);
     });
 
+  // Add modal container to the page
+  // if (!document.getElementById("image-modal")) {
+  //   const modal = document.createElement("div");
+  //   modal.id = "image-modal";
+  //   modal.style.display = "none";
+  //   modal.style.position = "fixed";
+  //   modal.style.top = "0";
+  //   modal.style.left = "0";
+  //   modal.style.width = "100%";
+  //   modal.style.height = "100%";
+  //   modal.style.backgroundColor = "rgba(0, 0, 0, 0.8)";
+  //   modal.style.zIndex = "1000";
+  //   modal.style.justifyContent = "center";
+  //   modal.style.alignItems = "center";
+
+  //   const modalImage = document.createElement("img");
+  //   modalImage.id = "modal-image";
+  //   modalImage.style.maxWidth = "90%";
+  //   modalImage.style.maxHeight = "90%";
+  //   modalImage.style.borderRadius = "10px";
+
+  //   const closeModal = document.createElement("span");
+  //   closeModal.textContent = "✖";
+  //   closeModal.style.position = "absolute";
+  //   closeModal.style.top = "20px";
+  //   closeModal.style.right = "20px";
+  //   closeModal.style.color = "white";
+  //   closeModal.style.fontSize = "30px";
+  //   closeModal.style.cursor = "pointer";
+
+  //   closeModal.addEventListener("click", () => {
+  //     modal.style.display = "none";
+  //   });
+
+  //   modal.appendChild(modalImage);
+  //   modal.appendChild(closeModal);
+  //   document.body.appendChild(modal);
+  // }
+}
+
+// Function to open the image in a modal
+// function openImageModal(imageUrl) {
+//   const modal = document.getElementById("image-modal");
+//   const modalImage = document.getElementById("modal-image");
+
+//   modalImage.src = imageUrl;
+//   modal.style.display = "flex";
+// }
+
 function renderAudio(exhibit) {
   const content = document.querySelector("#content");
 
@@ -356,3 +405,150 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 }
 );
+
+// function renderBlog(blog) {
+//   console.log("Rendering blog:", blog); // Debug: Log blog being rendered
+//   const content = document.querySelector("#content");
+
+//   // Clear the existing content
+//   content.innerHTML = "";
+
+//   // Create a container for blog content
+//   const blogContainer = document.createElement("div");
+//   blogContainer.classList.add("blog-container");
+
+//   // Add blog details
+//   const details = document.createElement("div");
+//   details.classList.add("blog-details");
+//   details.innerHTML = `
+//     <h2>${blog.title}</h2>
+//     <p><b>By:</b> ${blog.author || "Anonymous"}</p>
+//     <p><b>Published on:</b> ${blog.publishedDate || "Unknown"}</p>
+//     <br>
+//     <p>${blog.content || "This blog is currently unavailable."}</p>
+//   `;
+
+//   // Add external links
+//   if (blog.readMoreURL) {
+//     const readMoreButton = document.createElement("a");
+//     readMoreButton.href = blog.readMoreURL;
+//     readMoreButton.textContent = "Read More";
+//     readMoreButton.classList.add("action-button");
+//     readMoreButton.target = "_blank"; // Open link in a new tab
+//     details.appendChild(readMoreButton);
+//   }
+
+//   // Append the details to the container
+//   blogContainer.appendChild(details);
+
+//   // Add the container to the content
+//   content.appendChild(blogContainer);
+
+//   // Reapply the theme
+//   fetch("./assets/data/config.json")
+//     .then((response) => response.json())
+//     .then((config) => {
+//       console.log("Reapplying theme for blog content");
+//       applyTheme(config.theme);
+//     })
+//     .catch((error) => {
+//       console.error("Error reapplying theme:", error);
+//     });
+// }
+
+// function handleBlogView(data, blogId) {
+//   const blogData = data.blogs.find((blog, index) => index == blogId); // Or use a unique `blogId` field if available
+
+//   if (blogData) {
+//     renderBlog(blogData);
+//   } else {
+//     console.error(`No blog found with ID: ${blogId}`);
+//     updateTitleAndContent("Blog Not Found", `No blog found with ID: ${blogId}.`);
+//   }
+// }
+
+// document.addEventListener("DOMContentLoaded", () => {
+//   fetch("./assets/data/blogs.json")
+//     .then((response) => response.json())
+//     .then((data) => {
+//       // Example of rendering the first blog
+//       handleBlogView(data, 0); // Pass the first blog (index 0)
+//     })
+//     .catch((error) => {
+//       console.error("Error fetching data:", error);
+//     });
+// });
+
+
+// function renderVideo(exhibit) {
+//   const content = document.querySelector("#content");
+
+//   // Extract the videoURL and longDescription from the first species in the array
+//   const videoURL = exhibit.species.length > 0 ? exhibit.species[0].videoURL : "";
+//   const longDescription = exhibit.species.length > 0 ? exhibit.species[0].longDescription : "";
+
+//   // Clear existing content
+//   content.innerHTML = "";
+
+//   // Add exhibit name
+//   const title = document.createElement("h2");
+//   title.textContent = `You're watching: "${exhibit["exhibit-name"]}"`;
+//   content.appendChild(title);
+
+//   // Add the video controls container
+//   const videoContainer = document.querySelector("#video-container");
+//   videoContainer.style.display = "block"; // Ensure it's visible
+//   content.appendChild(videoContainer); // Move it inside the content container
+
+//   // Add the description below the video container
+//   const description = document.createElement("p");
+//   description.textContent = longDescription || "Enjoy this video about the exhibit.";
+//   description.style.marginTop = "20px"; // Optional: Add some spacing
+//   content.appendChild(description);
+
+//   // Video functionality
+//   const videoPlayer = document.querySelector("#video-player");
+//   const videoSource = document.querySelector("#video-source");
+//   const videoStatus = document.querySelector("#video-status");
+
+//   if (videoURL) {
+//     videoSource.src = videoURL;
+//     videoPlayer.load(); // Reload video with the new source
+
+//     // Update status when the video is playing
+//     videoPlayer.addEventListener("play", () => {
+//       videoStatus.textContent = "Now playing...";
+//     });
+
+//     // Update status when the video is paused
+//     videoPlayer.addEventListener("pause", () => {
+//       videoStatus.textContent = "Paused";
+//     });
+
+//     // Update status when the video ends
+//     videoPlayer.addEventListener("ended", () => {
+//       videoStatus.textContent = "Video ended.";
+//     });
+//   } else {
+//     videoContainer.style.display = "none";
+//     description.textContent = "No video available for this exhibit.";
+//   }
+// }
+
+// // Function to extract exhibit ID from the URL query string
+// function getExhibitIdFromURL() {
+//   const params = new URLSearchParams(window.location.search);
+//   return params.get("exhibit-id");
+// }
+
+// document.addEventListener("DOMContentLoaded", () => {
+//   const exhibitId = getExhibitIdFromURL(); // Use the function here
+//   fetch(`./assets/data/data.json?nocache=${new Date().getTime()}`)
+//     .then((response) => response.json())
+//     .then((data) => {
+//       handleExhibitView(data, exhibitId);
+//     })
+//     .catch((error) => {
+//       console.error("Error fetching data:", error);
+//     });
+// });
