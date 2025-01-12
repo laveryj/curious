@@ -1,17 +1,17 @@
 {
-  "siteName": "Sealife Adventure",
-  "siteid": "2054",
-  "databaseid": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQN7Vc3sLFfDaVF-7eRmR9Z_mvAiLwcB6K5slycdF2rajSNMMIRDo9mkvk4SNr7RFckWuTUD_2X2Khy/pub?output=csv",
+  "siteName": "Test site - Sealife demo",
+  "siteid": "2000",
+  "databaseid": "https://docs.google.com/spreadsheets/d/1cCSNg47mUUk1Y7g-azx4dqI3dAN7Q7VFF1i9NNdcO-Y/export?format=csv",
   "status": "Active",
-  "company": "Miller Leisure Ltd",
-  "address": "Eastern Esplanade, Southend-on-Sea, SS1 2ER",
-  "contact": "Marc Miller",
-  "tier": "Free",
-  "user": "sealife.displays",
-  "password": "Dragon123",
+  "company": "Josxph Limited",
+  "address": "Izaak Walton Way",
+  "contact": "Joe Lvery",
+  "subscription": "Free",
+  "user": "",
+  "password": "",
   "language": "English",
-  "email": "marc.miller@stockvale.co.uk",
-  "phone": "+44 1234 567890",
+  "email": "info@curio.us",
+  "phone": "+44 12345 678 910",
   "theme": {
     "logoPath": "assets/images/site-logo.png",
     "backgroundColor": "#9ce2fc",
@@ -22,9 +22,9 @@
     "linkColor": "#18236e"
   },
   "talkTimes": [
-    { "name": "Penguins", "time": "11:00" },
-    { "name": "Monkeys", "time": "13:30" },
-    { "name": "Piranhas", "time": "15:00" }
+    { "name": "Zebras", "time": "11:00" },
+    { "name": "Giraffes", "time": "13:30" },
+    { "name": "Meerkats", "time": "15:00" }
   ],
   "experiences": [
     { "name": "Otter feed", "price": "£100.00" },
