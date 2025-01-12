@@ -393,7 +393,7 @@
       "exhibit-mode": "audio",
       "species": [
         {
-          "species-id": "unknown-29",
+          "species-id": "unknown-28",
           "commonName": "Unknown",
           "scientificName": "Unknown",
           "shortDescription": "",
@@ -404,26 +404,6 @@
           "externalURL": "",
           "imageURL": "",
           "audioURL": "https://audio.jukehost.co.uk/aY7yKQdDeiSRjYfI8sELLZt8vNKDC8se"
-        }
-      ]
-    },
-    {
-      "exhibit-id": "OC1",
-      "exhibit-name": "Ocean",
-      "exhibit-mode": "standard",
-      "species": [
-        {
-          "species-id": "77",
-          "commonName": "Test",
-          "scientificName": "testicle testum",
-          "shortDescription": "",
-          "longDescription": "",
-          "funFact": "",
-          "conservationStatus": "Unknown",
-          "fishBaseURL": "",
-          "externalURL": "",
-          "imageURL": "",
-          "audioURL": ""
         }
       ]
     },
@@ -441,6 +421,182 @@
           "funFact": "",
           "conservationStatus": "Unknown",
           "fishBaseURL": "",
+          "externalURL": "",
+          "imageURL": "",
+          "audioURL": ""
+        }
+      ]
+    },
+    {
+      "exhibit-id": "OC1",
+      "exhibit-name": "Ocean",
+      "exhibit-mode": "standard",
+      "species": [
+        {
+          "species-id": "51",
+          "commonName": "Regal Tang",
+          "scientificName": "Paracanthurus hepatus",
+          "shortDescription": "A species of Indo-pacific surgeonfish.",
+          "longDescription": "Blue Tangs are identified by their bright blue colouring, oval bodies and yellow flag-shaped tails. They live in the Pacific Ocean, but they are also found in the Indian Ocean. They feed on algae, using their small, sharp teeth to keep their coral homes clean.",
+          "funFact": "They eat excess algae in the reef, which prevents the coral from suffocating",
+          "conservationStatus": "Least Concern",
+          "fishBaseURL": "https://www.fishbase.se/summary/Paracanthurus-hepatus",
+          "externalURL": "",
+          "imageURL": "https://www.fishbase.se/images/species/Pahep_ur.jpg",
+          "audioURL": ""
+        },
+        {
+          "species-id": "52",
+          "commonName": "Lipstick Tang",
+          "scientificName": "Naso lituratus",
+          "shortDescription": "A tropical marine fish which is also known as a Clown Unicornfish.",
+          "longDescription": "Lipstick Tangs get their common name from the bright orange colouring around their mouth, which makes them appear as if they are wearing lipstick! Growing to around 45cm, these tangs can be found on the coral reefs of both the Indian and Pacific Oceans, feeding mainly on algae and living in small groups.",
+          "funFact": "When threatened by potential predators, they will extend their strong tail spines to strike out in self-defence.",
+          "conservationStatus": "Least Concern",
+          "fishBaseURL": "https://www.fishbase.se/summary/Naso-lituratus.html",
+          "externalURL": "",
+          "imageURL": "https://www.fishbase.se/images/species/Nalit_u9.jpg",
+          "audioURL": ""
+        },
+        {
+          "species-id": "53",
+          "commonName": "Blue Triggerfish",
+          "scientificName": "Odonus niger",
+          "shortDescription": "A large, blue fish found in tropical marine areas.",
+          "longDescription": "Blue Triggerfish can grow up to 50cm in length. They eat a variety of foods including zooplankton, sponges and invertebrates. They form large groups to feed on zooplankton. Triggerfish have strong teeth and jaws to break open the hard shells of invertebrates. They are powerful swimmers so are often found in areas with strong currents.",
+          "funFact": "Only females will tend to the eggs but both the male and female will guard the eggs to keep them safe from predators.",
+          "conservationStatus": "Not Evaluated",
+          "fishBaseURL": "https://www.fishbase.se/summary/Odonus-niger.html",
+          "externalURL": "",
+          "imageURL": "https://www.fishbase.se/images/species/Odnig_u8.jpg",
+          "audioURL": ""
+        },
+        {
+          "species-id": "54",
+          "commonName": "Longfin Snapper",
+          "scientificName": "Symphorichthys spilurus",
+          "shortDescription": "A colourful predatory fish found in tropical marine waters.",
+          "longDescription": "The longfin snapper is a predatory fish, hunting other fish and invertebrates found in the coral reefs of the Eastern Indian Ocean and the Western Pacific Ocean. Growing up to around 60cm, these fish are usually found living on their own but large groups will come together to spawn. They have striking blue stripes running the length of their body and have bright orange stripes around their face.",
+          "funFact": "They can be very territoreal and aggressive towards other fish.",
+          "conservationStatus": "Least Concern",
+          "fishBaseURL": "https://www.fishbase.se/summary/Symphorichthys-spilurus.html",
+          "externalURL": "",
+          "imageURL": "https://www.fishbase.se/images/species/Syspi_u5.jpg",
+          "audioURL": ""
+        },
+        {
+          "species-id": "55",
+          "commonName": "Blue Striped Snapper",
+          "scientificName": "Lutjanus kasmira",
+          "shortDescription": "A colourful reef fish that can grow up to 40cm.",
+          "longDescription": "The blue striped snapper eats a large variety of foods such as small invertebrates including molluscs and cephlapods, algae and small fish. During the day, these fish form large schools around coral formations to feed. They are ready to breed by 1 - 2 years of age.",
+          "funFact": "In ideal temperatures (22.3 - 25 degrees C) their eggs are ready to hatch just 18 hours after they lay them.",
+          "conservationStatus": "Least Concern",
+          "fishBaseURL": "https://www.fishbase.se/summary/Lutjanus-kasmira.html",
+          "externalURL": "",
+          "imageURL": "https://cdn2.reefapp.net/large/lutjanus-kasmira-36ca421fc9aa40b2bf84328c0b74e3ce.jpg",
+          "audioURL": ""
+        },
+        {
+          "species-id": "56",
+          "commonName": "Porkfish",
+          "scientificName": "Anisotremus virginicus",
+          "shortDescription": "A type of gruntfish found in the Western Atlantic area.",
+          "longDescription": "The porkfish mainly lives in shallow inshore reefs in the Western Atlantic Ocean, found in a variety of areas such as Bermuda, Florida and the Carribean sea. It is a nocturnal species, swimming around in large schools and feeding on invertebrates such as molluscs and crustaceans found in the sand on the ocean floor. They can produce a grunting sound by grinding their teeth together.",
+          "funFact": "Young porkfish clean the skin and scales of much larger fish by picking off parasites and eating them.",
+          "conservationStatus": "Least Concern",
+          "fishBaseURL": "https://www.fishbase.se/summary/Anisotremus-virginicus.html",
+          "externalURL": "",
+          "imageURL": "https://reefguide.org/pix/porkfish1.jpg",
+          "audioURL": ""
+        },
+        {
+          "species-id": "57",
+          "commonName": "Silver mono",
+          "scientificName": "Monodactylus argentus",
+          "shortDescription": "A peaceful, shoaling fish.",
+          "longDescription": "The silver mono swims aorund in large schools feeding on plankton and detritus. They grow just over 25cm and are found in the open waters of the Indian and Pacific Ocean. They have silver diamond-shaped bodies with yellow fins and tail.",
+          "funFact": "Silver mono fish can be found in freshwater as well as saltwater. Mainly when they are juveniles, young monos have been found in the lower reches of freshwater streams.",
+          "conservationStatus": "Least Concern",
+          "fishBaseURL": "https://www.fishbase.se/summary/Monodactylus-argentus.html",
+          "externalURL": "",
+          "imageURL": "https://pesciacquario.com/wp-content/uploads/2020/08/Monodactylus-Argenteus-1024x768.jpg",
+          "audioURL": ""
+        },
+        {
+          "species-id": "58",
+          "commonName": "Bicolour Goatfish",
+          "scientificName": "Parupeneus barberinoides",
+          "shortDescription": "A colourful fish found in the Western Pacific Ocean.",
+          "longDescription": "Goatfish get their name because of the two barbels under their chin which resembles a goatee. They use these barbels to dig into, probe or poke the sand on the ocean floor to detect their prey which usually includes small invertebrates such as worms, molluscs and crustaceans. Growing up to 30cm, they are found on the coral reefs of the Western Pacific Ocean.",
+          "funFact": "Bicolour goatfish serve an important purpose for the coral reef ecosystem. They help keep the seabed healthy and are a prey species for larger fish such as groupers and reef sharks.",
+          "conservationStatus": "Least Concern",
+          "fishBaseURL": "https://www.fishbase.se/summary/Parupeneus-barberinoides.html",
+          "externalURL": "",
+          "imageURL": "https://reefs.com/blog/wp-content/uploads/2016/06/Bicolor-Goatfish_Parupeneus-barberinoides_Goatfishes_Mullidae.jpg",
+          "audioURL": ""
+        },
+        {
+          "species-id": "59",
+          "commonName": "Yellow Goatfish",
+          "scientificName": "Parupeneus cyclostomus",
+          "shortDescription": "Large, bright yellow fish found in the Indo-Pacific Region.",
+          "longDescription": "Despite growing to a large size of around 50cm, yellow goatfish mainly eat small invertebrates and zooplankton found on the coral reefs of both the Indian and Pacific Ocean. They tend to hunt by themselves but these social creatures have been known to swim in schools of mixed species of fish. It is believed the main reason they do this is for protection from predators.",
+          "funFact": "Like other goatfish, the yellow goatfish has the ability to change colour! This helps them camouflage so they are able to sneak up on their prey and hide from predators as well as communicate with other fish!",
+          "conservationStatus": "Least Concern",
+          "fishBaseURL": "https://www.fishbase.se/summary/Parupeneus-cyclostomus.html",
+          "externalURL": "",
+          "imageURL": "https://www.meerwasser-lexikon.de/img2/52459_59133fcb8158a.jpg",
+          "audioURL": ""
+        },
+        {
+          "species-id": "60",
+          "commonName": "Lookdown",
+          "scientificName": "Selene vomer",
+          "shortDescription": "Unusual looking fish with a flattened body, rhombus-shaped and silver in colour.",
+          "longDescription": "The lookdown fish gets its name because of the way it swims, as it appears to \"look down\" while moving. It lives in shallow waters near the coast of the Western Atlantic Ocean and is found from Canada all the way down to Bermuda and the Gulf of Mexico. They often shoal in large groups but may break away into smaller groups or even pairs. They feed on small fish and inverts.",
+          "funFact": "Their flat bodies allow them to swim very fast and gives them great agility allowing them to escape predators.",
+          "conservationStatus": "Least Concern",
+          "fishBaseURL": "https://www.fishbase.se/summary/Selene-vomer.html",
+          "externalURL": "",
+          "imageURL": "https://live.staticflickr.com/7172/6806074861_4d8139a77b_b.jpg",
+          "audioURL": ""
+        },
+        {
+          "species-id": "61",
+          "commonName": "Roundfin Batfish",
+          "scientificName": "Platax orbicularis",
+          "shortDescription": "A type of batfish found in tropical seas.",
+          "longDescription": "Adult Roundfin Batfish regularly come together in both small and large schools, even outside of the breeding season whereas when they are juveniles, they tend to live a solitary lifestyle. They can grow up to 50cm but mainly feed on zooplankton and algae. This type of batfish is widely distributed across many tropical seas and oceans.",
+          "funFact": "Young batfish have extremely tall fins but these become more rounded as they get older. The tall fins help the young fish mimic floating algae while they feed to protect them from predators.",
+          "conservationStatus": "Not Evaluated",
+          "fishBaseURL": "https://www.fishbase.se/summary/Platax-orbicularis.html",
+          "externalURL": "",
+          "imageURL": "https://th.bing.com/th/id/R.6ec324814b9c037339a9ce63a261244e?rik=JB2dt71ikYhNwA&riu=http%3a%2f%2fdoris.ffessm.fr%2fvar%2fdoris%2fstorage%2fimages%2fimages%2fprofil-28324%2f239601-1-fre-FR%2fplatax_orbicularis-sd11_image1200.jpg&ehk=2AmFW89gd%2bI3H1twPsbkThyhWKmJELRbhZGpHhabNDc%3d&risl=&pid=ImgRaw&r=0",
+          "audioURL": ""
+        },
+        {
+          "species-id": "62",
+          "commonName": "Cownose Ray",
+          "scientificName": "Rhinoptera bonasus",
+          "shortDescription": "A species of Batodiea found throughout a large part of the western Atlantic and Caribbean.",
+          "longDescription": "These active rays are benthic feeders, sifting food from the sand with their specialised mouths. They have strong bony plates in their mouth which are perfect for crushing up shellfish, small fish and crustaceans. They get their name from the lobes on their head, giving them a cow-like appearance.",
+          "funFact": "",
+          "conservationStatus": "Endangered",
+          "fishBaseURL": "https://www.fishbase.se/summary/Rhinoptera-bonasus.html",
+          "externalURL": "",
+          "imageURL": "https://www.americanoceans.org/wp-content/uploads/2022/03/Cownose-Ray-underwater-740x494.jpg",
+          "audioURL": ""
+        },
+        {
+          "species-id": "63",
+          "commonName": "Brown Branded Bamboo Shark",
+          "scientificName": "Chiloscyllium punctatum",
+          "shortDescription": "A species of benthic shark",
+          "longDescription": "The brown Banded Bamboo shark is an extremely hardy species with a slender body and thick, elongated tail. They feed on fish, shrimp, molluscs and squid and live in shallow tropical waters in the Indo-Pacific Ocean.",
+          "funFact": "",
+          "conservationStatus": "Near threatened",
+          "fishBaseURL": "https://www.fishbase.se/summary/Chiloscyllium-punctatum.html",
           "externalURL": "",
           "imageURL": "",
           "audioURL": ""
