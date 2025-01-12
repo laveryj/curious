@@ -58,7 +58,7 @@ const path = require("path");
           const exhibits = [];
           const currentDate = new Date().toISOString();
 
-          results.data.forEach((row, index) => {
+          results.data.forEach((row) => {
             let exhibit = exhibits.find(e => e.exhibitID === row["Exhibit ID"]);
             if (!exhibit) {
               exhibit = {
@@ -70,7 +70,12 @@ const path = require("path");
               };
               exhibits.push(exhibit);
             }
-
+          
+            const longDescription = row["Description"] || ""; // Ensure longDescription is defined
+            const shortDescription = longDescription.length > 100 
+              ? longDescription.slice(0, 100) + "..." 
+              : longDescription + (longDescription ? "..." : ""); // Truncate or append "..."
+          
             exhibit.objects.push({
               hidden: row["Object Hidden"],
               objectID: row["Object ID"],
@@ -78,14 +83,15 @@ const path = require("path");
               nickname: row["Nickname"],
               commonName: row["Common Name"],
               scientificName: row["Scientific Name"],
-              shortDescription: row["Description"],
-              longDescription: row["Description"],
+              shortDescription: shortDescription, // Use updated shortDescription logic
+              longDescription: longDescription, // Use original longDescription
               age: row["Age"],
               size: row["Size"],
               weight: row["Weight"],
               personalityProfile: row["Personality Profile"],
               funFact: row["Fun Fact"],
               conservationStatus: row["Conservation Status"],
+              conservationInfo: row["Conservation Info"],
               primaryURL: row["Primary URL"],
               primaryURLlabel: row["Primary URL Label"],
               secondaryURL: row["Secondary URL"],
@@ -94,7 +100,7 @@ const path = require("path");
               AudioURL: row["Audio URL"],
               VideoURL: row["Video URL"]
             });
-          });
+          });          
 
           const outputFolder = path.resolve(__dirname, "../2000/assets/data");
           await fs.mkdir(outputFolder, { recursive: true });

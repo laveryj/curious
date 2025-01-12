@@ -119,11 +119,12 @@ function handleSpeciesView(data, exhibitId, speciesId) {
     const speciesData = exhibitData.objects.find((object) => object["objectID"] == speciesId);
 
     if (speciesData) {
-      updateTitleAndContent("Species Factfile");
+      const title = `Factfile: ${speciesData.commonName || "Unknown Species"}`;
+      updateTitleAndContent(title);
       renderSpecies(speciesData);
     } else {
-      console.error(`Object with ID ${speciesId} not found.`);
-      updateTitleAndContent("Object Not Found", `No object found with ID: ${speciesId}.`);
+      console.error(`Species with ID ${speciesId} not found.`);
+      updateTitleAndContent("Species Not Found", `No species found with ID: ${speciesId}.`);
     }
   } else {
     console.error(`Exhibit with ID ${exhibitId} not found.`);
@@ -131,17 +132,6 @@ function handleSpeciesView(data, exhibitId, speciesId) {
   }
 }
 
-function updateTitleAndContent(title, content = "") {
-  const titleElement = document.getElementById("exhibit-title");
-  if (titleElement) {
-    titleElement.textContent = title;
-  }
-  document.title = title;
-
-  if (content) {
-    document.querySelector("#content").innerHTML = `<p>${content}</p>`;
-  }
-}
 
 function renderExhibit(objects, exhibitId) {
   console.log("Rendering exhibit. Exhibit ID:", exhibitId); // Debug log
@@ -153,7 +143,7 @@ function renderExhibit(objects, exhibitId) {
   // Add a message at the top
   const topMessage = document.createElement("p");
   topMessage.classList.add("exhibit-message");
-  topMessage.innerHTML = "<h4>Tap on a card below...</h4>";
+  topMessage.innerHTML = "<h4>Tap a card for more details...</h4>";
   content.appendChild(topMessage);
 
   if (!objects || objects.length === 0) {
@@ -164,13 +154,25 @@ function renderExhibit(objects, exhibitId) {
   // Render object cards
   objects.forEach((item) => {
     console.log("Object item:", item); // Debug each object item
+
+    // Determine card content for Species or Animal
+    const isAnimal = !!item["nickname"]; // Check if it's an animal based on nickname presence
+    const title = isAnimal ? `${item["nickname"]}` : `${item["commonName"]}`;
+    const subheading = isAnimal
+      ? `(${item["commonName"]}, <em>${item["scientificName"]}</em>)`
+      : `(<em>${item["scientificName"]}</em>)`;
+    const description = isAnimal
+      ? `<p>${item["personalityProfile"] || "Profile not available"}</p>`
+      : `<p>${item["shortDescription"] || "Description not available"}</p>`;
+
+    // Create the card
     const card = document.createElement("div");
     card.classList.add("card");
     card.innerHTML = `
       <a href="index.html?exhibit-id=${exhibitId}&species-id=${item["objectID"]}" style="text-decoration: none; color: inherit;">
         <img src="${item["ImageURL"] || "placeholder.png"}" alt="${item["commonName"]}">
-        <h3>${item["commonName"]} (<em>${item["scientificName"]}</em>)</h3>
-        <p>${item["shortDescription"]}</p>
+        <h3>${title} ${subheading}</h3>
+        ${description}
       </a>
     `;
     content.appendChild(card);
@@ -218,20 +220,46 @@ function renderSpecies(species) {
   // Add species details
   const details = document.createElement("div");
   details.classList.add("species-details");
-  details.innerHTML = `
-    <h2>${species["commonName"]}</h2>
-    <h3><i>${species["scientificName"]}</i></h3>
-    <br>
-    <p><b>Conservation Status:</b> ${species["conservationStatus"] || "Not Evaluated"}</p>
-    <p>${species["longDescription"] || "Detailed information is not available."}</p>
-    <p><b>Did you know?</b> ${species["funFact"] || "No fun fact available."}</p>
-  `;
+
+  // Build the HTML for species details in the specified order
+  let detailsHTML = `
+  <h2 style="margin-bottom: 5px;">${species.commonName}</h2>
+  <h3 style="margin-top: 5; margin-bottom: 10px;"><i>${species.scientificName}</i></h3>
+`;
+
+if (species["personalityProfile"]) {
+  detailsHTML += `<br><h3 style="margin-bottom: 5px;">Animal Profile:</h3><br>`;
+  detailsHTML += `<p style="margin: 2px 0;"><b>Name:</b> ${species["nickname"]}</p>`;
+  detailsHTML += `<p style="margin: 2px 0;"><b>About:</b> ${species["personalityProfile"]}</p>`;
+}
+if (species["age"]) {
+  detailsHTML += `<p style="margin: 2px 0;"><b>Age:</b> ${species["age"]}</p>`;
+}
+if (species["size"]) {
+  detailsHTML += `<p style="margin: 2px 0;"><b>Size:</b> ${species["size"]}</p>`;
+}
+if (species["weight"]) {
+  detailsHTML += `<p style="margin: 2px 0;"><b>Weight:</b> ${species["weight"]}</p>`;
+}
+if (species["personalityProfile"]) {
+  detailsHTML += `<br><h3 style="margin-bottom: 5px;">Species Profile:</h3>`;
+}
+detailsHTML += `
+  <p style="margin: 2px 0;"><br>${species["longDescription"] || "Detailed information has not been provided."}</p>
+  <p style="margin: 2px 0;"><br><b>Did you know?</b> ${species["funFact"] || "Not provided."}</p>
+  <p style="margin: 2px 0;"><br><b>Conservation Status:</b> ${species["conservationStatus"] || "Not Evaluated"}</p>
+  <p style="margin: 2px 0;"><br>${species["conservationInfo"] || "No additional conservation information provided."}<br><br></p>
+`;
+
+
+  // Set the generated HTML
+  details.innerHTML = detailsHTML;
 
   // Add external links
   if (species["primaryURL"]) {
     const learnMoreButton = document.createElement("a");
     learnMoreButton.href = species["primaryURL"];
-    learnMoreButton.textContent = species["primaryURLlabel"] || "Learn More";
+    learnMoreButton.textContent = species["primaryURLlabel"] || "Learn more";
     learnMoreButton.classList.add("action-button");
     learnMoreButton.target = "_blank"; // Open link in a new tab
     details.appendChild(learnMoreButton);
@@ -240,7 +268,7 @@ function renderSpecies(species) {
   if (species["secondaryURL"]) {
     const fishBaseButton = document.createElement("a");
     fishBaseButton.href = species["secondaryURL"];
-    fishBaseButton.textContent = species["secondaryURLlabel"] || "Learn more on FishBase";
+    fishBaseButton.textContent = species["secondaryURLlabel"] || "Learn more";
     fishBaseButton.classList.add("action-button");
     fishBaseButton.target = "_blank"; // Open link in a new tab
     details.appendChild(fishBaseButton);
@@ -263,6 +291,7 @@ function renderSpecies(species) {
       console.error("Error reapplying theme:", error);
     });
 }
+
 
 
 function renderAudio(exhibit) {

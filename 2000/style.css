@@ -329,6 +329,7 @@ a {
 .species-card h3 {
   font-size: 1em;
   margin-top: 10px;
+  margin-bottom: 10px;
   color: #333;
 }
 
@@ -377,8 +378,8 @@ a {
   margin: 15px 10px 0 0; /* Add margin between buttons */
   padding: 12px 20px;
   font-size: 16px;
-  background-color: #357edd;
-  color: white;
+  background-color: #285eb8;
+  color: #ffffff !important; /* Ensure white text color */
   text-decoration: none;
   border-radius: 8px;
   text-align: center;
