@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     <tr><td><strong>Site ID:</strong></td><td>${config.siteid}</td></tr>
                     <tr><td><strong>Site Name:</strong></td><td>${config.siteName}</td></tr>
                     <tr><td><strong>Company:</strong></td><td>${config.company}</td></tr>
-                    <tr><td><strong>Pricing Tier:</strong></td><td>${config.tier}</td></tr>
+                    <tr><td><strong>Pricing Tier:</strong></td><td>${config.subscription}</td></tr>
                     <tr><td><strong>Address:</strong></td><td>${config.address || "Not provided"}</td></tr>
                     <tr><td><strong>Contact:</strong></td><td>${config.contact || "Not provided"}</td></tr>
                     <tr><td><strong>Email:</strong></td><td>${config.email}</td></tr>
