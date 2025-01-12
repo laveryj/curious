@@ -6,9 +6,9 @@ on:
     paths:
       - scripts/data-json_builder.js # Run when the script changes
       - .github/workflows/generate-json.yml
-  schedule:
+  # schedule:
     # Run the workflow every 6 hours
-    - cron: "0 */6 * * *"
+    # - cron: "0 */6 * * *"
 
 jobs:
   generate-json:
