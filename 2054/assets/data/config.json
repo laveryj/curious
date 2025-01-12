@@ -19,7 +19,7 @@
     "cardColor": "#92c0d1",
     "textColor": "#18236e",
     "buttonTextColor": "#ffffff",
-    "linkColor": "#ffffff"
+    "linkColor": "#18236e"
   },
   "talkTimes": [
     { "name": "Penguins", "time": "11:00" },
