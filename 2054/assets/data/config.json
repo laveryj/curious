@@ -19,16 +19,16 @@
     "cardColor": "#92c0d1",
     "textColor": "#18236e",
     "buttonTextColor": "#ffffff",
-    "linkColor": "#18236e"
+    "linkColor": "#ffffff"
   },
   "talkTimes": [
     { "name": "Penguins", "time": "11:00" },
-    { "name": "Monkeys", "time": "13:00" },
+    { "name": "Monkeys", "time": "13:30" },
     { "name": "Piranhas", "time": "15:00" }
   ],
   "experiences": [
-    { "name": "Otter feed", "price": "£50.00" },
-    { "name": "Penguin feed", "price": "£50.00", "link": "https://buy.myonlinebooking.co.uk/sealife/sessions.aspx?tid=94" },
-    { "name": "Meerkat experience", "price": "£50.00", "link": "https://buy.myonlinebooking.co.uk/sealife/sessions.aspx?tid=88" }
+    { "name": "Otter feed", "price": "£100.00" },
+    { "name": "Penguin feed", "price": "£100.00", "link": "https://buy.myonlinebooking.co.uk/sealife/sessions.aspx?tid=94" },
+    { "name": "Meerkat experience", "price": "100.00", "link": "https://buy.myonlinebooking.co.uk/sealife/sessions.aspx?tid=88" }
   ]
 }
