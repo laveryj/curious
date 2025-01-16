@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .hidden {
+      display: none;
+    }
+    .toggle-btn {
+      cursor: pointer;
+      font-weight: bold;
+      margin: 10px 0;
+      display: block;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px;
+    }
+    th {
+      background-color: #f2f2f2;
+      text-align: left;
+    }
+  </style>
+  <script>
+    function toggleSection(sectionId) {
+      const section = document.getElementById(sectionId);
+      if (section.classList.contains('hidden')) {
+        section.classList.remove('hidden');
+      } else {
+        section.classList.add('hidden');
+      }
+    }
+  </script>
+</head>
+<body>
+
+<h2>Schedule Table</h2>
+
+<span class="toggle-btn" onclick="toggleSection('section-2024')">2024 ▼</span>
+<table id="section-2024" class="hidden">
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>10 June 2024</td>
+      <td>Review/audit of 'Maintenance' schedule</td>
+    </tr>
+    <tr>
+      <td>11 June 2024</td>
+      <td>Review/audit of 'Mammals (4)' schedule</td>
+    </tr>
+    <!-- Add more rows as needed -->
+  </tbody>
+</table>
+
+<span class="toggle-btn" onclick="toggleSection('section-2025')">2025 ▼</span>
+<table id="section-2025">
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>3 January 2025</td>
+      <td>Curator</td>
+    </tr>
+    <tr>
+      <td>4 January 2025</td>
+      <td>Curator - half day</td>
+    </tr>
+    <!-- Add more rows as needed -->
+  </tbody>
+</table>
+
+</body>
+</html>
