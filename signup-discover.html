@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up - Discover Plan</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+  <!-- Inline Critical Theme Styles -->
+  <style>
+    body {
+      background-color: #f9f9f9;
+      color: #292929;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #d35c18;
+      color: #ffffff;
+      padding: 10px;
+      text-align: center;
+    }
+
+    header img {
+      width: 100px;
+      height: auto;
+    }
+
+    main {
+      max-width: 600px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #ffffff;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      text-align: center;
+      color: #d35c18;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    label {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    input, button {
+      margin-top: 5px;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+
+    button {
+      background-color: #d35c18;
+      color: #ffffff;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #b74913;
+    }
+
+    .terms {
+      margin-top: 10px;
+      font-size: 14px;
+    }
+
+    .terms a {
+      color: #d35c18;
+      text-decoration: none;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 14px;
+      color: #555;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <img src="/assets/images/logo.png" alt="Curious Logo">
+  </header>
+
+  <main>
+    <h1>Sign Up for the Discover Plan</h1>
+
+    <form action="/submit-signup" method="POST">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" placeholder="Your full name" required>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" placeholder="Your email address" required>
+
+      <label for="organisation">Organisation</label>
+      <input type="text" id="organisation" name="organisation" placeholder="Your organisation's name" required>
+
+      <label for="phone">Phone Number</label>
+      <input type="tel" id="phone" name="phone" placeholder="Your phone number" required>
+
+      <button type="submit">Sign Up</button>
+
+      <p class="terms">By signing up, you agree to our <a href="/terms">Terms of Service</a> and <a href="/privacy">Privacy Policy</a>.</p>
+    </form>
+  </main>
+
+  <footer>
+    &copy; 2025 Curious. All rights reserved.
+  </footer>
+</body>
+
+</html>
