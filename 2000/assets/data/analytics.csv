@@ -1,0 +1,82 @@
+# ----------------------------------------
+# Report CSV Export
+# Account: josephlavery.co.uk
+# Property: Curious
+# ----------------------------------------
+# 
+# All Users
+# Start date: 20241220
+# End date: 20250116
+Page title and screen class,Landing page + query string,Views,Active users,Views per active user,Average engagement time per active user
+Loading...,/2054/index.html?exhibit-id=1&species-id=1,66,3,22,1
+Loading...,/2054/index.html?exhibit-id=1,42,3,14,6
+Loading...,/2054/index.html?exhibit-id=OC1,21,3,7,0.3333333333333333
+Species Factfile,/2054/index.html?exhibit-id=1&species-id=1,17,3,5.666666666666667,24
+Explore: Wave Tank,/2054/index.html?exhibit-id=1,14,3,4.666666666666667,15.666666666666666
+Read: Blog Test,/2054/index.html?exhibit-id=1&species-id=1,12,1,12,51
+Error,/2054/index.html?exhibit-id=1&species-id=1,10,1,10,15
+Loading...,/2000/index.html?exhibit-id=W1&species-id=781,9,1,9,0
+Explore: Wave Tank,/2054/index.html?exhibit-id=1&species-id=1,8,4,2,13.5
+Watch: Video Test,/2054/index.html?exhibit-id=1&species-id=1,7,1,7,27
+Loading...,/2054/index.html,6,1,6,0
+Sealife Adventure,/2054/index.html?exhibit-id=1,6,3,2,44.333333333333336
+Test site - Sealife demo,/2000/index.html?exhibit-id=W1&species-id=781,6,2,3,23
+Species Factfile,/2054/index.html?exhibit-id=1,5,3,1.6666666666666667,30.333333333333332
+Explore: Macaques,/2054/index.html?exhibit-id=W1,4,3,1.3333333333333333,7.666666666666667
+Loading...,/2054/index.html?exhibit-id=W1,4,1,4,0
+Sealife Adventure,/2054/index.html,4,1,4,7
+Explore: Ocean,/2054/index.html,3,1,3,8
+Explore: Ocean,/2054/index.html?exhibit-id=OC1,3,2,1.5,7.5
+Explore: Swamp,/index.html,3,1,3,78
+Loading...,/2000/index.html,3,1,3,0
+Loading...,/2000/index.html?exhibit-id=W1,3,1,3,0
+No Exhibit Selected,/index.html,3,1,3,0
+Sealife Adventure,/2054/index.html?exhibit-id=OC1,3,3,1,10.666666666666666
+Audio Guide,/3000/index.html?exhibit-id=1,2,2,1,2
+Blog: Blog Test,/2054/index.html?exhibit-id=1&species-id=1,2,1,2,9
+Curious,/index.html,2,1,2,9
+Error,/2054/index.html,2,1,2,0
+Explore: Macaques,/2054/index.html?exhibit-id=1,2,1,2,22
+Explore: Ocean,/2054/index.html?exhibit-id=1,2,2,1,69.5
+Explore: Ocean,/2054/index.html?exhibit-id=OC1&species-id=62,2,2,1,9
+Loading...,/2000/index.html?exhibit-id=W1&species-id=783,2,1,2,0
+Loading...,/2054/index.html?exhibit-id=20,2,1,2,0
+No Exhibit Selected,/,2,2,1,0
+No Exhibit Selected,/3000/,2,2,1,0
+Sealife Adventure,/2054/index.html?exhibit-id=1&species-id=1,2,4,0.5,11.5
+Sealife Adventure,/2054/index.html?exhibit-id=20,2,2,1,2.5
+Test site - Sealife demo,/2000/index.html,2,1,2,3
+Test site - Sealife demo,/2000/index.html?exhibit-id=W1&species-id=786,2,1,2,23
+Audio Guide,/2054/index.html,1,1,1,31
+Audio Guide,/2054/index.html?exhibit-id=20,1,1,1,0
+Blog: undefined,/2054/index.html?exhibit-id=1&species-id=1,1,1,1,2
+Exhibit Not Found,/2000/index.html,1,1,1,3
+Explore: Wave Tank,/2000/index.html,1,1,1,0
+Explore: Wave Tank,/2054/index.html,1,1,1,3
+Explore: Wave Tank,/2054/index.html?exhibit-id=20,1,1,1,81
+Loading...,/2000/index.html?exhibit-id=1,1,1,1,0
+Loading...,/2054/index.html?exhibit-id=OC1&species-id=62,1,1,1,0
+Loading...,/3000/index.html?exhibit-id=1,1,1,1,0
+Loading...,/index.html,1,1,1,0
+Sealife Adventure,/2054/index.html?exhibit-id=W1,1,1,1,3
+Species Factfile,/2054/index.html?exhibit-id=OC1,1,2,0.5,11.5
+Species Factfile,/2054/index.html?exhibit-id=OC1&species-id=57,1,1,1,3
+Species Factfile,/2054/index.html?exhibit-id=OC1&species-id=62,1,2,0.5,5
+Test site - Sealife demo,/2000/index.html?exhibit-id=1,1,1,1,73
+Test site - Sealife demo,/2000/index.html?exhibit-id=W1,1,1,1,0
+Test site - Sealife demo,/2000/index.html?exhibit-id=W1&species-id=783,1,1,1,0
+Test site - Sealife demo,/2054/index.html?exhibit-id=W1,1,1,1,39
+Audio Guide,/2054/index.html?exhibit-id=OC1,0,1,0,6
+Explore: Macaques,/2054/index.html?exhibit-id=1&species-id=1,0,1,0,1
+Explore: Macaques,/2054/index.html?exhibit-id=OC1,0,1,0,1
+Explore: Ocean,/2000/index.html?exhibit-id=W1&species-id=781,0,1,0,1
+Explore: Ocean,/2054/index.html?exhibit-id=20,0,1,0,1
+Explore: Ocean,/2054/index.html?exhibit-id=OC1&species-id=57,0,1,0,2
+Explore: Wave Tank,(not set),0,1,0,1
+Explore: Wave Tank,/2000/index.html?exhibit-id=W1&species-id=781,0,1,0,1
+Explore: Wave Tank,/2054/index.html?exhibit-id=OC1,0,1,0,1
+Leamington Spa Art Gallery and Museum,/3000/,0,2,0,0
+Sealife Adventure,/index.html,0,1,0,1
+Species Factfile,(not set),0,2,0,0
+Species Factfile,/2000/index.html?exhibit-id=W1&species-id=781,0,1,0,88
+Species Factfile,/2054/index.html,0,1,0,15
