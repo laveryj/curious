@@ -9,12 +9,12 @@
   <!-- Import the fallback styles -->
   <link rel="stylesheet" href="style.css">
   <script src="/scripts/qrious.min.js"></script>
-  <script src="/scripts/v2-fetch.js" defer></script>
+  
+  <!-- <script src="/scripts/v2-fetch.js" defer></script> -->
   <script src="/scripts/auth.js"></script>
   <script src="/scripts/v2-portal.js"></script>
   
   <!-- Include the script to load the dynamic theme -->
-  <!-- <script src="assets/scripts/config.js" defer></script> -->
   <script src="/scripts/v2-config.js" defer></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
@@ -48,6 +48,11 @@
     </header>
 
     <main>
+
+      <div style="text-align: right; margin: 10px 0;">
+        <button id="logout-button">Log Out</button>
+      </div>    
+
       <section id="site-info">
         <h2>Site Information</h2>
         <div id="site-info-content">
@@ -83,6 +88,14 @@
         <p><i>[No payments]</i></p>
         <br>
       </section>
+
+      <section id="analytics">
+        <h2>Analytics Dashboard</h2>
+        <button id="view-analytics">View Analytics</button>
+        <br>
+        <br>
+        <br>
+        </section>
   
       <section id="actions">
         <h2>System Update</h2>
@@ -101,7 +114,6 @@
       <br>
       <p>Generate a QR code for a specific exhibit below:</p>
       <div>
-        <!-- <label for="exhibit-select">Select Exhibit:</label> -->
         <select id="exhibit-select">
           <option value="">-- Select an Exhibit --</option>
         </select>
@@ -121,19 +133,7 @@
       <br>
       <sub>Powered by Curious. All rights reserved.</sub>
     </footer>
-  
-    <!-- <footer>
-      <sub><i>Powered by</i></sub><br><br>
-      <a href="/about.html">
-        <img src="/assets/logo.png" alt="Site Logo">
-      </a>
-    </footer> -->
 
-    <!-- Reference to local QRious script -->
-    <!-- <script src="/scripts/qrious.min.js"></script>
-    <script src="/scripts/fetch.js" defer></script>
-    <script src="/scripts/auth.js"></script>
-    <script src="/scripts/portal.js"></script> -->
   </div>
 
 </body>
