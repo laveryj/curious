@@ -321,9 +321,10 @@ a {
 }
 
 .species-card img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
+  width: 150px; /* Set a fixed width for thumbnails */
+  height: 150px; /* Set a fixed height for thumbnails */
+  object-fit: cover; /* Ensures the image maintains its aspect ratio within the thumbnail */
+  border-radius: 8px; /* Optional: Slight rounding for a cleaner look */
 }
 
 .species-card h3 {
@@ -631,4 +632,11 @@ a {
   .su-site-info-content td {
     padding: 8px; /* Adjust padding for smaller screens */
   }
+}
+
+.thumbnail {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
 }

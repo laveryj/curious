@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
             exhibit.objects.forEach((object) => {
               if (!uniqueObjectIds.has(object.objectID)) { // Correctly deduplicate based on "objectID"
                 uniqueObjectIds.add(object.objectID);
-                allObjects.push(object);
+                allObjects.push({ ...object, exhibitID: exhibit.exhibitID }); // Include exhibitID in object
               }
             });
           } else {
@@ -37,11 +37,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // Render objects as cards
       allObjects.forEach((object) => {
+        const displayName = object.nickname || object.commonName || "Unnamed Object";
+        const imageURL = object.ImageURL || "placeholder.png"; // Default to placeholder if no image
+
+        // Construct the species URL
+        const pageURL = `./index.html?exhibit-id=${object.exhibitID}&species-id=${object.objectID}`;
+
         const card = document.createElement("div");
         card.classList.add("object-card");
         card.innerHTML = `
-          <img src="${object.ImageURL || 'placeholder.png'}" alt="${object.commonName || 'Unknown Object'}">
-          <h3>${object.commonName || 'Unnamed Object'}</h3>
+          <a href="${pageURL}">
+            <img src="${imageURL}" alt="${displayName}" class="thumbnail">
+          </a>
+          <h3>${displayName}</h3>
         `;
         speciesListContainer.appendChild(card);
       });
