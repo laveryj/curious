@@ -1,0 +1,58 @@
+[
+  {
+      "name": "Tegan",
+      "role": "Aquarist",
+      "photo": "assets/images/tegan_photo.jpeg",
+      "overview": "Tegan is passionate about coral reefs and spends her time ensuring they thrive in the aquarium.",
+      "fun_fact": "Tegan once swam with sharks in the Maldives and called it a relaxing experience."
+  },
+  {
+      "name": "Morgan",
+      "role": "Aquarist",
+      "photo": "assets/images/morgan_photo.jpg",
+      "overview": "Morgan enjoys designing innovative habitats for the aquarium's unique residents.",
+      "fun_fact": "Morgan has a pet seahorse named Bubbles."
+  },
+  {
+      "name": "Immy",
+      "role": "Aquarist",
+      "photo": "assets/images/imogen_photo.png",
+      "overview": "Immy specialises in maintaining the health and happiness of freshwater fish.",
+      "fun_fact": "Immy can identify over 200 fish species by sight alone."
+  },
+  {
+      "name": "Sophie",
+      "role": "Aquarist",
+      "photo": "assets/images/sophie_photo.jpg",
+      "overview": "Sophie is dedicated to ensuring the jellyfish exhibits look spectacular every day.",
+      "fun_fact": "Sophie once accidentally fed herself the fish food while multitasking."
+  },
+  {
+      "name": "Trinity",
+      "role": "Aquarist",
+      "photo": "assets/images/trinity_photo.jpg",
+      "overview": "Trinity oversees the aquarium's breeding programmes for rare species.",
+      "fun_fact": "Trinity once trained a crab to follow a laser pointer."
+  },
+  {
+      "name": "Lee",
+      "role": "Aquarist",
+      "photo": "assets/images/lee_photo.jpg",
+      "overview": "Lee is an expert in aquatic plant care and aquascaping.",
+      "fun_fact": "Lee's dream is to create the world's largest underwater garden."
+  },
+  {
+      "name": "Natasha",
+      "role": "Aquarist",
+      "photo": "assets/images/natasha_photo.jpg",
+      "overview": "Natasha ensures the aquarium's water quality is always perfect.",
+      "fun_fact": "Natasha has a collection of over 100 sea-themed socks."
+  },
+  {
+      "name": "Hannah",
+      "role": "Aquarist",
+      "photo": "assets/images/hannah_photo.jpg",
+      "overview": "Hannah is responsible for the wellbeing of the aquarium's largest inhabitants.",
+      "fun_fact": "Hannah once shared her lunch with a hungry otter by accident."
+  }
+]
