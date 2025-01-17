@@ -7,6 +7,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const qrCodeCanvas = document.getElementById("qr-code");
     const downloadQrButton = document.getElementById("download-qr");
     const viewAllSpeciesButton = document.getElementById("view-all-species");
+    const viewAnalyticsButton = document.getElementById("view-analytics");
+    const logoutButton = document.getElementById("logout-button");
 
     // Load site information from config.json
     fetch(configUrl)
@@ -168,4 +170,23 @@ document.addEventListener("DOMContentLoaded", () => {
             window.location.href = "./all-species.html";
         });
     }
+
+        // Open species list page
+        if (viewAnalyticsButton) {
+            viewAnalyticsButton.addEventListener("click", () => {
+                window.location.href = "./analytics.html";
+            });
+        }
+
+        
+        // Add event listener for the logout button
+        logoutButton.addEventListener("click", () => {
+            console.log("Logging out...");
+            sessionStorage.clear();
+            localStorage.clear();
+            console.log("Session storage cleared:", sessionStorage);
+            console.log("Local storage cleared:", localStorage);
+            window.location.href = "./portal.html";
+        });
+
 });

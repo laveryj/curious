@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
     .then((config) => {
       const siteName = config.siteName || "Curious";
       console.log("Fetched site name:", siteName);
-      updateSiteName(siteName);
+      updateSiteName(siteName); // Change to explore tank?
     })
     .catch((error) => {
       console.error("Error loading site name:", error);
@@ -76,6 +76,29 @@ function updateTitleAndContent(content) {
   contentElement.innerHTML = `<p>${content}</p>`;
 }
 
+function updateTitleAndContent(title, content = "") {
+  // Update the page <title>
+  document.title = title;
+
+  // Update the <h1> element with ID #exhibit-title
+  const titleElement = document.getElementById("exhibit-title");
+  if (titleElement) {
+    titleElement.textContent = title;
+  } else {
+    console.error("Error: #exhibit-title element not found in the DOM.");
+  }
+
+  // Update the #content element, if content is provided
+  if (content) {
+    const contentElement = document.querySelector("#content");
+    if (contentElement) {
+      contentElement.innerHTML = `<p>${content}</p>`;
+    } else {
+      console.error("Error: #content element not found in the DOM.");
+    }
+  }
+}
+
 // Function for deciding which data to show, depending on exhibitMode
 function handleExhibitView(data, exhibitId) {
   const exhibitData = data.exhibits.find((exhibit) => exhibit["exhibitID"] == exhibitId);
@@ -116,19 +139,19 @@ function handleSpeciesView(data, exhibitId, speciesId) {
   const exhibitData = data.exhibits.find((exhibit) => exhibit["exhibitID"] == exhibitId);
 
   if (exhibitData) {
-    const speciesData = exhibitData.objects.find((object) => object["objectID"] == speciesId);
+      const speciesData = exhibitData.objects.find((object) => object["objectID"] == speciesId);
 
-    if (speciesData) {
-      const title = `Factfile: ${speciesData.commonName || "Unknown Species"}`;
-      updateTitleAndContent(title);
-      renderSpecies(speciesData);
-    } else {
-      console.error(`Species with ID ${speciesId} not found.`);
-      updateTitleAndContent("Species Not Found", `No species found with ID: ${speciesId}.`);
-    }
+      if (speciesData) {
+          const title = `Factfile: ${speciesData.commonName || "Unknown Species"}`;
+          updateTitleAndContent(title); // Update the page title and header
+          renderSpecies(speciesData); // Render the species content
+      } else {
+          console.error(`Species with ID ${speciesId} not found.`);
+          updateTitleAndContent("Species Not Found", `No species found with ID: ${speciesId}.`);
+      }
   } else {
-    console.error(`Exhibit with ID ${exhibitId} not found.`);
-    updateTitleAndContent("Exhibit Not Found", `No exhibit found with ID: ${exhibitId}.`);
+      console.error(`Exhibit with ID ${exhibitId} not found.`);
+      updateTitleAndContent("Exhibit Not Found", `No exhibit found with ID: ${exhibitId}.`);
   }
 }
 
