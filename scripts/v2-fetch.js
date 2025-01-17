@@ -142,7 +142,12 @@ function handleSpeciesView(data, exhibitId, speciesId) {
       const speciesData = exhibitData.objects.find((object) => object["objectID"] == speciesId);
 
       if (speciesData) {
-          const title = `Factfile: ${speciesData.commonName || "Unknown Species"}`;
+          // Determine if it's an animal or species
+          const isAnimal = !!speciesData.nickname; // True if it has a nickname
+          const displayName = speciesData.nickname || speciesData.commonName || "Unknown Species";
+          const titlePrefix = isAnimal ? "Profile" : "Factfile";
+
+          const title = `${titlePrefix}: ${displayName}`;
           updateTitleAndContent(title); // Update the page title and header
           renderSpecies(speciesData); // Render the species content
       } else {
@@ -265,7 +270,7 @@ if (species["weight"]) {
   detailsHTML += `<p style="margin: 2px 0;"><b>Weight:</b> ${species["weight"]}</p>`;
 }
 if (species["personalityProfile"]) {
-  detailsHTML += `<br><h3 style="margin-bottom: 5px;">Species Profile:</h3>`;
+  detailsHTML += `<br><br><h3 style="margin-bottom: 5px;">Species Factfile:</h3>`;
 }
 detailsHTML += `
   <p style="margin: 2px 0;"><br>${species["longDescription"] || "Detailed information has not been provided."}</p>
