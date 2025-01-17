@@ -22,9 +22,12 @@
     "linkColor": "#18236e"
   },
   "talkTimes": [
-    { "name": "Zebras", "time": "11:00" },
-    { "name": "Giraffes", "time": "13:30" },
-    { "name": "Meerkats", "time": "15:00" }
+    { "name": "Penguin Feed", "time": "10:30" },
+    { "name": "Otter talk", "time": "11:00" },
+    { "name": "Meerkat Feed", "time": "12:45" },
+    { "name": "Monkey Feed", "time": "13:30" },
+    { "name": "Crocodile Feed", "time": "14:30" },
+    { "name": "Shark Feed", "time": "15:30" }
   ],
   "experiences": [
     { "name": "Otter feed", "price": "£100.00" },
