@@ -1,28 +1,51 @@
 async function fetchAndDisplayCSV() {
-    const csvUrl = "./assets/data/analytics.csv"; // Path to the CSV file
-    const jsonUrl = "./assets/data/data.json"; // Path to the JSON file
+    const pathSegments = window.location.pathname.split("/");
+    const siteId = /^\d{4}$/.test(pathSegments[1]) ? pathSegments[1] : "2054"; // Extract or fallback to testSiteId
+
+    console.log("Extracted siteId:", siteId);
+
+    const csvUrl = `/${siteId}/assets/data/analytics.csv`;
+    const jsonUrl = `/${siteId}/assets/data/data.json`;
+
+    console.log("CSV URL:", csvUrl);
+    console.log("JSON URL:", jsonUrl);
 
     try {
         const csvResponse = await fetch(csvUrl, { cache: "no-store" });
-        if (!csvResponse.ok) throw new Error(`HTTP error! status: ${csvResponse.status}`);
+        if (!csvResponse.ok) throw new Error(`Failed to fetch CSV: ${csvResponse.statusText}`);
         const csvText = await csvResponse.text();
-        const rows = parseCSV(csvText);
 
         const jsonResponse = await fetch(jsonUrl, { cache: "no-store" });
-        if (!jsonResponse.ok) throw new Error(`HTTP error! status: ${jsonResponse.status}`);
+        if (!jsonResponse.ok) throw new Error(`Failed to fetch JSON: ${jsonResponse.statusText}`);
         const exhibitData = await jsonResponse.json();
 
-        const exhibitLookup = createExhibitLookup(exhibitData);
-        const metrics = calculateMetrics(rows, exhibitLookup);
-        const filteredMetrics = metrics.filter((row) => row.exhibitName !== "Unknown Exhibit");
+        console.log("CSV Content:", csvText);
+        console.log("JSON Content:", exhibitData);
 
-        // Calculate total views and update the container
-        const totalViews = filteredMetrics.reduce((sum, row) => sum + row.totalViews, 0);
+        const rows = parseCSV(csvText);
+        const exhibitLookup = createExhibitLookup(exhibitData);
+
+        const metrics = calculateMetrics(rows, exhibitLookup, siteId)
+            .filter((row) => row.exhibitName !== "Unknown Exhibit"); // Filter out unknown exhibits
+        
+        console.log("Filtered Metrics:", metrics);
+
+        const totalViews = metrics.reduce((sum, row) => sum + row.totalViews, 0);
+        const totalEngagementTime = metrics.reduce((sum, row) => sum + row.totalEngagementTime, 0);
+        const totalAvgEngagementTime = (totalEngagementTime / totalViews).toFixed(2);
+
+        console.log("Total Views:", totalViews);
+        console.log("Total Average Engagement Time:", totalAvgEngagementTime);
+
         document.getElementById("total-views-count").textContent = totalViews;
 
-        renderDashboard(filteredMetrics);
+        if (metrics.length === 0) {
+            console.error("No metrics available to render!");
+        }
+
+        renderDashboard(metrics, totalViews, totalAvgEngagementTime);
     } catch (error) {
-        console.error("Error fetching or displaying the CSV file:", error);
+        console.error("Error fetching or displaying data:", error);
     }
 }
 
@@ -55,10 +78,18 @@ function createExhibitLookup(data) {
     return lookup;
 }
 
-function calculateMetrics(data, exhibitLookup) {
+function calculateMetrics(data, exhibitLookup, siteId) {
     const metricsByQueryString = {};
+
     data.forEach((row) => {
         const queryString = row["Landing page + query string"];
+        console.log("Processing row:", queryString);
+
+        if (!queryString.includes(`/${siteId}/`)) {
+            console.log("Skipping row:", queryString);
+            return;
+        }
+
         const views = parseInt(row.Views, 10) || 0;
         const engagementTime = parseFloat(row["Average engagement time per active user"]) || 0;
         const { exhibitId, speciesId } = parseQueryString(queryString);
@@ -76,9 +107,12 @@ function calculateMetrics(data, exhibitLookup) {
                 totalEngagementTime: 0,
             };
         }
+
         metricsByQueryString[queryString].totalViews += views;
         metricsByQueryString[queryString].totalEngagementTime += engagementTime;
     });
+
+    console.log("Aggregated Metrics:", metricsByQueryString);
 
     return Object.values(metricsByQueryString).map((entry) => ({
         ...entry,
@@ -219,7 +253,7 @@ function renderDashboard(metrics) {
         .map((row) => {
             const page = row.speciesName
                 ? `${row.speciesName}${row.animalName ? ` - ${row.animalName}` : ""}`
-                : "Main Page";
+                : "Unknown";
             return `
             <tr>
                 <td>${row.exhibitName || ""}</td>
@@ -239,6 +273,8 @@ function renderDashboard(metrics) {
         </tr>
     `;
 }
+
+document.addEventListener("DOMContentLoaded", fetchAndDisplayCSV);
 
 document.addEventListener("DOMContentLoaded", fetchAndDisplayCSV);
 document.addEventListener("DOMContentLoaded", () => {
