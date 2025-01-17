@@ -424,6 +424,17 @@ select option {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+.pricing-card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  width: 100%; /* Ensure the card takes up available space */
+  max-width: 300px; /* Or set a specific width, like 300px */
+}
+
 .most-popular-banner {
   position: absolute;
   top: 10px;
@@ -438,6 +449,15 @@ select option {
   text-align: center;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   white-space: nowrap; /* Prevents the text from breaking into multiple lines */
+}
+
+.pricing-card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
 }
 
 .pricing-card h3 {
