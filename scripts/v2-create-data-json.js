@@ -23,6 +23,8 @@ const path = require("path");
 
   console.log("Fetching data from Google Sheets database...");
 
+  let uniqueIdCounter = 0; // Counter to generate unique IDs
+
   https.get(sheetUrl, (response) => {
     if (response.statusCode !== 200) {
       console.error(`Failed to fetch data. Status Code: ${response.statusCode}`);
@@ -70,37 +72,38 @@ const path = require("path");
               };
               exhibits.push(exhibit);
             }
-          
-            const longDescription = row["Description"] || ""; // Ensure longDescription is defined
-            const shortDescription = longDescription.length > 100 
-              ? longDescription.slice(0, 100) + "..." 
-              : longDescription + (longDescription ? "..." : ""); // Truncate or append "..."
-          
+
+            const longDescription = row["Description"] || "";
+            const shortDescription = row["Short Description"]?.trim() || // Use the Short Description if available
+              (longDescription.length > 100
+                ? longDescription.slice(0, 100) + "..."
+                : longDescription + (longDescription ? "..." : ""));
+
             exhibit.objects.push({
-              hidden: row["Object Hidden"],
-              objectID: row["Object ID"],
-              objectType: row["Object Type"],
-              nickname: row["Nickname"],
-              commonName: row["Common Name"],
-              scientificName: row["Scientific Name"],
-              shortDescription: shortDescription, // Use updated shortDescription logic
-              longDescription: longDescription, // Use original longDescription
-              age: row["Age"],
-              size: row["Size"],
-              weight: row["Weight"],
-              personalityProfile: row["Personality Profile"],
-              funFact: row["Fun Fact"],
-              conservationStatus: row["Conservation Status"],
-              conservationInfo: row["Conservation Info"],
-              primaryURL: row["Primary URL"],
-              primaryURLlabel: row["Primary URL Label"],
-              secondaryURL: row["Secondary URL"],
-              secondaryURLlabel: row["Secondary URL Label"],
-              ImageURL: row["Image URL"],
-              AudioURL: row["Audio URL"],
-              VideoURL: row["Video URL"]
+              hidden: row["Object Hidden"] || "FALSE",
+              objectID: row["Object ID"] || `OID${++uniqueIdCounter}`, // Generate unique ID if missing
+              objectType: row["Object Type"] || "",
+              nickname: row["Nickname"] || "",
+              commonName: row["Common Name"] || "Unknown",
+              scientificName: row["Scientific Name"] || "",
+              shortDescription: shortDescription, // Prioritise sheet Short Description
+              longDescription: longDescription,
+              age: row["Age"] || "",
+              size: row["Size"] || "",
+              weight: row["Weight"] || "",
+              personalityProfile: row["Personality Profile"] || "",
+              funFact: row["Fun Fact"] || "",
+              conservationStatus: row["Conservation Status"] || "Unknown",
+              conservationInfo: row["Conservation Info"] || "",
+              primaryURL: row["Primary URL"] || "",
+              primaryURLlabel: row["Primary URL Label"] || "",
+              secondaryURL: row["Secondary URL"] || "",
+              secondaryURLlabel: row["Secondary URL Label"] || "",
+              ImageURL: row["Image URL"] || "",
+              AudioURL: row["Audio URL"] || "",
+              VideoURL: row["Video URL"] || ""
             });
-          });          
+          });
 
           const outputFolder = path.resolve(__dirname, "../2000/assets/data");
           await fs.mkdir(outputFolder, { recursive: true });
