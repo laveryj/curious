@@ -214,17 +214,42 @@ function renderSpecies(species) {
   image.addEventListener("click", () => openImageModal(species.imageURL || "placeholder.png"));
   speciesContainer.appendChild(image);
 
-  // Add species details
-  const details = document.createElement("div");
-  details.classList.add("species-details");
-  details.innerHTML = `
-    <h2>${species.commonName}</h2>
-    <h3><i>${species.scientificName}</i></h3>
-    <br>
-    <p><b>Conservation Status:</b> ${species.conservationStatus || "Not Evaluated"}</p>
-    <p>${species.longDescription || "Detailed information is not available."}</p>
-    <p><b>Did you know?</b> ${species.funFact || "No fun fact available."}</p>
-  `;
+// Add species details
+const details = document.createElement("div");
+details.classList.add("species-details");
+
+let detailsHTML = `
+  <h2>${species.commonName}</h2>
+  <h3><i>${species.scientificName}</i></h3>
+  <br>
+  <p><b>Conservation Status:</b> ${species.conservationStatus || "Not Evaluated"}</p>
+  <p>${species.longDescription || "Detailed information is not available."}</p>
+  <p><b>Did you know?</b> ${species.funFact || "No fun fact available."}</p>
+`;
+
+// Add animal-specific details if they are provided
+if (species.nickname) {
+  detailsHTML += `<p><b>Animal Name:</b> ${species.nickname}</p>`;
+}
+if (species.personalityProfile) {
+  detailsHTML += `<p><b>Personality Profile:</b> ${species.personalityProfile}</p>`;
+}
+if (species.age) {
+  detailsHTML += `<p><b>Age:</b> ${species.age}</p>`;
+}
+if (species.size) {
+  detailsHTML += `<p><b>Size:</b> ${species.size}</p>`;
+}
+if (species.weight) {
+  detailsHTML += `<p><b>Weight:</b> ${species.weight}</p>`;
+}
+
+// Set the HTML to the container
+details.innerHTML = detailsHTML;
+
+// Append the details to the container
+content.appendChild(details);
+
 
   // Add external links
   if (species.externalURL) {
