@@ -1,7 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const configUrl = "./assets/data/config.json"; // Path to the config.json file
-
-function displaySiteInfo(config) {
+function displayTalkTimes(config) {
   // Locate the table elements
   const talkTimesTable = document.getElementById("talk-times-table");
   const experiencesTable = document.getElementById("experiences-table");
@@ -11,16 +8,15 @@ function displaySiteInfo(config) {
     if (config.talkTimes && config.talkTimes.length > 0) {
       talkTimesTable.innerHTML = `
         <thead>
-          <tr>
-          </tr>
         </thead>
         <tbody>
           ${config.talkTimes
             .map(
               (talk) =>
                 `<tr>
-                  <td>${talk.talkName}</td> <!-- Updated key to match new JSON format -->
-                  <td>${talk.talkTime}</td> <!-- Updated key to match new JSON format -->
+                  <td>${talk.name}</td>
+                  <td>${talk.time}</td>
+  
                 </tr>`
             )
             .join("")}
@@ -29,12 +25,10 @@ function displaySiteInfo(config) {
     } else {
       talkTimesTable.innerHTML = `
         <thead>
-          <tr>
-          </tr>
         </thead>
         <tbody>
           <tr>
-            <td colspan="2">No talk times available</td>
+            <td colspan="3">No talk times available</td>
           </tr>
         </tbody>
       `;
@@ -48,20 +42,21 @@ function displaySiteInfo(config) {
     if (config.experiences && config.experiences.length > 0) {
       experiencesTable.innerHTML = `
         <thead>
-          <tr>
-          </tr>
         </thead>
         <tbody>
           ${config.experiences
             .map(
               (experience) =>
                 `<tr>
+                  <td>${experience.name}</td>
+                  <td>${experience.price}</td>
                   <td>
-                    ${experience.experienceLink 
-                      ? `<a href="${experience.experienceLink}" target="_blank">${experience.experienceName}</a>` // Updated keys
-                      : experience.experienceName} <!-- Updated key -->
+                    ${
+                      experience.link
+                        ? `<a href="${experience.link}" target="_blank">Book now</a>`
+                        : ""
+                    }
                   </td>
-                  <td>${experience.experiencePrice}</td> <!-- Updated key -->
                 </tr>`
             )
             .join("")}
@@ -70,24 +65,15 @@ function displaySiteInfo(config) {
     } else {
       experiencesTable.innerHTML = `
         <thead>
-          <tr>
-          </tr>
         </thead>
         <tbody>
           <tr>
-            <td colspan="2">No experiences available</td>
+            <td colspan="3">No experiences available</td>
           </tr>
         </tbody>
       `;
     }
-
-    // Add "Book Today!" subheading below the table
-    const bookTodaySubheading = document.createElement("h3");
-    bookTodaySubheading.textContent = "Click the link & book today!";
-    bookTodaySubheading.style.textAlign = "center"; // Centre the text
-    experiencesTable.parentElement.appendChild(bookTodaySubheading);
   } else {
     console.error("Error: 'experiences-table' element not found in the DOM.");
   }
 }
-});

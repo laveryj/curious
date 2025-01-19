@@ -45,8 +45,7 @@
 
   ],
   "experiences": [
-    { "name": "Otter feed", "price": "£100.00" },
     { "name": "Penguin feed", "price": "£100.00", "link": "https://buy.myonlinebooking.co.uk/sealife/sessions.aspx?tid=94" },
-    { "name": "Meerkat experience", "price": "100.00", "link": "https://buy.myonlinebooking.co.uk/sealife/sessions.aspx?tid=88" }
+    { "name": "Meerkat feed", "price": "£100.00", "link": "https://buy.myonlinebooking.co.uk/sealife/sessions.aspx?tid=88" }
   ]
 }
