@@ -1,5 +1,5 @@
 {
-  "dateCreated": "2025-01-19T10:57:32.124Z",
+  "dateCreated": "2025-01-19T11:17:24.231Z",
   "exhibits": [
     {
       "exhibitID": "C1",
@@ -9,7 +9,7 @@
       "objects": [
         {
           "hidden": "FALSE",
-          "objectID": "OID1",
+          "objectID": "1",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Pollack",
@@ -33,7 +33,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID2",
+          "objectID": "2A",
           "objectType": "Animal",
           "nickname": "Iris",
           "commonName": "Painted Ray",
@@ -57,7 +57,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID3",
+          "objectID": "3",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Common Starfish",
@@ -81,7 +81,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID4",
+          "objectID": "4",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Black Sea Bream",
@@ -105,7 +105,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID5",
+          "objectID": "5",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Thick Lipped Mullet",
@@ -129,7 +129,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID6",
+          "objectID": "6",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Lesser Spotted Cat shark",
@@ -153,7 +153,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID7",
+          "objectID": "7",
           "objectType": "species",
           "nickname": "",
           "commonName": "Plaice",
@@ -185,7 +185,7 @@
       "objects": [
         {
           "hidden": "FALSE",
-          "objectID": "OID8",
+          "objectID": "1",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Pollack",
@@ -209,7 +209,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID9",
+          "objectID": "3",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Common Starfish",
@@ -233,7 +233,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID10",
+          "objectID": "8",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Coldsinny Wrasse",
@@ -257,7 +257,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID11",
+          "objectID": "9",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Top Knot",
@@ -281,7 +281,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID12",
+          "objectID": "7",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Plaice",
@@ -305,7 +305,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID219",
+          "objectID": "147A",
           "objectType": "Animal",
           "nickname": "Salmonella",
           "commonName": "Salmon Pink Tarantula",
@@ -337,7 +337,7 @@
       "objects": [
         {
           "hidden": "FALSE",
-          "objectID": "OID13",
+          "objectID": "3",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Common Starfish",
@@ -361,7 +361,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID14",
+          "objectID": "10",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Tompot Blenny",
@@ -385,7 +385,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID15",
+          "objectID": "11",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Clingfish",
@@ -409,7 +409,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID16",
+          "objectID": "12",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Butterfish",
@@ -433,7 +433,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID17",
+          "objectID": "13",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Cushion Starfish",
@@ -465,7 +465,7 @@
       "objects": [
         {
           "hidden": "FALSE",
-          "objectID": "OID18",
+          "objectID": "14",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Rock Cook Wrasee",
@@ -489,7 +489,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID19",
+          "objectID": "15",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Common Urchin",
@@ -513,7 +513,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID20",
+          "objectID": "14",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Corkwing Wrasse",
@@ -545,7 +545,7 @@
       "objects": [
         {
           "hidden": "FALSE",
-          "objectID": "OID21",
+          "objectID": "16",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Big Bellied Seahorse",
@@ -569,7 +569,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID22",
+          "objectID": "17",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Purple Starfish",
@@ -601,7 +601,7 @@
       "objects": [
         {
           "hidden": "FALSE",
-          "objectID": "OID23",
+          "objectID": "18",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Poor Cod",
@@ -625,7 +625,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID24",
+          "objectID": "19A",
           "objectType": "Animal",
           "nickname": "Joan",
           "commonName": "Lobster",
@@ -649,7 +649,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID25",
+          "objectID": "19B",
           "objectType": "Animal",
           "nickname": "Not Joan",
           "commonName": "Lobster",
@@ -673,7 +673,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID26",
+          "objectID": "20",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Bloody Henry Starfish",
@@ -697,7 +697,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID27",
+          "objectID": "21",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Pincushion Urchins",
@@ -721,31 +721,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID28",
-          "objectType": "Species",
-          "nickname": "",
-          "commonName": "Bloody Henry Starfish",
-          "scientificName": "Henricia oculata",
-          "shortDescription": "Dahlia anemones are Cnidarians, a large group that also includes corals and jellyfish.",
-          "longDescription": "The Bloody Henry starfish is a vividly colored echinoderm found in rocky coastal waters. Its striking red and purple hues help it camouflage among algae and corals. This species is known for its ability to regenerate lost limbs and is a key grazer in its marine habitat.",
-          "age": "",
-          "size": "",
-          "weight": "",
-          "personalityProfile": "",
-          "funFact": "They feed by absorbing nutrients through their body.",
-          "conservationStatus": "Least Concern",
-          "conservationInfo": "",
-          "primaryURL": "https://www.fishbase.se/summary/Henricia-oculata.html",
-          "primaryURLlabel": "",
-          "secondaryURL": "",
-          "secondaryURLlabel": "",
-          "ImageURL": "https://www.marlin.ac.uk/assets/images/marlin/species/web/o_glang20110121.jpg",
-          "AudioURL": "",
-          "VideoURL": ""
-        },
-        {
-          "hidden": "FALSE",
-          "objectID": "OID29",
+          "objectID": "22",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Dahlia Anenome",
@@ -777,7 +753,7 @@
       "objects": [
         {
           "hidden": "FALSE",
-          "objectID": "OID30",
+          "objectID": "23",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Snakelock Anenomes",
@@ -809,7 +785,7 @@
       "objects": [
         {
           "hidden": "FALSE",
-          "objectID": "OID31",
+          "objectID": "24",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Common Brittlestar",
@@ -833,7 +809,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID32",
+          "objectID": "25",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Stickleback",
@@ -865,7 +841,7 @@
       "objects": [
         {
           "hidden": "FALSE",
-          "objectID": "OID33",
+          "objectID": "26",
           "objectType": "Species",
           "nickname": "",
           "commonName": "European Eel",
@@ -897,7 +873,7 @@
       "objects": [
         {
           "hidden": "FALSE",
-          "objectID": "OID34",
+          "objectID": "27",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Common Sunstars",
@@ -929,7 +905,7 @@
       "objects": [
         {
           "hidden": "FALSE",
-          "objectID": "OID35",
+          "objectID": "28",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Sea Toads",
@@ -953,7 +929,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID36",
+          "objectID": "15",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Common Urchin",
@@ -977,7 +953,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID37",
+          "objectID": "29",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Spiny Starfish",
@@ -1009,11 +985,11 @@
       "objects": [
         {
           "hidden": "FALSE",
-          "objectID": "Plant Room Audio",
+          "objectID": "30",
           "objectType": "audio",
           "nickname": "",
           "commonName": "Unknown",
-          "scientificName": "",
+          "scientificName": "Unknown Species",
           "shortDescription": "Our plant room cleans the water for our ocean tank, and our coastal & abyss areas. Listen to the aud...",
           "longDescription": "Our plant room cleans the water for our ocean tank, and our coastal & abyss areas. Listen to the audio guide to find out how!",
           "age": "",
@@ -1041,7 +1017,7 @@
       "objects": [
         {
           "hidden": "FALSE",
-          "objectID": "OID38",
+          "objectID": "31A",
           "objectType": "animal",
           "nickname": "Patrick",
           "commonName": "Crab-eating Macaque",
@@ -1065,7 +1041,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID39",
+          "objectID": "31B",
           "objectType": "animal",
           "nickname": "Ali",
           "commonName": "Crab-eating Macaque",
@@ -1089,7 +1065,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID40",
+          "objectID": "31C",
           "objectType": "animal",
           "nickname": "Squinty",
           "commonName": "Crab-eating Macaque",
@@ -1113,7 +1089,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID41",
+          "objectID": "31D",
           "objectType": "animal",
           "nickname": "Arietty",
           "commonName": "Crab-eating Macaque",
@@ -1137,7 +1113,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID42",
+          "objectID": "31E",
           "objectType": "animal",
           "nickname": "Lorax",
           "commonName": "Crab-eating Macaque",
@@ -1161,7 +1137,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID43",
+          "objectID": "31F",
           "objectType": "animal",
           "nickname": "Mogwai",
           "commonName": "Crab-eating Macaque",
@@ -1185,7 +1161,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID44",
+          "objectID": "31G",
           "objectType": "animal",
           "nickname": "Geoffrey",
           "commonName": "Crab-eating Macaque",
@@ -1209,7 +1185,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID45",
+          "objectID": "31H",
           "objectType": "animal",
           "nickname": "Tubs",
           "commonName": "Crab-eating Macaque",
@@ -1233,7 +1209,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID46",
+          "objectID": "31I",
           "objectType": "animal",
           "nickname": "Olive",
           "commonName": "Crab-eating Macaque",
@@ -1257,7 +1233,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID47",
+          "objectID": "31J",
           "objectType": "animal",
           "nickname": "Nana Rose",
           "commonName": "Crab-eating Macaque",
@@ -1281,7 +1257,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID48",
+          "objectID": "31",
           "objectType": "species",
           "nickname": "Babs",
           "commonName": "Crab-eating Macaque",
@@ -1313,7 +1289,7 @@
       "objects": [
         {
           "hidden": "FALSE",
-          "objectID": "OID49",
+          "objectID": "32",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Butterfly Goodied",
@@ -1337,7 +1313,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID50",
+          "objectID": "33",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Cherry Shrimp",
@@ -1361,7 +1337,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID54",
+          "objectID": "32",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Butterfly Goodied",
@@ -1385,7 +1361,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID55",
+          "objectID": "33",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Cherry Shrimp",
@@ -1417,7 +1393,7 @@
       "objects": [
         {
           "hidden": "FALSE",
-          "objectID": "OID51",
+          "objectID": "34",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Clouded Archerfish",
@@ -1441,7 +1417,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID52",
+          "objectID": "35",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Rainbow Boseman",
@@ -1465,7 +1441,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID53",
+          "objectID": "36",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Sunshine Pleco",
@@ -1489,7 +1465,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID58",
+          "objectID": "36",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Sunshine Pleco",
@@ -1521,7 +1497,7 @@
       "objects": [
         {
           "hidden": "FALSE",
-          "objectID": "OID56",
+          "objectID": "37",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Bamboo Shrimp",
@@ -1545,7 +1521,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID57",
+          "objectID": "38",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Cardianl Tetras",
@@ -1577,7 +1553,7 @@
       "objects": [
         {
           "hidden": "FALSE",
-          "objectID": "OID59",
+          "objectID": "39",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Red Bellied Piranahs",
@@ -1609,7 +1585,7 @@
       "objects": [
         {
           "hidden": "FALSE",
-          "objectID": "OID60",
+          "objectID": "40A",
           "objectType": "Animal",
           "nickname": "Paley",
           "commonName": "California Horned Shark",
@@ -1633,7 +1609,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID61",
+          "objectID": "40B",
           "objectType": "Animal",
           "nickname": "Hayley",
           "commonName": "California Horned Shark",
@@ -1657,7 +1633,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID62",
+          "objectID": "41",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Leopard Moray Eel",
@@ -1681,7 +1657,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID63",
+          "objectID": "42",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Porcupine Puffer",
@@ -1705,7 +1681,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID64",
+          "objectID": "43",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Solider fish",
@@ -1729,7 +1705,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID65",
+          "objectID": "44",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Regal Tang",
@@ -1753,7 +1729,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID66",
+          "objectID": "45",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Sergent Major",
@@ -1777,7 +1753,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID67",
+          "objectID": "46",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Birdmouth Wrasse",
@@ -1801,7 +1777,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID68",
+          "objectID": "47",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Dogface Puffer",
@@ -1825,7 +1801,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID69",
+          "objectID": "48",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Bicolour Goatfish",
@@ -1849,7 +1825,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID70",
+          "objectID": "49",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Picasso Trigger",
@@ -1873,7 +1849,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID71",
+          "objectID": "50",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Blue Triggerfish",
@@ -1897,7 +1873,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID73",
+          "objectID": "52",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Pacific pearscale Butterfly",
@@ -1921,7 +1897,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID74",
+          "objectID": "53",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Zebra Sailfin",
@@ -1945,7 +1921,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID75",
+          "objectID": "54",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Blue Ring Angel Fish",
@@ -1977,7 +1953,7 @@
       "objects": [
         {
           "hidden": "FALSE",
-          "objectID": "OID72",
+          "objectID": "51",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Blue Striped Snapper",
@@ -2001,7 +1977,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID91",
+          "objectID": "44",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Regal Tang",
@@ -2025,7 +2001,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID92",
+          "objectID": "68",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Lipstick Tang",
@@ -2049,7 +2025,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID93",
+          "objectID": "50",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Blue Triggerfish",
@@ -2073,7 +2049,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID94",
+          "objectID": "69",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Longfin Snapper",
@@ -2097,7 +2073,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID95",
+          "objectID": "51",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Blue Striped Snapper",
@@ -2121,7 +2097,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID96",
+          "objectID": "70",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Porkfish",
@@ -2145,7 +2121,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID97",
+          "objectID": "71",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Silver mono",
@@ -2169,7 +2145,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID98",
+          "objectID": "48",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Bicolour Goatfish",
@@ -2193,7 +2169,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID99",
+          "objectID": "72",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Yellow Goatfish",
@@ -2217,7 +2193,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID100",
+          "objectID": "73",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Lookdown",
@@ -2241,7 +2217,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID101",
+          "objectID": "74",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Roundfin Batfish",
@@ -2265,7 +2241,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID102",
+          "objectID": "75",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Striped Damsel",
@@ -2289,7 +2265,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID103",
+          "objectID": "76",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Sea Goldies",
@@ -2313,7 +2289,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID104",
+          "objectID": "77",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Slingjaw Wrasse",
@@ -2337,7 +2313,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID105",
+          "objectID": "78",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Orential Sweetlips",
@@ -2361,7 +2337,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID106",
+          "objectID": "79",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Blackstreak Surgeon",
@@ -2385,7 +2361,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID107",
+          "objectID": "47",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Dogface Puffer",
@@ -2409,7 +2385,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID108",
+          "objectID": "80A",
           "objectType": "Animal",
           "nickname": "Floop",
           "commonName": "Cownose Ray",
@@ -2433,7 +2409,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID109",
+          "objectID": "80B",
           "objectType": "Animal",
           "nickname": "Flap",
           "commonName": "Cownose Ray",
@@ -2457,7 +2433,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID110",
+          "objectID": "80C",
           "objectType": "Animal",
           "nickname": "Flop",
           "commonName": "Cownose Ray",
@@ -2481,7 +2457,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID111",
+          "objectID": "80D",
           "objectType": "Animal",
           "nickname": "Flip",
           "commonName": "Cownose Ray",
@@ -2505,7 +2481,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID112",
+          "objectID": "81A",
           "objectType": "Animal",
           "nickname": "Xena",
           "commonName": "Zebra Shark",
@@ -2529,7 +2505,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID113",
+          "objectID": "81B",
           "objectType": "Animal",
           "nickname": "Ripley",
           "commonName": "Zebra Shark",
@@ -2553,7 +2529,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID114",
+          "objectID": "82A",
           "objectType": "Animal",
           "nickname": "Bam",
           "commonName": "Brown Branded Bamboo Shark",
@@ -2577,7 +2553,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID115",
+          "objectID": "82B",
           "objectType": "Animal",
           "nickname": "Boo",
           "commonName": "Brown Branded Bamboo Shark",
@@ -2601,7 +2577,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID116",
+          "objectID": "83A",
           "objectType": "Animal",
           "nickname": "Philly",
           "commonName": "Scrawled Filefish",
@@ -2625,7 +2601,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID117",
+          "objectID": "54",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Blue Ring Angel Fish",
@@ -2657,7 +2633,7 @@
       "objects": [
         {
           "hidden": "FALSE",
-          "objectID": "OID76",
+          "objectID": "55",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Maroon Clownfish",
@@ -2681,7 +2657,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID77",
+          "objectID": "56",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Tassle Filefish",
@@ -2705,7 +2681,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID78",
+          "objectID": "57",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Tobacco Bass",
@@ -2729,7 +2705,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID79",
+          "objectID": "58",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Checkerboard Wrasse",
@@ -2753,7 +2729,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID80",
+          "objectID": "59",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Chocolate Chip Starfish",
@@ -2777,7 +2753,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID81",
+          "objectID": "60",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Marine Betta",
@@ -2809,7 +2785,7 @@
       "objects": [
         {
           "hidden": "FALSE",
-          "objectID": "OID82",
+          "objectID": "61",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Red Lionfish",
@@ -2841,7 +2817,7 @@
       "objects": [
         {
           "hidden": "FALSE",
-          "objectID": "OID83",
+          "objectID": "62",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Shrimpfish",
@@ -2865,7 +2841,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID84",
+          "objectID": "63",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Strawberry Basslet",
@@ -2889,7 +2865,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID85",
+          "objectID": "64",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Lyretail Hogfish",
@@ -2913,7 +2889,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID86",
+          "objectID": "65",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Hawkfish",
@@ -2945,7 +2921,7 @@
       "objects": [
         {
           "hidden": "FALSE",
-          "objectID": "OID87",
+          "objectID": "41",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Leopard Moray Eel",
@@ -2969,7 +2945,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID88",
+          "objectID": "42",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Porcupine Puffer",
@@ -3001,7 +2977,7 @@
       "objects": [
         {
           "hidden": "FALSE",
-          "objectID": "OID89",
+          "objectID": "66",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Spotted Box fish",
@@ -3025,7 +3001,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID90",
+          "objectID": "67",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Foxface Rabbitfish",
@@ -3057,7 +3033,7 @@
       "objects": [
         {
           "hidden": "FALSE",
-          "objectID": "OID118",
+          "objectID": "84",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Blue Green Chromis",
@@ -3081,7 +3057,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID119",
+          "objectID": "85",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Carpet Anenome",
@@ -3105,7 +3081,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID120",
+          "objectID": "86",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Yellow Tailed Damsel",
@@ -3129,7 +3105,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID121",
+          "objectID": "87",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Bannana Wrasse",
@@ -3153,7 +3129,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID122",
+          "objectID": "88",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Copperband",
@@ -3177,7 +3153,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID124",
+          "objectID": "90",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Royal gamma",
@@ -3201,7 +3177,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID125",
+          "objectID": "91",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Leapord Wrasse",
@@ -3225,7 +3201,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID126",
+          "objectID": "92",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Sirated Surgenfish",
@@ -3249,7 +3225,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID127",
+          "objectID": "93",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Pacific Cleaer Shrimp",
@@ -3273,7 +3249,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID128",
+          "objectID": "94",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Kenya Tree",
@@ -3297,7 +3273,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID129",
+          "objectID": "95",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Toad Stool",
@@ -3321,7 +3297,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID130",
+          "objectID": "96",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Mushroom Coral",
@@ -3345,7 +3321,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID131",
+          "objectID": "97",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Leather Coral",
@@ -3369,7 +3345,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID132",
+          "objectID": "98",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Buttom Polyps",
@@ -3393,7 +3369,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID136",
+          "objectID": "94",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Kenya Tree",
@@ -3417,7 +3393,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID137",
+          "objectID": "97",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Leather Coral",
@@ -3441,7 +3417,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID155",
+          "objectID": "94",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Kenya Tree",
@@ -3473,7 +3449,7 @@
       "objects": [
         {
           "hidden": "FALSE",
-          "objectID": "OID123",
+          "objectID": "89",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Racoon Butterflyfish",
@@ -3497,7 +3473,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID133",
+          "objectID": "99",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Montipora sp.",
@@ -3521,7 +3497,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID135",
+          "objectID": "101",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Frogspawn Coral",
@@ -3545,7 +3521,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID138",
+          "objectID": "102",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Flame Angel",
@@ -3569,7 +3545,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID139",
+          "objectID": "44",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Regal Tang",
@@ -3593,7 +3569,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID141",
+          "objectID": "104",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Shrunk Clownfish",
@@ -3617,7 +3593,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID142",
+          "objectID": "105",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Peppered Butterfly fish",
@@ -3641,7 +3617,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID143",
+          "objectID": "106",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Bubble Tip Anenome",
@@ -3665,7 +3641,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID144",
+          "objectID": "94",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Kenya Tree",
@@ -3689,7 +3665,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID145",
+          "objectID": "107",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Boxing Shrimp",
@@ -3713,7 +3689,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID146",
+          "objectID": "108",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Lawnmower Blenny",
@@ -3745,7 +3721,7 @@
       "objects": [
         {
           "hidden": "FALSE",
-          "objectID": "OID134",
+          "objectID": "100",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Touch Coral",
@@ -3769,7 +3745,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID140",
+          "objectID": "103",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Dot Dash Butterfly Fish",
@@ -3793,7 +3769,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID147",
+          "objectID": "99",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Montipora sp.",
@@ -3817,7 +3793,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID148",
+          "objectID": "109",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Red Bellied Urchin",
@@ -3841,7 +3817,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID149",
+          "objectID": "76",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Sea Goldies",
@@ -3865,7 +3841,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID150",
+          "objectID": "88",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Copperband",
@@ -3889,7 +3865,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID151",
+          "objectID": "93",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Pacific Cleaer Shrimp",
@@ -3913,7 +3889,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID152",
+          "objectID": "110",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Bluecheek Butterfly Fish",
@@ -3937,7 +3913,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID153",
+          "objectID": "111",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Valentini puffer",
@@ -3969,7 +3945,7 @@
       "objects": [
         {
           "hidden": "FALSE",
-          "objectID": "OID154",
+          "objectID": "112",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Caulerpa sp.",
@@ -3993,7 +3969,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID156",
+          "objectID": "113",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Bangaii Cardinals",
@@ -4017,7 +3993,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID157",
+          "objectID": "62",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Shrimpfish",
@@ -4041,7 +4017,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID158",
+          "objectID": "114",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Pjyama Cardinals",
@@ -4065,7 +4041,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID159",
+          "objectID": "109",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Red Bellied Urchin",
@@ -4089,7 +4065,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID160",
+          "objectID": "59",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Chocolate Chip Starfish",
@@ -4113,7 +4089,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID161",
+          "objectID": "115",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Brissle Tail Filefish",
@@ -4145,7 +4121,7 @@
       "objects": [
         {
           "hidden": "FALSE",
-          "objectID": "OID162",
+          "objectID": "116",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Beadlet Anenome",
@@ -4169,7 +4145,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID163",
+          "objectID": "95",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Toad Stool",
@@ -4193,7 +4169,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID164",
+          "objectID": "106",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Bubble Tip Anenome",
@@ -4217,7 +4193,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID165",
+          "objectID": "107",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Boxing Shrimp",
@@ -4241,7 +4217,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID166",
+          "objectID": "117",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Blue Chromis",
@@ -4265,7 +4241,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID167",
+          "objectID": "118",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Coral Beauty",
@@ -4289,7 +4265,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID168",
+          "objectID": "119",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Talbots Damsel",
@@ -4313,7 +4289,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID169",
+          "objectID": "120",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Engineer Gobies",
@@ -4337,7 +4313,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID170",
+          "objectID": "44",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Regal Tang",
@@ -4361,7 +4337,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID171",
+          "objectID": "121",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Golden Nugget Clownfish",
@@ -4385,7 +4361,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID172",
+          "objectID": "122",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Chalk Bass",
@@ -4409,7 +4385,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID178",
+          "objectID": "106",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Bubble Tip Anenome",
@@ -4441,7 +4417,7 @@
       "objects": [
         {
           "hidden": "FALSE",
-          "objectID": "OID173",
+          "objectID": "112",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Caulerpa sp.",
@@ -4465,7 +4441,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID174",
+          "objectID": "123",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Common Clownfish",
@@ -4489,7 +4465,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID175",
+          "objectID": "115",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Brissle Tail Filefish",
@@ -4513,7 +4489,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID176",
+          "objectID": "124",
           "objectType": "Species",
           "nickname": "",
           "commonName": "White-barred Gobi",
@@ -4537,7 +4513,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID177",
+          "objectID": "125",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Halloween Hermit Crab",
@@ -4569,7 +4545,7 @@
       "objects": [
         {
           "hidden": "FALSE",
-          "objectID": "OID179",
+          "objectID": "126",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Red Tail Catfish",
@@ -4593,7 +4569,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID180",
+          "objectID": "127",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Freshwater Pufferfish",
@@ -4617,7 +4593,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID181",
+          "objectID": "128",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Black Pacu",
@@ -4641,7 +4617,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID182",
+          "objectID": "129",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Leapord shovelnose Catfish",
@@ -4665,7 +4641,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID183",
+          "objectID": "130",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Tiger shovelnose Catfish",
@@ -4689,7 +4665,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID184",
+          "objectID": "131",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Cigar Shark",
@@ -4713,7 +4689,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID185",
+          "objectID": "132",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Sailfin Plecostomus",
@@ -4734,30 +4710,6 @@
           "ImageURL": "https://www.bing.com/th?id=OIP.pbAyxM9_uEEEtvNP2xeZTgHaE9&w=174&h=185&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2",
           "AudioURL": "",
           "VideoURL": ""
-        },
-        {
-          "hidden": "FALSE",
-          "objectID": "OID186",
-          "objectType": "Species",
-          "nickname": "",
-          "commonName": "Unknown",
-          "scientificName": "",
-          "shortDescription": "",
-          "longDescription": "",
-          "age": "",
-          "size": "",
-          "weight": "",
-          "personalityProfile": "",
-          "funFact": "",
-          "conservationStatus": "Unknown",
-          "conservationInfo": "",
-          "primaryURL": "",
-          "primaryURLlabel": "",
-          "secondaryURL": "",
-          "secondaryURLlabel": "",
-          "ImageURL": "",
-          "AudioURL": "",
-          "VideoURL": ""
         }
       ]
     },
@@ -4769,7 +4721,7 @@
       "objects": [
         {
           "hidden": "FALSE",
-          "objectID": "OID187",
+          "objectID": "133A",
           "objectType": "Animal",
           "nickname": "Hades",
           "commonName": "Snapping Turtle",
@@ -4793,7 +4745,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID188",
+          "objectID": "32",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Butterfly Goodied",
@@ -4825,7 +4777,7 @@
       "objects": [
         {
           "hidden": "FALSE",
-          "objectID": "OID189",
+          "objectID": "134A",
           "objectType": "Animal",
           "nickname": "Jimbob",
           "commonName": "Dwarf African Crocodile",
@@ -4849,7 +4801,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID190",
+          "objectID": "135",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Cichilids",
@@ -4881,7 +4833,7 @@
       "objects": [
         {
           "hidden": "FALSE",
-          "objectID": "OID191",
+          "objectID": "136",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Poision Dart Frogs",
@@ -4913,7 +4865,7 @@
       "objects": [
         {
           "hidden": "FALSE",
-          "objectID": "OID192",
+          "objectID": "137",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Keel Bellied Lizards",
@@ -4945,11 +4897,11 @@
       "objects": [
         {
           "hidden": "FALSE",
-          "objectID": "OID193",
+          "objectID": "30",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Butterfly",
-          "scientificName": "",
+          "scientificName": "Unknown Species",
           "shortDescription": "",
           "longDescription": "",
           "age": "",
@@ -4977,11 +4929,11 @@
       "objects": [
         {
           "hidden": "FALSE",
-          "objectID": "OID194",
+          "objectID": "30",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Pupa",
-          "scientificName": "",
+          "scientificName": "Unknown Species",
           "shortDescription": "",
           "longDescription": "",
           "age": "",
@@ -5009,7 +4961,7 @@
       "objects": [
         {
           "hidden": "FALSE",
-          "objectID": "OID195",
+          "objectID": "138",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Giant African Land Snails",
@@ -5041,11 +4993,11 @@
       "objects": [
         {
           "hidden": "FALSE",
-          "objectID": "OID196",
+          "objectID": "30",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Leaf Cutter Ants",
-          "scientificName": "",
+          "scientificName": "Unknown Species",
           "shortDescription": "",
           "longDescription": "",
           "age": "",
@@ -5073,7 +5025,7 @@
       "objects": [
         {
           "hidden": "FALSE",
-          "objectID": "OID197",
+          "objectID": "139A",
           "objectType": "Animal",
           "nickname": "Didge",
           "commonName": "Humbolt Pengiuns",
@@ -5097,7 +5049,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID198",
+          "objectID": "139B",
           "objectType": "Animal",
           "nickname": "Squash",
           "commonName": "Humbolt Pengiuns",
@@ -5121,7 +5073,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID199",
+          "objectID": "139C",
           "objectType": "Animal",
           "nickname": "Aquila",
           "commonName": "Humbolt Pengiuns",
@@ -5145,7 +5097,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID200",
+          "objectID": "139D",
           "objectType": "Animal",
           "nickname": "Ray",
           "commonName": "Humbolt Pengiuns",
@@ -5169,7 +5121,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID201",
+          "objectID": "139E",
           "objectType": "Animal",
           "nickname": "Sunrise",
           "commonName": "Humbolt Pengiuns",
@@ -5193,7 +5145,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID202",
+          "objectID": "139F",
           "objectType": "Animal",
           "nickname": "Serena",
           "commonName": "Humbolt Pengiuns",
@@ -5217,7 +5169,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID203",
+          "objectID": "139G",
           "objectType": "Animal",
           "nickname": "Temuco",
           "commonName": "Humbolt Pengiuns",
@@ -5249,7 +5201,7 @@
       "objects": [
         {
           "hidden": "FALSE",
-          "objectID": "OID204",
+          "objectID": "140A",
           "objectType": "Animal",
           "nickname": "unnamed",
           "commonName": "Asian Short-Clawed Otters",
@@ -5273,7 +5225,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID205",
+          "objectID": "140B",
           "objectType": "Animal",
           "nickname": "Dave",
           "commonName": "Asian Short-Clawed Otters",
@@ -5305,7 +5257,7 @@
       "objects": [
         {
           "hidden": "FALSE",
-          "objectID": "OID206",
+          "objectID": "141A",
           "objectType": "Animal",
           "nickname": "Ronan",
           "commonName": "Swinhoe Squirrels",
@@ -5329,7 +5281,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID207",
+          "objectID": "141B",
           "objectType": "Animal",
           "nickname": "Archimedies",
           "commonName": "Swinhoe Squirrels",
@@ -5361,7 +5313,7 @@
       "objects": [
         {
           "hidden": "FALSE",
-          "objectID": "OID208",
+          "objectID": "142A",
           "objectType": "Animal",
           "nickname": "Manny",
           "commonName": "Yellow Mongoose",
@@ -5385,7 +5337,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID209",
+          "objectID": "142B",
           "objectType": "Animal",
           "nickname": "Vixen",
           "commonName": "Yellow Mongoose",
@@ -5417,7 +5369,7 @@
       "objects": [
         {
           "hidden": "FALSE",
-          "objectID": "OID210",
+          "objectID": "143",
           "objectType": "Species",
           "nickname": "",
           "commonName": "Slender tail Meerkats",
@@ -5441,7 +5393,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID211",
+          "objectID": "144A",
           "objectType": "Animal",
           "nickname": "Hank",
           "commonName": "Sulcata",
@@ -5465,7 +5417,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID212",
+          "objectID": "144B",
           "objectType": "Animal",
           "nickname": "Bert",
           "commonName": "Sulcata",
@@ -5489,7 +5441,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID213",
+          "objectID": "144C",
           "objectType": "Animal",
           "nickname": "Ernie",
           "commonName": "Sulcata",
@@ -5513,7 +5465,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID214",
+          "objectID": "145A",
           "objectType": "Animal",
           "nickname": "Florentine",
           "commonName": "Lepoard Tortoise",
@@ -5537,7 +5489,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID215",
+          "objectID": "145B",
           "objectType": "Animal",
           "nickname": "Stitch",
           "commonName": "Lepoard Tortoise",
@@ -5561,7 +5513,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID216",
+          "objectID": "145C",
           "objectType": "Animal",
           "nickname": "Wonderer",
           "commonName": "Lepoard Tortoise",
@@ -5593,7 +5545,7 @@
       "objects": [
         {
           "hidden": "FALSE",
-          "objectID": "OID217",
+          "objectID": "146A",
           "objectType": "Animal",
           "nickname": "Victoria",
           "commonName": "Royal Python",
@@ -5617,7 +5569,7 @@
         },
         {
           "hidden": "FALSE",
-          "objectID": "OID218",
+          "objectID": "146B",
           "objectType": "Animal",
           "nickname": "Albert",
           "commonName": "Royal Python",
@@ -5643,13 +5595,13 @@
     },
     {
       "exhibitID": "C8",
-      "exhibitName": "day gecko",
+      "exhibitName": "Day Gecko",
       "exhibitMode": "standard",
       "exhibitStatus": "active",
       "objects": [
         {
           "hidden": "FALSE",
-          "objectID": "OID220",
+          "objectID": "148A",
           "objectType": "Animal",
           "nickname": "Loco",
           "commonName": "Giant Day Gecko",
