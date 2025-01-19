@@ -1,5 +1,5 @@
 {
-  "dateCreated": "2025-01-19T11:17:24.231Z",
+  "dateCreated": "2025-01-19T15:38:16.977Z",
   "exhibits": [
     {
       "exhibitID": "C1",
@@ -315,7 +315,7 @@
           "age": "",
           "size": "",
           "weight": "",
-          "personalityProfile": "",
+          "personalityProfile": "Test",
           "funFact": "Despite its name, the Brazilian Salmon Pink Birdeater doesn't actually eat birds in the wild. The \"birdeater\" part of its name comes from early reports, but in reality, these tarantulas primarily feed on insects, small reptiles, and amphibians. They are also known for their impressive ability to flick urticating hairs from their abdomen as a defense mechanism if they feel threatened.",
           "conservationStatus": "Not Evaluated",
           "conservationInfo": "",
