@@ -1,5 +1,5 @@
 {
-  "dateCreated": "2025-01-19T15:38:16.977Z",
+  "dateCreated": "2025-01-19T15:49:51.935Z",
   "exhibits": [
     {
       "exhibitID": "C1",
@@ -307,7 +307,7 @@
           "hidden": "FALSE",
           "objectID": "147A",
           "objectType": "Animal",
-          "nickname": "Salmonella",
+          "nickname": "Salmon",
           "commonName": "Salmon Pink Tarantula",
           "scientificName": "Lasiodora parahybana",
           "shortDescription": "One of the largest species of tarantula native to Brazil, specifically the Amazon rainforest.",
@@ -323,7 +323,7 @@
           "primaryURLlabel": "",
           "secondaryURL": "",
           "secondaryURLlabel": "",
-          "ImageURL": "/2000/assets/images/C2/Salmonella.JPG",
+          "ImageURL": "/2000/assets/images/C2/Salmonella.jpg",
           "AudioURL": "",
           "VideoURL": ""
         }
@@ -2499,7 +2499,7 @@
           "primaryURLlabel": "",
           "secondaryURL": "",
           "secondaryURLlabel": "",
-          "ImageURL": "/2000/assets/images/OC1/Xena.JPG",
+          "ImageURL": "/2000/assets/images/OC1/Xena.jpg",
           "AudioURL": "",
           "VideoURL": ""
         },
@@ -2523,7 +2523,7 @@
           "primaryURLlabel": "",
           "secondaryURL": "",
           "secondaryURLlabel": "",
-          "ImageURL": "/2000/assets/images/OC1/Ripley.JPG",
+          "ImageURL": "/2000/assets/images/OC1/Ripley.jpg",
           "AudioURL": "",
           "VideoURL": ""
         },
@@ -4795,7 +4795,7 @@
           "primaryURLlabel": "",
           "secondaryURL": "",
           "secondaryURLlabel": "",
-          "ImageURL": "/2000/assets/images/TH5/Jim.JPG",
+          "ImageURL": "/2000/assets/images/TH5/Jim.jpg",
           "AudioURL": "",
           "VideoURL": ""
         },
@@ -5043,7 +5043,7 @@
           "primaryURLlabel": "",
           "secondaryURL": "",
           "secondaryURLlabel": "",
-          "ImageURL": "/2000/assets/images/P1/Didge.JPG",
+          "ImageURL": "/2000/assets/images/P1/Didge.jpg",
           "AudioURL": "",
           "VideoURL": ""
         },
@@ -5067,7 +5067,7 @@
           "primaryURLlabel": "",
           "secondaryURL": "",
           "secondaryURLlabel": "",
-          "ImageURL": "/2000/assets/images/P1/Squash.JPG",
+          "ImageURL": "/2000/assets/images/P1/Squash.jpg",
           "AudioURL": "",
           "VideoURL": ""
         },
@@ -5091,7 +5091,7 @@
           "primaryURLlabel": "",
           "secondaryURL": "",
           "secondaryURLlabel": "",
-          "ImageURL": "/2000/assets/images/P1/Aquila.JPG",
+          "ImageURL": "/2000/assets/images/P1/Aquila.jpg",
           "AudioURL": "",
           "VideoURL": ""
         },
@@ -5115,7 +5115,7 @@
           "primaryURLlabel": "",
           "secondaryURL": "",
           "secondaryURLlabel": "",
-          "ImageURL": "/2000/assets/images/P1/Ray.JPG",
+          "ImageURL": "/2000/assets/images/P1/Ray.jpg",
           "AudioURL": "",
           "VideoURL": ""
         },
@@ -5139,7 +5139,7 @@
           "primaryURLlabel": "",
           "secondaryURL": "",
           "secondaryURLlabel": "",
-          "ImageURL": "/2000/assets/images/P1/Sunrise.JPG",
+          "ImageURL": "/2000/assets/images/P1/Sunrise.jpg",
           "AudioURL": "",
           "VideoURL": ""
         },
@@ -5163,7 +5163,7 @@
           "primaryURLlabel": "",
           "secondaryURL": "",
           "secondaryURLlabel": "",
-          "ImageURL": "/2000/assets/images/P1/Serena.JPG",
+          "ImageURL": "/2000/assets/images/P1/Serena.jpg",
           "AudioURL": "",
           "VideoURL": ""
         },
@@ -5187,7 +5187,7 @@
           "primaryURLlabel": "",
           "secondaryURL": "",
           "secondaryURLlabel": "",
-          "ImageURL": "/2000/assets/images/P1/Temuco.JPG",
+          "ImageURL": "/2000/assets/images/P1/Temuco.jpg",
           "AudioURL": "",
           "VideoURL": ""
         }
@@ -5243,7 +5243,7 @@
           "primaryURLlabel": "",
           "secondaryURL": "",
           "secondaryURLlabel": "",
-          "ImageURL": "/2000/assets/images/O1/Dave.JPG",
+          "ImageURL": "/2000/assets/images/O1/Dave.jpg",
           "AudioURL": "",
           "VideoURL": ""
         }
@@ -5275,7 +5275,7 @@
           "primaryURLlabel": "",
           "secondaryURL": "",
           "secondaryURLlabel": "",
-          "ImageURL": "/2000/assets/images/W4/Ronan.JPG",
+          "ImageURL": "/2000/assets/images/W4/Ronan.jpg",
           "AudioURL": "",
           "VideoURL": ""
         },
@@ -5299,7 +5299,7 @@
           "primaryURLlabel": "",
           "secondaryURL": "",
           "secondaryURLlabel": "",
-          "ImageURL": "/2000/assets/images/W4/Archimedes.JPG",
+          "ImageURL": "/2000/assets/images/W4/Archimedes.jpg",
           "AudioURL": "",
           "VideoURL": ""
         }
@@ -5331,7 +5331,7 @@
           "primaryURLlabel": "",
           "secondaryURL": "",
           "secondaryURLlabel": "",
-          "ImageURL": "/2000/assets/images/M1/Manny.JPG",
+          "ImageURL": "/2000/assets/images/M1/Manny.jpg",
           "AudioURL": "",
           "VideoURL": ""
         },
@@ -5355,7 +5355,7 @@
           "primaryURLlabel": "",
           "secondaryURL": "",
           "secondaryURLlabel": "",
-          "ImageURL": "/2000/assets/images/M1/Vixen.JPG",
+          "ImageURL": "/2000/assets/images/M1/Vixen.jpg",
           "AudioURL": "",
           "VideoURL": ""
         }
@@ -5387,7 +5387,7 @@
           "primaryURLlabel": "",
           "secondaryURL": "",
           "secondaryURLlabel": "",
-          "ImageURL": "/2000/assets/images/W2/Meerkats.JPG",
+          "ImageURL": "/2000/assets/images/W2/Meerkats.jpg",
           "AudioURL": "",
           "VideoURL": ""
         },
@@ -5411,7 +5411,7 @@
           "primaryURLlabel": "",
           "secondaryURL": "",
           "secondaryURLlabel": "",
-          "ImageURL": "/2000/assets/images/W2/Hank.JPG",
+          "ImageURL": "/2000/assets/images/W2/Hank.jpg",
           "AudioURL": "",
           "VideoURL": ""
         },
@@ -5435,7 +5435,7 @@
           "primaryURLlabel": "",
           "secondaryURL": "",
           "secondaryURLlabel": "",
-          "ImageURL": "/2000/assets/images/W2/Bert.JPG",
+          "ImageURL": "/2000/assets/images/W2/Bert.jpg",
           "AudioURL": "",
           "VideoURL": ""
         },
@@ -5459,7 +5459,7 @@
           "primaryURLlabel": "",
           "secondaryURL": "",
           "secondaryURLlabel": "",
-          "ImageURL": "/2000/assets/images/W2/Ernie.JPG",
+          "ImageURL": "/2000/assets/images/W2/Ernie.jpg",
           "AudioURL": "",
           "VideoURL": ""
         },
@@ -5483,7 +5483,7 @@
           "primaryURLlabel": "",
           "secondaryURL": "",
           "secondaryURLlabel": "",
-          "ImageURL": "/2000/assets/images/W2/Florentine.JPG",
+          "ImageURL": "/2000/assets/images/W2/Florentine.jpg",
           "AudioURL": "",
           "VideoURL": ""
         },
@@ -5507,7 +5507,7 @@
           "primaryURLlabel": "",
           "secondaryURL": "",
           "secondaryURLlabel": "",
-          "ImageURL": "/2000/assets/images/W2/Stitch.JPG",
+          "ImageURL": "/2000/assets/images/W2/Stitch.jpg",
           "AudioURL": "",
           "VideoURL": ""
         },
@@ -5531,7 +5531,7 @@
           "primaryURLlabel": "",
           "secondaryURL": "",
           "secondaryURLlabel": "",
-          "ImageURL": "/2000/assets/images/W2/Wonderer.JPG",
+          "ImageURL": "/2000/assets/images/W2/Wonderer.jpg",
           "AudioURL": "",
           "VideoURL": ""
         }
@@ -5555,7 +5555,7 @@
           "age": "",
           "size": "",
           "weight": "",
-          "personalityProfile": "",
+          "personalityProfile": "Test",
           "funFact": "Pythons get their name from their behavior of curling into a tight ball when they feel threatened, hiding their head and keeping it protected within their coils. This defensive posture helps them feel secure from predators. Their docile nature and relatively small size make them one of the most popular snake species kept as pets.",
           "conservationStatus": "Near Threatened",
           "conservationInfo": "",
@@ -5563,7 +5563,7 @@
           "primaryURLlabel": "",
           "secondaryURL": "",
           "secondaryURLlabel": "",
-          "ImageURL": "/2000/assets/images/C6/Victoria.JPG",
+          "ImageURL": "/2000/assets/images/C6/Victoria.jpg",
           "AudioURL": "",
           "VideoURL": ""
         },
@@ -5579,7 +5579,7 @@
           "age": "",
           "size": "",
           "weight": "",
-          "personalityProfile": "",
+          "personalityProfile": "Test",
           "funFact": "Pythons get their name from their behavior of curling into a tight ball when they feel threatened, hiding their head and keeping it protected within their coils. This defensive posture helps them feel secure from predators. Their docile nature and relatively small size make them one of the most popular snake species kept as pets.",
           "conservationStatus": "Near Threatened",
           "conservationInfo": "",
@@ -5587,7 +5587,7 @@
           "primaryURLlabel": "",
           "secondaryURL": "",
           "secondaryURLlabel": "",
-          "ImageURL": "/2000/assets/images/C6/Albert.JPG",
+          "ImageURL": "/2000/assets/images/C6/Albert.jpg",
           "AudioURL": "",
           "VideoURL": ""
         }
@@ -5611,7 +5611,7 @@
           "age": "",
           "size": "",
           "weight": "",
-          "personalityProfile": "",
+          "personalityProfile": "Test",
           "funFact": "Despite their large size, Giant Day Geckos are known for their agility and speed. They have specialized toe pads that help them climb smooth surfaces, such as glass or tree trunks, making them excellent climbers. These geckos are also famous for their ability to shed their tails as a defense mechanism if threatened, though the tail will not grow back as dramatically as in some other species.",
           "conservationStatus": "Least Concern",
           "conservationInfo": "",
