@@ -200,7 +200,7 @@ function renderExhibit(objects, exhibitId) {
     card.classList.add("card");
     card.innerHTML = `
       <a href="index.html?EID=${exhibitId}&OID=${item["objectID"]}" style="text-decoration: none; color: inherit;">
-        <img src="${item["ImageURL"] || "placeholder.png"}" alt="${item["commonName"]}">
+        <img src="${item["ImageURL"] || "../assets/images/placeholder-image.jpg"}" alt="${item["commonName"]}">
         <h3>${title} ${subheading}</h3>
         ${description}
       </a>
@@ -240,7 +240,7 @@ function renderSpecies(species) {
 
   // Add the image with a clickable event for the modal
   const image = document.createElement("img");
-  image.src = species["ImageURL"] || "placeholder.png";
+  image.src = species["ImageURL"] || "../assets/images/placeholder-image.jpg";
   image.alt = species["commonName"];
   image.classList.add("species-image");
   image.style.cursor = "pointer"; // Indicate the image is clickable

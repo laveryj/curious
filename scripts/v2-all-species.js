@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
       // Render objects as cards
       allObjects.forEach((object) => {
         const displayName = object.nickname || object.commonName || "Unnamed Object";
-        const imageURL = object.ImageURL || "placeholder.png"; // Default to placeholder if no image
+        const imageURL = object.ImageURL || "../assets/images/placeholder-image.jpg"; // Default to placeholder if no image
 
         // Construct the species URL
         // const pageURL = `./index.html?exhibit-id=${object.exhibitID}&species-id=${object.objectID}`;
