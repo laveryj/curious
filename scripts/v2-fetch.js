@@ -244,7 +244,7 @@ function renderSpecies(species) {
   image.alt = species["commonName"];
   image.classList.add("species-image");
   image.style.cursor = "pointer"; // Indicate the image is clickable
-  image.addEventListener("click", () => openImageModal(species["ImageURL"] || "placeholder.png"));
+  image.addEventListener("click", () => openImageModal(species["ImageURL"] || "../assets/images/placeholder-image.jpg"));
   speciesContainer.appendChild(image);
 
   // Add species details
