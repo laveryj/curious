@@ -1,7 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
   const urlParams = new URLSearchParams(window.location.search);
-  const exhibitId = urlParams.get("exhibit-id");
-  const speciesId = urlParams.get("species-id"); // Fixed species-id parameter
+  // const exhibitId = urlParams.get("exhibit-id");
+  const exhibitId = urlParams.get("EID");
+  // const speciesId = urlParams.get("species-id"); // Fixed species-id parameter
+  const speciesId = urlParams.get("OID"); // Fixed species-id parameter
   const dataUrl = "./assets/data/data.json";
   const configUrl = "./assets/data/config.json";
 
@@ -197,7 +199,7 @@ function renderExhibit(objects, exhibitId) {
     const card = document.createElement("div");
     card.classList.add("card");
     card.innerHTML = `
-      <a href="index.html?exhibit-id=${exhibitId}&species-id=${item["objectID"]}" style="text-decoration: none; color: inherit;">
+      <a href="index.html?EID=${exhibitId}&OID=${item["objectID"]}" style="text-decoration: none; color: inherit;">
         <img src="${item["ImageURL"] || "placeholder.png"}" alt="${item["commonName"]}">
         <h3>${title} ${subheading}</h3>
         ${description}
@@ -273,10 +275,10 @@ if (species["personalityProfile"]) {
   detailsHTML += `<br><br><h3 style="margin-bottom: 5px;">Species Factfile:</h3>`;
 }
 detailsHTML += `
-  <p style="margin: 2px 0;"><br>${species["longDescription"] || "Detailed information has not been provided."}</p>
+  <p style="margin: 2px 0;"><br>${species["longDescription"] || "No description has been provided"}</p>
   <p style="margin: 2px 0;"><br><b>Did you know?</b> ${species["funFact"] || "Not provided."}</p>
   <p style="margin: 2px 0;"><br><b>Conservation Status:</b> ${species["conservationStatus"] || "Not Evaluated"}</p>
-  <p style="margin: 2px 0;"><br>${species["conservationInfo"] || "No additional conservation information provided."}<br><br></p>
+  <p style="margin: 2px 0;"><br>${species["conservationInfo"] || ""}<br><br></p>
 `;
 
 
@@ -407,7 +409,8 @@ function renderAudio(exhibit) {
 // Function to only show the back button on the species info page
 document.addEventListener("DOMContentLoaded", () => {
   const urlParams = new URLSearchParams(window.location.search);
-  const speciesId = urlParams.get("species-id");
+  // const speciesId = urlParams.get("species-id");
+  const speciesId = urlParams.get("OID");
 
   // Show the back button only if species-id is present
   const backButtonContainer = document.getElementById("back-button-container");

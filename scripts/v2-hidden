@@ -13,11 +13,11 @@ document.addEventListener("DOMContentLoaded", () => {
             return response.json();
           })
           .then(data => {
-            if (data.subscription === "monetise") {
-              // Redirect to analytics page if tier is monetise
+            if (data.subscription === "Monetise") {
+              // Redirect to analytics page if tier is Monetise
               window.location.href = "./analytics.html";
             } else {
-              // Show pop-up for non-monetise tiers
+              // Show pop-up for non-Monetise tiers
               alert("This feature is available for premium users. Please upgrade to access the Analytics Dashboard.");
             }
           })
