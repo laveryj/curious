@@ -85,8 +85,8 @@ document.addEventListener("DOMContentLoaded", () => {
     function populateExhibitDropdown(exhibits) {
         exhibits.forEach((exhibit) => {
             const option = document.createElement("option");
-            option.value = exhibit.exhibitID; <!-- Updated key -->
-            option.textContent = exhibit.exhibitName; <!-- Updated key -->
+            option.value = exhibit.exhibitID;
+            option.textContent = exhibit.exhibitName;
             exhibitSelect.appendChild(option);
         });
         exhibitSelect.disabled = false;
@@ -140,13 +140,13 @@ document.addEventListener("DOMContentLoaded", () => {
                             new QRious({
                                 element: qrCanvas,
                                 // value: `${window.location.href.replace(/\/[^\/]*$/, '/') + 'index.html?exhibit-id='}${exhibit.exhibitID}`, <!-- Updated key -->
-                                value: `${window.location.href.replace(/\/[^\/]*$/, '/') + 'index.html?EID='}${exhibit.exhibitID}`, <!-- Updated key -->
+                                value: `${window.location.href.replace(/\/[^\/]*$/, '/') + 'index.html?EID='}${exhibit.exhibitID}`,
                                 size: 200,
                             });
 
                             qrCanvas.toBlob((blob) => {
                                 zip.file(
-                                    `Curious-QRCode-${exhibit.exhibitID}-${exhibit.exhibitName.replace(/ /g, "_")}.png`, <!-- Updated key -->
+                                    `Curious-QRCode-${exhibit.exhibitID}-${exhibit.exhibitName.replace(/ /g, "_")}.png`,
                                     blob
                                 );
                                 resolve();
