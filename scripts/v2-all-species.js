@@ -41,7 +41,8 @@ document.addEventListener("DOMContentLoaded", () => {
         const imageURL = object.ImageURL || "placeholder.png"; // Default to placeholder if no image
 
         // Construct the species URL
-        const pageURL = `./index.html?exhibit-id=${object.exhibitID}&species-id=${object.objectID}`;
+        // const pageURL = `./index.html?exhibit-id=${object.exhibitID}&species-id=${object.objectID}`;
+        const pageURL = `./index.html?EID=${object.exhibitID}&OID=${object.objectID}`;
 
         const card = document.createElement("div");
         card.classList.add("object-card");

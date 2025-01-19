@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     <tr><td><strong>Site ID:</strong></td><td>${config.siteid}</td></tr>
                     <tr><td><strong>Site Name:</strong></td><td>${config.siteName}</td></tr>
                     <tr><td><strong>Company:</strong></td><td>${config.company}</td></tr>
-                    <tr><td><strong>Subscription:</strong></td><td>${config.subscription} Package</td></tr>
+                    <tr><td><strong>Subscription:</strong></td><td>${config.subscription} </td></tr>
                     <tr><td><strong>Address:</strong></td><td>${config.address || ""}</td></tr>
                     <tr><td><strong>Contact:</strong></td><td>${config.contact || ""}</td></tr>
                     <tr><td><strong>Email:</strong></td><td>${config.email}</td></tr>
@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
             .map((exhibit) => `
                 <tr>
                     <td>${exhibit.exhibitID}</td> <!-- Updated key -->
-                    <td><a href="./index.html?exhibit-id=${exhibit.exhibitID}" style="text-decoration: none; color: inherit;">${exhibit.exhibitName}</a></td> <!-- Updated key -->
+                    <td><a href="./index.html?EID=${exhibit.exhibitID}" style="text-decoration: none; color: inherit;">${exhibit.exhibitName}</a></td> <!-- Updated key -->
                     <td>${exhibit.objects ? exhibit.objects.length : 0}</td>
                 </tr>
             `)
@@ -106,7 +106,8 @@ document.addEventListener("DOMContentLoaded", () => {
             const selectedOption = exhibitSelect.options[exhibitSelect.selectedIndex];
             const exhibitName = selectedOption.text;
 
-            const url = `${window.location.href.replace(/\/[^\/]*$/, '/') + 'index.html?exhibit-id='}${exhibitId}`;
+            // const url = `${window.location.href.replace(/\/[^\/]*$/, '/') + 'index.html?exhibit-id='}${exhibitId}`;
+            const url = `${window.location.href.replace(/\/[^\/]*$/, '/') + 'index.html?EID='}${exhibitId}`;
             console.log("Generating QR code for:", url);
 
             const qr = new QRious({
@@ -138,7 +139,8 @@ document.addEventListener("DOMContentLoaded", () => {
                             const qrCanvas = document.createElement("canvas");
                             new QRious({
                                 element: qrCanvas,
-                                value: `${window.location.href.replace(/\/[^\/]*$/, '/') + 'index.html?exhibit-id='}${exhibit.exhibitID}`, <!-- Updated key -->
+                                // value: `${window.location.href.replace(/\/[^\/]*$/, '/') + 'index.html?exhibit-id='}${exhibit.exhibitID}`, <!-- Updated key -->
+                                value: `${window.location.href.replace(/\/[^\/]*$/, '/') + 'index.html?EID='}${exhibit.exhibitID}`, <!-- Updated key -->
                                 size: 200,
                             });
 
@@ -205,11 +207,11 @@ document.addEventListener("DOMContentLoaded", () => {
 //           return response.json();
 //         })
 //         .then(data => {
-//           if (data.subscription === "monetise") {
-//             // Redirect to analytics page if tier is monetise
+//           if (data.subscription === "Monetise") {
+//             // Redirect to analytics page if tier is Monetise
 //             window.location.href = "./analytics.html";
 //           } else {
-//             // Show pop-up for non-monetise tiers
+//             // Show pop-up for non-Monetise tiers
 //             alert("This feature is available for premium users. Please upgrade to access the Analytics Dashboard.");
 //           }
 //         })
@@ -235,11 +237,11 @@ document.addEventListener("DOMContentLoaded", () => {
           fetch(pricingPath).then(response => response.json())
         ])
           .then(([configData, pricingData]) => {
-            if (configData.subscription === "monetise") {
-              // Redirect to analytics page if tier is monetise
+            if (configData.subscription === "Monetise") {
+              // Redirect to analytics page if tier is Monetise
               window.location.href = "./analytics.html";
             } else {
-              // Show modal for non-monetise tiers
+              // Show modal for non-Monetise tiers
               showUpgradeModal(configData.subscription, pricingData);
             }
           })
@@ -255,9 +257,9 @@ document.addEventListener("DOMContentLoaded", () => {
     // Function to show the upgrade modal
     function showUpgradeModal(currentSubscription, pricingData) {
         const tiers = [
-          { name: "Discover", price: pricingData.discover, perVisitor: Math.round((pricingData.discover / (pricingData.footfall / 12)) * 100) },
-          { name: "Engage", price: pricingData.engage, perVisitor: Math.round((pricingData.engage / (pricingData.footfall / 12)) * 100) },
-          { name: "Monetise", price: pricingData.monetise, perVisitor: Math.round((pricingData.monetise / (pricingData.footfall / 12)) * 100) }
+          { name: "Discover", price: pricingData.Discover, perVisitor: Math.round((pricingData.Discover / (pricingData.footfall / 12)) * 100) },
+          { name: "Engage", price: pricingData.Engage, perVisitor: Math.round((pricingData.Engage / (pricingData.footfall / 12)) * 100) },
+          { name: "Monetise", price: pricingData.Monetise, perVisitor: Math.round((pricingData.Monetise / (pricingData.footfall / 12)) * 100) }
         ];
   
       // Determine the index of the user's current tier

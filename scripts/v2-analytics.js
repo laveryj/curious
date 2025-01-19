@@ -124,8 +124,10 @@ function parseQueryString(queryString) {
     if (!queryString || !queryString.includes("?")) return { exhibitId: null, speciesId: null };
     const params = new URLSearchParams(queryString.split("?")[1]);
     return {
-        exhibitId: params.get("exhibit-id") || null,
-        speciesId: params.get("species-id") || params.get("object-id") || null,
+        // exhibitId: params.get("exhibit-id") || null,
+        exhibitId: params.get("EID") || null,
+        // speciesId: params.get("species-id") || params.get("object-id") || null,
+        speciesId: params.get("OID") || params.get("object-id") || null,
     };
 }
 
