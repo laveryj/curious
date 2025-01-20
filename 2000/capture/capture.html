@@ -39,7 +39,7 @@
   <main>
     <!-- <h2 id="site-name">Try it out below</h2> -->
 
-    <button type="button" onclick="init()">Start</button>
+    <button type="button" onclick="init()">Start Demo</button>
 
     <div id="webcam-container"></div>
     <div id="label-container"></div>
@@ -83,12 +83,19 @@
         }
 
         async function predict() {
-            const prediction = await model.predict(webcam.canvas);
-            for (let i = 0; i < maxPredictions; i++) {
-                const classPrediction = `${prediction[i].className}: ${prediction[i].probability.toFixed(2)}`;
-                labelContainer.childNodes[i].innerHTML = classPrediction;
-            }
+    const predictions = await model.predict(webcam.canvas);
+    labelContainer.innerHTML = ""; // Clear previous results
+    for (let i = 0; i < maxPredictions; i++) {
+        if (predictions[i].probability > 0.85) {
+            const classPrediction = `${predictions[i].className}: ${(
+                predictions[i].probability * 100
+            ).toFixed(2)}%`;
+            const resultDiv = document.createElement("div");
+            resultDiv.textContent = classPrediction;
+            labelContainer.appendChild(resultDiv);
         }
+    }
+}
     </script>
 
   </main>
