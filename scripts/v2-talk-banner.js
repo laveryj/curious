@@ -1,4 +1,4 @@
-// Function to fetch talks from talks.json
+// Function to fetch talks from config.json
 async function fetchTalks() {
     const response = await fetch('./assets/data/config.json');
     if (!response.ok) {
@@ -23,13 +23,13 @@ function showBanner(message) {
     banner.style.backgroundColor = '#ffffff'; // White background
     banner.style.color = '#000000'; // Black text
     banner.style.textAlign = 'center';
-    banner.style.padding = '5px'; // Thinner padding
-    banner.style.fontSize = '16px'; // Reduced font size
+    banner.style.padding = '5px';
+    banner.style.fontSize = '16px';
     banner.style.boxShadow = '0 2px 5px rgba(0, 0, 0, 0.3)';
     banner.style.display = 'flex';
-    banner.style.justifyContent = 'space-between'; // Ensure message and close button are spaced
+    banner.style.justifyContent = 'space-between';
     banner.style.alignItems = 'center';
-    banner.style.zIndex = '1000'; // Ensure the banner stays above all other elements
+    banner.style.zIndex = '1000';
 
     // Adjust the banner position to sit below the header
     const header = document.querySelector('header');
@@ -39,25 +39,35 @@ function showBanner(message) {
     // Add the message to the banner
     const messageSpan = document.createElement('span');
     messageSpan.textContent = message;
-    messageSpan.style.flex = '1'; // Allow the message to take up available space
+    messageSpan.style.flex = '1';
     banner.appendChild(messageSpan);
 
     // Add a close button to the banner
     const closeButton = document.createElement('button');
     closeButton.textContent = '×';
-    closeButton.style.fontSize = '16px'; // Adjusted font size
-    closeButton.style.color = '#000000'; // Black text
+    closeButton.style.fontSize = '16px';
+    closeButton.style.color = '#000000';
     closeButton.style.background = 'none';
     closeButton.style.border = 'none';
     closeButton.style.cursor = 'pointer';
-    closeButton.style.padding = '0 10px'; // Add padding to improve click area
-    closeButton.style.margin = '0'; // Ensure no unnecessary margin
+    closeButton.style.padding = '0 10px';
+    closeButton.style.margin = '0';
     closeButton.style.fontWeight = 'bold';
     closeButton.addEventListener('click', () => banner.remove());
-    // banner.appendChild(closeButton);
+    banner.appendChild(closeButton);
 
     // Append the banner to the body
     document.body.appendChild(banner);
+}
+
+// Function to filter talks based on the current day
+function filterTalksByDay(talks) {
+    const currentDay = new Date().toLocaleDateString('en-GB', { weekday: 'long' });
+    return talks.filter(talk =>
+        talk.days.includes('Daily') ||
+        talk.days.includes(currentDay) ||
+        (talk.days.includes('Weekends') && (currentDay === 'Saturday' || currentDay === 'Sunday'))
+    );
 }
 
 // Function to check and display the countdown for the next talk
@@ -65,13 +75,16 @@ async function checkNextTalk() {
     const talkTimes = await fetchTalks();
     const now = new Date();
 
+    // Filter talks by day
+    const filteredTalks = filterTalksByDay(talkTimes);
+
     // Convert talk times to Date objects and sort them
-    const upcomingTalks = talkTimes
+    const upcomingTalks = filteredTalks
         .map(talk => {
             const [hours, minutes] = talk.time.split(':').map(Number);
             const talkTime = new Date();
             talkTime.setHours(hours, minutes, 0);
-            talkTime.setSeconds(0, 0); // Ensure no seconds/milliseconds
+            talkTime.setSeconds(0, 0);
             return { ...talk, talkTime };
         })
         .filter(talk => talk.talkTime > now) // Only keep future talks
