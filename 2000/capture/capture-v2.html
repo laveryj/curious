@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Curious | AI Fishfinder Demo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      background-color: #f4f4f4;
+    }
+
+    header {
+      background-color: #BF3300;
+      color: #FFFFFF;
+      padding: 20px;
+    }
+
+    #webcam-container {
+      margin-top: 20px;
+    }
+
+    video {
+      border: 2px solid #BF3300;
+      border-radius: 5px;
+      width: 90%;
+      max-width: 400px;
+    }
+
+    button {
+      background-color: #BF3300;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      margin: 10px;
+    }
+
+    button:hover {
+      background-color: #D83B01;
+    }
+
+    #label-container {
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Curious | AI Fishfinder Demo</h1>
+  </header>
+
+  <main>
+    <button type="button" onclick="init()">Start Demo</button>
+    <button id="capture-button" type="button" onclick="capture()" disabled>Capture</button>
+    <button type="button" onclick="stopDemo()">Stop Demo</button>
+
+    <div id="webcam-container"></div>
+    <div id="label-container"></div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
+  <script>
+    const URL = "/2000/capture/model/";
+
+    let model, webcam, labelContainer, maxPredictions;
+
+    async function init() {
+      try {
+        const modelURL = URL + "model.json";
+        const metadataURL = URL + "metadata.json";
+
+        // Load model and metadata
+        model = await tmImage.load(modelURL, metadataURL);
+        maxPredictions = model.getTotalClasses();
+
+        // Set up the webcam with rear camera preference
+        webcam = new tmImage.Webcam(300, 300, true); // Flip for mirror view
+        await webcam.setup({ video: { facingMode: { exact: "environment" } } }); // Rear camera
+        await webcam.play();
+
+        // Append webcam canvas to the DOM
+        const webcamContainer = document.getElementById("webcam-container");
+        webcamContainer.innerHTML = ""; // Clear any previous content
+        webcamContainer.appendChild(webcam.canvas);
+
+        // Prepare the label container
+        labelContainer = document.getElementById("label-container");
+        labelContainer.innerHTML = ""; // Clear previous labels
+
+        // Enable the capture button
+        document.getElementById("capture-button").disabled = false;
+      } catch (error) {
+        console.error("Error initializing model or webcam:", error);
+        alert(
+          "Could not start the demo. Ensure camera permissions are granted, your connection is HTTPS, and the model URL is correct."
+        );
+      }
+    }
+
+    async function capture() {
+      try {
+        const predictions = await model.predict(webcam.canvas);
+        labelContainer.innerHTML = ""; // Clear previous results
+        predictions.forEach(prediction => {
+          if (prediction.probability > 0.75) {
+            const result = document.createElement("div");
+            result.textContent = `${prediction.className}: ${(prediction.probability * 100).toFixed(2)}%`;
+            labelContainer.appendChild(result);
+          }
+        });
+      } catch (error) {
+        console.error("Error capturing frame:", error);
+        alert("Error processing the capture.");
+      }
+    }
+
+    function stopDemo() {
+      if (webcam && webcam.stop) {
+        webcam.stop(); // Stops the webcam feed
+      }
+
+      // Clear webcam and labels
+      document.getElementById("webcam-container").innerHTML = "";
+      document.getElementById("label-container").innerHTML = "";
+
+      // Disable the capture button
+      document.getElementById("capture-button").disabled = true;
+    }
+  </script>
+</body>
+
+</html>
