@@ -1,4 +1,4 @@
-const URL = "/2054/assets/capture/model3/";
+const URL = "./assets/capture/model3/";
 let model, labelContainer, modelLoaded = false;
 
 // Load the model
