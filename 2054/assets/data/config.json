@@ -12,6 +12,7 @@
   "language": "English",
   "email": "marc.miller@stockvale.co.uk",
   "phone": "+44 1234 567890",
+  "version": "Test",
   "theme": {
     "logoPath": "assets/images/site-logo.png",
     "backgroundColor": "#9ce2fc",
