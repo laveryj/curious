@@ -1,5 +1,5 @@
 // Fetch the version number from version.json and display it in the footer
-fetch('../assets/data/version.json')
+fetch('../assets/data/config.json')
   .then(response => {
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
