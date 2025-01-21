@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const downloadQrButton = document.getElementById("download-qr");
     const viewAllSpeciesButton = document.getElementById("view-all-species");
     const viewAnalyticsButton = document.getElementById("view-analytics");
+    const viewIDDemoButton = document.getElementById("test-capture");
     const logoutButton = document.getElementById("logout-button");
 
     // Load site information from config.json
@@ -172,6 +173,13 @@ document.addEventListener("DOMContentLoaded", () => {
             window.location.href = "./all-species.html";
         });
     }
+
+    // Open species list page
+    if (viewIDDemoButton) {
+      viewIDDemoButton.addEventListener("click", () => {
+          window.location.href = "./capture.html";
+      });
+  }
 
         // // Open analytics page
         // if (viewAnalyticsButton) {
