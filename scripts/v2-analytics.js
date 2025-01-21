@@ -1,6 +1,11 @@
 async function fetchAndDisplayCSV() {
     const pathSegments = window.location.pathname.split("/");
-    const siteId = /^\d{4}$/.test(pathSegments[1]) ? pathSegments[1] : "2054"; // Extract or fallback to testSiteId
+    const siteId = /^\d{4}$/.test(pathSegments[1]) ? pathSegments[1] : null;
+
+    if (!siteId) {
+        console.error("Site ID is missing or invalid in the URL path.");
+        return; // Exit early if the site ID is not valid
+    }
 
     console.log("Extracted siteId:", siteId);
 
@@ -27,7 +32,7 @@ async function fetchAndDisplayCSV() {
 
         const metrics = calculateMetrics(rows, exhibitLookup, siteId)
             .filter((row) => row.exhibitName !== "Unknown Exhibit"); // Filter out unknown exhibits
-        
+
         console.log("Filtered Metrics:", metrics);
 
         const totalViews = metrics.reduce((sum, row) => sum + row.totalViews, 0);
@@ -85,7 +90,7 @@ function calculateMetrics(data, exhibitLookup, siteId) {
         const queryString = row["Landing page + query string"];
         console.log("Processing row:", queryString);
 
-        if (!queryString.includes(`/${siteId}/`)) {
+        if (!queryString.includes(`/2000/`)) {
             console.log("Skipping row:", queryString);
             return;
         }
@@ -254,8 +259,8 @@ function renderDashboard(metrics) {
     tbody.innerHTML = metrics
         .map((row) => {
             const page = row.speciesName
-                ? `${row.speciesName}${row.animalName ? ` - ${row.animalName}` : ""}`
-                : "Unknown";
+                ? `${row.animalName || row.speciesName || "Unknown"}`
+                : "";
             return `
             <tr>
                 <td>${row.exhibitName || ""}</td>
