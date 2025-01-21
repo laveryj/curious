@@ -3,282 +3,171 @@ const fs = require("fs").promises;
 const https = require("follow-redirects").https;
 const path = require("path");
 
-// ORIGINAL CODE
-
-// (async () => {
-//   const configPath = path.resolve(__dirname, "../2000/assets/data/config.json");
-//   let config;
-
-//   try {
-//     const configContent = await fs.readFile(configPath, "utf-8");
-//     config = JSON.parse(configContent);
-//   } catch (error) {
-//     console.error("Failed to load config.json:", error.message);
-//     return;
-//   }
-
-//   const sheetUrl = config.databaseid; // Ensure this is the correct key from your config for the Google Sheet URL
-//   if (!sheetUrl) {
-//     console.error("No database ID found in config.json.");
-//     return;
-//   }
-
-//   console.log("Fetching data from Google Sheets database...");
-
-//   let uniqueIdCounter = 0; // Counter to generate unique IDs
-
-//   https.get(sheetUrl, (response) => {
-//     if (response.statusCode !== 200) {
-//       console.error(`Failed to fetch data. Status Code: ${response.statusCode}`);
-//       response.resume();
-//       return;
-//     }
-
-//     let csvData = "";
-
-//     response.on("data", (chunk) => {
-//       csvData += chunk;
-//     });
-
-//     response.on("end", async () => {
-//       if (!csvData) {
-//         console.error("No CSV data received from Google Sheets.");
-//         return;
-//       }
-
-//       console.log("Google Sheets CSV data fetched successfully. Parsing data...");
-
-//       Papa.parse(csvData, {
-//         header: true,
-//         skipEmptyLines: true,
-//         complete: async (results) => {
-//           if (!results.data || results.data.length === 0) {
-//             console.error("No valid data found in the Google Sheets CSV.");
-//             return;
-//           }
-
-//           console.log("Google Sheets CSV parsed successfully. Processing data...");
-
-//           const exhibits = [];
-//           const currentDate = new Date().toISOString();
-
-//           results.data.forEach((row) => {
-//             let exhibit = exhibits.find(e => e.exhibitID === row["Exhibit ID"]);
-//             if (!exhibit) {
-//               exhibit = {
-//                 exhibitID: row["Exhibit ID"],
-//                 exhibitName: row["Exhibit Name"],
-//                 exhibitMode: row["Exhibit Mode"],
-//                 exhibitStatus: row["Exhibit Status"],
-//                 objects: []
-//               };
-//               exhibits.push(exhibit);
-//             }
-
-//             const longDescription = row["Description"] || "";
-//             const shortDescription = row["Short Description"]?.trim() || // Use the Short Description if available
-//               (longDescription.length > 100
-//                 ? longDescription.slice(0, 100) + "..."
-//                 : longDescription + (longDescription ? "..." : ""));
-
-//             exhibit.objects.push({
-//               hidden: row["Object Hidden"] || "FALSE",
-//               objectID: row["Object ID"] || `OID${++uniqueIdCounter}`, // Generate unique ID if missing
-//               objectType: row["Object Type"] || "",
-//               nickname: row["Nickname"] || "",
-//               commonName: row["Common Name"] || "Unknown",
-//               scientificName: row["Scientific Name"] || "",
-//               shortDescription: shortDescription, // Prioritise sheet Short Description
-//               longDescription: longDescription,
-//               age: row["Age"] || "",
-//               size: row["Size"] || "",
-//               weight: row["Weight"] || "",
-//               personalityProfile: row["Personality Profile"] || "",
-//               funFact: row["Fun Fact"] || "",
-//               conservationStatus: row["Conservation Status"] || "Unknown",
-//               conservationInfo: row["Conservation Info"] || "",
-//               primaryURL: row["Primary URL"] || "",
-//               primaryURLlabel: row["Primary URL Label"] || "",
-//               secondaryURL: row["Secondary URL"] || "",
-//               secondaryURLlabel: row["Secondary URL Label"] || "",
-//               ImageURL: row["Image URL"] || "",
-//               AudioURL: row["Audio URL"] || "",
-//               VideoURL: row["Video URL"] || ""
-//             });
-//           });
-
-//           const outputFolder = path.resolve(__dirname, "../2000/assets/data");
-//           await fs.mkdir(outputFolder, { recursive: true });
-//           const filePath = path.join(outputFolder, "data.json");
-
-//           try {
-//             const dataToWrite = JSON.stringify({ dateCreated: currentDate, exhibits }, null, 2);
-//             await fs.writeFile(filePath, dataToWrite);
-//             console.log(`Exhibits data written successfully to ${filePath}`);
-//           } catch (error) {
-//             console.error(`Failed to write data to ${filePath}:`, error);
-//           }
-//         },
-//         error: (error) => {
-//           console.error("Error parsing CSV:", error.message);
-//         }
-//       });
-//     });
-//   }).on("error", (error) => {
-//     console.error("Error fetching CSV:", error.message);
-//   });
-// })();
-
-
-// WITH ADDED FILTERING TO ENSURE SAME SPECIES RECEIVE SAME OID
 (async () => {
-  const configPath = path.resolve(__dirname, "../2054/assets/data/config.json");
-  let config;
+    const basePath = path.resolve(__dirname, ".."); // Base directory containing site directories
+    const logFilePath = path.join(basePath, "update_log.txt"); // Log file
 
-  try {
-    const configContent = await fs.readFile(configPath, "utf-8");
-    config = JSON.parse(configContent);
-  } catch (error) {
-    console.error("Failed to load config.json:", error.message);
-    return;
-  }
-
-  const sheetUrl = config.databaseid;
-  if (!sheetUrl) {
-    console.error("No database ID found in config.json.");
-    return;
-  }
-
-  console.log("Fetching data from Google Sheets database...");
-
-  let uniqueIdCounter = 0; // Counter to generate unique IDs for base IDs
-  const idMap = {}; // Map to store base IDs for scientific names
-  const speciesCounters = {}; // Map to store unique letter suffixes for animals in each species
-
-  https.get(sheetUrl, (response) => {
-    if (response.statusCode !== 200) {
-      console.error(`Failed to fetch data. Status Code: ${response.statusCode}`);
-      response.resume();
-      return;
+    async function logMessage(message) {
+        console.log(message);
+        await fs.appendFile(logFilePath, message + "\n", "utf-8");
     }
 
-    let csvData = "";
+    try {
+        const directories = await fs.readdir(basePath, { withFileTypes: true });
+        const siteDirs = directories.filter(dir => dir.isDirectory() && /^\d{4}$/.test(dir.name));
 
-    response.on("data", (chunk) => {
-      csvData += chunk;
-    });
-
-    response.on("end", async () => {
-      if (!csvData) {
-        console.error("No CSV data received from Google Sheets.");
-        return;
-      }
-
-      console.log("Google Sheets CSV data fetched successfully. Parsing data...");
-
-      Papa.parse(csvData, {
-        header: true,
-        skipEmptyLines: true,
-        complete: async (results) => {
-          if (!results.data || results.data.length === 0) {
-            console.error("No valid data found in the Google Sheets CSV.");
+        if (siteDirs.length === 0) {
+            await logMessage("No valid site directories found.");
             return;
-          }
+        }
 
-          console.log("Google Sheets CSV parsed successfully. Processing data...");
+        for (const dir of siteDirs) {
+            const siteId = dir.name;
+            const configPath = path.join(basePath, siteId, "assets/data/config.json");
+            const outputPath = path.join(basePath, siteId, "assets/data/data.json");
 
-          const exhibits = [];
-          const currentDate = new Date().toISOString();
+            try {
+                const configContent = await fs.readFile(configPath, "utf-8");
+                const config = JSON.parse(configContent);
 
-          results.data.forEach((row) => {
+                if (!config.databaseid) {
+                    await logMessage(`Site ${siteId}: Missing 'databaseid' in config.json.`);
+                    continue;
+                }
+
+                await logMessage(`Site ${siteId}: Fetching data from Google Sheets...`);
+
+                const csvData = await fetchCSV(config.databaseid);
+                if (!csvData) {
+                    await logMessage(`Site ${siteId}: Failed to fetch or parse Google Sheets data.`);
+                    continue;
+                }
+
+                const exhibits = processCSVData(csvData);
+                if (!exhibits) {
+                    await logMessage(`Site ${siteId}: Error processing CSV data.`);
+                    continue;
+                }
+
+                const currentDate = new Date().toISOString();
+                const dataToWrite = JSON.stringify({ dateCreated: currentDate, exhibits }, null, 2);
+
+                await fs.mkdir(path.dirname(outputPath), { recursive: true });
+                await fs.writeFile(outputPath, dataToWrite);
+
+                await logMessage(`Site ${siteId}: data.json updated successfully.`);
+
+            } catch (error) {
+                await logMessage(`Site ${siteId}: Error processing site - ${error.message}`);
+                continue;
+            }
+        }
+
+        await logMessage("Update process completed.");
+
+    } catch (error) {
+        console.error("Critical error:", error.message);
+        await logMessage(`Critical error: ${error.message}`);
+    }
+
+    async function fetchCSV(sheetUrl) {
+        return new Promise((resolve, reject) => {
+            let csvData = "";
+
+            https.get(sheetUrl, (response) => {
+                if (response.statusCode !== 200) {
+                    return reject(new Error(`HTTP status ${response.statusCode}`));
+                }
+
+                response.on("data", (chunk) => {
+                    csvData += chunk;
+                });
+
+                response.on("end", () => {
+                    resolve(csvData);
+                });
+            }).on("error", (error) => {
+                reject(error);
+            });
+        });
+    }
+
+    function processCSVData(csvText) {
+        const { data, errors } = Papa.parse(csvText, { header: true, skipEmptyLines: true });
+        if (errors.length) {
+            console.error("CSV Parsing errors:", errors);
+            return null;
+        }
+
+        const exhibits = [];
+        const idMap = {};
+        const speciesCounters = {};
+
+        data.forEach(row => {
             let exhibit = exhibits.find(e => e.exhibitID === row["Exhibit ID"]);
             if (!exhibit) {
-              exhibit = {
-                exhibitID: row["Exhibit ID"],
-                exhibitName: row["Exhibit Name"],
-                exhibitMode: row["Exhibit Mode"],
-                exhibitStatus: row["Exhibit Status"],
-                objects: []
-              };
-              exhibits.push(exhibit);
+                exhibit = {
+                    exhibitID: row["Exhibit ID"],
+                    exhibitName: row["Exhibit Name"],
+                    exhibitMode: row["Exhibit Mode"],
+                    exhibitStatus: row["Exhibit Status"],
+                    objects: []
+                };
+                exhibits.push(exhibit);
             }
 
             const longDescription = row["Description"] || "";
             const shortDescription = row["Short Description"]?.trim() ||
-              (longDescription.length > 100
-                ? longDescription.slice(0, 100) + "..."
-                : longDescription + (longDescription ? "..." : ""));
+                (longDescription.length > 100
+                    ? longDescription.slice(0, 80) + "..."
+                    : longDescription + (longDescription ? "..." : ""));
 
-            const scientificName = row["Scientific Name"] || "Unknown Species";
-            const objectType = row["Object Type"] || "";
+            const scientificName = row["Scientific Name"] || "";
             let baseID;
 
-            // Assign or retrieve the base ID for the species
             if (idMap[scientificName]) {
-              baseID = idMap[scientificName];
+                baseID = idMap[scientificName];
             } else {
-              // baseID = `OID${++uniqueIdCounter}`;
-              baseID = `${++uniqueIdCounter}`;
-              idMap[scientificName] = baseID;
-              speciesCounters[scientificName] = 0; // Initialise letter counter for this species
+                baseID = `${Object.keys(idMap).length + 1}`;
+                idMap[scientificName] = baseID;
+                speciesCounters[scientificName] = 0;
             }
 
             let objectID;
-
-            if (objectType.toLowerCase() === "animal") {
-              // Generate a unique letter suffix for animals
-              const suffixLetter = String.fromCharCode(65 + (speciesCounters[scientificName] || 0)); // A, B, C, ...
-              objectID = `${baseID}${suffixLetter}`;
-              speciesCounters[scientificName] = (speciesCounters[scientificName] || 0) + 1;
+            if ((row["Object Type"] || "").toLowerCase() === "animal") {
+                const suffixLetter = String.fromCharCode(65 + speciesCounters[scientificName]);
+                objectID = `${baseID}${suffixLetter}`;
+                speciesCounters[scientificName] += 1;
             } else {
-              // Use the base ID for non-animal objects
-              objectID = baseID;
+                objectID = baseID;
             }
 
             exhibit.objects.push({
-              hidden: row["Object Hidden"] || "FALSE",
-              objectID: objectID,
-              objectType: objectType,
-              nickname: row["Nickname"] || "",
-              commonName: row["Common Name"] || "Unknown",
-              scientificName: scientificName,
-              shortDescription: shortDescription,
-              longDescription: longDescription,
-              age: row["Age"] || "",
-              size: row["Size"] || "",
-              weight: row["Weight"] || "",
-              personalityProfile: row["Personality Profile"] || "",
-              funFact: row["Fun Fact"] || "",
-              conservationStatus: row["Conservation Status"] || "Unknown",
-              conservationInfo: row["Conservation Info"] || "",
-              primaryURL: row["Primary URL"] || "",
-              primaryURLlabel: row["Primary URL Label"] || "",
-              secondaryURL: row["Secondary URL"] || "",
-              secondaryURLlabel: row["Secondary URL Label"] || "",
-              ImageURL: row["Image URL"] || "",
-              AudioURL: row["Audio URL"] || "",
-              VideoURL: row["Video URL"] || ""
+                hidden: row["Object Hidden"] || "FALSE",
+                objectID,
+                objectType: row["Object Type"] || "",
+                nickname: row["Nickname"] || "",
+                commonName: row["Common Name"] || "Unknown Object",
+                scientificName,
+                shortDescription,
+                longDescription,
+                age: row["Age"] || "",
+                size: row["Size"] || "",
+                weight: row["Weight"] || "",
+                personalityProfile: row["Personality Profile"] || "",
+                funFact: row["Fun Fact"] || "",
+                conservationStatus: row["Conservation Status"] || "Unknown",
+                conservationInfo: row["Conservation Info"] || "",
+                primaryURL: row["Primary URL"] || "",
+                primaryURLlabel: row["Primary URL Label"] || "",
+                secondaryURL: row["Secondary URL"] || "",
+                secondaryURLlabel: row["Secondary URL Label"] || "",
+                ImageURL: row["Image URL"] || "",
+                AudioURL: row["Audio URL"] || "",
+                VideoURL: row["Video URL"] || ""
             });
-          });
+        });
 
-          const outputFolder = path.resolve(__dirname, "../2054/assets/data");
-          await fs.mkdir(outputFolder, { recursive: true });
-          const filePath = path.join(outputFolder, "data.json");
-
-          try {
-            const dataToWrite = JSON.stringify({ dateCreated: currentDate, exhibits }, null, 2);
-            await fs.writeFile(filePath, dataToWrite);
-            console.log(`Exhibits data written successfully to ${filePath}`);
-          } catch (error) {
-            console.error(`Failed to write data to ${filePath}:`, error);
-          }
-        },
-        error: (error) => {
-          console.error("Error parsing CSV:", error.message);
-        }
-      });
-    });
-  }).on("error", (error) => {
-    console.error("Error fetching CSV:", error.message);
-  });
+        return exhibits;
+    }
 })();
