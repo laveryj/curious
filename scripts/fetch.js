@@ -252,7 +252,7 @@ content.appendChild(details);
 
 
   // Add external links
-  if (species.externalURL) {
+  if (species.URL) {
     const learnMoreButton = document.createElement("a");
     learnMoreButton.href = species.externalURL;
     learnMoreButton.textContent = "Learn More";
