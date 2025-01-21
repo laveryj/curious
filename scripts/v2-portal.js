@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     const configUrl = "./assets/data/config.json"; // Path to the config.json file
+    const versionURL = "../assets/data/version.json"; // Path to the data.json file
     const dataUrl = "./assets/data/data.json"; // Path to the data.json file
     const exhibitSelect = document.getElementById("exhibit-select");
     const generateQrButton = document.getElementById("generate-qr");
@@ -12,58 +13,75 @@ document.addEventListener("DOMContentLoaded", () => {
     const logoutButton = document.getElementById("logout-button");
 
     // Load site information from config.json
-    fetch(configUrl)
+fetch(configUrl)
+.then((response) => {
+    if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    return response.json();
+})
+.then((config) => {
+    // Fetch version.json after loading config
+    fetch(versionURL)
         .then((response) => {
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
             return response.json();
         })
-        .then((config) => {
+        .then((versionData) => {
+            // Add version to config and populate site info
+            config.version = versionData.version;
             populateSiteInfo(config);
         })
         .catch((error) => {
-            console.error("Error loading site information:", error);
+            console.error("Error loading version information:", error);
+            populateSiteInfo(config); // Populate without version if it fails
         });
+})
+.catch((error) => {
+    console.error("Error loading site information:", error);
+});
 
-    // Load exhibit data from data.json
-    fetch(dataUrl)
-        .then((response) => {
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
-            }
-            return response.json();
-        })
-        .then((data) => {
-            populateExhibitTable(data.exhibits);
-            populateExhibitDropdown(data.exhibits);
-        })
-        .catch((error) => {
-            console.error("Error loading exhibit data:", error);
-        });
-
-    // Populate site info section
-    function populateSiteInfo(config) {
-        const siteInfoContent = document.getElementById("site-info-content");
-        if (siteInfoContent) {
-            siteInfoContent.innerHTML = `
-                <table>
-                    <tr><td><strong>Site ID:</strong></td><td>${config.siteid}</td></tr>
-                    <tr><td><strong>Site Name:</strong></td><td>${config.siteName}</td></tr>
-                    <tr><td><strong>Company:</strong></td><td>${config.company}</td></tr>
-                    <tr><td><strong>Subscription:</strong></td><td>${config.subscription} </td></tr>
-                    <tr><td><strong>Address:</strong></td><td>${config.address || ""}</td></tr>
-                    <tr><td><strong>Contact:</strong></td><td>${config.contact || ""}</td></tr>
-                    <tr><td><strong>Email:</strong></td><td>${config.email}</td></tr>
-                    <tr><td><strong>Phone:</strong></td><td>${config.phone}</td></tr>
-                    <tr><td><strong>Language:</strong></td><td>${config.language}</td></tr>
-                </table>
-            `;
-        } else {
-            console.error("Site Info section not found in the document.");
-        }
+// Load exhibit data from data.json
+fetch(dataUrl)
+.then((response) => {
+    if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
     }
+    return response.json();
+})
+.then((data) => {
+    populateExhibitTable(data.exhibits);
+    populateExhibitDropdown(data.exhibits);
+})
+.catch((error) => {
+    console.error("Error loading exhibit data:", error);
+});
 
+// Populate site info section
+function populateSiteInfo(config) {
+const siteInfoContent = document.getElementById("site-info-content");
+if (siteInfoContent) {
+    siteInfoContent.innerHTML = `
+        <table>
+            <tr><td><strong>Site ID:</strong></td><td>${config.siteid}</td></tr>
+            <tr><td><strong>Site Name:</strong></td><td>${config.siteName}</td></tr>
+            <tr><td><strong>Address:</strong></td><td>${config.address || ""}</td></tr>
+            <tr><td><strong>Contact:</strong></td><td>${config.contact || ""}</td></tr>
+            <tr><td><strong>Company:</strong></td><td>${config.company}</td></tr>
+            <tr><td><strong>Email:</strong></td><td>${config.email}</td></tr>
+            <tr><td><strong>Phone:</strong></td><td>${config.phone}</td></tr>
+            <tr><td><strong>Language:</strong></td><td>${config.language}</td></tr>
+            <tr><td><strong>Subscription:</strong></td><td>${config.subscription}</td></tr>
+            <tr><td><strong>Version:</strong></td><td>Curious ${config.version || "Not available"}</td></tr>
+        </table>
+    `;
+} else {
+    console.error("Site Info section not found in the document.");
+}
+}
+    
     // Populate exhibits table
     function populateExhibitTable(exhibits) {
         const tableBody = document.getElementById("exhibits-table-body");
