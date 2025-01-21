@@ -1,5 +1,5 @@
 {
-  "dateCreated": "2025-01-21T12:44:23.472Z",
+  "dateCreated": "2025-01-21T12:51:01.011Z",
   "exhibits": [
     {
       "exhibitID": "C1",
@@ -300,30 +300,6 @@
           "secondaryURL": "",
           "secondaryURLlabel": "",
           "ImageURL": "https://www.habitas.org.uk/marinelife/pisces/pleplas.jpg",
-          "AudioURL": "",
-          "VideoURL": ""
-        },
-        {
-          "hidden": "FALSE",
-          "objectID": "147A",
-          "objectType": "Animal",
-          "nickname": "Salmon",
-          "commonName": "Salmon Pink Tarantula",
-          "scientificName": "Lasiodora parahybana",
-          "shortDescription": "One of the largest species of tarantula native to Brazil, specifically the Amazon rainforest.",
-          "longDescription": "This species is known for its impressive size, with leg spans reaching up to 28 cm (11 inches), making it one of the largest tarantulas in the world. The Brazilian Salmon Pink Birdeater has a characteristic dark brown or black body with bright pink or orange hairs on its legs and abdomen, giving it a striking appearance. Despite its intimidating size, this species is typically docile and slow-moving but can be defensive if threatened.",
-          "age": "",
-          "size": "",
-          "weight": "",
-          "personalityProfile": "Test",
-          "funFact": "Despite its name, the Brazilian Salmon Pink Birdeater doesn't actually eat birds in the wild. The \"birdeater\" part of its name comes from early reports, but in reality, these tarantulas primarily feed on insects, small reptiles, and amphibians. They are also known for their impressive ability to flick urticating hairs from their abdomen as a defense mechanism if they feel threatened.",
-          "conservationStatus": "Not Evaluated",
-          "conservationInfo": "",
-          "primaryURL": "",
-          "primaryURLlabel": "",
-          "secondaryURL": "",
-          "secondaryURLlabel": "",
-          "ImageURL": "/2000/assets/images/C2/Salmonella.jpg",
           "AudioURL": "",
           "VideoURL": ""
         }
@@ -5538,7 +5514,7 @@
       ]
     },
     {
-      "exhibitID": "C6",
+      "exhibitID": "TH14",
       "exhibitName": "Royals",
       "exhibitMode": "standard",
       "exhibitStatus": "active",
@@ -5566,7 +5542,15 @@
           "ImageURL": "/2000/assets/images/C6/Victoria.jpg",
           "AudioURL": "",
           "VideoURL": ""
-        },
+        }
+      ]
+    },
+    {
+      "exhibitID": "TH11",
+      "exhibitName": "Royals",
+      "exhibitMode": "standard",
+      "exhibitStatus": "active",
+      "objects": [
         {
           "hidden": "FALSE",
           "objectID": "146B",
@@ -5594,7 +5578,39 @@
       ]
     },
     {
-      "exhibitID": "C8",
+      "exhibitID": "TH12",
+      "exhibitName": "Spider",
+      "exhibitMode": "standard",
+      "exhibitStatus": "active",
+      "objects": [
+        {
+          "hidden": "FALSE",
+          "objectID": "147A",
+          "objectType": "Animal",
+          "nickname": "Salmon",
+          "commonName": "Salmon Pink Tarantula",
+          "scientificName": "Lasiodora parahybana",
+          "shortDescription": "One of the largest species of tarantula native to Brazil, specifically the Amazon rainforest.",
+          "longDescription": "This species is known for its impressive size, with leg spans reaching up to 28 cm (11 inches), making it one of the largest tarantulas in the world. The Brazilian Salmon Pink Birdeater has a characteristic dark brown or black body with bright pink or orange hairs on its legs and abdomen, giving it a striking appearance. Despite its intimidating size, this species is typically docile and slow-moving but can be defensive if threatened.",
+          "age": "",
+          "size": "",
+          "weight": "",
+          "personalityProfile": "Test",
+          "funFact": "Despite its name, the Brazilian Salmon Pink Birdeater doesn't actually eat birds in the wild. The \"birdeater\" part of its name comes from early reports, but in reality, these tarantulas primarily feed on insects, small reptiles, and amphibians. They are also known for their impressive ability to flick urticating hairs from their abdomen as a defense mechanism if they feel threatened.",
+          "conservationStatus": "Not Evaluated",
+          "conservationInfo": "",
+          "primaryURL": "",
+          "primaryURLlabel": "",
+          "secondaryURL": "",
+          "secondaryURLlabel": "",
+          "ImageURL": "/2000/assets/images/C2/Salmonella.jpg",
+          "AudioURL": "",
+          "VideoURL": ""
+        }
+      ]
+    },
+    {
+      "exhibitID": "TH13",
       "exhibitName": "Day Gecko",
       "exhibitMode": "standard",
       "exhibitStatus": "active",
