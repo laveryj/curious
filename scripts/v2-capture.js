@@ -48,7 +48,7 @@ async function processImage(event) {
             let hasHighConfidencePrediction = false;
 
             predictions.forEach((result) => {
-                if (result.probability > 0.98) {
+                if (result.probability > 0.95) {
                     hasHighConfidencePrediction = true;
 
                     const div = document.createElement("div");
