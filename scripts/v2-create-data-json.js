@@ -132,7 +132,7 @@ const path = require("path");
 
 // WITH ADDED FILTERING TO ENSURE SAME SPECIES RECEIVE SAME OID
 (async () => {
-  const configPath = path.resolve(__dirname, "../2000/assets/data/config.json");
+  const configPath = path.resolve(__dirname, "../2054/assets/data/config.json");
   let config;
 
   try {
@@ -261,7 +261,7 @@ const path = require("path");
             });
           });
 
-          const outputFolder = path.resolve(__dirname, "../2000/assets/data");
+          const outputFolder = path.resolve(__dirname, "../2054/assets/data");
           await fs.mkdir(outputFolder, { recursive: true });
           const filePath = path.join(outputFolder, "data.json");
 
