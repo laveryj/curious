@@ -1,0 +1,28 @@
+{
+  "siteName": "Leamington Spa Art Gallery and Museum",
+  "siteid": "3000",
+  "databaseid": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQN7Vc3sLFfDaVF-7eRmR9Z_mvAiLwcB6K5slycdF2rajSNMMIRDo9mkvk4SNr7RFckWuTUD_2X2Khy/pub?output=csv",
+  "status": "Active",
+  "company": "Warwick District Council",
+  "address": "Royal Pump Rooms, The Parade. Leamington Spa, CV32 4AA",
+  "contact": "TBC",
+  "tier": "Free",
+  "user": "",
+  "password": "",
+  "language": "English",
+  "email": "TBC",
+  "phone": "+TBC",
+  "theme": {
+    "logoPath": "assets/images/site-logo.jpeg",
+    "backgroundColor": "#ffffff",
+    "headerColor": "#2e3884",
+    "cardColor": "#efefef",
+    "textColor": "#2e3884",
+    "buttonTextColor": "#ffffff",
+    "linkColor": "#2e3884"
+  },
+  "talkTimes": [
+  ],
+  "experiences": [
+  ]
+}
