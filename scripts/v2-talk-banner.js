@@ -43,18 +43,18 @@ function showBanner(message) {
     banner.appendChild(messageSpan);
 
     // Add a close button to the banner
-    const closeButton = document.createElement('button');
-    closeButton.textContent = '×';
-    closeButton.style.fontSize = '16px';
-    closeButton.style.color = '#000000';
-    closeButton.style.background = 'none';
-    closeButton.style.border = 'none';
-    closeButton.style.cursor = 'pointer';
-    closeButton.style.padding = '0 10px';
-    closeButton.style.margin = '0';
-    closeButton.style.fontWeight = 'bold';
-    closeButton.addEventListener('click', () => banner.remove());
-    banner.appendChild(closeButton);
+    // const closeButton = document.createElement('button');
+    // closeButton.textContent = '×';
+    // closeButton.style.fontSize = '16px';
+    // closeButton.style.color = '#000000';
+    // closeButton.style.background = 'none';
+    // closeButton.style.border = 'none';
+    // closeButton.style.cursor = 'pointer';
+    // closeButton.style.padding = '0 10px';
+    // closeButton.style.margin = '0';
+    // closeButton.style.fontWeight = 'bold';
+    // closeButton.addEventListener('click', () => banner.remove());
+    // banner.appendChild(closeButton);
 
     // Append the banner to the body
     document.body.appendChild(banner);
