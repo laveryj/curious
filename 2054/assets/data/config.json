@@ -1,17 +1,17 @@
 {
-  "siteName": "Sealife Adventure",
-  "siteid": "2054",
-  "databaseid": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQN7Vc3sLFfDaVF-7eRmR9Z_mvAiLwcB6K5slycdF2rajSNMMIRDo9mkvk4SNr7RFckWuTUD_2X2Khy/pub?output=csv",
+  "siteName": "Test Site",
+  "siteid": "2000",
+  "databaseid": "https://docs.google.com/spreadsheets/d/1cCSNg47mUUk1Y7g-azx4dqI3dAN7Q7VFF1i9NNdcO-Y/export?format=csv",
   "status": "Active",
-  "company": "Miller Leisure Ltd",
-  "address": "Eastern Esplanade, Southend-on-Sea, SS1 2ER",
-  "contact": "Marc Miller",
-  "tier": "Free",
-  "user": "sealife.displays",
-  "password": "Dragon123",
-  "language": "English",
-  "email": "marc.miller@stockvale.co.uk",
-  "phone": "+44 1234 567890",
+  "company": "",
+  "address": "",
+  "contact": "",
+  "subscription": "Monetise",
+  "user": "",
+  "password": "",
+  "language": "",
+  "email": "",
+  "phone": "",
   "theme": {
     "logoPath": "assets/images/site-logo.png",
     "backgroundColor": "#9ce2fc",
@@ -21,14 +21,19 @@
     "buttonTextColor": "#ffffff",
     "linkColor": "#18236e"
   },
-  "talkTimes": [
-    { "name": "Penguins", "time": "11:00" },
-    { "name": "Monkeys", "time": "13:30" },
-    { "name": "Piranhas", "time": "15:00" }
-  ],
+"talkTimes": [
+  { "name": "Penguin Feed", "time": "11:30", "days": ["Daily"] },
+  { "name": "Dino Tour", "time": "12:00", "days": ["Weekends"] },
+  { "name": "Macaque Talk", "time": "13:15", "days": ["Weekends"] },
+  { "name": "Meerkat Feed", "time": "13:30", "days": ["Daily"] },
+  { "name": "Clownfish Talk", "time": "14:15", "days": ["Weekends"] },
+  { "name": "Piranha Talk", "time": "14:30", "days": ["Weekends"] },
+  { "name": "Mongoose Feed", "time": "15:00", "days": ["Daily"] },
+  { "name": "Meerkat Feed", "time": "15:15", "days": ["Daily"] },
+  { "name": "Penguin Feed", "time": "15:30", "days": ["Daily"] }
+],
   "experiences": [
-    { "name": "Otter feed", "price": "£100.00" },
     { "name": "Penguin feed", "price": "£100.00", "link": "https://buy.myonlinebooking.co.uk/sealife/sessions.aspx?tid=94" },
-    { "name": "Meerkat experience", "price": "100.00", "link": "https://buy.myonlinebooking.co.uk/sealife/sessions.aspx?tid=88" }
+    { "name": "Meerkat feed", "price": "£100.00", "link": "https://buy.myonlinebooking.co.uk/sealife/sessions.aspx?tid=88" }
   ]
 }

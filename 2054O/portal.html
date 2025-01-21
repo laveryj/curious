@@ -8,22 +8,17 @@
 
   <!-- Import the fallback styles -->
   <link rel="stylesheet" href="style.css">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-
   <script src="/scripts/qrious.min.js"></script>
-  
-  <!-- <script src="/scripts/v2-fetch.js" defer></script> -->
+  <script src="/scripts/fetch.js" defer></script>
   <script src="/scripts/auth.js"></script>
-  <script src="/scripts/v2-portal.js"></script>
-  <!-- <script src="/scripts/v2-hidden.js"></script> -->
+  <script src="/scripts/portal.js"></script>
   
   <!-- Include the script to load the dynamic theme -->
-  <script src="/scripts/v2-config.js" defer></script>
-  <script src="/scripts/v2-version.js" defer></script>
+  <!-- <script src="assets/scripts/config.js" defer></script> -->
+  <script src="/scripts/config.js" defer></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
-  
 </head>
 
 <body class="hidden">
@@ -53,11 +48,6 @@
     </header>
 
     <main>
-
-      <div style="text-align: right; margin: 10px 0;">
-        <button id="logout-button">Log Out</button>
-      </div>    
-
       <section id="site-info">
         <h2>Site Information</h2>
         <div id="site-info-content">
@@ -94,14 +84,6 @@
         <br>
       </section>
   
-      <section id="analytics">
-        <h2>Analytics Dashboard</h2>
-        <button id="view-analytics">View Analytics</button>
-        <br>
-        <br>
-        <br>
-      </section>
-
       <section id="actions">
         <h2>System Update</h2>
         <p>Any changes to your exhibit information will be applied within 2 hours. If you need to force an update, for example to quickly fix an error, you can do that here.</p>
@@ -119,6 +101,7 @@
       <br>
       <p>Generate a QR code for a specific exhibit below:</p>
       <div>
+        <!-- <label for="exhibit-select">Select Exhibit:</label> -->
         <select id="exhibit-select">
           <option value="">-- Select an Exhibit --</option>
         </select>
@@ -131,15 +114,26 @@
     </section>
     </main>
 
-    <small id="footer-version"></small>
     <footer>
       <a href="/index.html">
         <img src="/assets/images/logo.png" alt="Curious Logo">
       </a>
-      <!-- <br>
-      <sub>Powered by Curious. All rights reserved.</sub> -->
+      <br>
+      <sub>Powered by Curious. All rights reserved.</sub>
     </footer>
+  
+    <!-- <footer>
+      <sub><i>Powered by</i></sub><br><br>
+      <a href="/about.html">
+        <img src="/assets/logo.png" alt="Site Logo">
+      </a>
+    </footer> -->
 
+    <!-- Reference to local QRious script -->
+    <!-- <script src="/scripts/qrious.min.js"></script>
+    <script src="/scripts/fetch.js" defer></script>
+    <script src="/scripts/auth.js"></script>
+    <script src="/scripts/portal.js"></script> -->
   </div>
 
 </body>

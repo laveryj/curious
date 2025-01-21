@@ -321,16 +321,14 @@ a {
 }
 
 .species-card img {
-  width: 150px; /* Set a fixed width for thumbnails */
-  height: 150px; /* Set a fixed height for thumbnails */
-  object-fit: cover; /* Ensures the image maintains its aspect ratio within the thumbnail */
-  border-radius: 8px; /* Optional: Slight rounding for a cleaner look */
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
 }
 
 .species-card h3 {
   font-size: 1em;
   margin-top: 10px;
-  margin-bottom: 10px;
   color: #333;
 }
 
@@ -379,8 +377,8 @@ a {
   margin: 15px 10px 0 0; /* Add margin between buttons */
   padding: 12px 20px;
   font-size: 16px;
-  background-color: #285eb8;
-  color: #ffffff !important; /* Ensure white text color */
+  background-color: #357edd;
+  color: white;
   text-decoration: none;
   border-radius: 8px;
   text-align: center;
@@ -632,11 +630,4 @@ a {
   .su-site-info-content td {
     padding: 8px; /* Adjust padding for smaller screens */
   }
-}
-
-.thumbnail {
-  width: 150px;
-  height: 150px;
-  object-fit: cover;
-  border-radius: 8px;
 }
