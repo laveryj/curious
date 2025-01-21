@@ -381,11 +381,26 @@ a {
   font-size: 16px;
   background-color: #285eb8;
   color: #ffffff !important; /* Ensure white text color */
-  text-decoration: none;
+  text-decoration: none; /* Remove underlines */
   border-radius: 8px;
   text-align: center;
   transition: background-color 0.3s ease;
   width: auto; /* Allow dynamic sizing on desktop */
+}
+
+/* Override link-specific styles */
+.action-button:link,
+.action-button:visited,
+.action-button:hover,
+.action-button:active {
+  color: #ffffff !important; /* Force white text for all link states */
+  text-decoration: none; /* Ensure no underline appears */
+}
+
+/* Active click effect */
+.action-button:active {
+  background-color: #163a70; /* Even darker blue */
+  transform: scale(0.98); /* Slightly shrink button on click */
 }
 
 .action-button:hover {
@@ -454,12 +469,6 @@ a {
   .species-details p {
     font-size: 14px; /* Reduce font size slightly for smaller screens */
     line-height: 1.6; /* Adjust line spacing */
-  }
-
-  .action-button {
-    width: 90%; /* Full-width buttons on mobile */
-    margin: 10px auto; /* Center-align and add spacing between buttons */
-    display: block;
   }
 }
 
