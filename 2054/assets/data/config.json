@@ -21,9 +21,6 @@
     "buttonTextColor": "#ffffff",
     "linkColor": "#18236e"
   },
-"description": "Welcome to Sealife Adventure in Southend-On-Sea, the UK’s premier Zooquarium!
-
-You can explore so much more here than in a regular aquarium. Here, you can journey around each of our ocean zones and immerse yourself in the wonders of life on planet Earth, experiencing everything from the mysteries of our oceans to the diverse beauty of our jungles and deserts. You’ll meet famous sea dwellers, discover weird and wonderful creatures of the deep, and get to know plenty of land-loving animals, too, including our cheeky monkeys, our curious meerkats and our waddling-wonderful Humboldt Penguins."
 "talkTimes": [
   { "name": "Penguin Feed", "time": "11:30", "days": ["Daily"] },
   { "name": "Dino Tour", "time": "12:00", "days": ["Weekends"] },
