@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     } catch (err) {
       console.error("Error accessing camera:", err);
-      alert("Failed to access the camera. Please check permissions or try a different browser.");
+      alert("Failed to access the camera. Please allow access.");
       popup.style.display = "none";
       if (qrIcon) {
         qrIcon.style.display = "block"; // Show the icon again if there's an error
