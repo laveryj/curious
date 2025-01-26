@@ -150,7 +150,6 @@ function handleExhibitView(data, exhibitId) {
   }
 }
 
-
 function handleSpeciesView(data, exhibitId, speciesId) {
   const exhibitData = data.exhibits.find((exhibit) => exhibit["exhibitID"] == exhibitId);
 
@@ -195,6 +194,17 @@ function renderExhibit(objects, exhibitId) {
     return;
   }
 
+  // Sort objects by priority first, then alphabetically by commonName
+  objects.sort((a, b) => {
+    const aPrioritise = a.prioritise === "TRUE"; // Convert to boolean
+    const bPrioritise = b.prioritise === "TRUE"; // Convert to boolean
+  
+    if (aPrioritise === bPrioritise) {
+      return a.commonName.localeCompare(b.commonName); // Alphabetical if prioritise is the same
+    }
+    return bPrioritise - aPrioritise; // Prioritise objects with prioritise: true
+  });
+
   // Render object cards
   objects.forEach((item) => {
     console.log("Object item:", item); // Debug each object item
@@ -222,18 +232,11 @@ function renderExhibit(objects, exhibitId) {
     content.appendChild(card);
   });
 
-  // // Add a message at the bottom
+  // Add a message at the bottom
   const bottomMessage = document.createElement("p");
   bottomMessage.classList.add("exhibit-message");
   bottomMessage.innerHTML = "<h4>Keep scanning to learn more!</h4>";
   content.appendChild(bottomMessage);
-
-  // Replace the "Keep scanning to learn more!" message with a "Scan QR Code" button
-// const scanButton = document.createElement("button");
-// scanButton.id = "start-scan"; // Ensure this matches your external JS
-// scanButton.classList.add("exhibit-message"); // Add styling class if needed
-// scanButton.textContent = "Keep scanning to learn more!";
-// content.appendChild(scanButton);
 
   // Reapply the theme to include newly created cards
   fetch("./assets/data/config.json")
