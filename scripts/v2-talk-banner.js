@@ -29,32 +29,29 @@ function showBanner(message) {
     banner.style.display = 'flex';
     banner.style.justifyContent = 'space-between';
     banner.style.alignItems = 'center';
-    banner.style.zIndex = '1000';
+    banner.style.zIndex = '100';
 
     // Adjust the banner position to sit below the header
     const header = document.querySelector('header');
-    const headerHeight = header ? header.offsetHeight : 0;
-    banner.style.top = `${headerHeight}px`;
+    const updateBannerPosition = () => {
+        const headerHeight = header ? header.offsetHeight : 0;
+        banner.style.top = `${headerHeight}px`;
+    };
+
+    // Update position initially
+    updateBannerPosition();
+
+    // Observe header resizing to adjust position dynamically
+    if (header) {
+        const resizeObserver = new ResizeObserver(updateBannerPosition);
+        resizeObserver.observe(header);
+    }
 
     // Add the message to the banner
     const messageSpan = document.createElement('span');
     messageSpan.textContent = message;
     messageSpan.style.flex = '1';
     banner.appendChild(messageSpan);
-
-    // Add a close button to the banner
-    // const closeButton = document.createElement('button');
-    // closeButton.textContent = '×';
-    // closeButton.style.fontSize = '16px';
-    // closeButton.style.color = '#000000';
-    // closeButton.style.background = 'none';
-    // closeButton.style.border = 'none';
-    // closeButton.style.cursor = 'pointer';
-    // closeButton.style.padding = '0 10px';
-    // closeButton.style.margin = '0';
-    // closeButton.style.fontWeight = 'bold';
-    // closeButton.addEventListener('click', () => banner.remove());
-    // banner.appendChild(closeButton);
 
     // Append the banner to the body
     document.body.appendChild(banner);
