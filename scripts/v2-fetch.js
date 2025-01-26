@@ -30,8 +30,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (!exhibitId) {
     console.log("No exhibit ID provided in the URL."); // Debug
-    // updateTitleAndContent("No Exhibit Selected", "Please scan an exhibit QR code to start.");
-    updateTitleAndContent("No Exhibit Selected", "");
+    // updateTitleAndContent("Exhibit Explorer", "Please scan an exhibit QR code to start.");
+    updateTitleAndContent("Scan a QR code to start", "");
     return;
   }
 
@@ -58,11 +58,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Function to pull in site name
 function updateSiteName(siteName) {
+  window.siteName = siteName; // Store globally
   const siteNameElement = document.getElementById("site-name");
   if (siteNameElement) {
     siteNameElement.textContent = `Welcome to ${siteName}`;
   }
-  document.title = siteName;
+
+  // Set the title based on the URL path
+  const path = window.location.pathname;
+  if (path.endsWith("get-started.html")) {
+    document.title = `${siteName} | Get Started`;
+  } else if (path.endsWith("index.html") || path === "/") {
+    document.title = `${siteName} | Scan to Start`;  
+  } else if (path.endsWith("all-species.html") || path === "/") {
+      document.title = `${siteName} | All Species`;
+  } else {
+    document.title = `${siteName}`; // Fallback for other pages
+  }
 }
 
 // Function to pull in title and content
@@ -82,6 +94,7 @@ function updateTitleAndContent(content) {
 function updateTitleAndContent(title, content = "") {
   // Update the page <title>
   document.title = title;
+  // document.title = `${siteName} | Scan a code to start`;
 
   // Update the <h1> element with ID #exhibit-title
   const titleElement = document.getElementById("exhibit-title");
@@ -113,17 +126,17 @@ function handleExhibitView(data, exhibitId) {
 
     switch (exhibitMode) {
       case "audio":
-        updateTitleAndContent(`Audio Guide`);
+        updateTitleAndContent(`Listen: ${exhibitData["exhibitName"]} | ${siteName}`);
         renderAudio(exhibitData);
         break;
 
       case "video":
-        updateTitleAndContent(`Watch: ${exhibitData["exhibitName"]}`);
+        updateTitleAndContent(`Watch: ${exhibitData["exhibitName"]} | ${siteName}`);
         renderVideo(exhibitData); // Call a function to render video content
         break;
 
       case "blog":
-        updateTitleAndContent(`Blog: ${exhibitData["exhibitName"]}`);
+        updateTitleAndContent(`Blog: ${exhibitData["exhibitName"]} | ${siteName}`);
         renderBlog(exhibitData); // Call a function to render blog content
         break;
 
@@ -284,7 +297,11 @@ if (species["personalityProfile"]) {
 }
 detailsHTML += `
   <p style="margin: 2px 0;"><br>${species["longDescription"] || "No description has been provided"}</p>
-  <p style="margin: 2px 0;"><br><b>Did you know?</b> ${species["funFact"] || "Not provided."}</p>
+`;
+if (species["funFact"]) {
+  detailsHTML += `  <p style="margin: 2px 0;"><br><b>Did you know?</b> ${species["funFact"] || "Not provided."}</p>`;
+}
+detailsHTML += `
   <p style="margin: 2px 0;"><br><b>Conservation Status:</b> ${species["conservationStatus"] || "Not Evaluated"}</p>
   <p style="margin: 2px 0;"><br>${species["conservationInfo"] || ""}<br><br></p>
 `;
