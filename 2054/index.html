@@ -18,7 +18,9 @@
   <script src="/scripts/v2-config.js" defer></script>
   <script src="/scripts/v2-fetch.js" defer></script>
   <script src="/scripts/v2-talk-banner.js" defer></script>
-  <script src="/scripts/v2-version.js" defer></script>
+  <script src="/scripts/v2-scanner.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jsqr/dist/jsQR.js"></script>
+
 </head>
 
 <body class="hidden" style="background-color: #f4f4f4;">
@@ -31,6 +33,17 @@
 
   <main>
     <br>
+
+    <div id="qr-icon" title="Scan Exhibit QR Code" aria-label="Scan Exhibit QR Code" role="button">
+      <img src="/assets/images/qr-icon.png" alt="QR Code Icon" />
+    </div>
+
+    <div id="camera-popup">
+      <button id="close-popup">Close</button>
+      <video id="camera-feed" autoplay></video>
+      <canvas id="canvas" style="display: none;"></canvas>
+    </div>
+
     <!-- Back button -->
     <div id="back-button-container" style="text-align: center; margin: 10px 0; display: none;">
       <button onclick="window.history.back()" class="back-button">← Back</button>
@@ -61,6 +74,7 @@
       <source id="audio-source" src="" type="audio/mpeg">
       Your browser does not support the audio element.
     </audio>
+
   </main>
 
   <footer>
