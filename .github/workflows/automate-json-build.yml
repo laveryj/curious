@@ -31,7 +31,7 @@ jobs:
     - name: Run JSON generation script
       env:
         OUTPUT_DIR: ${{ github.workspace }} # Set workspace for processing files
-      run: node scripts/v2-create-data.json.js
+      run: node scripts/v2-create-data-json.js
 
     - name: Debug generated files
       run: ls -R ${{ github.workspace }}
