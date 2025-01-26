@@ -1,0 +1,35 @@
+name: Save Commits to File
+
+on:
+  push:
+    branches:
+      - main  # Specify the branch you want this workflow to run on
+
+jobs:
+  save_commits:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Check out the repository
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # Step 2: Retrieve commit messages
+      - name: Get commit messages
+        run: |
+          git log --pretty=format:"%h %an: %s" > commits.txt
+
+      # Step 3: Move commits.txt to the /assets/ folder
+      - name: Move to assets folder
+        run: |
+          mkdir -p assets
+          mv commits.txt assets/
+
+      # Step 4: Commit and push the changes
+      - name: Commit and push changes
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          git add assets/commits.txt
+          git commit -m "Update commits.txt with latest commit messages"
+          git push
