@@ -472,4 +472,5 @@ document.addEventListener("DOMContentLoaded", () => {
         modal.remove();
       });
     }
+    
   });
