@@ -1,9 +1,60 @@
-document.addEventListener("DOMContentLoaded", () => {
+async function handleNotices(exhibitId) {
+  const noticesUrl = "./assets/data/notices.json"; // Path to notices.json
+  const dataUrl = "./assets/data/data.json"; // Path to exhibit data JSON
+
+  if (!exhibitId) {
+    console.warn("No Exhibit ID provided in the URL.");
+    return false;
+  }
+
+  try {
+    const dataResponse = await fetch(dataUrl);
+    if (!dataResponse.ok) {
+      throw new Error(`Failed to load exhibit data: ${dataResponse.status}`);
+    }
+    const exhibitData = await dataResponse.json();
+
+    const exhibit = exhibitData.exhibits.find((item) => item.exhibitID == exhibitId);
+    if (!exhibit) {
+      window.location.href = "./notice.html?notice=not-found";
+      return true;
+    }
+
+    const exhibitStatus = exhibit.exhibitStatus || "unknown";
+    if (exhibitStatus !== "active") {
+      const noticesResponse = await fetch(noticesUrl);
+      if (!noticesResponse.ok) {
+        throw new Error(`Failed to load notices.json: ${noticesResponse.status}`);
+      }
+      const notices = await noticesResponse.json();
+
+      if (notices[exhibitStatus]) {
+        window.location.href = `./notice.html?notice=${exhibitStatus}`;
+        return true;
+      } else {
+        window.location.href = "./notice.html?notice=general";
+        return true;
+      }
+    }
+  } catch (error) {
+    console.error("Error in handleNotices:", error);
+    window.location.href = "./notice.html?notice=error";
+    return true;
+  }
+
+  return false;
+}
+
+// Main content execution
+document.addEventListener("DOMContentLoaded", async () => {
   const urlParams = new URLSearchParams(window.location.search);
-  // const exhibitId = urlParams.get("exhibit-id");
-  const exhibitId = urlParams.get("EID");
-  // const speciesId = urlParams.get("species-id"); // Fixed species-id parameter
-  const speciesId = urlParams.get("OID"); // Fixed species-id parameter
+  const exhibitId = urlParams.get("EID"); // Retrieve Exhibit ID
+  const speciesId = urlParams.get("OID"); // Retrieve Species ID
+
+  // Call handleNotices and check if a redirection occurred
+  const redirected = await handleNotices(exhibitId);
+  if (redirected) return; // Stop further execution if redirected
+
   const dataUrl = "./assets/data/data.json";
   const configUrl = "./assets/data/config.json";
 
@@ -30,7 +81,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (!exhibitId) {
     console.log("No exhibit ID provided in the URL."); // Debug
-    // updateTitleAndContent("Exhibit Explorer", "Please scan an exhibit QR code to start.");
     updateTitleAndContent("Scan a QR code to start", "");
     return;
   }
