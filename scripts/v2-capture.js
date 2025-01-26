@@ -1,4 +1,4 @@
-const URL = "./assets/capture/model4/";
+const URL = "./assets/capture/model5/";
 const MATCH_THRESHOLD = 0.95; // Confidence threshold for matches
 let model, labelContainer, modelLoaded = false;
 
