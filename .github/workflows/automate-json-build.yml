@@ -6,8 +6,7 @@ on:
     paths:
       - scripts/data-json_builder.js # Run when the script changes
       - .github/workflows/generate-json.yml
-  schedule:
-    Run the workflow every 12 hours
+  schedule:          # Run the workflow every 12 hours
     - cron: "0 */12 * * *"
 
 jobs:
@@ -29,8 +28,6 @@ jobs:
       run: npm install papaparse follow-redirects
 
     - name: Run JSON generation script
-      env:
-        OUTPUT_DIR: ${{ github.workspace }} # Set workspace for processing files
       run: node scripts/v2-create-data-json.js
 
     - name: Debug generated files
