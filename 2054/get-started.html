@@ -14,12 +14,51 @@
   <!-- Fallback Styles -->
   <link rel="stylesheet" href="./assets/css/style.css">
 
+  <style>
+    #camera-popup {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      z-index: 1000;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #camera-feed {
+      max-width: 100%;
+      max-height: 100%;
+    }
+
+    #close-popup {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      z-index: 1001;
+    }
+
+    .center {
+    text-align: center; /* Centre align text inside */
+}
+  </style>
+
   <!-- Include the necessary scripts -->
   <script src="/scripts/config.js" defer></script>
   <script src="/scripts/fetch.js" defer></script>
   <script src="/scripts/v2-talk-banner.js" defer></script>
-  <script src="/scripts/v2-version.js" defer></script>
+  <!-- <script src="/scripts/v2-version.js" defer></script> -->
   <script src="/scripts/v2-talk-times.js" defer></script>
+  <script src="/scripts/v2-scanner.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jsqr/dist/jsQR.js"></script>
+
 </head>
 
 <body class="hidden" style="background-color: #f4f4f4;">
@@ -45,6 +84,18 @@
       There's no need to download any apps – our system works seamlessly with any modern smartphone. Enjoy your journey of discovery!
     </p>
     <br>
+
+    <div class="center">
+      <button id="start-scan">Scan Exhibit QR Code</button>
+      <div id="camera-popup">
+        <button id="close-popup">Close</button>
+        <video id="camera-feed" autoplay></video>
+        <canvas id="canvas" style="display: none;"></canvas>
+      </div>
+    </div>
+
+    <br>
+    
   <!-- Section for dynamically loaded talk times -->
   <section id="talk-times-card" class="advert-card">
     <h2>Talk Times</h2>
