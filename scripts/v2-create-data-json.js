@@ -144,6 +144,7 @@ const path = require("path");
 
             exhibit.objects.push({
                 hidden: row["Object Hidden"] || "FALSE",
+                prioritise: row["Prioritise Object"] || "FALSE",
                 objectID,
                 objectType: row["Object Type"] || "",
                 nickname: row["Nickname"] || "",
