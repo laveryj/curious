@@ -67,11 +67,11 @@ function updateSiteName(siteName) {
   // Set the title based on the URL path
   const path = window.location.pathname;
   if (path.endsWith("get-started.html")) {
-    document.title = `${siteName} | Get Started`;
+    document.title = `Get Started | ${siteName} `;
   } else if (path.endsWith("index.html") || path === "/") {
-    document.title = `${siteName} | Scan to Start`;  
+    document.title = `Scan to Start | ${siteName}`;  
   } else if (path.endsWith("all-species.html") || path === "/") {
-      document.title = `${siteName} | All Species`;
+      document.title = `All Species | ${siteName}`;
   } else {
     document.title = `${siteName}`; // Fallback for other pages
   }
