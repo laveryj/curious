@@ -30,7 +30,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (!exhibitId) {
     console.log("No exhibit ID provided in the URL."); // Debug
-    updateTitleAndContent("No Exhibit Selected", "Please scan an exhibit QR code to start.");
+    // updateTitleAndContent("No Exhibit Selected", "Please scan an exhibit QR code to start.");
+    updateTitleAndContent("No Exhibit Selected", "");
     return;
   }
 
@@ -208,11 +209,18 @@ function renderExhibit(objects, exhibitId) {
     content.appendChild(card);
   });
 
-  // Add a message at the bottom
+  // // Add a message at the bottom
   const bottomMessage = document.createElement("p");
   bottomMessage.classList.add("exhibit-message");
   bottomMessage.innerHTML = "<h4>Keep scanning to learn more!</h4>";
   content.appendChild(bottomMessage);
+
+  // Replace the "Keep scanning to learn more!" message with a "Scan QR Code" button
+// const scanButton = document.createElement("button");
+// scanButton.id = "start-scan"; // Ensure this matches your external JS
+// scanButton.classList.add("exhibit-message"); // Add styling class if needed
+// scanButton.textContent = "Keep scanning to learn more!";
+// content.appendChild(scanButton);
 
   // Reapply the theme to include newly created cards
   fetch("./assets/data/config.json")
