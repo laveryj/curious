@@ -5,47 +5,67 @@
 # ----------------------------------------
 # 
 # All Users
-# Start date: 20241224
-# End date: 20250120
+# Start date: 20241228
+# End date: 20250124
 Page title and screen class,Landing page + query string,Views,Active users,Views per active user,Average engagement time per active user
-Loading...,/2054/index.html?exhibit-id=1,99,3,33,6
+Loading...,/2054/index.html?exhibit-id=1,100,4,25,4.5
 Loading...,/2054/index.html?exhibit-id=1&species-id=1,66,3,22,1
+Curious,/2054/get-started.html,65,1,65,170
 (not set),/2000/index.html?exhibit-id=TH3&species-id=OID188,51,1,51,0
 Test Site,/2000/index.html?exhibit-id=TH3&species-id=OID188,32,1,32,45
 Factfile: Atlantic Cod,/2000/index.html?exhibit-id=1&species-id=1,29,1,29,20
+Curious,/2054/index.html?EID=C1&OID=1,26,1,26,72
 Loading...,/2054/index.html?exhibit-id=OC1,24,5,4.8,0.2
 Test Site,/2000/index.html,24,1,24,40
-Explore: Wave Tank,/2054/index.html?exhibit-id=1,18,3,6,38.666666666666664
+Sealife Adventure,/2054/test.html,22,2,11,59.5
+Explore: Wave Tank,/2054/index.html?exhibit-id=1,20,5,4,27.4
+(not set),/2054/index.html,17,1,17,0
+Sealife Adventure,/2054/index.html,17,2,8.5,41
 Species Factfile,/2054/index.html?exhibit-id=1&species-id=1,17,3,5.666666666666667,24
 (not set),/2000/index.html?exhibit-id=W1,16,2,8,0
+Sealife Adventure,/2054/get-started.html,16,1,16,93
 (not set),/2000/index.html,15,1,15,0
+Explore: Cuboid Tank,/2054/test.html,15,1,15,47
 Loading...,/2000/index.html?exhibit-id=W1,15,2,7.5,0
 Explore: Wave Tank,/2000/index.html,14,1,14,103
+No Exhibit Selected,/2054/get-started.html,14,1,14,0
 Species Not Found,/2000/index.html?exhibit-id=TH3&species-id=OID188,14,1,14,17
 Factfile: Crab-eating Macaque,/2000/index.html?exhibit-id=W1,13,1,13,42
 Factfile: Poor Cod,/2000/index.html?exhibit-id=A2&species-id=OID22,13,1,13,82
+Explore: Ocean,/2054/index.html?exhibit-id=OC1,12,9,1.3333333333333333,16.555555555555557
+No Exhibit Selected,/2054/index.html,12,1,12,0
 Read: Blog Test,/2054/index.html?exhibit-id=1&species-id=1,12,1,12,51
-Explore: Ocean,/2054/index.html?exhibit-id=OC1,11,8,1.375,18.625
+Curious,/2054/index.html?exhibit-id=1,11,1,11,101
+Explore: Wave Tank,/2054/index.html,11,1,11,49
+Sealife Adventure,/2054/index.html?EID=C1&OID=1,11,1,11,18
 Error,/2054/index.html?exhibit-id=1&species-id=1,10,1,10,15
+Sealife Adventure,/2054/index.html?exhibit-id=1,10,4,2.5,36
 Test site - Sealife demo,/2000/index.html,10,1,10,36
 Loading...,/2000/index.html,9,1,9,0
 Loading...,/2000/index.html?exhibit-id=6&species-id=16,9,1,9,0
 Loading...,/2000/index.html?exhibit-id=W1&species-id=781,9,1,9,0
+Sealife Adventure,/2054/index.html?EID=ST3,9,1,9,45
 Species Factfile,/2054/index.html?exhibit-id=OC1,9,4,2.25,30.25
 (not set),/2000/index.html?EID=C2&OID=147A,8,2,4,0
 (not set),/2000/index.html?exhibit-id=A4,8,1,8,0
+Curious,/2054/index.html,8,1,8,0
+Curious,/2054/test.html,8,1,8,63
 Explore: Wave Tank,/2054/index.html?exhibit-id=1&species-id=1,8,4,2,13.5
 Factfile: Atlantic Cod,/2000/index.html,8,1,8,27
 Loading...,/2054/index.html?exhibit-id=1&species-id=2,8,1,8,0
+Sealife Adventure,/2054/index.html?exhibit-id=OC1,8,8,1,4
 (not set),/2000/index.html?EID=W4,7,1,7,0
 (not set),/2000/index.html?exhibit-id=C5,7,1,7,0
 (not set),/2000/index.html?exhibit-id=O1,7,1,7,0
 Loading...,/2000/index.html?exhibit-id=1,7,2,3.5,0
+No Exhibit Selected,/2054/index.html?EID=C1&OID=1,7,1,7,0
+No Exhibit Selected,/2054/index.html?exhibit-id=1,7,1,7,0
 Profile: Stitch,/2000/index.html?exhibit-id=TH3&species-id=OID188,7,1,7,18
-Sealife Adventure,/2054/index.html?exhibit-id=1,7,3,2.3333333333333335,44.333333333333336
 Watch: Video Test,/2054/index.html?exhibit-id=1&species-id=1,7,1,7,27
 (not set),/2054/index.html?exhibit-id=1,6,1,6,0
+Explore: Cuboid Tank,/2054/index.html?EID=ST3,6,1,6,3
 Explore: Wave Tank,/2000/index.html?exhibit-id=1&species-id=1,6,1,6,92
+Leamington Spa Art Gallery and Museum,/2054/index.html?EID=C1&OID=1,6,1,6,7
 Loading...,/2054/index.html,6,1,6,0
 Loading...,/2054/index.html?exhibit-id=W1,6,1,6,0
 No Exhibit Selected,/2000/index.html?exhibit-id=TH3&species-id=OID188,6,1,6,0
@@ -59,13 +79,20 @@ Explore: Macaques,/2000/index.html?exhibit-id=TH3&species-id=OID188,5,1,5,7
 Explore: Macaques,/2054/index.html?exhibit-id=W1,5,4,1.25,5.75
 Explore: Rockpools,/2000/index.html?EID=C3,5,1,5,17
 Factfile: Common Starfish,/2000/index.html?exhibit-id=TH3&species-id=OID188,5,1,5,12
-Sealife Adventure,/2054/index.html?exhibit-id=OC1,5,4,1.25,8
+Factfile: Pollack,/2054/index.html?EID=C1&OID=1,5,1,5,7
 (not set),/2000/index.html?exhibit-id=C6,4,1,4,0
+Curious,/2054/index.html?EID=ST3,4,1,4,5
+Factfile: Black Sea Bream,/2054/get-started.html,4,1,4,2
+Factfile: Common Starfish,/2054/index.html,4,1,4,29
+Factfile: Pollack,/2054/index.html,4,1,4,11
+Leamington Spa Art Gallery and Museum,/2054/get-started.html,4,1,4,7
 Loading...,/2000/index.html?exhibit-id=1&species-id=1,4,1,4,0
 No Exhibit Selected,/2000/index.html?exhibit-id=C1,4,1,4,0
+No Exhibit Selected,/2054/index.html?EID=ST3,4,1,4,0
+No Exhibit Selected,/2054/test.html,4,1,4,0
 Profile: Florentine,/2000/index.html?exhibit-id=TH3&species-id=OID188,4,1,4,14
 Profile: Ronan,/2000/index.html?EID=C2&OID=147A,4,2,2,11
-Sealife Adventure,/2054/index.html,4,1,4,7
+Your Page Title,/2054/index.html,4,1,4,0
 (not set),/2000/index.html?EID=C3,3,1,3,0
 (not set),/2000/index.html?EID=ST2,3,1,3,0
 (not set),/2000/index.html?EID=W4&OID=141A,3,1,3,0
@@ -74,28 +101,35 @@ Exhibit Not Found,/2000/index.html,3,1,3,4
 Explore: Macaques,/2000/index.html?exhibit-id=W1,3,2,1.5,4
 Explore: Meerkats,/2000/index.html?exhibit-id=TH3&species-id=OID188,3,1,3,65
 Explore: Ocean,/2054/index.html,3,1,3,8
+Explore: Ocean,/2054/index.html?exhibit-id=1,3,2,1.5,72.5
 Explore: Royals,/2000/index.html?exhibit-id=C6,3,1,3,41
 Explore: Swamp,/index.html,3,1,3,78
 Explore: Wave Tank,/2000/index.html?exhibit-id=OC1&species-id=51,3,1,3,4
 Loading...,/2000/index.html?exhibit-id=OC1&species-id=51,3,1,3,0
 No Exhibit Selected,/index.html,3,1,3,0
+Test Site,/2054/index.html?exhibit-id=1,3,1,3,9
 Test site - Sealife demo,/2000/index.html?exhibit-id=OC1&species-id=51,3,1,3,4
 Audio Guide,/3000/index.html?exhibit-id=1,2,2,1,2
 Blog: Blog Test,/2054/index.html?exhibit-id=1&species-id=1,2,1,2,9
+Curious,/2054/index.html?EID=A7,2,1,2,80
 Curious,/index.html,2,1,2,9
 Error,/2054/index.html,2,1,2,0
+Explore: Hex Tank,/2054/test.html,2,1,2,13
 Explore: Macaques,/2054/index.html?exhibit-id=1,2,1,2,23
-Explore: Ocean,/2054/index.html?exhibit-id=1,2,2,1,69.5
+Explore: Ocean,/2054/index.html?EID=ST3,2,1,2,67
+Explore: Ray Bay,/2054/index.html?exhibit-id=1,2,1,2,6
 Explore: Sunstars,/2000/index.html,2,1,2,14
 Factfile: Blackstreak Surgeon,/2000/index.html?exhibit-id=TH3&species-id=OID188,2,1,2,7
 Factfile: Blackstreak Surgeon,/2054/index.html?exhibit-id=OC1,2,1,2,13
 Factfile: Bloody Henry Starfish,/2000/index.html?exhibit-id=A2&species-id=OID27,2,1,2,62
 Factfile: Bloody Henry Starfish,/2000/index.html?exhibit-id=TH3&species-id=OID188,2,1,2,4
 Factfile: Crab-eating Macaque,/2000/index.html?exhibit-id=W1&species-id=781,2,1,2,1
+Factfile: Pollack,/2054/get-started.html,2,1,2,4
 Factfile: Unknown,/2000/index.html?exhibit-id=TH3&species-id=OID188,2,1,2,10
 Loading...,/2054/index.html?exhibit-id=20,2,1,2,0
 No Exhibit Selected,/,2,2,1,0
 No Exhibit Selected,/3000/,2,2,1,0
+Profile: Iris,/2054/index.html,2,1,2,19
 Profile: Ronan,/2000/index.html?EID=W4&OID=141A,2,1,2,13
 Profile: Wonderer,/2000/index.html?exhibit-id=TH3&species-id=OID188,2,1,2,4
 Sealife Adventure,/2054/index.html?exhibit-id=1&species-id=1,2,4,0.5,11.5
@@ -111,16 +145,24 @@ Test site - Sealife demo,/2054/index.html?exhibit-id=W1,2,1,2,60
 (not set),/2000/index.html?exhibit-id=A2&species-id=OID22,1,1,1,0
 (not set),/2000/index.html?exhibit-id=A2&species-id=OID27,1,1,1,0
 (not set),/2000/index.html?exhibit-id=P1&species-id=OID199,1,1,1,0
+(not set),/2054/index.html?EID=C1,1,1,1,0
 (not set),/2054/index.html?exhibit-id=OC1,1,1,1,0
+Audio Guide,/2054/get-started.html,1,1,1,24
 Audio Guide,/2054/index.html,1,1,1,31
 Audio Guide,/2054/index.html?exhibit-id=20,1,1,1,0
+Audio Guide,/3000/index.html?exhibit-id=2,1,1,1,4
 Blog: undefined,/2054/index.html?exhibit-id=1&species-id=1,1,1,1,2
+Curious,/2000/index.html?EID=TH5&OID=134A,1,1,1,0
+Curious,/2054/capture.html,1,1,1,1
 Explore: Butterfly House,/2000/index.html?exhibit-id=OC1&species-id=51,1,1,1,5
+Explore: Corner Tank,/2054/index.html?EID=A7,1,1,1,12
+Explore: Corner Tank,/2054/index.html?exhibit-id=1,1,1,1,0
 Explore: Croc Pool,/2000/index.html?EID=W4,1,1,1,2
 Explore: Dump Tank,/2000/index.html?exhibit-id=C5,1,1,1,12
 Explore: Ocean,/2000/index.html?exhibit-id=W1,1,1,1,26
 Explore: Ocean,/2054/index.html?exhibit-id=OC1&species-id=62,1,1,1,4
 Explore: Pengiuns,/2000/index.html?EID=C3,1,1,1,14
+Explore: Rockpools,/2054/index.html,1,1,1,8
 Explore: Squirels,/2000/index.html?EID=W4,1,1,1,2
 Explore: Tall Tank,/2000/index.html?EID=ST2,1,1,1,3
 Explore: Waterfall,/2000/index.html?exhibit-id=A4,1,1,1,2
@@ -129,7 +171,7 @@ Explore: Wave Tank,/2000/index.html?exhibit-id=1,1,1,1,2
 Explore: Wave Tank,/2000/index.html?exhibit-id=A4,1,1,1,1
 Explore: Wave Tank,/2000/index.html?exhibit-id=C1,1,1,1,10
 Explore: Wave Tank,/2000/index.html?exhibit-id=TH3&species-id=OID188,1,1,1,33
-Explore: Wave Tank,/2054/index.html,1,1,1,3
+Explore: Wave Tank,/2054/index.html?EID=C1,1,1,1,5
 Explore: Wave Tank,/2054/index.html?exhibit-id=20,1,1,1,81
 Factfile: Babs,/2000/index.html?exhibit-id=W1,1,1,1,24
 Factfile: Blackstreak Surgeon,/2000/index.html?EID=OC1&OID=79,1,1,1,2
@@ -140,17 +182,23 @@ Factfile: Leopard Moray Eel,/2000/index.html?EID=W4,1,1,1,2
 Factfile: Nana Rose,/2000/index.html?exhibit-id=W1,1,1,1,1
 Factfile: Patrick,/2000/index.html?exhibit-id=W1,1,1,1,0
 Factfile: Pollack,/2000/index.html?EID=W4,1,1,1,3
+Factfile: Pollack,/2054/index.html?EID=C1,1,1,1,5
+Factfile: Pollack,/2054/index.html?exhibit-id=1,1,1,1,2
 Factfile: Porcupine Puffer,/2000/index.html?EID=W4,1,1,1,1
 Factfile: Regal Tang,/2000/index.html?exhibit-id=OC1&species-id=51,1,2,0.5,42.5
+Factfile: Regal Tang,/2054/index.html?exhibit-id=1,1,1,1,4
 Factfile: Shrimpfish,/2000/index.html?EID=W4,1,1,1,8
 Factfile: Spiny Seahorse,/2000/index.html?exhibit-id=6&species-id=16,1,1,1,21
 Factfile: Unknown,/2000/index.html?exhibit-id=O1,1,1,1,3
+Leamington Spa Art Gallery and Museum,/2054/index.html?exhibit-id=1,1,1,1,2
+Leamington Spa Art Gallery and Museum,/3000/index.html?exhibit-id=2,1,1,1,5
 Loading...,/2000/index.html?EID=C2&OID=147A,1,1,1,0
 Loading...,/3000/index.html?exhibit-id=1,1,1,1,0
+Loading...,/3000/index.html?exhibit-id=2,1,1,1,0
 Loading...,/index.html,1,1,1,0
 No Exhibit Selected,/2000/index.html,1,1,1,0
 No Exhibit Selected,/2000/index.html?EID=C2&OID=147A,1,1,1,0
-No Exhibit Selected,/2054/index.html?exhibit-id=1,1,1,1,0
+No Exhibit Selected,/2054/index.html?exhibit-id=OC1,1,1,1,0
 Profile - Babs,/2000/index.html?exhibit-id=W1,1,1,1,0
 Profile Babs,/2000/index.html?exhibit-id=W1,1,1,1,0
 Profile: Animal - Babs,/2000/index.html?exhibit-id=W1,1,1,1,0
@@ -159,15 +207,21 @@ Profile: Babs,/2000/index.html?exhibit-id=W1,1,1,1,1
 Profile: Didge,/2000/index.html?exhibit-id=P1&species-id=OID199,1,1,1,6
 Profile: Flop,/2000/index.html?EID=W4,1,1,1,3
 Profile: Florentine,/2000/index.html?EID=C2&OID=147A,1,1,1,43
+Profile: Iris,/2054/index.html?EID=ST3,1,1,1,1
+Profile: Jimbob,/2000/index.html?EID=TH5&OID=134A,1,1,1,0
 Profile: Jimbob,/2000/index.html?EID=W4,1,1,1,15
 Profile: Jimbob,/2000/index.html?exhibit-id=O1,1,1,1,5
 Profile: Mogwai,/2000/index.html?exhibit-id=W1,1,1,1,7
+Profile: Paley,/2054/index.html?exhibit-id=1,1,1,1,20
 Profile: Patrick,/2000/index.html?EID=W4,1,1,1,3
 Profile: Patrick,/2000/index.html?exhibit-id=W1,1,1,1,11
 Profile: Patrick,/2054/index.html?exhibit-id=1,1,2,0.5,17.5
 Profile: Ronan,/2000/index.html?EID=W4,1,1,1,3
 Profile: Vixen,/2000/index.html?exhibit-id=O1,1,1,1,9
 Profile: unnamed,/2000/index.html?exhibit-id=TH3&species-id=OID188,1,1,1,6
+Sealife Adventure,/2000/index.html?EID=TH5&OID=134A,1,1,1,0
+Sealife Adventure,/2054/index.html?EID=A7,1,1,1,3
+Sealife Adventure,/2054/index.html?EID=OC1,1,1,1,9
 Sealife Adventure,/2054/index.html?exhibit-id=W1,1,1,1,3
 Species Factfile,/2054/index.html?exhibit-id=OC1&species-id=57,1,1,1,3
 Species Factfile,/2054/index.html?exhibit-id=OC1&species-id=62,1,1,1,2
@@ -179,8 +233,10 @@ Test site - Sealife demo,/2000/index.html?exhibit-id=W1,1,2,0.5,4
 Test site - Sealife demo,/2054/index.html?exhibit-id=1,1,2,0.5,103
 Audio Guide,/2054/index.html?exhibit-id=OC1,0,1,0,6
 Explore: Breadbin,/2054/index.html?exhibit-id=1,0,1,0,1
+Explore: Butterfly House,/2054/index.html?EID=A7,0,1,0,1
 Explore: Cliff,/2000/index.html?exhibit-id=TH3&species-id=OID188,0,1,0,1
 Explore: Cube,/2000/index.html?exhibit-id=OC1&species-id=51,0,1,0,12
+Explore: Cuboid Tank,/2054/index.html,0,1,0,11
 Explore: Cylinder,/2000/index.html?EID=W4,0,1,0,6
 Explore: Dump Tank,/2054/index.html?exhibit-id=1,0,1,0,6
 Explore: Hex,/2000/index.html?exhibit-id=A4,0,1,0,9
@@ -205,6 +261,7 @@ Explore: Ray Bay,/2000/index.html?exhibit-id=1&species-id=1,0,1,0,1
 Explore: Reef Wall,/2000/index.html?EID=ST2,0,1,0,1
 Explore: Rockpools,/2000/index.html?exhibit-id=TH3&species-id=OID188,0,1,0,11
 Explore: Royals,/2000/index.html?exhibit-id=W1,0,1,0,5
+Explore: Seahorse Tank,/2054/get-started.html,0,1,0,4
 Explore: Squirels,(not set),0,1,0,0
 Explore: Squirels,/2000/index.html?EID=W4&OID=141A,0,1,0,1
 Explore: Squirels,/2000/index.html?exhibit-id=C1,0,1,0,7
@@ -223,6 +280,7 @@ Factfile: Atlantic Cod,/2000/index.html?exhibit-id=1,0,1,0,27
 Factfile: Atlantic Cod,/2000/index.html?exhibit-id=6&species-id=16,0,1,0,6
 Factfile: Atlantic Cod,/2000/index.html?exhibit-id=W1,0,1,0,2
 Factfile: Atlantic Cod,/2054/index.html?exhibit-id=1,0,1,0,6
+Factfile: Big Bellied Seahorse,/2054/get-started.html,0,1,0,4
 Factfile: Black Pacu,/2000/index.html?exhibit-id=6&species-id=16,0,1,0,5
 Factfile: Black Pacu,/2054/index.html?exhibit-id=1,0,1,0,1
 Factfile: Bloody Henry Starfish,/2054/index.html?exhibit-id=1,0,1,0,0
@@ -237,6 +295,7 @@ Factfile: Crab-eating Macaque,/2054/index.html?exhibit-id=1,0,1,0,38
 Factfile: European Eel,/2000/index.html?exhibit-id=OC1&species-id=51,0,1,0,15
 Factfile: Lesser Spotted Cat shark,/2000/index.html?exhibit-id=OC1&species-id=51,0,1,0,6
 Factfile: Maroon Clownfish,/2000/index.html?EID=ST2,0,1,0,1
+Factfile: Plaice,/2054/index.html,0,1,0,1
 Factfile: Pollack,/2000/index.html?exhibit-id=TH3&species-id=OID188,0,1,0,5
 Factfile: Poor Cod,(not set),0,1,0,0
 Factfile: Poor Cod,/2054/index.html?exhibit-id=1,0,1,0,1
@@ -247,17 +306,20 @@ Factfile: Regal Tang,(not set),0,1,0,0
 Factfile: Regal Tang,/2000/index.html?exhibit-id=C5,0,1,0,1
 Factfile: Snakelock Anenomes,/2054/index.html?exhibit-id=1,0,1,0,64
 Factfile: Thick Lipped Mullet,/2000/index.html?EID=C2&OID=147A,0,1,0,1
+Factfile: Tompot Blenny,/2054/index.html,0,1,0,1
 Leamington Spa Art Gallery and Museum,/3000/,0,2,0,0
 Profile: Ali,/2000/index.html?exhibit-id=W1,0,1,0,37
 Profile: Dave,/2000/index.html?exhibit-id=TH3&species-id=OID188,0,1,0,9
 Profile: Iris,/2000/index.html,0,1,0,2
 Profile: Iris,/2000/index.html?exhibit-id=OC1&species-id=51,0,1,0,19
 Profile: Iris,/2000/index.html?exhibit-id=TH3&species-id=OID188,0,1,0,22
+Profile: Iris,/2054/index.html?EID=C1,0,1,0,8
 Profile: Ronan,/2000/index.html?exhibit-id=C1,0,1,0,12
 Profile: Ronan,/2000/index.html?exhibit-id=TH3&species-id=OID188,0,1,0,1
 Profile: Ronan,/2054/index.html?exhibit-id=1,0,1,0,4
 Profile: Squash,/2000/index.html?exhibit-id=A2&species-id=OID27,0,1,0,4
 Profile: Victoria,/2000/index.html?exhibit-id=TH3&species-id=OID188,0,1,0,2
+Sealife Adventure,(not set),0,1,0,0
 Sealife Adventure,/2000/index.html?EID=C2&OID=147A,0,1,0,0
 Sealife Adventure,/2000/index.html?exhibit-id=1,0,1,0,0
 Sealife Adventure,/index.html,0,1,0,1
@@ -266,7 +328,6 @@ Species Factfile,/2000/index.html?exhibit-id=W1&species-id=781,0,1,0,88
 Species Factfile,/2054/index.html,0,1,0,15
 Test Site,/2000/index.html?exhibit-id=A2&species-id=OID22,0,1,0,0
 Test Site,/2000/index.html?exhibit-id=C5,0,1,0,1
-Test Site,/2054/index.html?exhibit-id=1,0,1,0,3
 Test site - Sealife demo,(not set),0,1,0,0
 Test site - Sealife demo,/2000/index.html?exhibit-id=6&species-id=16,0,1,0,9
 Test site - Sealife demo,/2054/index.html?exhibit-id=1&species-id=2,0,1,0,59
