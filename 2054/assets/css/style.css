@@ -726,3 +726,85 @@ opacity: 0.8; /* Dim slightly for visual feedback */
   opacity: 0.8; /* Dim slightly for visual feedback */
   }
   
+  .notice-container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .notice-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #161616;
+    margin-bottom: 10px;
+  }
+  
+  .notice-message {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #555555;
+  }
+  
+  .notice-container a {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #ffffff;
+    background-color: #0078d7;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  .notice-container a:hover {
+    background-color: #005ea6;
+  }
+
+  .notice-overdue {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #d69393; /* Light red background for a warning effect */
+    border: 2px dashed #e5042d; /* Dashed red border for visual impact */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    text-align: center;
+  }
+  
+  .notice-overdue h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #000000;
+    /* color: #b00020; Deep red text for emphasis */
+    margin-bottom: 10px;
+  }
+  
+  .notice-overdue p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #000000;
+    /* color: #b00020; Deep red text for emphasis */
+  }
+
+  .scan-another-button {
+    display: block; /* Changes the button to a block-level element */
+    margin: 20px auto; /* Centres the button horizontally and adds vertical spacing */
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #ffffff;
+    background-color: #18236e;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  .scan-another-button:hover {
+    background-color: #141e5b; /* Darker shade for hover effect */
+  }
