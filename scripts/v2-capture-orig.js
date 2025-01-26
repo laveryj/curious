@@ -63,10 +63,10 @@ async function processImage(event) {
         //     // Add inline styles to center the result
         //     div.style.margin = "20px auto";
         //     div.style.padding = "5px";
-        //     div.style.border = "2px solid #BF3300";
+        //     div.style.border = "2px solid #d35c18";
         //     div.style.borderRadius = "5px";
         //     div.style.backgroundColor = "#FFD7B5";
-        //     div.style.color = "#BF3300";
+        //     div.style.color = "#d35c18";
         //     div.style.fontSize = "20px";
         //     div.style.fontWeight = "bold";
         //     div.style.maxWidth = "300px";

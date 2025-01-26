@@ -195,7 +195,7 @@ select:hover {
 
 select:focus {
   outline: none; /* Remove default focus outline */
-  box-shadow: 0 0 5px var(--header-color, #BF3300); /* Add focus glow */
+  box-shadow: 0 0 5px var(--header-color, #d35c18); /* Add focus glow */
 }
 
 select option {
@@ -563,7 +563,7 @@ main {
 }
 
 label {
-  background-color: #BF3300;
+  background-color: #d35c18;
   color: white;
   padding: 10px 20px;
   border: none;
@@ -586,7 +586,7 @@ label:hover {
 #uploaded-image {
   margin: 20px 0;
   max-width: 300px;
-  border: 2px solid #BF3300;
+  border: 2px solid #d35c18;
   border-radius: 5px;
 }
 
@@ -597,7 +597,7 @@ label:hover {
   text-align: center; /* Centre text inside the container */
   /* background-color: #fff; */
   /* padding: 10px 20px; */
-  /* border: 2px solid #BF3300; */
+  /* border: 2px solid #d35c18; */
   /* border-radius: 8px; */
   /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); Add subtle shadow */
 }
@@ -606,7 +606,7 @@ label:hover {
   margin: 20px 0;
   max-width: 200px;
   width: 100%; /* Ensures responsiveness */
-  border: 2px solid #BF3300;
+  border: 2px solid #d35c18;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
   transition: transform 0.3s ease; /* Smooth animation for hover effect */

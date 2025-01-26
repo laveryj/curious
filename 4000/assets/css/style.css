@@ -10,7 +10,7 @@
     }
     
     header {
-      background-color: #BF3300;
+      background-color: #d35c18;
       color: #ffffff;
       padding: 15px;
       text-align: center;
@@ -43,7 +43,7 @@
       flex: 1;
     }
     .card {
-      background: #BF3300;
+      background: #d35c18;
       padding: 15px;
       border-radius: 8px;
       margin-bottom: 20px;
@@ -57,7 +57,7 @@
       margin-right: 0px;
     }
     footer {
-      background-color: #BF3300;
+      background-color: #d35c18;
       color: #ffffff;
       text-align: center;
       padding: 10px;
@@ -195,7 +195,7 @@ select:hover {
 
 select:focus {
   outline: none; /* Remove default focus outline */
-  box-shadow: 0 0 5px var(--header-color, #BF3300); /* Add focus glow */
+  box-shadow: 0 0 5px var(--header-color, #d35c18); /* Add focus glow */
 }
 
 select option {
@@ -209,7 +209,7 @@ body.hidden {
   visibility: hidden; /* Hide until authenticated */
 }
 header {
-  background-color: #BF3300; /* Theme header color */
+  background-color: #d35c18; /* Theme header color */
   color: #FFFFFF; /* Theme text color */
 }
 a {
@@ -268,7 +268,7 @@ a {
 }
 
 .play-button:hover {
-  background-color: #bf3300;
+  background-color: #d35c18;
 }
 
 /* Button group for Pause and Restart */
@@ -286,7 +286,7 @@ a {
   width: 175px;
   height: 150px;
   cursor: pointer;
-  background-color: #bf3300;
+  background-color: #d35c18;
   color: white;
   border: none;
   border-radius: 6px;
