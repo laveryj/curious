@@ -8,8 +8,10 @@ const path = require("path");
     const logFilePath = path.join(basePath, "update_log.txt"); // Log file
 
     async function logMessage(message) {
-        console.log(message);
-        await fs.appendFile(logFilePath, message + "\n", "utf-8");
+        const timestamp = new Date().toISOString();
+        const formattedMessage = `[${timestamp}] ${message}`;
+        console.log(formattedMessage);
+        await fs.appendFile(logFilePath, formattedMessage + "\n", "utf-8");
     }
 
     try {
