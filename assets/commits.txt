@@ -1,1 +1,1 @@
-183d2e3 laveryj: Merge branch 'main' of https://github.com/laveryj/curious
+183d2e3 laveryj: Merge branch 'main' of https://github.com/laveryj/curiousc794f37 laveryj: Update index.html
