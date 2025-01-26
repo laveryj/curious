@@ -671,3 +671,4 @@ transition: transform 0.2s ease, opacity 0.2s ease; /* Add hover effects */
 transform: scale(1.1); /* Slightly enlarge on hover */
 opacity: 0.8; /* Dim slightly for visual feedback */
 }
+
