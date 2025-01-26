@@ -4928,7 +4928,7 @@
       "exhibitID": "TH5",
       "exhibitName": "Croc Pool",
       "exhibitMode": "standard",
-      "exhibitStatus": "active",
+      "exhibitStatus": "inactive",
       "objects": [
         {
           "hidden": "FALSE",
