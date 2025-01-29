@@ -474,3 +474,25 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     
   });
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const docsList = document.getElementById("docs-list");
+  
+    fetch("./assets/data/docs.json")
+      .then(response => response.json())
+      .then(docs => {
+        docs.forEach(doc => {
+          const listItem = document.createElement("li");
+          const link = document.createElement("a");
+          link.href = `./assets/docs/${doc.file}`;
+          link.textContent = doc.name;
+          link.target = "_blank"; // Opens in a new tab
+          listItem.appendChild(link);
+          docsList.appendChild(listItem);
+        });
+      })
+      .catch(error => {
+        console.error("Error loading documents:", error);
+        docsList.innerHTML = "<li>Error loading documents</li>";
+      });
+  });
