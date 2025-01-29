@@ -363,24 +363,24 @@ detailsHTML += `
   // Set the generated HTML
   details.innerHTML = detailsHTML;
 
-  // Add external links
-  if (species["primaryURL"]) {
-    const learnMoreButton = document.createElement("a");
-    learnMoreButton.href = species["primaryURL"];
-    learnMoreButton.textContent = species["primaryURLlabel"] || "Learn more";
-    learnMoreButton.classList.add("action-button");
-    learnMoreButton.target = "_blank"; // Open link in a new tab
-    details.appendChild(learnMoreButton);
-  }
+// Add external links if they exist
+if (species["primaryURL"] && species["primaryURL"].trim() !== "") {
+  const learnMoreButton = document.createElement("a");
+  learnMoreButton.href = species["primaryURL"];
+  learnMoreButton.textContent = species["primaryURLlabel"] || "Learn more";
+  learnMoreButton.classList.add("action-button");
+  learnMoreButton.target = "_blank"; // Open link in a new tab
+  details.appendChild(learnMoreButton);
+}
 
-  if (species["secondaryURL"]) {
-    const fishBaseButton = document.createElement("a");
-    fishBaseButton.href = species["secondaryURL"];
-    fishBaseButton.textContent = species["secondaryURLlabel"] || "Learn more";
-    fishBaseButton.classList.add("action-button");
-    fishBaseButton.target = "_blank"; // Open link in a new tab
-    details.appendChild(fishBaseButton);
-  }
+if (species["secondaryURL"] && species["secondaryURL"].trim() !== "") {
+  const fishBaseButton = document.createElement("a");
+  fishBaseButton.href = species["secondaryURL"];
+  fishBaseButton.textContent = species["secondaryURLlabel"] || "Learn more";
+  fishBaseButton.classList.add("action-button");
+  fishBaseButton.target = "_blank"; // Open link in a new tab
+  details.appendChild(fishBaseButton);
+}
 
   // Append the details to the container
   speciesContainer.appendChild(details);
