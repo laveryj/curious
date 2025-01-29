@@ -1,5 +1,5 @@
 {
-  "dateCreated": "2025-01-26T14:43:11.012Z",
+  "dateCreated": "2025-01-28T12:10:55.999Z",
   "exhibits": [
     {
       "exhibitID": "C1",
@@ -4928,7 +4928,7 @@
       "exhibitID": "TH5",
       "exhibitName": "Croc Pool",
       "exhibitMode": "standard",
-      "exhibitStatus": "inactive",
+      "exhibitStatus": "active",
       "objects": [
         {
           "hidden": "FALSE",
