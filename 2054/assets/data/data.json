@@ -1,5 +1,5 @@
 {
-  "dateCreated": "2025-01-29T00:27:53.209Z",
+  "dateCreated": "2025-01-30T00:27:26.639Z",
   "exhibits": [
     {
       "exhibitID": "C1",
@@ -1807,7 +1807,7 @@
           "size": "",
           "weight": "",
           "personalityProfile": "",
-          "funFact": "These fish are very important for reef health, as they eat excess algae and thus prevent the corals from ��suffocating’.",
+          "funFact": "These fish are very important for reef health, as they eat excess algae and thus prevent the corals from ‘suffocating’.",
           "conservationStatus": "Least Concern",
           "conservationInfo": "",
           "primaryURL": "",
@@ -2798,6 +2798,31 @@
           "secondaryURL": "",
           "secondaryURLlabel": "",
           "ImageURL": "https://th.bing.com/th/id/OIP.g8CT5QObdjUwF3cjqmsRjwHaEO?rs=1&pid=ImgDetMain",
+          "AudioURL": "",
+          "VideoURL": ""
+        },
+        {
+          "hidden": "FALSE",
+          "prioritise": "FALSE",
+          "objectID": "85",
+          "objectType": "Species",
+          "nickname": "",
+          "commonName": "Yellowfin Surgeonfish",
+          "scientificName": "Acanthurus xanthopterus",
+          "shortDescription": "Species of marine ray-finned fish belonging to the family Acanthuridae.",
+          "longDescription": "The yellow surgeonfish ranges in length to 70 cm. Acanthurus xanthopterus feeds on diatoms, detritus film of sand, filamentous algae, hydroids, and pieces of fish.  They live near coral reefs at depths ranging from 5–90 m",
+          "age": "",
+          "size": "",
+          "weight": "",
+          "personalityProfile": "",
+          "funFact": "Juveniles inhabit shallow, protected, turbid inshore waters, while adults prefer deeper areas of protected bays and lagoons",
+          "conservationStatus": "Least concern",
+          "conservationInfo": "",
+          "primaryURL": "",
+          "primaryURLlabel": "",
+          "secondaryURL": "",
+          "secondaryURLlabel": "",
+          "ImageURL": "Acanthurus xanthopterus",
           "AudioURL": "",
           "VideoURL": ""
         }
@@ -3863,7 +3888,7 @@
           "size": "",
           "weight": "",
           "personalityProfile": "",
-          "funFact": "The Lawnmower blenny is the most popular cleaning fish for marine reef tanks, as it��s main activity is grazing for alage.",
+          "funFact": "The Lawnmower blenny is the most popular cleaning fish for marine reef tanks, as it’s main activity is grazing for alage.",
           "conservationStatus": "Least Concern",
           "conservationInfo": "",
           "primaryURL": "",
