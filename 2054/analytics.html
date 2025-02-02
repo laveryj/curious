@@ -21,7 +21,7 @@
   <script src="/scripts/v2-config.js" defer></script>
   <script src="/scripts/auth.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script src="/scripts/v2-analytics.js"></script>
+  <script src="/scripts/v2-analytics-new.js"></script>
 
   <style>
     body {
@@ -133,7 +133,6 @@
 
       <br>
       <br>
-      <br>
 
       <section id="metrics" style="margin: 20px 0; text-align: left;">
         <h2>Key Metrics</h2>
@@ -158,8 +157,17 @@
 
       <section id="graphs">
         <h2>Page Analytics</h2>
-        <div id="chart-container"></div>
-      </section>
+
+        <div class="chart-container"><canvas id="chart-page-views-time"></canvas></div>
+        <div class="chart-container"><canvas id="chart-page-views"></canvas></div>
+        <div class="chart-container"><canvas id="chart-avg-engagement"></canvas></div>
+        <div class="chart-container"><canvas id="chart-discovery-depth"></canvas></div>
+        <div class="chart-container"><canvas id="chart-most-engaging"></canvas></div>
+        <div class="chart-container"><canvas id="chart-views-browser"></canvas></div>
+        <div class="chart-container"><canvas id="chart-views-source"></canvas></div>
+        <div class="chart-container"><canvas id="chart-dropoff-rate"></canvas></div>
+        <div class="chart-container"><canvas id="chart-heatmap-time"></canvas></div>
+    </section>
 
         <br>
         <br>
