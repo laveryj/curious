@@ -808,3 +808,46 @@ opacity: 0.8; /* Dim slightly for visual feedback */
   .scan-another-button:hover {
     background-color: #141e5b; /* Darker shade for hover effect */
   }
+
+  #wifi-dialog {
+    width: 90%;
+    max-width: 400px;
+    padding: 20px;
+    border-radius: 10px;
+    border: none;
+    background: #fff;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+  }
+  
+  #wifi-dialog h2 {
+    margin-top: 0;
+    font-size: 22px;
+    color: #333;
+  }
+  
+  #wifi-content p {
+    font-size: 18px;
+    margin: 10px 0;
+    color: #555;
+  }
+  
+  #wifi-content p strong {
+    color: #222;
+  }
+  
+  #close-wifi-dialog {
+    background: #ff5f5f;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+    width: 30%;
+  }
+  
+  #close-wifi-dialog:hover {
+    background: #e04b4b;
+  }
