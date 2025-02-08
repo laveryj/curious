@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welfare Assessment</title>
+
+<!-- Import the fallback styles -->
+<link rel="stylesheet" href="/assets/css/style.css">
+
+<!-- Import the assessment CSS style -->
+<link rel="stylesheet" href="/assets/css/assessment.css">
+  
+<!-- Include the script to load the dynamic theme -->
+<script src="/scripts/config.js" defer></script>
+<!-- <script src="/scripts/fetch.js" defer></script> -->
+
+</head>
+
+<body class="hidden">
+  <header style="display: flex; justify-content: center; align-items: center;">
+    <img src="/assets/images/logo.png" alt="Curious Logo" style="width: 120px; height: auto;">
+</header>
+
+<main>
+
+  <div class="assessment-card">
+    <h2>Welfare Assessment</h2>
+
+    <div id="auditor-form">
+      <label for="animal-select">Which animal are you assessing?</label>
+      <select id="animal-select">
+        <option value="" disabled selected>Select an animal</option>
+      </select>
+      <br>
+      <label for="auditor-name">Auditor name:</label>
+      <input type="text" id="auditor-name" placeholder="Enter your name">
+      <br>
+      <label for="auditor-role">Auditor role:</label>
+      <input type="text" id="auditor-role" placeholder="Enter your role">
+      <br>
+      <button id="start-button">Start Assessment</button>
+    </div>
+    
+    <div class="assessment-container" id="assessment-container"></div>
+  
+  </div>
+  
+<!-- Import the assessment javascript -->
+<script src="/scripts/v2-assessment.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+
+
+</main>
+</body>
+</html>
