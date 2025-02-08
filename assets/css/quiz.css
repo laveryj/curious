@@ -11,14 +11,15 @@ a {
 }
 
 .quiz-card {
-background-color: white;
-border: 1px solid #ddd;
-border-radius: 10px;
-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-padding: 20px;
-width: 600px;
-margin: 20px auto;
-text-align: center;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  max-width: 600px; /* Ensures it doesn't exceed 600px */
+  width: 90%; /* Makes it responsive on smaller screens */
+  margin: 20px auto;
+  text-align: center;
 }
 
 .quiz-card h1 {
@@ -54,15 +55,16 @@ margin-bottom: 20px;
 }
 
 .quiz-container .options {
-display: flex; /* Enable flexbox for horizontal layout */
-flex-wrap: wrap; /* Allow wrapping to the next line if needed */
-justify-content: center; /* Center-align the buttons */
-gap: 10px; /* Add space between buttons */
+  display: flex;
+  flex-direction: column; /* Stack buttons vertically on smaller screens */
+  align-items: center;
+  gap: 10px; /* Space between buttons */
 }
 
 .quiz-container .options button {
 flex: 1 1 40%; /* Each button takes up 40% of the row */
 max-width: 150px; /* Prevent buttons from becoming too wide */
+width: 100%; /* Makes the buttons take full width of the container */
 padding: 10px;
 font-size: 1rem;
 border: none;
