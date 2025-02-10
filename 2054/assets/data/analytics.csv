@@ -1,511 +1,123 @@
 # ----------------------------------------
-# Report CSV Export
-# Account: josephlavery.co.uk
-# Property: Curious
+# Curious
+# Curious Data Export MASTER-Free-form 1
+# 20250127-20250130
 # ----------------------------------------
-# 
-# All Users
-# Start date: 20250101
-# End date: 20250128
-Page title and screen class,Landing page + query string,Views,Active users,Views per active user,Average engagement time per active user
-Loading...,/2054/index.html?exhibit-id=1,100,4,25,4.5
-Curious,/2054/qrscanner.html,97,1,97,313
-(not set),/2054/index.html?EID=TH5,83,2,41.5,11.5
-Loading...,/2054/index.html?exhibit-id=1&species-id=1,66,3,22,1
-Curious,/2054/get-started.html,65,1,65,170
-Factfile: Pollack,/2054/index.html,64,1,64,179
-Sealife Adventure,/2054/index.html,62,3,20.666666666666668,116
-(not set),/2054/index.html?EID=ST1,57,1,57,80
-No Exhibit Selected,/2054/capture.html,52,2,26,0
-(not set),/2000/index.html?exhibit-id=TH3&species-id=OID188,51,1,51,0
-Curious,/2054/index.html,46,1,46,50
-No Exhibit Selected,/2054/qrscanner.html,46,3,15.333333333333334,0
-Sealife Adventure,/2054/capture.html,40,3,13.333333333333334,444.3333333333333
-Test Site,/2000/index.html?exhibit-id=TH3&species-id=OID188,32,1,32,45
-Factfile: Atlantic Cod,/2000/index.html?exhibit-id=1&species-id=1,29,1,29,20
-Curious,/2054/index.html?EID=C1&OID=1,26,1,26,72
-No Exhibit Selected,/2054/index.html,25,2,12.5,0
-Loading...,/2054/index.html?exhibit-id=OC1,24,5,4.8,0.2
-Test Site,/2000/index.html,24,1,24,40
-Sealife Adventure,/2054/index.html?EID=S3&OID=100,23,1,23,90
-Sealife Adventure,/2054/test.html,22,2,11,59.5
-Sealife Adventure | Get Started,/2054/index.html?EID=S3&OID=100,21,1,21,139
-Explore: Wave Tank,/2054/index.html?exhibit-id=1,20,5,4,27.4
-(not set),/2054/index.html?EID=S3&OID=100,19,1,19,0
-Exhibit Inactive,/2054/index.html?EID=TH5,18,1,18,291
-(not set),/2054/index.html,17,1,17,0
-Sealife Adventure,/2054/get-started.html,17,2,8.5,261
-Species Factfile,/2054/index.html?exhibit-id=1&species-id=1,17,3,5.666666666666667,24
-(not set),/2000/index.html?exhibit-id=W1,16,2,8,0
-(not set),/2000/index.html,15,1,15,0
-Explore: Cuboid Tank,/2054/test.html,15,1,15,47
-Loading...,/2000/index.html?exhibit-id=W1,15,2,7.5,0
-Curious,/2054/index.html?exhibit-id=1,14,1,14,116
-Curious | Portal,/2054/index.html?EID=S3&OID=100,14,1,14,260
-Explore: Wave Tank,/2000/index.html,14,1,14,103
-No Exhibit Selected,/2054/get-started.html,14,1,14,0
-Species Not Found,/2000/index.html?exhibit-id=TH3&species-id=OID188,14,1,14,17
-Factfile: Crab-eating Macaque,/2000/index.html?exhibit-id=W1,13,1,13,42
-Factfile: Poor Cod,/2000/index.html?exhibit-id=A2&species-id=OID22,13,1,13,82
-Factfile: Snakelock Anenomes,/2054/capture.html,13,1,13,2
-Factfile: Snakelock Anenomes,/2054/index.html,13,1,13,20
-Explore: Ocean,/2054/index.html?exhibit-id=OC1,12,9,1.3333333333333333,16.555555555555557
-Profile: Sunrise,/2054/index.html?EID=TH5,12,1,12,4
-Read: Blog Test,/2054/index.html?exhibit-id=1&species-id=1,12,1,12,51
-Sealife Adventure,/2054/qrscanner.html,12,3,4,339
-Explore: Wave Tank,/2054/index.html,11,1,11,49
-Factfile: Shrimpfish,/2054/index.html,11,1,11,10
-Sealife Adventure,/2054/index.html?EID=C1&OID=1,11,1,11,18
-Sealife Adventure,/2054/index.html?exhibit-id=OC1,11,11,1,2.909090909090909
-Error,/2054/index.html?exhibit-id=1&species-id=1,10,1,10,15
-Explore: Reef Wall,/2054/index.html?EID=ST1,10,1,10,17
-No Exhibit Selected,/2054/index.html?EID=S3&OID=100,10,1,10,0
-Sealife Adventure,/2054/index.html?exhibit-id=1,10,4,2.5,36
-Test site - Sealife demo,/2000/index.html,10,1,10,36
-Exhibit Explorer,/2054/index.html?EID=S3&OID=100,9,1,9,0
-Loading...,/2000/index.html,9,1,9,0
-Loading...,/2000/index.html?exhibit-id=6&species-id=16,9,1,9,0
-Loading...,/2000/index.html?exhibit-id=W1&species-id=781,9,1,9,0
-No Exhibit Selected,/2054/index.html?exhibit-id=1,9,1,9,0
-Payment Overdue,/2054/index.html?EID=TH5,9,1,9,66
-Sealife Adventure,/2054/index.html?EID=ST3,9,1,9,45
-Species Factfile,/2054/index.html?exhibit-id=OC1,9,4,2.25,30.25
-(not set),/2000/index.html?EID=C2&OID=147A,8,2,4,0
-(not set),/2000/index.html?exhibit-id=A4,8,1,8,0
-Curious,/2054/capture.html,8,3,2.6666666666666665,4.333333333333333
-Curious,/2054/index.html?EID=S3&OID=100,8,1,8,57
-Curious,/2054/portal.html,8,1,8,3
-Curious,/2054/test.html,8,1,8,63
-Explore: Ray Bay,/2054/index.html?EID=ST1,8,1,8,18
-Explore: Wave Tank,/2054/index.html?exhibit-id=1&species-id=1,8,4,2,13.5
-Factfile: Atlantic Cod,/2000/index.html,8,1,8,27
-Loading...,/2054/index.html?exhibit-id=1&species-id=2,8,1,8,0
-(not set),/2000/index.html?EID=W4,7,1,7,0
-(not set),/2000/index.html?exhibit-id=C5,7,1,7,0
-(not set),/2000/index.html?exhibit-id=O1,7,1,7,0
-(not set),/2054/notice.html,7,1,7,0
-(not set),/2054/notice.html?notice=overdue,7,1,7,0
-(not set),/2054/portal.html,7,3,2.3333333333333335,0
-Curious | Portal,/2054/portal.html,7,3,2.3333333333333335,62
-Explore: Sub 3,/2054/capture.html,7,1,7,64
-Factfile: Butterfly,/2054/index.html?EID=S3&OID=100,7,1,7,6
-Loading...,/2000/index.html?exhibit-id=1,7,2,3.5,0
-No Exhibit Selected,/2054/index.html?EID=C1&OID=1,7,1,7,0
-Profile: Stitch,/2000/index.html?exhibit-id=TH3&species-id=OID188,7,1,7,18
-Scan a QR code to start,/2054/capture.html,7,1,7,0
-Under Maintenance,/2054/notice.html?notice=overdue,7,1,7,59
-Watch: Video Test,/2054/index.html?exhibit-id=1&species-id=1,7,1,7,27
-(not set),/2054/index.html?EID=O1&OID=141A,6,1,6,0
-(not set),/2054/index.html?exhibit-id=1,6,1,6,0
-Curious | Portal,/2054/index.html?EID=TH5,6,1,6,30
-Explore: Cuboid Tank,/2054/index.html?EID=ST3,6,1,6,3
-Explore: Wave Tank,/2000/index.html?exhibit-id=1&species-id=1,6,1,6,92
-Leamington Spa Art Gallery and Museum,/2054/index.html?EID=C1&OID=1,6,1,6,7
-Loading...,/2054/index.html,6,1,6,0
-Loading...,/2054/index.html?exhibit-id=W1,6,1,6,0
-No Exhibit Selected,/2000/index.html?exhibit-id=TH3&species-id=OID188,6,1,6,0
-Profile: Salmonella,/2000/index.html?EID=C2&OID=147A,6,2,3,28.5
-Profile: Wonderer,/2000/index.html?EID=C2&OID=147A,6,2,3,18.5
-Species Factfile,/2054/index.html?exhibit-id=1,6,3,2,53
-Test site - Sealife demo,/2000/index.html?exhibit-id=W1&species-id=781,6,3,2,16.333333333333332
-(not set),/2000/index.html?exhibit-id=C1,5,2,2.5,0
-(not set),/2000/index.html?exhibit-id=OC1&species-id=51,5,1,5,0
-(not set),/2054/capture.html,5,1,5,0
-(not set),/2054/index.html?EID=OC1,5,1,5,0
-Curious | Portal,/2054/capture.html,5,1,5,37
-Explore: Macaques,/2000/index.html?exhibit-id=TH3&species-id=OID188,5,1,5,7
-Explore: Macaques,/2054/index.html?exhibit-id=W1,5,4,1.25,5.75
-Explore: Ocean,/2054/index.html?EID=ST1,5,1,5,21
-Explore: Ocean,/2054/index.html?exhibit-id=1,5,2,2.5,100
-Explore: Ocean,/2054/portal.html,5,2,2.5,32.5
-Explore: Rockpools,/2000/index.html?EID=C3,5,1,5,17
-Factfile: Boxing Shrimp,/2054/index.html?EID=TH5,5,1,5,13
-Factfile: Common Starfish,/2000/index.html?exhibit-id=TH3&species-id=OID188,5,1,5,12
-Factfile: Pollack,/2054/index.html?EID=C1&OID=1,5,1,5,7
-Scan a QR code to start,/2054/get-started.html,5,1,5,0
-Sealife Adventure | Scan to Start,/2054/index.html,5,2,2.5,32
-(not set),/2000/index.html?exhibit-id=C6,4,1,4,0
-Curious,/2054/index.html?EID=OC1,4,1,4,18
-Curious,/2054/index.html?EID=ST3,4,1,4,5
-Curious | Portal,/2054/get-started.html,4,2,2,14
-Curious | Portal,/2054/index.html?EID=ST1,4,1,4,21
-Explore: Croc Pool,/2054/index.html?EID=TH5,4,2,2,14
-Explore: Sub 2,/2054/index.html?EID=TH5,4,1,4,6
-Factfile: Black Sea Bream,/2054/get-started.html,4,1,4,2
-Factfile: Common Starfish,/2054/index.html,4,1,4,29
-Factfile: Rock Cook Wrasee,/2054/qrscanner.html,4,1,4,942
-Leamington Spa Art Gallery and Museum,/2054/get-started.html,4,1,4,7
-Loading...,/2000/index.html?exhibit-id=1&species-id=1,4,1,4,0
-No Exhibit Selected,/2000/index.html?exhibit-id=C1,4,1,4,0
-No Exhibit Selected,/2054/index.html?EID=OC1,4,1,4,0
-No Exhibit Selected,/2054/index.html?EID=ST3,4,1,4,0
-No Exhibit Selected,/2054/test.html,4,1,4,0
-Profile: Florentine,/2000/index.html?exhibit-id=TH3&species-id=OID188,4,1,4,14
-Profile: Ronan,/2000/index.html?EID=C2&OID=147A,4,2,2,11
-Scan an exhibit QR code to start,/2054/index.html,4,2,2,0
-Scan an exhibit QR code to start,/2054/index.html?EID=S3&OID=100,4,1,4,0
-Scan to Start | Sealife Adventure,/2054/index.html?EID=TH5,4,2,2,4.5
-Scan to Start | Sealife Adventure,/2054/portal.html,4,2,2,19
-Sealife Adventure,/2054/portal.html,4,3,1.3333333333333333,8.666666666666666
-Your Page Title,/2054/index.html,4,1,4,0
-(not set),/2000/index.html?EID=C3,3,1,3,0
-(not set),/2000/index.html?EID=ST2,3,1,3,0
-(not set),/2000/index.html?EID=W4&OID=141A,3,1,3,0
-(not set),/2000/index.html?exhibit-id=W1&species-id=781,3,1,3,0
-Exhibit Not Found,/2000/index.html,3,1,3,4
-Explore: Macaques,/2000/index.html?exhibit-id=W1,3,2,1.5,4
-Explore: Meerkats,/2000/index.html?exhibit-id=TH3&species-id=OID188,3,1,3,65
-Explore: Ocean,/2054/index.html,3,1,3,8
-Explore: Ocean,/2054/index.html?EID=OC1,3,1,3,5
-Explore: Royals,/2000/index.html?exhibit-id=C6,3,1,3,41
-Explore: Swamp,/index.html,3,1,3,78
-Explore: Wave Tank,/2000/index.html?exhibit-id=OC1&species-id=51,3,1,3,4
-Factfile: Butterfish,/2054/qrscanner.html,3,1,3,38
-Loading...,/2000/index.html?exhibit-id=OC1&species-id=51,3,1,3,0
-No Exhibit Selected,/2054/,3,1,3,0
-No Exhibit Selected,/index.html,3,1,3,0
-Payment Overdue,/2054/notice.html?notice=overdue,3,1,3,1
-Profile: Iris,/2054/index.html,3,1,3,85
-Scan a QR code to start,/2054/index.html?EID=ST1,3,1,3,0
-Scan a QR code to start,/2054/portal.html,3,2,1.5,0
-Sealife Adventure | Scan to Start,/2054/index.html?EID=S3&OID=100,3,1,3,103
-Test Site,/2054/index.html?exhibit-id=1,3,1,3,9
-Test site - Sealife demo,/2000/index.html?exhibit-id=OC1&species-id=51,3,1,3,4
-(not set),/2054/get-started.html,2,2,1,0
-Audio Guide,/3000/index.html?exhibit-id=1,2,2,1,2
-Blog: Blog Test,/2054/index.html?exhibit-id=1&species-id=1,2,1,2,9
-Curious,/2054/index.html?EID=A7,2,1,2,80
-Curious,/index.html,2,1,2,9
-Curious | Portal,/2054/index.html,2,2,1,58
-Error,/2054/index.html,2,1,2,0
-Explore: Dump Tank,/2054/qrscanner.html,2,1,2,82
-Explore: Hex Tank,/2054/test.html,2,1,2,13
-Explore: Macaques,/2054/index.html?exhibit-id=1,2,1,2,23
-Explore: Mongoose,/2054/index.html?EID=S3&OID=100,2,1,2,18
-Explore: Ocean,/2054/index.html?EID=ST3,2,1,2,67
-Explore: Ray Bay,/2054/index.html?exhibit-id=1,2,1,2,6
-Explore: Reef Wall,/2054/portal.html,2,1,2,49
-Explore: Rockpools,/2054/qrscanner.html,2,1,2,338
-Explore: Sunstars,/2000/index.html,2,1,2,14
-Explore: Tall Tank,/2054/portal.html,2,1,2,10
-Factfile: Blackstreak Surgeon,/2000/index.html?exhibit-id=TH3&species-id=OID188,2,1,2,7
-Factfile: Blackstreak Surgeon,/2054/index.html?exhibit-id=OC1,2,1,2,13
-Factfile: Bloody Henry Starfish,/2000/index.html?exhibit-id=A2&species-id=OID27,2,1,2,62
-Factfile: Bloody Henry Starfish,/2000/index.html?exhibit-id=TH3&species-id=OID188,2,1,2,4
-Factfile: Butterfish,/2054/capture.html,2,1,2,14
-Factfile: Chocolate Chip Starfish,/2054/portal.html,2,1,2,190
-Factfile: Crab-eating Macaque,/2000/index.html?exhibit-id=W1&species-id=781,2,1,2,1
-Factfile: Pollack,/2054/get-started.html,2,1,2,4
-Factfile: Touch Coral,/2054/index.html?EID=S3&OID=100,2,1,2,12
-Factfile: Unknown,/2000/index.html?exhibit-id=TH3&species-id=OID188,2,1,2,10
-Get Started | Sealife Adventure,/2054/get-started.html,2,2,1,7.5
-Listen: Plant Room | Sealife Adventure,/2054/index.html?EID=S3&OID=100,2,1,2,59
-Loading...,/2054/index.html?exhibit-id=20,2,1,2,0
-No Exhibit Selected,/,2,2,1,0
-No Exhibit Selected,/2054/index.html?exhibit-id=OC1,2,2,1,0
-No Exhibit Selected,/2054/portal.html,2,1,2,0
-No Exhibit Selected,/3000/,2,2,1,0
-Profile: Ronan,/2000/index.html?EID=W4&OID=141A,2,1,2,13
-Profile: Wonderer,/2000/index.html?exhibit-id=TH3&species-id=OID188,2,1,2,4
-Profile: unnamed,/2054/index.html?EID=S3&OID=100,2,1,2,7
-Profile: unnamed | Sealife Adventure,/2054/index.html?EID=S3&OID=100,2,1,2,0
-Scan a QR code to start,/2054/index.html?EID=TH5,2,1,2,0
-Scan to Start | Sealife Adventure,/2054/index.html?EID=ST1,2,1,2,0
-Sealife Adventure,/2054/,2,1,2,29
-Sealife Adventure,/2054/index.html?EID=OC1,2,2,1,46
-Sealife Adventure,/2054/index.html?exhibit-id=1&species-id=1,2,4,0.5,11.5
-Sealife Adventure,/2054/index.html?exhibit-id=20,2,2,1,2.5
-Test Site,/2000/index.html?exhibit-id=A4,2,1,2,51
-Test Site,/2000/index.html?exhibit-id=C1,2,1,2,9
-Test Site,/2000/index.html?exhibit-id=C6,2,1,2,13
-Test Site,/2000/index.html?exhibit-id=W1,2,3,0.6666666666666666,23.333333333333332
-Test site - Sealife demo,/2000/index.html?exhibit-id=1,2,2,1,37
-Test site - Sealife demo,/2000/index.html?exhibit-id=W1&species-id=786,2,1,2,23
-Test site - Sealife demo,/2054/index.html?exhibit-id=W1,2,1,2,60
-(not set),/2000/index.html?EID=ST5,1,1,1,0
-(not set),/2000/index.html?exhibit-id=A2&species-id=OID22,1,1,1,0
-(not set),/2000/index.html?exhibit-id=A2&species-id=OID27,1,1,1,0
-(not set),/2000/index.html?exhibit-id=P1&species-id=OID199,1,1,1,0
-(not set),/2054/index.html?EID=C1,1,1,1,0
-(not set),/2054/index.html?EID=W4,1,1,1,0
-(not set),/2054/index.html?exhibit-id=OC1,1,1,1,0
-Audio Guide,/2054/get-started.html,1,1,1,24
-Audio Guide,/2054/index.html,1,1,1,31
-Audio Guide,/2054/index.html?EID=1,1,1,1,16
-Audio Guide,/2054/index.html?exhibit-id=20,1,1,1,0
-Audio Guide,/3000/index.html?exhibit-id=2,1,1,1,4
-Blog: undefined,/2054/index.html?exhibit-id=1&species-id=1,1,1,1,2
-Curious,/2000/index.html?EID=TH5&OID=134A,1,1,1,0
-Curious | Analytics,/2054/get-started.html,1,1,1,1
-Curious | Analytics,/2054/index.html?EID=S3&OID=100,1,1,1,6
-Curious | Analytics,/2054/notice.html,1,1,1,1
-Curious | Portal,/2054/index.html?EID=O1&OID=141A,1,1,1,6
-Curious | Portal,/2054/index.html?EID=OC1,1,1,1,8
-Curious | Portal,/2054/notice.html,1,1,1,14
-Error,/2054/index.html?EID=TH5,1,1,1,0
-Exhibit Retired,/2054/index.html?EID=TH5,1,1,1,18
-Explore: Anemone Tank,/2054/index.html?EID=OC1,1,1,1,19
-Explore: Butterfly House,/2000/index.html?exhibit-id=OC1&species-id=51,1,1,1,5
-Explore: Corner Tank,/2054/index.html?EID=A7,1,1,1,12
-Explore: Corner Tank,/2054/index.html?exhibit-id=1,1,1,1,0
-Explore: Corner Tank,/2054/qrscanner.html,1,1,1,129
-Explore: Croc Pool,/2000/index.html?EID=W4,1,1,1,2
-Explore: Croc Pool,/2054/index.html?EID=ST1,1,1,1,0
-Explore: Dump Tank,/2000/index.html?exhibit-id=C5,1,1,1,12
-Explore: Hex Tank,/2054/get-started.html,1,1,1,10
-Explore: Hex Tank,/2054/portal.html,1,1,1,0
-Explore: Macaques,/2054/portal.html,1,1,1,0
-Explore: Ocean,/2000/index.html?exhibit-id=W1,1,1,1,26
-Explore: Ocean,/2054/index.html?exhibit-id=OC1&species-id=62,1,1,1,4
-Explore: Otters,/2054/index.html?EID=S3&OID=100,1,1,1,21
-Explore: Pengiuns,/2000/index.html?EID=C3,1,1,1,14
-Explore: Pengiuns,/2054/index.html?EID=O1&OID=141A,1,1,1,16
-Explore: Reef Wall,/2054/index.html?exhibit-id=1,1,1,1,5
-Explore: Rockpools,/2054/capture.html,1,1,1,0
-Explore: Rockpools,/2054/index.html,1,1,1,8
-Explore: Squirels,/2000/index.html?EID=W4,1,1,1,2
-Explore: Sub 3,/2054/index.html?EID=S3&OID=100,1,1,1,6
-Explore: Tall Tank,/2000/index.html?EID=ST2,1,1,1,3
-Explore: Wall Tank,/2054/portal.html,1,1,1,2
-Explore: Waterfall,/2000/index.html?exhibit-id=A4,1,1,1,2
-Explore: Waterfall,/2000/index.html?exhibit-id=C5,1,1,1,2
-Explore: Wave Tank,/2000/index.html?exhibit-id=1,1,1,1,2
-Explore: Wave Tank,/2000/index.html?exhibit-id=A4,1,1,1,1
-Explore: Wave Tank,/2000/index.html?exhibit-id=C1,1,1,1,10
-Explore: Wave Tank,/2000/index.html?exhibit-id=TH3&species-id=OID188,1,1,1,33
-Explore: Wave Tank,/2054/index.html?EID=C1,1,1,1,5
-Explore: Wave Tank,/2054/index.html?exhibit-id=20,1,1,1,81
-Explore: Wave Tank,/2054/portal.html,1,1,1,7
-Factfile: Babs,/2000/index.html?exhibit-id=W1,1,1,1,24
-Factfile: Bamboo Shrimp,/2054/index.html?EID=S3&OID=100,1,1,1,1
-Factfile: Blackstreak Surgeon,/2000/index.html?EID=OC1&OID=79,1,1,1,2
-Factfile: Brown Branded Bamboo Shark,/2000/index.html?exhibit-id=W1,1,1,1,3
-Factfile: Checkerboard Wrasse,/2054/portal.html,1,1,1,48
-Factfile: Common Starfish,/2054/portal.html,1,1,1,2
-Factfile: Common Sunstars,/2000/index.html?EID=W4,1,1,1,3
-Factfile: Crab-eating Macaque,/2054/index.html?exhibit-id=1&species-id=2,1,1,1,37
-Factfile: Leopard Moray Eel,/2000/index.html?EID=W4,1,1,1,2
-Factfile: Lesser Spotted Cat shark,/2054/index.html?EID=S3&OID=100,1,1,1,6
-Factfile: Lionfish,/2054/portal.html,1,1,1,17
-Factfile: Nana Rose,/2000/index.html?exhibit-id=W1,1,1,1,1
-Factfile: Orential Sweetlips,/2054/index.html?exhibit-id=1,1,1,1,4
-Factfile: Orential Sweetlips,/2054/portal.html,1,1,1,13
-Factfile: Patrick,/2000/index.html?exhibit-id=W1,1,1,1,0
-Factfile: Pollack,/2000/index.html?EID=W4,1,1,1,3
-Factfile: Pollack,/2054/index.html?EID=C1,1,1,1,5
-Factfile: Pollack,/2054/index.html?exhibit-id=1,1,1,1,2
-Factfile: Poor Cod,/2054/get-started.html,1,1,1,2
-Factfile: Porcupine Puffer,/2000/index.html?EID=W4,1,1,1,1
-Factfile: Porkfish,/2054/portal.html,1,1,1,29
-Factfile: Regal Tang,/2000/index.html?exhibit-id=OC1&species-id=51,1,2,0.5,42.5
-Factfile: Regal Tang,/2054/index.html?exhibit-id=1,1,1,1,4
-Factfile: Regal Tang,/2054/portal.html,1,1,1,13
-Factfile: Shrimpfish,/2000/index.html?EID=W4,1,1,1,8
-Factfile: Snakelock Anenomes,/2054/index.html?EID=OC1,1,1,1,8
-Factfile: Spiny Seahorse,/2000/index.html?exhibit-id=6&species-id=16,1,1,1,21
-Factfile: Sunshine Pleco,/2054/index.html?EID=S3&OID=100,1,1,1,2
-Factfile: Unknown,/2000/index.html?exhibit-id=O1,1,1,1,3
-Get Started | Sealife Adventure,/2054/capture.html,1,1,1,34
-Get Started | Sealife Adventure,/2054/portal.html,1,1,1,1
-Leamington Spa Art Gallery and Museum,/2054/index.html?exhibit-id=1,1,1,1,2
-Leamington Spa Art Gallery and Museum,/3000/index.html?exhibit-id=2,1,1,1,5
-Listen: Plant Room,/2054/index.html?EID=S3&OID=100,1,1,1,0
-Loading...,/2000/index.html?EID=C2&OID=147A,1,1,1,0
-Loading...,/3000/index.html?exhibit-id=1,1,1,1,0
-Loading...,/3000/index.html?exhibit-id=2,1,1,1,0
-Loading...,/index.html,1,1,1,0
-No Exhibit Selected,/2000/index.html,1,1,1,0
-No Exhibit Selected,/2000/index.html?EID=C2&OID=147A,1,1,1,0
-Notice Not Found,/2054/index.html?EID=TH5,1,1,1,13
-Profile - Babs,/2000/index.html?exhibit-id=W1,1,1,1,0
-Profile Babs,/2000/index.html?exhibit-id=W1,1,1,1,0
-Profile: Animal - Babs,/2000/index.html?exhibit-id=W1,1,1,1,0
-Profile: Archimedies,/2000/index.html?EID=C2&OID=147A,1,1,1,5
-Profile: Babs,/2000/index.html?exhibit-id=W1,1,1,1,1
-Profile: Dave,/2054/index.html?EID=S3&OID=100,1,1,1,9
-Profile: Didge,/2000/index.html?exhibit-id=P1&species-id=OID199,1,1,1,6
-Profile: Flop,/2000/index.html?EID=W4,1,1,1,3
-Profile: Florentine,/2000/index.html?EID=C2&OID=147A,1,1,1,43
-Profile: Iris,/2054/index.html?EID=ST3,1,1,1,1
-Profile: Jimbob,/2000/index.html?EID=TH5&OID=134A,1,1,1,0
-Profile: Jimbob,/2000/index.html?EID=W4,1,1,1,15
-Profile: Jimbob,/2000/index.html?exhibit-id=O1,1,1,1,5
-Profile: Mogwai,/2000/index.html?exhibit-id=W1,1,1,1,7
-Profile: Paley,/2054/index.html?exhibit-id=1,1,1,1,20
-Profile: Patrick,/2000/index.html?EID=W4,1,1,1,3
-Profile: Patrick,/2000/index.html?exhibit-id=W1,1,1,1,11
-Profile: Patrick,/2054/index.html?exhibit-id=1,1,2,0.5,17.5
-Profile: Patrick,/2054/portal.html,1,1,1,0
-Profile: Philly,/2054/index.html?exhibit-id=1,1,1,1,10
-Profile: Ronan,/2000/index.html?EID=W4,1,1,1,3
-Profile: Vixen,/2000/index.html?exhibit-id=O1,1,1,1,9
-Profile: unnamed,/2000/index.html?exhibit-id=TH3&species-id=OID188,1,1,1,6
-Scan a QR code to start,/2054/index.html,1,1,1,0
-Scan a QR code to start,/2054/index.html?EID=O1&OID=141A,1,1,1,0
-Scan a QR code to start,/2054/index.html?EID=OC1,1,1,1,0
-Scan a QR code to start,/2054/index.html?EID=W4,1,1,1,0
-Scan a QR code to start,/2054/index.html?exhibit-id=W1,1,1,1,0
-Scan a QR code to start,/2054/notice.html,1,1,1,0
-Scan an exhibit QR code to start,/2054/portal.html,1,1,1,0
-Scan to Start | Sealife Adventure,/2054/get-started.html,1,1,1,3
-Sealife Adventure,/2000/index.html?EID=TH5&OID=134A,1,1,1,0
-Sealife Adventure,/2054/index.html?EID=A7,1,1,1,3
-Sealife Adventure,/2054/index.html?exhibit-id=OC1&species-id=63,1,0,0,0
-Sealife Adventure,/2054/index.html?exhibit-id=W1,1,1,1,3
-Sealife Adventure,/2054/notice.html,1,1,1,25
-Sealife Adventure | All Species,/2054/index.html?EID=S3&OID=100,1,1,1,9
-Sealife Adventure | Get Started,/2054/get-started.html,1,1,1,0
-Species Factfile,/2054/index.html?exhibit-id=OC1&species-id=57,1,1,1,3
-Species Factfile,/2054/index.html?exhibit-id=OC1&species-id=62,1,1,1,2
-Test Site,/2000/index.html?EID=C2&OID=147A,1,1,1,2
-Test Site,/2000/index.html?exhibit-id=A2&species-id=OID27,1,1,1,0
-Test Site,/2000/index.html?exhibit-id=O1,1,1,1,6
-Test site - Sealife demo,/2000/index.html?exhibit-id=1&species-id=1,1,1,1,0
-Test site - Sealife demo,/2000/index.html?exhibit-id=W1,1,2,0.5,4
-Test site - Sealife demo,/2054/index.html?exhibit-id=1,1,2,0.5,103
-Audio Guide,/2054/index.html?EID=S3&OID=100,0,1,0,13
-Audio Guide,/2054/index.html?exhibit-id=OC1,0,1,0,6
-Deprecated Exhibit,/2054/index.html?EID=TH5,0,1,0,1
-Exhibit Inactive,/2054/notice.html,0,1,0,0
-Explore: Breadbin,/2054/index.html?exhibit-id=1,0,1,0,1
-Explore: Butterfly House,/2054/index.html?EID=A7,0,1,0,1
-Explore: Butterfly House,/2054/index.html?EID=S3&OID=100,0,1,0,2
-Explore: Cliff,/2000/index.html?exhibit-id=TH3&species-id=OID188,0,1,0,1
-Explore: Cube,/2000/index.html?exhibit-id=OC1&species-id=51,0,1,0,12
-Explore: Cuboid Tank,/2054/index.html,0,1,0,11
-Explore: Cylinder,/2000/index.html?EID=W4,0,1,0,6
-Explore: Dump Tank,/2054/index.html?exhibit-id=1,0,1,0,6
-Explore: Hex,/2000/index.html?exhibit-id=A4,0,1,0,9
-Explore: Hex,/2000/index.html?exhibit-id=TH3&species-id=OID188,0,1,0,10
-Explore: Hex,/2054/index.html?exhibit-id=1,0,1,0,20
-Explore: Lizards,/2054/qrscanner.html,0,1,0,8
-Explore: Macaques,/2000/index.html?EID=W4,0,1,0,3
-Explore: Macaques,/2054/index.html?exhibit-id=1&species-id=1,0,1,0,1
-Explore: Macaques,/2054/index.html?exhibit-id=1&species-id=2,0,1,0,6
-Explore: Macaques,/2054/index.html?exhibit-id=OC1,0,1,0,1
-Explore: Meerkats,/2000/index.html?exhibit-id=O1,0,1,0,9
-Explore: Meerkats,/2000/index.html?exhibit-id=P1&species-id=OID199,0,1,0,11
-Explore: Mongoose,/2000/index.html?EID=W4&OID=141A,0,1,0,5
-Explore: Ocean,(not set),0,1,0,0
-Explore: Ocean,/2000/index.html?EID=W4,0,1,0,6
-Explore: Ocean,/2000/index.html?exhibit-id=W1&species-id=781,0,2,0,1.5
-Explore: Ocean,/2054/,0,1,0,7
-Explore: Ocean,/2054/capture.html,0,1,0,10
-Explore: Ocean,/2054/index.html?exhibit-id=20,0,1,0,1
-Explore: Ocean,/2054/index.html?exhibit-id=OC1&species-id=57,0,1,0,2
-Explore: Otters,/2054/index.html?EID=O1&OID=141A,0,1,0,1
-Explore: Otters,/2054/notice.html,0,1,0,4
-Explore: Pengiuns,/2054/index.html?EID=S3&OID=100,0,1,0,6
-Explore: Pengiuns,/2054/index.html?EID=TH5,0,1,0,1
-Explore: Ray Bay,/2000/index.html,0,1,0,5
-Explore: Ray Bay,/2000/index.html?EID=ST5,0,1,0,7
-Explore: Ray Bay,/2000/index.html?EID=W4,0,1,0,12
-Explore: Ray Bay,/2000/index.html?exhibit-id=1&species-id=1,0,1,0,1
-Explore: Reef Wall,/2000/index.html?EID=ST2,0,1,0,1
-Explore: Rockpools,/2000/index.html?exhibit-id=TH3&species-id=OID188,0,1,0,11
-Explore: Royals,/2000/index.html?exhibit-id=W1,0,1,0,5
-Explore: Royals,/2054/capture.html,0,1,0,2
-Explore: Seahorse Tank,/2054/get-started.html,0,1,0,4
-Explore: Seahorse Tank,/2054/portal.html,0,1,0,9
-Explore: Snails,/2054/index.html?EID=S3&OID=100,0,1,0,5
-Explore: Squirels,(not set),0,1,0,0
-Explore: Squirels,/2000/index.html?EID=W4&OID=141A,0,1,0,1
-Explore: Squirels,/2000/index.html?exhibit-id=C1,0,1,0,7
-Explore: Sub 1,/2000/index.html,0,1,0,6
-Explore: Sub 6,/2054/index.html?EID=O1&OID=141A,0,1,0,28
-Explore: Sub 6,/2054/index.html?EID=S3&OID=100,0,1,0,4
-Explore: Sunstars,/2000/index.html?EID=W4,0,1,0,2
-Explore: Swamp,/2000/index.html,0,1,0,1
-Explore: Swamp,/2000/index.html?exhibit-id=TH3&species-id=OID188,0,1,0,3
-Explore: Wave Tank,(not set),0,1,0,1
-Explore: Wave Tank,/2000/index.html?EID=C2&OID=147A,0,1,0,2
-Explore: Wave Tank,/2000/index.html?EID=W4,0,1,0,3
-Explore: Wave Tank,/2000/index.html?exhibit-id=W1&species-id=781,0,1,0,1
-Explore: Wave Tank,/2054/get-started.html,0,1,0,12
-Explore: Wave Tank,/2054/index.html?exhibit-id=OC1,0,1,0,1
-Explore: Whitewater 1,/2000/index.html,0,1,0,4
-Explore: day gecko,/2000/index.html?exhibit-id=W1,0,1,0,1
-Factfile: Atlantic Cod,/2000/index.html?exhibit-id=1,0,1,0,27
-Factfile: Atlantic Cod,/2000/index.html?exhibit-id=6&species-id=16,0,1,0,6
-Factfile: Atlantic Cod,/2000/index.html?exhibit-id=W1,0,1,0,2
-Factfile: Atlantic Cod,/2054/index.html?exhibit-id=1,0,1,0,6
-Factfile: Big Bellied Seahorse,/2054/get-started.html,0,1,0,4
-Factfile: Black Pacu,/2000/index.html?exhibit-id=6&species-id=16,0,1,0,5
-Factfile: Black Pacu,/2054/index.html?exhibit-id=1,0,1,0,1
-Factfile: Black Sea Bream,/2054/index.html?EID=S3&OID=100,0,1,0,4
-Factfile: Blackstreak Surgeon,/2054/capture.html,0,1,0,2
-Factfile: Bloody Henry Starfish,/2054/index.html?exhibit-id=1,0,1,0,0
-Factfile: Blue Triggerfish,/2000/index.html?exhibit-id=W1,0,1,0,1
-Factfile: Brissle Tail Filefish,/2054/index.html?EID=O1&OID=141A,0,1,0,29
-Factfile: Butterfly,/2000/index.html?exhibit-id=OC1&species-id=51,0,1,0,8
-Factfile: Carpet Anenome,/2054/index.html?EID=S3&OID=100,0,1,0,1
-Factfile: Caulerpa sp.,/2054/index.html?EID=S3&OID=100,0,1,0,4
-Factfile: Common Brittlestar,/2000/index.html?exhibit-id=C5,0,1,0,2
-Factfile: Common Pipefish,/2000/index.html?exhibit-id=6&species-id=16,0,1,0,2
-Factfile: Common Pipefish,/2000/index.html?exhibit-id=W1,0,1,0,3
-Factfile: Common Sunstars,/2000/index.html,0,1,0,2
-Factfile: Copperband,/2054/index.html?EID=S3&OID=100,0,1,0,1
-Factfile: Corkwing Wrasse,/2000/index.html?exhibit-id=C5,0,1,0,3
-Factfile: Crab-eating Macaque,/2054/index.html?exhibit-id=1,0,1,0,38
-Factfile: Dot Dash Butterfly Fish,/2054/index.html?EID=S3&OID=100,0,1,0,8
-Factfile: European Eel,/2000/index.html?exhibit-id=OC1&species-id=51,0,1,0,15
-Factfile: Giant African Land Snails,/2054/index.html?EID=S3&OID=100,0,1,0,3
-Factfile: Lesser Spotted Cat shark,/2000/index.html?exhibit-id=OC1&species-id=51,0,1,0,6
-Factfile: Maroon Clownfish,/2000/index.html?EID=ST2,0,1,0,1
-Factfile: Plaice,/2054/index.html,0,1,0,1
-Factfile: Pollack,/2000/index.html?exhibit-id=TH3&species-id=OID188,0,1,0,5
-Factfile: Poor Cod,(not set),0,1,0,0
-Factfile: Poor Cod,/2054/index.html?exhibit-id=1,0,1,0,1
-Factfile: Red Lionfish,/2000/index.html?EID=ST2,0,1,0,6
-Factfile: Red Tail Catfish,/2000/index.html?exhibit-id=6&species-id=16,0,1,0,2
-Factfile: Red Tail Catfish,/2000/index.html?exhibit-id=TH3&species-id=OID188,0,1,0,7
-Factfile: Regal Tang,(not set),0,1,0,0
-Factfile: Regal Tang,/2000/index.html?exhibit-id=C5,0,1,0,1
-Factfile: Sea Toads,/2054/qrscanner.html,0,1,0,22
-Factfile: Snakelock Anenomes,/2054/index.html?exhibit-id=1,0,1,0,64
-Factfile: Thick Lipped Mullet,/2000/index.html?EID=C2&OID=147A,0,1,0,1
-Factfile: Tompot Blenny,/2054/index.html,0,1,0,1
-Factfile: Tompot Blenny,/2054/index.html?EID=S3&OID=100,0,1,0,1
-Factfile: White-barred Gobi,/2054/index.html?EID=O1&OID=141A,0,1,0,31
-Get Started | Sealife Adventure,/2054/index.html?EID=O1&OID=141A,0,1,0,24
-Get Started | Sealife Adventure,/2054/index.html?EID=OC1,0,1,0,1
-Get Started | Sealife Adventure,/2054/index.html?EID=ST1,0,1,0,5
-Get Started | Sealife Adventure,/2054/index.html?EID=W4,0,1,0,26
-Get Started | Sealife Adventure,/2054/notice.html,0,1,0,12
-Leamington Spa Art Gallery and Museum,/3000/,0,2,0,0
-Overdue Exhibit,/2054/index.html?EID=TH5,0,1,0,7
-Payment Overdue,/2054/notice.html,0,1,0,0
-Profile: Ali,/2000/index.html?exhibit-id=W1,0,1,0,37
-Profile: Aquila,/2054/index.html?EID=S3&OID=100,0,1,0,22
-Profile: Dave,/2000/index.html?exhibit-id=TH3&species-id=OID188,0,1,0,9
-Profile: Dave,/2054/notice.html,0,1,0,19
-Profile: Flip,/2054/capture.html,0,1,0,2
-Profile: Iris,/2000/index.html,0,1,0,2
-Profile: Iris,/2000/index.html?exhibit-id=OC1&species-id=51,0,1,0,19
-Profile: Iris,/2000/index.html?exhibit-id=TH3&species-id=OID188,0,1,0,22
-Profile: Iris,/2054/index.html?EID=C1,0,1,0,8
-Profile: Ronan,/2000/index.html?exhibit-id=C1,0,1,0,12
-Profile: Ronan,/2000/index.html?exhibit-id=TH3&species-id=OID188,0,1,0,1
-Profile: Ronan,/2054/index.html?exhibit-id=1,0,1,0,4
-Profile: Squash,/2000/index.html?exhibit-id=A2&species-id=OID27,0,1,0,4
-Profile: Squash,/2054/index.html?EID=O1&OID=141A,0,1,0,13
-Profile: Victoria,/2000/index.html?exhibit-id=TH3&species-id=OID188,0,1,0,2
-Scan to Start | Sealife Adventure,/2054/index.html?EID=O1&OID=141A,0,1,0,2
-Scan to Start | Sealife Adventure,/2054/index.html?EID=OC1,0,1,0,9
-Scan to Start | Sealife Adventure,/2054/index.html?EID=W4,0,1,0,42
-Scan to Start | Sealife Adventure,/2054/index.html?exhibit-id=W1,0,1,0,7
-Sealife Adventure,(not set),0,1,0,0
-Sealife Adventure,/2000/index.html?EID=C2&OID=147A,0,1,0,0
-Sealife Adventure,/2000/index.html?exhibit-id=1,0,1,0,0
-Sealife Adventure,/index.html,0,1,0,1
-Sealife Adventure | Get Started,/2054/index.html,0,2,0,11.5
-Sealife Adventure | Get Started,/2054/portal.html,0,1,0,9
-Species Factfile,(not set),0,2,0,0
-Species Factfile,/2000/index.html?exhibit-id=W1&species-id=781,0,1,0,88
-Species Factfile,/2054/index.html,0,1,0,15
-Test Site,/2000/index.html?exhibit-id=A2&species-id=OID22,0,1,0,0
-Test Site,/2000/index.html?exhibit-id=C5,0,1,0,1
-Test site - Sealife demo,(not set),0,1,0,0
-Test site - Sealife demo,/2000/index.html?exhibit-id=6&species-id=16,0,1,0,9
-Test site - Sealife demo,/2054/index.html?exhibit-id=1&species-id=2,0,1,0,59
-Under Maintenance,/2054/index.html?EID=TH5,0,1,0,23
+
+Date + hour (YYYYMMDDHH),Landing page + query string,Page title,Session source,Browser,Views,Views per session,Views per active user,Average engagement time per session
+,,,,,117,3,9,35.30769230769231,Grand total
+2025012710,/2054/get-started.html,Get Started | Sealife Adventure,(direct),Safari,1,1,1,0
+2025012710,/2054/index.html?exhibit-id=W1,Scan a QR code to start,(direct),Safari,1,1,1,0
+2025012710,/2054/index.html?exhibit-id=W1,Scan to Start | Sealife Adventure,(direct),Safari,0,0,0,7
+2025012711,/2054/get-started.html,Get Started | Sealife Adventure,(direct),Safari,0,0,0,4
+2025012714,/2054/get-started.html,Get Started | Sealife Adventure,(direct),Safari,1,1,1,0
+2025012816,/2054/index.html?EID=W4,(not set),(direct),Safari,1,1,1,0
+2025012816,/2054/index.html?EID=W4,Get Started | Sealife Adventure,(direct),Safari,0,0,0,26
+2025012816,/2054/index.html?EID=W4,Scan a QR code to start,(direct),Safari,1,1,1,0
+2025012816,/2054/index.html?EID=W4,Scan to Start | Sealife Adventure,(direct),Safari,0,0,0,42
+2025012915,/2054/index.html?EID=WW4,Explore: Whitewater 4,(direct),Safari,1,1,1,7
+2025012915,/2054/index.html?EID=WW4&OID=40,(not set),(direct),Safari,1,1,1,0
+2025012915,/2054/index.html?EID=WW4&OID=40,Factfile: Red Bellied Piranha,(direct),Safari,0,0,0,1
+2025012916,/2054/index.html?EID=W4,(not set),(direct),Chrome,2,2,2,0
+2025012916,/2054/index.html?EID=W4,Explore: Squirels,(direct),Chrome,1,1,1,7
+2025012916,/2054/index.html?EID=W4,Profile: Archimedies,(direct),Chrome,0,0,0,14
+2025012918,/2054/index.html?EID=W4&OID=144A,(not set),(direct),Chrome,1,1,1,0
+2025013008,/2054/index.html?EID=OC1,(not set),(direct),Safari,2,2,2,0
+2025013008,/2054/index.html?EID=OC1,Explore: Dump Tank,(direct),Safari,1,1,1,5
+2025013008,/2054/index.html?EID=OC1,Explore: Ocean,(direct),Safari,0,0,0,55
+2025013008,/2054/index.html?EID=OC1,Profile: Floop,(direct),Safari,0,0,0,4
+2025013008,/2054/index.html?EID=S1,(not set),(direct),Chrome,1,1,1,0
+2025013008,/2054/index.html?EID=S4,(not set),(direct),Chrome,3,3,3,0
+2025013009,/2054/index.html?EID=TH2,(not set),(direct),Safari,1,1,1,0
+2025013010,/2054/index.html?EID=C5,(not set),(direct),Safari,1,1,1,0
+2025013010,/2054/index.html?EID=C5,Explore: Dump Tank,(direct),Safari,1,1,1,1
+2025013010,/2054/index.html?EID=C5,Explore: Whitewater 4,(direct),Safari,0,0,0,1
+2025013010,/2054/index.html?EID=S1,(not set),(direct),Chrome,1,1,1,0
+2025013010,/2054/index.html?EID=TH8,(not set),(direct),Safari,1,1,1,0
+2025013010,/2054/index.html?EID=TH8,Explore: Emgergance Hut,(direct),Safari,1,1,1,2
+2025013014,/2054/index.html?EID=1,(not set),(direct),Safari,2,2,2,0
+2025013014,/2054/index.html?EID=1,Get Started | Sealife Adventure,(direct),Safari,1,1,1,0
+2025013014,/2054/index.html?EID=1,Listen: Plant Room | Sealife Adventure,(direct),Safari,1,0.5,0.5,76
+2025013015,/2054/index.html?EID=1,(not set),(direct),Safari,2,2,2,0
+2025013015,/2054/index.html?EID=C2,(not set),(direct),Safari,1,1,1,0
+2025012706,/2054/notice.html,(not set),1041-2a00-23c6-54df-9f00-3428-a238-a37c-a400.ngrok-free.app,Safari,7,7,7,0
+2025012706,/2054/notice.html,Curious | Analytics,1041-2a00-23c6-54df-9f00-3428-a238-a37c-a400.ngrok-free.app,Safari,1,1,1,1
+2025012706,/2054/notice.html,Curious | Portal,1041-2a00-23c6-54df-9f00-3428-a238-a37c-a400.ngrok-free.app,Safari,1,1,1,14
+2025012706,/2054/notice.html,Explore: Otters,1041-2a00-23c6-54df-9f00-3428-a238-a37c-a400.ngrok-free.app,Safari,0,0,0,4
+2025012706,/2054/notice.html,Get Started | Sealife Adventure,1041-2a00-23c6-54df-9f00-3428-a238-a37c-a400.ngrok-free.app,Safari,0,0,0,12
+2025012706,/2054/notice.html,Profile: Dave,1041-2a00-23c6-54df-9f00-3428-a238-a37c-a400.ngrok-free.app,Safari,0,0,0,19
+2025012706,/2054/notice.html,Scan a QR code to start,1041-2a00-23c6-54df-9f00-3428-a238-a37c-a400.ngrok-free.app,Safari,1,1,1,0
+2025012706,/2054/notice.html,Sealife Adventure,1041-2a00-23c6-54df-9f00-3428-a238-a37c-a400.ngrok-free.app,Safari,1,1,1,25
+2025012710,/2054/capture.html,Scan a QR code to start,1041-2a00-23c6-54df-9f00-3428-a238-a37c-a400.ngrok-free.app,Safari,3,3,3,0
+2025012710,/2054/capture.html,Sealife Adventure,1041-2a00-23c6-54df-9f00-3428-a238-a37c-a400.ngrok-free.app,Safari,1,1,1,123
+2025012712,/2054/capture.html,(not set),1041-2a00-23c6-54df-9f00-3428-a238-a37c-a400.ngrok-free.app,Safari,4,4,4,0
+2025012712,/2054/capture.html,Curious | Portal,1041-2a00-23c6-54df-9f00-3428-a238-a37c-a400.ngrok-free.app,Safari,1,1,1,6
+2025012712,/2054/capture.html,Explore: Ocean,1041-2a00-23c6-54df-9f00-3428-a238-a37c-a400.ngrok-free.app,Safari,0,0,0,10
+2025012712,/2054/capture.html,Factfile: Blackstreak Surgeon,1041-2a00-23c6-54df-9f00-3428-a238-a37c-a400.ngrok-free.app,Safari,0,0,0,2
+2025012712,/2054/capture.html,Get Started | Sealife Adventure,1041-2a00-23c6-54df-9f00-3428-a238-a37c-a400.ngrok-free.app,Safari,1,1,1,34
+2025012712,/2054/capture.html,Profile: Flip,1041-2a00-23c6-54df-9f00-3428-a238-a37c-a400.ngrok-free.app,Safari,0,0,0,2
+2025012712,/2054/capture.html,Scan a QR code to start,1041-2a00-23c6-54df-9f00-3428-a238-a37c-a400.ngrok-free.app,Safari,2,2,2,0
+2025012712,/2054/capture.html,Sealife Adventure,1041-2a00-23c6-54df-9f00-3428-a238-a37c-a400.ngrok-free.app,Safari,0,0,0,70
+2025012718,/2054/index.html?EID=OC1,(not set),1041-2a00-23c6-54df-9f00-3428-a238-a37c-a400.ngrok-free.app,Safari,1,1,1,0
+2025012807,/2054/index.html?EID=OC1,Explore: Ocean,1041-2a00-23c6-54df-9f00-3428-a238-a37c-a400.ngrok-free.app,Safari,1,1,1,0
+2025012812,/2054/index.html?EID=OC1,(not set),1041-2a00-23c6-54df-9f00-3428-a238-a37c-a400.ngrok-free.app,Safari,4,4,4,0
+2025012812,/2054/index.html?EID=OC1,Curious | Portal,1041-2a00-23c6-54df-9f00-3428-a238-a37c-a400.ngrok-free.app,Safari,1,1,1,8
+2025012812,/2054/index.html?EID=OC1,Get Started | Sealife Adventure,1041-2a00-23c6-54df-9f00-3428-a238-a37c-a400.ngrok-free.app,Safari,0,0,0,1
+2025012812,/2054/index.html?EID=OC1,Scan a QR code to start,1041-2a00-23c6-54df-9f00-3428-a238-a37c-a400.ngrok-free.app,Safari,1,1,1,0
+2025012812,/2054/index.html?EID=OC1,Scan to Start | Sealife Adventure,1041-2a00-23c6-54df-9f00-3428-a238-a37c-a400.ngrok-free.app,Safari,0,0,0,9
+2025012814,/2054/index.html?EID=O1&OID=141A,(not set),1041-2a00-23c6-54df-9f00-3428-a238-a37c-a400.ngrok-free.app,Safari,5,5,5,0
+2025012814,/2054/index.html?EID=O1&OID=141A,Curious | Portal,1041-2a00-23c6-54df-9f00-3428-a238-a37c-a400.ngrok-free.app,Safari,1,1,1,6
+2025012814,/2054/index.html?EID=O1&OID=141A,Explore: Otters,1041-2a00-23c6-54df-9f00-3428-a238-a37c-a400.ngrok-free.app,Safari,0,0,0,1
+2025012814,/2054/index.html?EID=O1&OID=141A,Explore: Sub 6,1041-2a00-23c6-54df-9f00-3428-a238-a37c-a400.ngrok-free.app,Safari,0,0,0,28
+2025012814,/2054/index.html?EID=O1&OID=141A,Factfile: Brissle Tail Filefish,1041-2a00-23c6-54df-9f00-3428-a238-a37c-a400.ngrok-free.app,Safari,0,0,0,29
+2025012814,/2054/index.html?EID=O1&OID=141A,Factfile: White-barred Gobi,1041-2a00-23c6-54df-9f00-3428-a238-a37c-a400.ngrok-free.app,Safari,0,0,0,31
+2025012814,/2054/index.html?EID=O1&OID=141A,Get Started | Sealife Adventure,1041-2a00-23c6-54df-9f00-3428-a238-a37c-a400.ngrok-free.app,Safari,0,0,0,17
+2025012814,/2054/index.html?EID=O1&OID=141A,Scan a QR code to start,1041-2a00-23c6-54df-9f00-3428-a238-a37c-a400.ngrok-free.app,Safari,1,1,1,0
+2025012814,/2054/index.html?EID=O1&OID=141A,Scan to Start | Sealife Adventure,1041-2a00-23c6-54df-9f00-3428-a238-a37c-a400.ngrok-free.app,Safari,0,0,0,2
+2025012815,/2054/index.html?EID=O1&OID=141A,(not set),1041-2a00-23c6-54df-9f00-3428-a238-a37c-a400.ngrok-free.app,Safari,1,1,1,0
+2025012815,/2054/index.html?EID=O1&OID=141A,Explore: Pengiuns,1041-2a00-23c6-54df-9f00-3428-a238-a37c-a400.ngrok-free.app,Safari,1,1,1,16
+2025012815,/2054/index.html?EID=O1&OID=141A,Get Started | Sealife Adventure,1041-2a00-23c6-54df-9f00-3428-a238-a37c-a400.ngrok-free.app,Safari,0,0,0,7
+2025012815,/2054/index.html?EID=O1&OID=141A,Profile: Squash,1041-2a00-23c6-54df-9f00-3428-a238-a37c-a400.ngrok-free.app,Safari,0,0,0,13
+2025012816,/2054/capture.html,(not set),1041-2a00-23c6-54df-9f00-3428-a238-a37c-a400.ngrok-free.app,Safari,1,1,1,0
+2025012816,/2054/capture.html,Curious | Portal,1041-2a00-23c6-54df-9f00-3428-a238-a37c-a400.ngrok-free.app,Safari,4,4,4,31
+2025012816,/2054/capture.html,Explore: Royals,1041-2a00-23c6-54df-9f00-3428-a238-a37c-a400.ngrok-free.app,Safari,0,0,0,2
+2025012816,/2054/capture.html,Scan a QR code to start,1041-2a00-23c6-54df-9f00-3428-a238-a37c-a400.ngrok-free.app,Safari,2,2,2,0
+2025012816,/2054/capture.html,Sealife Adventure,1041-2a00-23c6-54df-9f00-3428-a238-a37c-a400.ngrok-free.app,Safari,0,0,0,147
+2025012820,/2054/portal.html,Curious | Portal,1041-2a00-23c6-54df-9f00-3428-a238-a37c-a400.ngrok-free.app,Safari,1,1,1,0
+2025012900,/2054/portal.html,Curious | Portal,1041-2a00-23c6-54df-9f00-3428-a238-a37c-a400.ngrok-free.app,Safari,1,1,1,0
+2025012908,/2054/portal.html,Curious | Portal,1041-2a00-23c6-54df-9f00-3428-a238-a37c-a400.ngrok-free.app,Safari,1,1,1,0
+2025012915,/2054/portal.html,Curious | Portal,1041-2a00-23c6-54df-9f00-3428-a238-a37c-a400.ngrok-free.app,Safari,2,2,2,6
+2025012915,/2054/portal.html,Sealife Adventure,1041-2a00-23c6-54df-9f00-3428-a238-a37c-a400.ngrok-free.app,Safari,1,1,1,0
+2025012916,/2054/capture.html,(not set),1041-2a00-23c6-54df-9f00-3428-a238-a37c-a400.ngrok-free.app,Safari,3,3,3,0
+2025012916,/2054/capture.html,Curious | Portal,1041-2a00-23c6-54df-9f00-3428-a238-a37c-a400.ngrok-free.app,Safari,1,1,1,7
+2025012916,/2054/capture.html,Explore: Rockpools,1041-2a00-23c6-54df-9f00-3428-a238-a37c-a400.ngrok-free.app,Safari,0,0,0,2
+2025012916,/2054/capture.html,Scan a QR code to start,1041-2a00-23c6-54df-9f00-3428-a238-a37c-a400.ngrok-free.app,Safari,1,1,1,0
+2025012916,/2054/capture.html,Sealife Adventure,1041-2a00-23c6-54df-9f00-3428-a238-a37c-a400.ngrok-free.app,Safari,1,1,1,1
+2025012917,/2054/index.html?EID=S3,(not set),1041-2a00-23c6-54df-9f00-3428-a238-a37c-a400.ngrok-free.app,Safari,2,2,2,0
+2025012917,/2054/index.html?EID=S3,Factfile: Valentini puffer,1041-2a00-23c6-54df-9f00-3428-a238-a37c-a400.ngrok-free.app,Safari,0,0,0,3
+2025012917,/2054/index.html?EID=S3,Scan to Start | Sealife Adventure,1041-2a00-23c6-54df-9f00-3428-a238-a37c-a400.ngrok-free.app,Safari,0,0,0,12
+2025012921,/2054/index.html?EID=ST1,(not set),1041-2a00-23c6-54df-9f00-3428-a238-a37c-a400.ngrok-free.app,Safari,1,1,1,0
+2025012921,/2054/index.html?EID=ST1,Explore: Reef Wall,1041-2a00-23c6-54df-9f00-3428-a238-a37c-a400.ngrok-free.app,Safari,1,1,1,12
+2025012921,/2054/index.html?EID=ST1,Factfile: Tobacco Bass,1041-2a00-23c6-54df-9f00-3428-a238-a37c-a400.ngrok-free.app,Safari,0,0,0,3
+2025012921,/2054/index.html?EID=ST1,Get Started | Sealife Adventure,1041-2a00-23c6-54df-9f00-3428-a238-a37c-a400.ngrok-free.app,Safari,1,1,1,1
+2025013000,/2054/get-started.html,(not set),1041-2a00-23c6-54df-9f00-3428-a238-a37c-a400.ngrok-free.app,Safari,1,1,1,0
+2025013000,/2054/get-started.html,Get Started | Sealife Adventure,1041-2a00-23c6-54df-9f00-3428-a238-a37c-a400.ngrok-free.app,Safari,1,1,1,0
+2025013011,/2054/index.html?EID=A6,(not set),1041-2a00-23c6-54df-9f00-3428-a238-a37c-a400.ngrok-free.app,Safari,1,1,1,0
+2025013016,/2054/get-started.html,(not set),1041-2a00-23c6-54df-9f00-3428-a238-a37c-a400.ngrok-free.app,Safari,8,8,8,0
+2025013016,/2054/get-started.html,Curious | Portal,1041-2a00-23c6-54df-9f00-3428-a238-a37c-a400.ngrok-free.app,Safari,3,3,3,52
+2025013016,/2054/get-started.html,Explore: Macaques,1041-2a00-23c6-54df-9f00-3428-a238-a37c-a400.ngrok-free.app,Safari,0,0,0,1
+2025013016,/2054/get-started.html,Explore: Meerkats,1041-2a00-23c6-54df-9f00-3428-a238-a37c-a400.ngrok-free.app,Safari,0,0,0,6
+2025013016,/2054/get-started.html,Explore: Squirels,1041-2a00-23c6-54df-9f00-3428-a238-a37c-a400.ngrok-free.app,Safari,0,0,0,2
+2025013016,/2054/get-started.html,Explore: Sub 3,1041-2a00-23c6-54df-9f00-3428-a238-a37c-a400.ngrok-free.app,Safari,0,0,0,7
+2025013016,/2054/get-started.html,Factfile: Bluecheek Butterfly Fish,1041-2a00-23c6-54df-9f00-3428-a238-a37c-a400.ngrok-free.app,Safari,0,0,0,4
+2025013016,/2054/get-started.html,Get Started | Sealife Adventure,1041-2a00-23c6-54df-9f00-3428-a238-a37c-a400.ngrok-free.app,Safari,1,1,1,28
+2025013016,/2054/get-started.html,Profile: Hank,1041-2a00-23c6-54df-9f00-3428-a238-a37c-a400.ngrok-free.app,Safari,0,0,0,3
+2025013016,/2054/get-started.html,Profile: Patrick,1041-2a00-23c6-54df-9f00-3428-a238-a37c-a400.ngrok-free.app,Safari,0,0,0,18
+2025013016,/2054/get-started.html,Scan a QR code to start,1041-2a00-23c6-54df-9f00-3428-a238-a37c-a400.ngrok-free.app,Safari,2,2,2,0
+2025013016,/2054/get-started.html,Sealife Adventure,1041-2a00-23c6-54df-9f00-3428-a238-a37c-a400.ngrok-free.app,Safari,1,1,1,18
+2025013020,/2054/index.html?EID=1,(not set),1041-2a00-23c6-54df-9f00-3428-a238-a37c-a400.ngrok-free.app,Safari,1,1,1,0
+2025013021,/2054/index.html?EID=1,(not set),1041-2a00-23c6-54df-9f00-3428-a238-a37c-a400.ngrok-free.app,Safari,1,1,1,0
+2025013021,/2054/index.html?EID=1,Curious | Portal,1041-2a00-23c6-54df-9f00-3428-a238-a37c-a400.ngrok-free.app,Safari,1,1,1,1
+2025013021,/2054/index.html?EID=1,Get Started | Sealife Adventure,1041-2a00-23c6-54df-9f00-3428-a238-a37c-a400.ngrok-free.app,Safari,1,1,1,4
+2025013021,/2054/index.html?EID=1,Listen: Plant Room | Sealife Adventure,1041-2a00-23c6-54df-9f00-3428-a238-a37c-a400.ngrok-free.app,Safari,0,0,0,118
+
