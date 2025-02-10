@@ -58,7 +58,7 @@
   <script src="/scripts/v2-talk-times.js" defer></script>
   <script src="/scripts/v2-scanner.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/jsqr/dist/jsQR.js"></script>
-
+  <script src="/scripts/get-started.js"></script>
 </head>
 
 <body class="hidden" style="background-color: #f4f4f4;">
@@ -86,6 +86,9 @@
     <br>
 
     <div class="center">
+      <!-- Button to trigger Wi-Fi details popup -->
+      <button id="show-wifi-btn" style="display: none;">Join our Wi-Fi</button>
+      
       <button id="start-scan">Scan Exhibit QR Code</button>
       <div id="camera-popup">
         <button id="close-popup">Close</button>
@@ -95,7 +98,9 @@
     </div>
 
     <br>
-    
+
+
+
   <!-- Section for dynamically loaded talk times -->
   <section id="talk-times-card" class="advert-card">
     <h2>Talk Times</h2>
@@ -103,7 +108,9 @@
       <!-- Talk times will be dynamically loaded here -->
     </table>
   </section>
+
   <br>
+  
   <!-- Section for dynamically loaded experiences -->
   <section id="experiences-card" class="advert-card">
     <h2>Experiences</h2>
