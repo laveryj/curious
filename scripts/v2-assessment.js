@@ -34,7 +34,8 @@ document.addEventListener("DOMContentLoaded", async () => {
     const response = await fetch("./assets/data/assessment.json");
     const data = await response.json();
     const animals = data.animals;
-    questions = data.questions[0].questions;
+    // Flatten all questions from all sections into a single array
+    questions = data.questions.flatMap(section => section.questions);
 
     console.log("✅ Questions loaded successfully:", questions);
 
@@ -302,7 +303,7 @@ function exportResults() {
   const pdfBlobUrl = URL.createObjectURL(pdfBlob);
 
   // Open the PDF in a new tab
-  window.open(pdfBlobUrl, "_blank");
+  // window.open(pdfBlobUrl, "_blank");
 
   // Proceed with ZIP generation and download
   zip.file("assessment_results.pdf", pdfBlob);
