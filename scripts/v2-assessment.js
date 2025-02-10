@@ -3,9 +3,12 @@ let selectedAnimal = "";
 document.addEventListener("DOMContentLoaded", async () => {
   console.log("DOM fully loaded and script running.");
 
-  const animalSelect = document.getElementById("animal-select");
+  const introContainer = document.getElementById("instructions-page");
+  const auditorContainer = document.getElementById("auditor-form");
   const assessmentContainer = document.getElementById("assessment-container");
+  const getStartedButton = document.getElementById("get-started-button");
   const startButton = document.getElementById("start-button");
+  const animalSelect = document.getElementById("animal-select");
   const auditorName = document.getElementById("auditor-name");
   const auditorRole = document.getElementById("auditor-role");
   const auditorForm = document.getElementById("auditor-form");
@@ -14,6 +17,16 @@ document.addEventListener("DOMContentLoaded", async () => {
     console.error("❌ ERROR: #auditor-form not found! Check HTML structure.");
     return;
   }
+
+  // Show the intro page first, hide others
+  introContainer.style.display = "block";
+  auditorContainer.style.display = "none";
+  assessmentContainer.style.display = "none";
+
+  getStartedButton.addEventListener("click", () => {
+    introContainer.style.display = "none";
+    auditorContainer.style.display = "block";
+  });
 
   // Load animals list
   try {
@@ -44,16 +57,14 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
 
     selectedAnimal = animalSelect.value; // Store selected animal
-
     currentQuestionIndex = 0;
     responses = [];
+    startTime = new Date();
 
     console.log(`✅ Assessment started for ${selectedAnimal}. Hiding auditor form.`);
 
     // Hide auditor form
-    auditorForm.style.display = "none";
-
-    // Ensure the container is visible
+    auditorContainer.style.display = "none";
     assessmentContainer.style.display = "block";
     assessmentContainer.innerHTML = "";
 
@@ -61,6 +72,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     loadQuestion();
   });
 });
+
 
 function loadQuestion() {
   const assessmentContainer = document.getElementById("assessment-container");
@@ -110,19 +122,24 @@ function loadQuestion() {
 
 function selectAnswer(answer) {
   console.log(`✅ Answer selected: ${answer}`);
-  const notes = document.getElementById("notes").value || "";
   responses[currentQuestionIndex] = {
     question: questions[currentQuestionIndex].question,
-    answer,
-    notes
+    answer
   };
 }
 
 function nextQuestion() {
-  if (!responses[currentQuestionIndex]) {
-    alert("Please select an answer");
+  const notesField = document.getElementById("notes");
+  const selectedAnswer = responses[currentQuestionIndex]?.answer; // Check if an answer was selected
+
+  if (!selectedAnswer) {
+    alert("Please select an answer before proceeding.");
     return;
   }
+
+  // Capture notes at the time "Next" is pressed
+  const notes = notesField.value || "";
+  responses[currentQuestionIndex].notes = notes;
 
   console.log("➡ Proceeding to next question...");
   currentQuestionIndex++;
@@ -134,7 +151,7 @@ function nextQuestion() {
 function showResults() {
   console.log("🎉 Assessment completed. Displaying results...");
   const assessmentContainer = document.getElementById("assessment-container");
-  assessmentContainer.innerHTML = "<h4>Assessment Completed!</h4>";
+  assessmentContainer.innerHTML = "<h4>Assessment Completed 🎉</h4>";
 
   // responses.forEach((response, index) => {
   //   assessmentContainer.innerHTML += `
@@ -149,42 +166,149 @@ function showResults() {
   assessmentContainer.appendChild(exportButton);
 }
 
-async function exportResults() {
+function exportResults() {
   console.log("📤 Exporting results...");
   const { jsPDF } = window.jspdf;
   const zip = new JSZip();
 
-  // Generate PDF
   const doc = new jsPDF();
   let csvContent = "Question,Answer,Notes\n";
+  let totalPossible = 0;
+  let totalAchieved = 0;
+  let welfareIssues = [];
+  const endTime = new Date();
+  const pageHeight = 280; // Limit before adding a new page
 
   doc.setFont("helvetica", "bold");
   doc.setFontSize(16);
-  doc.text("Animal Welfare Assessment Results", 20, 20);
+  doc.text(`Animal Welfare Assessment`, 15, 20);
+  doc.setFontSize(12);
+  doc.text(`${selectedAnimal}`, 15, 30);
+
+  doc.setFont("helvetica", "normal");
+  doc.setFont("helvetica", "bold");
+  doc.text(`Name:`, 15, 45);
+  doc.setFont("helvetica", "normal");
+  doc.text(`${document.getElementById("auditor-name").value} - ${document.getElementById("auditor-role").value}`, 30, 45);
+
+  doc.setFont("helvetica", "bold");
+  doc.text(`Date:`, 15, 50);
+  doc.setFont("helvetica", "normal");
+  doc.text(`${new Date().toLocaleDateString()}`, 27, 50);
+
+  doc.setFont("helvetica", "bold");
+  doc.text(`Start time:`, 15, 55);
+  doc.setFont("helvetica", "normal");
+  doc.text(`${startTime ? startTime.toLocaleTimeString() : "N/A"}`, 37, 55);
+
+  doc.setFont("helvetica", "bold");
+  doc.text(`End time:`, 15, 60);
+  doc.setFont("helvetica", "normal");
+  doc.text(`${endTime.toLocaleTimeString()}`, 35, 60);
+
+  doc.setFont("helvetica", "bold");
+  doc.setFontSize(14);
+  doc.text(`Results`, 15, 75);
 
   doc.setFont("helvetica", "normal");
   doc.setFontSize(12);
-  let yPos = 40;
+
+  let yPos = 85;
 
   responses.forEach((res, index) => {
-    doc.text(`${index + 1}. ${res.question}`, 20, yPos);
-    yPos += 7;
-    doc.text(`Answer: ${res.answer}`, 25, yPos);
-    yPos += 5;
-    doc.text(`Notes: ${res.notes || "None"}`, 25, yPos);
-    yPos += 10;
+    doc.setFont("helvetica", "bold");
+
+    // Add a new page if needed
+    if (yPos > pageHeight) {
+      doc.addPage();
+      yPos = 20; // Reset position for the new page
+    }
+
+    // Wrap question text
+    let wrappedQuestion = doc.splitTextToSize(`${index + 1}. ${res.question}`, 170);
+    doc.text(wrappedQuestion, 15, yPos);
+    yPos += wrappedQuestion.length * 7;
+
+    doc.setFont("helvetica", "normal");
+
+    // Wrap answer text
+    let wrappedAnswer = doc.splitTextToSize(`Answer: ${res.answer}`, 160);
+    doc.text(wrappedAnswer, 20, yPos);
+    yPos += wrappedAnswer.length * 7;
+
+    // Wrap notes text
+    let wrappedNotes = doc.splitTextToSize(`Notes: ${res.notes || "None"}`, 160);
+    doc.text(wrappedNotes, 20, yPos);
+    yPos += wrappedNotes.length * 7 + 5;
+
     csvContent += `"${res.question.replace(/"/g, '""')}","${res.answer}","${res.notes.replace(/"/g, '""')}"\n`;
+
+    if (res.answer === "Yes") {
+      totalAchieved++;
+      totalPossible++;
+    } else if (res.answer === "No") {
+      totalPossible++;
+      welfareIssues.push(res.question);
+    }
   });
+  
+  let welfareScore = totalPossible > 0 ? ((totalAchieved / totalPossible) * 100).toFixed(2) : "N/A";
+  doc.setFont("helvetica", "bold");
+  
+  if (yPos > pageHeight) {
+    doc.addPage();
+    yPos = 20;
+  }
+  
+  // Welfare Score Section
+  doc.text(`Welfare Score:`, 15, yPos + 10);
+  doc.setFont("helvetica", "normal");
+  doc.text(`${welfareScore}%`, 47, yPos + 10);
+  yPos += 30; // Extra space before the action plan
+  
+  // Welfare Action Plan
+  if (welfareIssues.length > 0) {
+    if (yPos > pageHeight) {
+      doc.addPage();
+      yPos = 20;
+    }
+  
+    doc.setFont("helvetica", "bold");
+    doc.setFontSize(14); // Increase font size for the action plan title
+    doc.text("Welfare Action Plan", 15, yPos);
+    doc.setFont("helvetica", "normal");
+    doc.setFontSize(12); // Reset to normal font size for the content
+    yPos += 12;
+    
+    doc.text("The following questions were answered 'no' and need addressing:", 15, yPos);
+    yPos += 10;
+  
+    welfareIssues.forEach(issue => {
+      if (yPos > pageHeight) {
+        doc.addPage();
+        yPos = 20;
+      }
+  
+      let wrappedIssue = doc.splitTextToSize(`- ${issue}`, 160);
+      doc.text(wrappedIssue, 20, yPos);
+      yPos += wrappedIssue.length * 7;
+    });
+  }
 
-  // Convert PDF to Blob
+  // Generate PDF Blob first
   const pdfBlob = doc.output("blob");
-  zip.file("assessment_results.pdf", pdfBlob);
 
-  // Convert CSV to Blob
+  // Generate a Blob URL for preview
+  const pdfBlobUrl = URL.createObjectURL(pdfBlob);
+
+  // Open the PDF in a new tab
+  window.open(pdfBlobUrl, "_blank");
+
+  // Proceed with ZIP generation and download
+  zip.file("assessment_results.pdf", pdfBlob);
   const csvBlob = new Blob([csvContent], { type: "text/csv" });
   zip.file("assessment_results.csv", csvBlob);
 
-  // Generate Zip and trigger download
   zip.generateAsync({ type: "blob" }).then((zipBlob) => {
     const zipUrl = URL.createObjectURL(zipBlob);
     const downloadAnchor = document.createElement("a");

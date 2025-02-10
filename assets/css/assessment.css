@@ -100,18 +100,18 @@ a {
 }
 
 .assessment-container .option-btn[data-answer="N/A"] {
-  background-color: #ff9800; /* Orange */
-  color: white;
-  border-color: #f57c00;
+  background-color: #2196f3; /* Blue */
+  color: white;  
+  border-color: #1976d2;
   flex: 1 1 45%; /* Each button takes ~48% of the row */
   max-width: 220px; /* Optional: Prevents buttons from being too wide */
   width: 80%; /* Ensures full width inside flexbox */
 }
 
 .assessment-container .option-btn[data-answer="N/W"] {
-  background-color: #2196f3; /* Blue */
+  background-color: #ff9800; /* Orange */
+  border-color: #f57c00;
   color: white;
-  border-color: #1976d2;
   flex: 1 1 45%; /* Each button takes ~48% of the row */
   max-width: 220px; /* Optional: Prevents buttons from being too wide */
   width: 80%; /* Ensures full width inside flexbox */
