@@ -35,5 +35,12 @@
   "experiences": [
     { "name": "Penguin feed", "price": "£100.00", "link": "https://buy.myonlinebooking.co.uk/sealife/sessions.aspx?tid=94" },
     { "name": "Meerkat feed", "price": "£100.00", "link": "https://buy.myonlinebooking.co.uk/sealife/sessions.aspx?tid=88" }
+  ],
+  "wifi": [
+    {
+      "ssid": "",
+      "password": "",
+      "instructions": "Search for 'Sealife Adventure Free Wifi' and enter your details to access our free wifi network!"
+    }
   ]
 }
