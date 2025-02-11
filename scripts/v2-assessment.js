@@ -103,7 +103,7 @@ function loadQuestion() {
       <button class="option-btn" data-answer="N/W">n/w</button>
     </div>
     <br>
-    <textarea id="notes" placeholder="Notes"></textarea>
+    <textarea id="evidence" placeholder="Evidence"></textarea>
     <br>
     <br>
     <button id="next-button">Next</button>
@@ -130,7 +130,7 @@ function selectAnswer(answer) {
 }
 
 function nextQuestion() {
-  const notesField = document.getElementById("notes");
+  const evidenceField = document.getElementById("evidence");
   const selectedAnswer = responses[currentQuestionIndex]?.answer; // Check if an answer was selected
 
   if (!selectedAnswer) {
@@ -138,9 +138,9 @@ function nextQuestion() {
     return;
   }
 
-  // Capture notes at the time "Next" is pressed
-  const notes = notesField.value || "";
-  responses[currentQuestionIndex].notes = notes;
+  // Capture evidence at the time "Next" is pressed
+  const evidence = evidenceField.value || "";
+  responses[currentQuestionIndex].evidence = evidence;
 
   console.log("➡ Proceeding to next question...");
   currentQuestionIndex++;
@@ -156,7 +156,7 @@ function showResults() {
 
   // responses.forEach((response, index) => {
   //   assessmentContainer.innerHTML += `
-  //     <p>${index + 1}. ${response.question} - <strong>${response.answer}</strong><br>Notes: ${response.notes || "None"}</p>
+  //     <p>${index + 1}. ${response.question} - <strong>${response.answer}</strong><br>Evidence: ${response.evidence || "None"}</p>
   //   `;
   // });
 
@@ -173,7 +173,7 @@ function exportResults() {
   const zip = new JSZip();
 
   const doc = new jsPDF();
-  let csvContent = "Question,Answer,Notes\n";
+  let csvContent = "Question,Answer,Evidence\n";
   let totalPossible = 0;
   let totalAchieved = 0;
   let welfareIssues = [];
@@ -237,12 +237,12 @@ function exportResults() {
     doc.text(wrappedAnswer, 20, yPos);
     yPos += wrappedAnswer.length * 7;
 
-    // Wrap notes text
-    let wrappedNotes = doc.splitTextToSize(`Notes: ${res.notes || "None"}`, 160);
-    doc.text(wrappedNotes, 20, yPos);
-    yPos += wrappedNotes.length * 7 + 5;
+    // Wrap evidence text
+    let wrappedEvidence = doc.splitTextToSize(`Evidence: ${res.evidence || "None"}`, 160);
+    doc.text(wrappedEvidence, 20, yPos);
+    yPos += wrappedEvidence.length * 7 + 5;
 
-    csvContent += `"${res.question.replace(/"/g, '""')}","${res.answer}","${res.notes.replace(/"/g, '""')}"\n`;
+    csvContent += `"${res.question.replace(/"/g, '""')}","${res.answer}","${res.evidence.replace(/"/g, '""')}"\n`;
 
     if (res.answer === "Yes") {
       totalAchieved++;
