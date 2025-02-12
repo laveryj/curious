@@ -1,4 +1,7 @@
 let selectedAnimal = "";
+let emailSent = false; // ✅ Track whether the email has been sent
+let reportBlob = null; // ✅ Store PDF blob for manual download
+let csvBlob = null; // ✅ Store CSV blob for manual download
 
 document.addEventListener("DOMContentLoaded", async () => {
   console.log("DOM fully loaded and script running.");
@@ -149,25 +152,59 @@ function nextQuestion() {
   setTimeout(loadQuestion, 50);
 }
 
-function showResults() {
-  console.log("🎉 Assessment completed. Displaying results...");
+async function showResults() {
+  const recipientEmail = await getSiteEmail();
+  console.log("🎉 Assessment completed!");
+
   const assessmentContainer = document.getElementById("assessment-container");
-  assessmentContainer.innerHTML = "<h4>Assessment Completed 🎉</h4>";
+  assessmentContainer.innerHTML = `
+    <h4>Assessment Completed 🎉</h4>
+    <p>The data has been saved, and a PDF report has been e-mailed to ${recipientEmail}.</p>
+  `;
 
-  // responses.forEach((response, index) => {
-  //   assessmentContainer.innerHTML += `
-  //     <p>${index + 1}. ${response.question} - <strong>${response.answer}</strong><br>Evidence: ${response.evidence || "None"}</p>
-  //   `;
-  // });
+  exportResults(true); // ✅ Generate & upload the report, but do not download it
 
-  // Add Export button
+  // ✅ Add button for manual download
   const exportButton = document.createElement("button");
-  exportButton.textContent = "Export Results";
-  exportButton.addEventListener("click", exportResults);
+  exportButton.textContent = "Manual Download";
+  exportButton.addEventListener("click", downloadReport); // ✅ Trigger manual download
   assessmentContainer.appendChild(exportButton);
 }
 
-function exportResults() {
+async function uploadToR2(pdfBlob, fileName) {
+  console.log("📤 Uploading PDF to R2...");
+
+  const formData = new FormData();
+  formData.append("file", pdfBlob, fileName);
+
+  try {
+    const response = await fetch("https://welfare-assessment-reports.hello-e9b.workers.dev/upload", {
+      method: "POST",
+      body: formData,
+    });
+
+    if (!response.ok) {
+      const errorText = await response.text();
+      console.error(`❌ Upload failed. Response: ${errorText}`);
+      throw new Error(`Upload failed: ${response.statusText}`);
+    }
+
+    const data = await response.json();
+
+    if (!data || !data.url) {
+      throw new Error("❌ Invalid response from R2 upload - No file URL received.");
+    }
+
+    console.log("✅ PDF uploaded successfully:", data.url);
+    return data.url; // ✅ Correctly returning the direct file URL
+
+  } catch (error) {
+    console.error("❌ Failed to upload PDF:", error.message, error);
+    return null;
+  }
+}
+
+async function exportResults() {
   console.log("📤 Exporting results...");
   const { jsPDF } = window.jspdf;
   const zip = new JSZip();
@@ -219,25 +256,21 @@ function exportResults() {
   responses.forEach((res, index) => {
     doc.setFont("helvetica", "bold");
 
-    // Add a new page if needed
     if (yPos > pageHeight) {
       doc.addPage();
-      yPos = 20; // Reset position for the new page
+      yPos = 20;
     }
 
-    // Wrap question text
     let wrappedQuestion = doc.splitTextToSize(`${index + 1}. ${res.question}`, 170);
     doc.text(wrappedQuestion, 15, yPos);
     yPos += wrappedQuestion.length * 7;
 
     doc.setFont("helvetica", "normal");
 
-    // Wrap answer text
     let wrappedAnswer = doc.splitTextToSize(`Answer: ${res.answer}`, 160);
     doc.text(wrappedAnswer, 20, yPos);
     yPos += wrappedAnswer.length * 7;
 
-    // Wrap evidence text
     let wrappedEvidence = doc.splitTextToSize(`Evidence: ${res.evidence || "None"}`, 160);
     doc.text(wrappedEvidence, 20, yPos);
     yPos += wrappedEvidence.length * 7 + 5;
@@ -252,72 +285,190 @@ function exportResults() {
       welfareIssues.push(res.question);
     }
   });
-  
+
   let welfareScore = totalPossible > 0 ? ((totalAchieved / totalPossible) * 100).toFixed(2) : "N/A";
   doc.setFont("helvetica", "bold");
-  
+
   if (yPos > pageHeight) {
     doc.addPage();
     yPos = 20;
   }
-  
-  // Welfare Score Section
+
   doc.text(`Welfare Score:`, 15, yPos + 10);
   doc.setFont("helvetica", "normal");
   doc.text(`${welfareScore}%`, 47, yPos + 10);
-  yPos += 30; // Extra space before the action plan
-  
-  // Welfare Action Plan
-  if (welfareIssues.length > 0) {
-    if (yPos > pageHeight) {
-      doc.addPage();
-      yPos = 20;
-    }
-  
-    doc.setFont("helvetica", "bold");
-    doc.setFontSize(14); // Increase font size for the action plan title
-    doc.text("Welfare Action Plan", 15, yPos);
-    doc.setFont("helvetica", "normal");
-    doc.setFontSize(12); // Reset to normal font size for the content
-    yPos += 12;
-    
-    doc.text("The following questions were answered 'no' and need addressing:", 15, yPos);
-    yPos += 10;
-  
-    welfareIssues.forEach(issue => {
-      if (yPos > pageHeight) {
-        doc.addPage();
-        yPos = 20;
-      }
-  
-      let wrappedIssue = doc.splitTextToSize(`- ${issue}`, 160);
-      doc.text(wrappedIssue, 20, yPos);
-      yPos += wrappedIssue.length * 7;
+  yPos += 30;
+
+  const date = new Date();
+  const shortDate = `${date.getDate().toString().padStart(2, '0')}${(date.getMonth() + 1).toString().padStart(2, '0')}${date.getFullYear()}`;
+  const time = `${date.getHours().toString().padStart(2, '0')}${date.getMinutes().toString().padStart(2, '0')}`;
+  const fileNameBase = `Welfare-assessment_${shortDate}-${time}`;
+
+  reportBlob = doc.output("blob"); // ✅ Store PDF Blob
+  csvBlob = new Blob([csvContent], { type: "text/csv" }); // ✅ Store CSV Blob
+
+  // ✅ Upload PDF to Cloudflare R2
+  const fileName = `${fileNameBase}.pdf`;
+  try {
+    const formData = new FormData();
+    formData.append("file", reportBlob, fileName);
+
+    const uploadResponse = await fetch("https://welfare-assessment-reports.hello-e9b.workers.dev/upload", {
+      method: "POST",
+      body: formData
     });
+
+    if (!uploadResponse.ok) {
+      throw new Error(`Upload failed: ${uploadResponse.statusText}`);
+    }
+
+    const responseData = await uploadResponse.json();
+    if (!responseData.url) {
+      throw new Error("Upload response did not contain a valid URL.");
+    }
+
+    console.log("✅ File uploaded successfully to R2:", responseData.url);
+    const fileLink = responseData.url; // Ensure the correct link is used
+
+    const recipientEmail = await getSiteEmail(); // Fetch dynamically
+
+    const emailPayload = {
+      recipient: recipientEmail,
+      subject: `🔔 New Welfare Assessment: ${selectedAnimal}`,
+      message: `A welfare assessment for ${selectedAnimal} has just been completed by ${document.getElementById("auditor-name").value}!\n\nDownload the report here: ${fileLink}`
+    };
+
+    const emailResponse = await fetch("https://welfare-assessment-reports.hello-e9b.workers.dev/send-email", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(emailPayload),
+    });
+
+    if (!emailResponse.ok) {
+      const errorText = await emailResponse.text(); // Read response for more details
+      throw new Error(`Email send failed: ${emailResponse.statusText}, Response: ${errorText}`);
+    }
+
+    console.log("✅ Email sent successfully");
+
+  } catch (error) {
+    console.error("❌ Error processing upload or email:", error);
+  }
+}
+
+async function submitWelfareAssessment() {
+  console.log("📤 Sending welfare assessment to database...");
+
+  const pathSegments = window.location.pathname.split("/");
+  const siteId = /^\d{4}$/.test(pathSegments[1]) ? pathSegments[1] : null;
+  if (!siteId) {
+      console.error("❌ Site ID is missing or invalid.");
+      return;
   }
 
-  // Generate PDF Blob first
-  const pdfBlob = doc.output("blob");
+  const endTime = new Date();
 
-  // Generate a Blob URL for preview
-  const pdfBlobUrl = URL.createObjectURL(pdfBlob);
+  const assessmentData = {
+      site_id: siteId,
+      animal: selectedAnimal,
+      assessment_id: Date.now(), // Unique ID for this assessment
+      auditor_name: document.getElementById("auditor-name").value,
+      auditor_role: document.getElementById("auditor-role").value,
+      start_time: startTime.toISOString(),  // Capture start time in ISO format
+      end_time: endTime.toISOString(),      // Capture end time in ISO format
+      responses
+  };
 
-  // Open the PDF in a new tab
-  // window.open(pdfBlobUrl, "_blank");
+  try {
+      const response = await fetch("https://save-welfare-assessments.hello-e9b.workers.dev/", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(assessmentData)
+      });
 
-  // Proceed with ZIP generation and download
-  zip.file("assessment_results.pdf", pdfBlob);
-  const csvBlob = new Blob([csvContent], { type: "text/csv" });
-  zip.file("assessment_results.csv", csvBlob);
+      if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+
+      console.log("✅ Welfare assessment saved to database successfully!");
+  } catch (error) {
+      console.error("❌ Failed to save assessment to database:", error);
+  }
+}
+
+async function getSiteEmail() {
+  try {
+    const response = await fetch("./assets/data/config.json");
+    if (!response.ok) throw new Error("Failed to load config.json");
+    
+    const configData = await response.json();
+
+    if (!configData.assessmentsEmail) {
+      throw new Error("❌ assessmentsEmail is missing in config.json.");
+    }
+
+    console.log("✅ Retrieved email:", configData.assessmentsEmail);
+    return configData.assessmentsEmail;
+  } catch (error) {
+    console.error("❌ Error fetching site email:", error);
+    return "reports@alerts.get-curio.us"; // change to emai.get.curious
+  }
+}
+
+// async function sendEmailNotification(fileUrl) {
+//   console.log("📧 Sending email notification...");
+
+//   try {
+//     // ✅ Get the correct recipient email
+//     const recipientEmail = await getSiteEmail();
+
+//     // ✅ Construct the email payload
+//     const emailData = {
+//       recipient: recipientEmail, // Now dynamically set
+//       subject: `🔔 New Welfare Assessment: ${selectedAnimal}`,
+//       message: `A welfare assessment for ${selectedAnimal} has just been completed by ${document.getElementById("auditor-name").value}. \n\nDownload the report here: ${fileUrl}`,
+//     };
+
+//     // ✅ Send the email
+//     const response = await fetch("https://welfare-assessment-reports.hello-e9b.workers.dev/send-email", {
+//       method: "POST",
+//       headers: { "Content-Type": "application/json" },
+//       body: JSON.stringify(emailData),
+//     });
+
+//     if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
+    
+//     console.log("✅ Email sent successfully to:", recipientEmail);
+//   } catch (error) {
+//     console.error("❌ Failed to send email:", error);
+//   }
+// }
+
+function downloadReport() {
+  if (!reportBlob || !csvBlob) {
+    console.error("❌ Report not available for download.");
+    return;
+  }
+
+  const date = new Date();
+  const shortDate = `${date.getDate().toString().padStart(2, '0')}${(date.getMonth() + 1).toString().padStart(2, '0')}${date.getFullYear()}`;
+  const time = `${date.getHours().toString().padStart(2, '0')}${date.getMinutes().toString().padStart(2, '0')}`;
+  const fileNameBase = `Welfare-assessment_${shortDate}-${time}`;
+
+  const zip = new JSZip();
+  zip.file(`${fileNameBase}.pdf`, reportBlob);
+  zip.file(`${fileNameBase}.csv`, csvBlob);
 
   zip.generateAsync({ type: "blob" }).then((zipBlob) => {
     const zipUrl = URL.createObjectURL(zipBlob);
     const downloadAnchor = document.createElement("a");
     downloadAnchor.href = zipUrl;
-    downloadAnchor.download = "assessment_results.zip";
+    downloadAnchor.download = `${fileNameBase}.zip`;
     document.body.appendChild(downloadAnchor);
     downloadAnchor.click();
     document.body.removeChild(downloadAnchor);
     URL.revokeObjectURL(zipUrl);
   });
+
+  console.log("✅ Report downloaded successfully.");
 }

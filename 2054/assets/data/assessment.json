@@ -1,6 +1,5 @@
 {
   "animals": [
-    "Meerkat",
     "Humboldt Penguin (Didge)",
     "Humboldt Penguin (Squash)",
     "Humboldt Penguin (Aquila)",
@@ -22,9 +21,54 @@
     "Asian Short-Clawed Otter (Dave)",
     "Asian Short-Clawed Otter (Harry)",
     "Yellow Mongoose (Manny)",
-    "Yellow Mongoose (Vixen)"
+    "Yellow Mongoose (Vixen)",
+    "Meerkat"
   ],
   "questions": [
+    {
+      "section": "Environment",
+      "questions": [
+        {
+          "question": "Is there music playing nearby?",
+          "options": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+        "question": "Are there audio-based interactives nearby?",
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "question": "Are there artificial lights pointing towards the enclosure, either static or moving/flashing?",
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "question": "How busy is the attraction today?",
+        "options": [
+          "Empty",
+          "Quiet",
+          "Busy",
+          "Very Busy" 
+        ]
+      },
+      {
+        "question": "What's the weather like today? Pick the option that matches the closest.",
+        "options": [
+          "Sunshine",
+          "Snow/Frost",
+          "Wind/Rain",
+          "Other"
+        ]
+        }
+      ]
+    }, 
     {
       "section": "1A: Behaviour - Animal-Based Indicators of Welfare",
       "questions": [

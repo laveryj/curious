@@ -11,6 +11,7 @@
   "password": "Dragon123",
   "language": "English",
   "email": "marc.miller@stockvale.co.uk",
+  "assessmentsEmail": "displays@sealifeadventure.co.uk",
   "phone": "+44 1234 567890",
   "theme": {
     "logoPath": "assets/images/site-logo.png",
