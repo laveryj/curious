@@ -93,28 +93,36 @@ function loadQuestion() {
   const question = questions[currentQuestionIndex];
   console.log("📌 Displaying question:", question);
 
-  // Create a new question block
+  // ✅ Get the correct answer options from the JSON
+  const answerOptions = question.options || ["Yes", "No", "N/A", "N/W"]; // Default if missing
+  const showEvidence = question.notes !== false; // ✅ Evidence field appears unless explicitly false
+
+  // ✅ Generate answer buttons dynamically
+  const optionsHTML = answerOptions.map(option => `
+    <button class="option-btn" data-answer="${option}">${option}</button>
+  `).join("");
+
+  // ✅ Create the evidence field only if `notes` is not false
+  const evidenceHTML = showEvidence ? `
+    <br>
+    <textarea id="evidence" placeholder="Evidence"></textarea>
+  ` : ""; // ✅ Empty string if `notes` is false
+
+  // ✅ Create a new question block
   const questionBlock = document.createElement("div");
   questionBlock.classList.add("question-block");
   questionBlock.innerHTML = `
     <h3>${selectedAnimal}</h3>
     <p>${currentQuestionIndex + 1}. ${question.question}</p>
-    <div class="options">
-      <button class="option-btn" data-answer="No">❌</button>
-      <button class="option-btn" data-answer="Yes">✅</button>
-      <button class="option-btn" data-answer="N/A">n/a</button>
-      <button class="option-btn" data-answer="N/W">n/w</button>
-    </div>
-    <br>
-    <textarea id="evidence" placeholder="Evidence"></textarea>
-    <br>
+    <div class="options">${optionsHTML}</div>
+    ${evidenceHTML} <!-- ✅ Evidence is conditionally added -->
     <br>
     <button id="next-button">Next</button>
   `;
 
   assessmentContainer.appendChild(questionBlock);
 
-  // Attach event listeners
+  // ✅ Attach event listeners for the dynamically created buttons
   document.querySelectorAll(".option-btn").forEach(button => {
     button.addEventListener("click", (event) => {
       selectAnswer(event.target.getAttribute("data-answer"));
@@ -124,32 +132,35 @@ function loadQuestion() {
   document.getElementById("next-button").addEventListener("click", nextQuestion);
 }
 
-function selectAnswer(answer) {
-  console.log(`✅ Answer selected: ${answer}`);
-  responses[currentQuestionIndex] = {
-    question: questions[currentQuestionIndex].question,
-    answer
-  };
-}
-
 function nextQuestion() {
-  const evidenceField = document.getElementById("evidence");
-  const selectedAnswer = responses[currentQuestionIndex]?.answer; // Check if an answer was selected
+  const evidenceField = document.getElementById("evidence"); // ✅ Check if element exists
+  const selectedAnswer = responses[currentQuestionIndex]?.answer; // ✅ Check if an answer was selected
 
   if (!selectedAnswer) {
     alert("Please select an answer before proceeding.");
     return;
   }
 
-  // Capture evidence at the time "Next" is pressed
-  const evidence = evidenceField.value || "";
-  responses[currentQuestionIndex].evidence = evidence;
+  // ✅ Store evidence only if the field exists
+  responses[currentQuestionIndex] = {
+    question: questions[currentQuestionIndex].question,
+    answer: selectedAnswer,
+    ...(evidenceField ? { evidence: evidenceField.value } : {}) // ✅ Only add evidence if present
+  };
 
   console.log("➡ Proceeding to next question...");
   currentQuestionIndex++;
 
   // Small delay to ensure updates apply before loading the next question
   setTimeout(loadQuestion, 50);
+}
+
+function selectAnswer(answer) {
+  console.log(`✅ Answer selected: ${answer}`);
+  responses[currentQuestionIndex] = {
+    question: questions[currentQuestionIndex].question,
+    answer
+  };
 }
 
 async function showResults() {

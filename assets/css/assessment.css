@@ -33,6 +33,7 @@ a {
   display: inline-block;
   color: white;
   border: none;
+  background-color: #18236e; /* Match site button background */
   border-radius: 5px;
   padding: 10px 20px;
   font-size: 1rem;
@@ -112,6 +113,15 @@ a {
   background-color: #ff9800; /* Orange */
   border-color: #f57c00;
   color: white;
+  flex: 1 1 45%; /* Each button takes ~48% of the row */
+  max-width: 220px; /* Optional: Prevents buttons from being too wide */
+  width: 80%; /* Ensures full width inside flexbox */
+}
+
+.option-btn:not([data-answer="Yes"]):not([data-answer="No"]):not([data-answer="N/W"]):not([data-answer="N/A"]) {
+  background-color: #ccc; /* Neutral grey */
+  color: #333;
+  border: 1px solid #aaa;
   flex: 1 1 45%; /* Each button takes ~48% of the row */
   max-width: 220px; /* Optional: Prevents buttons from being too wide */
   width: 80%; /* Ensures full width inside flexbox */
@@ -227,5 +237,5 @@ button, input[type="button"], input[type="submit"] {
 
 .assessment-container .options,
 #next-button {
-  margin-top: auto; /* Ensures consistent placement */
+  margin-top: auto; Ensures consistent placement
 }

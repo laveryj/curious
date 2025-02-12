@@ -31,23 +31,26 @@
         {
           "question": "Is there music playing nearby?",
           "options": [
-            "Yes",
-            "No"
-          ]
+            "No",
+            "Yes"
+          ],
+          "notes": false
         },
         {
         "question": "Are there audio-based interactives nearby?",
         "options": [
-          "Yes",
-          "No"
-        ]
+          "No",
+          "Yes"
+      ],
+        "notes": false
       },
       {
         "question": "Are there artificial lights pointing towards the enclosure, either static or moving/flashing?",
         "options": [
-          "Yes",
-          "No"
-        ]
+          "No",
+          "Yes"
+      ],
+        "notes": false
       },
       {
         "question": "How busy is the attraction today?",
@@ -56,7 +59,8 @@
           "Quiet",
           "Busy",
           "Very Busy" 
-        ]
+        ],
+        "notes": false
       },
       {
         "question": "What's the weather like today? Pick the option that matches the closest.",
@@ -65,7 +69,8 @@
           "Snow/Frost",
           "Wind/Rain",
           "Other"
-        ]
+        ],
+        "notes": false
         }
       ]
     }, 
