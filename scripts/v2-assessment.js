@@ -174,7 +174,7 @@ async function showResults() {
   const assessmentContainer = document.getElementById("assessment-container");
   assessmentContainer.innerHTML = `
     <h4>Assessment Completed 🎉</h4>
-    <p>The data has been saved, and a PDF report has been e-mailed to ${recipientEmail}.</p>
+    <p>The data from your assessment has been saved to the Curious database, and a PDF report has been e-mailed to ${recipientEmail}.</p>
   `;
 
   exportResults(true); // ✅ Generate & upload the report, but do not download it
