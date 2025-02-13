@@ -14,7 +14,6 @@
   
   <!-- Include the script to load the dynamic theme -->
   <script src="/scripts/v2-config.js" defer></script>
-  <!-- <script src="/scripts/v2-fetch.js" defer></script> -->
 
   <!-- Import the assessment javascript -->
   <script src="/scripts/v2-assessment.js"></script>
@@ -22,13 +21,20 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
 </head>
 
-<body class="hidden">
-  <header>
-    <img id="site-logo" alt="Site Logo" style="display: none;">
-    <!-- <h1 id="title">Welfare Assessment Tool</h1> -->
+<body class="hidden" style="background-color: #f4f4f4;">
+  <header style="text-align: left;">
+    <a href="get-started.html">
+      <img id="site-logo" alt="Site Logo" style="display: none;">
+    </a>
+    <h1 id="exhibit-title">Husbandry Tools</h1>
   </header>
 
 <main>
+
+  <div style="text-align: right; margin: 10px 0;">
+    <button onclick="window.history.back()" class="back-button">← Back</button>
+    <button id="logout-button">Log Out</button>
+  </div>
 
   <div class="assessment-card">
     <h2>Welfare Assessment</h2>

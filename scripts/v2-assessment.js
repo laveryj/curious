@@ -16,6 +16,10 @@ document.addEventListener("DOMContentLoaded", async () => {
   const auditorRole = document.getElementById("auditor-role");
   const auditorForm = document.getElementById("auditor-form");
 
+  const captureWelfareAssessment = document.getElementById("welfare-assessment-tool");
+  const viewHistoricWelfareAssessments = document.getElementById("welfare-assessment-history");
+
+
   if (!auditorForm) {
     console.error("❌ ERROR: #auditor-form not found! Check HTML structure.");
     return;
@@ -286,8 +290,8 @@ async function exportResults() {
     doc.text(wrappedEvidence, 20, yPos);
     yPos += wrappedEvidence.length * 7 + 5;
 
-    csvContent += `"${res.question.replace(/"/g, '""')}","${res.answer}","${res.evidence.replace(/"/g, '""')}"\n`;
-
+    csvContent += `"${res.question.replace(/"/g, '""')}","${res.answer}","${(res.evidence || "").replace(/"/g, '""')}"\n`;
+    
     if (res.answer === "Yes") {
       totalAchieved++;
       totalPossible++;
@@ -483,3 +487,17 @@ function downloadReport() {
 
   console.log("✅ Report downloaded successfully.");
 }
+
+      // Open species list page
+      if (captureWelfareAssessment) {
+        captureWelfareAssessment.addEventListener("click", () => {
+            window.location.href = "./assessment.html";
+        });
+    }
+
+        // Open species list page
+        if (viewHistoricWelfareAssessments) {
+          viewHistoricWelfareAssessments.addEventListener("click", () => {
+              window.location.href = "./assessment-history.html";
+          });
+      }
