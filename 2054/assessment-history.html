@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welfare Assessments</title>
+
+  <!-- Google Tag Manager -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-T9S88HFP32"></script>
+  <script src="/scripts/gtag.js" defer></script>
+
+  <!-- Fallback Styles -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <!-- Dynamic Theme and Page Scripts -->
+  <script src="/scripts/v2-config.js" defer></script>
+
+  <style>
+    body {
+      background-color: #f4f4f4;
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      padding: 0;
+    }
+    header {
+      text-align: left;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    h1 {
+      margin: 0;
+      font-size: 24px;
+    }
+
+    th, td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: left; /* Ensure left alignment */
+  white-space: nowrap; /* Prevent wrapping */
+}
+
+th {
+  background: #18236e; /* Darker blue for contrast */
+  color: white;
+  text-align: left;
+  font-weight: bold;
+}
+
+td {
+  font-weight: normal;
+}
+
+table {
+  width: 80%;
+  table-layout: fixed; /* Ensures uniform column widths */
+}
+
+th:nth-child(1), td:nth-child(1) { width: 10%; } /* ID */
+th:nth-child(2), td:nth-child(2) { width: 20%; } /* Animal */
+th:nth-child(3), td:nth-child(3) { width: 12%; } /* Auditor */
+th:nth-child(4), td:nth-child(4) { width: 12%; } /* Role */
+th:nth-child(5), td:nth-child(5) { width: 8%; } /* Date */
+th:nth-child(6), td:nth-child(6) { width: 6%; } /* Start */
+th:nth-child(7), td:nth-child(7) { width: 6%; } /* End */
+th:nth-child(8), td:nth-child(8) { width: 10%; } /* Report PDF */
+
+    .loading {
+      text-align: center;
+      font-size: 16px;
+      color: #666;
+    }
+    .error {
+      text-align: center;
+      font-size: 16px;
+      color: red;
+    }
+    .back-button {
+      display: inline-block;
+      margin: 10px 0;
+      padding: 8px 12px;
+      background: #18236e;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .back-button:hover {
+      background: #18236e;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <a href="get-started.html">
+      <img id="site-logo" alt="Site Logo" style="display: none;">
+    </a>
+    <h1 id="exhibit-title">Husbandry Tools</h1>
+  </header>
+
+  <main>
+    <br>
+    <div id="back-button-container" style="text-align: center; margin: 10px 0;">
+      <button onclick="window.history.back()" class="back-button">← Back</button>
+    </div>
+
+    <div id="assessments-container">
+      <h2>All Welfare Assessments</h2>
+      <p id="status-message" class="loading">Loading assessments...</p>
+      <table id="assessments-table">
+        <thead>
+          <tr>
+            <th>Assessment ID</th>
+            <th>Animal</th>
+            <th>Auditor</th>
+            <th>Role</th>
+            <th>Date</th>
+            <th>Start</th>
+            <th>End</th>
+            <th>Report PDF</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Data will be inserted here dynamically -->
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+  <footer>
+    <a href="/index.html">
+      <img src="/assets/images/logo.png" alt="Curious Logo">
+    </a>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", async () => {
+  console.log("📡 Fetching assessments...");
+  const statusMessage = document.getElementById("status-message");
+  const tableBody = document.querySelector("#assessments-table tbody");
+
+  try {
+    const response = await fetch("https://view-welfare-assessments.hello-e9b.workers.dev/");
+    if (!response.ok) throw new Error("Failed to load assessments");
+
+    const { data: assessments } = await response.json(); // Assuming data is an array
+
+    tableBody.innerHTML = "";
+    statusMessage.style.display = "none"; // Hide loading message
+
+    if (assessments.length === 0) {
+      statusMessage.textContent = "No assessments available.";
+      statusMessage.classList.remove("loading");
+      statusMessage.classList.add("error");
+      return;
+    }
+
+    assessments.forEach(assessment => {
+      const row = document.createElement("tr");
+
+      const startDate = new Date(assessment.start_time);
+      const endDate = new Date(assessment.end_time);
+      const formattedDate = startDate.toLocaleDateString(); // Show date
+      const formattedStartTime = startDate.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+      const formattedEndTime = endDate.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+
+      row.innerHTML = `
+        <td>${assessment.assessment_id}</td>
+        <td>${assessment.animal}</td>
+        <td>${assessment.auditor_name}</td>
+        <td>${assessment.auditor_role}</td>
+        <td>${formattedDate}</td> 
+        <td>${formattedStartTime}</td>
+        <td>${formattedEndTime}</td>
+        <td>${assessment.file_url ? `<a href="${assessment.file_url}" target="_blank">View Report</a>` : "No Report"}</td>
+      `;
+      tableBody.appendChild(row);
+    });
+  } catch (error) {
+    console.error("❌ Error loading assessments:", error);
+    statusMessage.textContent = "Error loading assessments. Please try again later.";
+    statusMessage.classList.remove("loading");
+    statusMessage.classList.add("error");
+  }
+});
+  </script>
+</body>
+</html>

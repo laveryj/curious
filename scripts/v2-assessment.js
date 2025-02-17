@@ -2,6 +2,8 @@ let selectedAnimal = "";
 let emailSent = false; // ✅ Track whether the email has been sent
 let reportBlob = null; // ✅ Store PDF blob for manual download
 let csvBlob = null; // ✅ Store CSV blob for manual download
+let questions = []; // Declare globally
+let fileUrl = null; // Use camelCase
 
 document.addEventListener("DOMContentLoaded", async () => {
   console.log("DOM fully loaded and script running.");
@@ -57,6 +59,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   }
 
   startButton.addEventListener("click", () => {
+    assessment_id = Date.now();  // Generates a unique timestamp
     console.log("▶ Start button clicked.");
 
     if (!auditorName.value || !auditorRole.value || !animalSelect.value) {
@@ -69,7 +72,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     responses = [];
     startTime = new Date();
 
-    console.log(`✅ Assessment started for ${selectedAnimal}. Hiding auditor form.`);
+    console.log(`✅ Assessment with an ID ${assessment_id} started for ${selectedAnimal}.`);
 
     // Hide auditor form
     auditorContainer.style.display = "none";
@@ -168,26 +171,48 @@ function selectAnswer(answer) {
 }
 
 async function showResults() {
-  const recipientEmail = await getSiteEmail();
   console.log("🎉 Assessment completed!");
+  const recipientEmail = await getSiteEmail();
 
   const assessmentContainer = document.getElementById("assessment-container");
   assessmentContainer.innerHTML = `
-    <h4>Assessment Completed 🎉</h4>
-    <p>The data from your assessment has been saved to the Curious database, and a PDF report has been e-mailed to ${recipientEmail}.</p>
+      <h4>Assessment Completed 🎉</h4>
+      <p>The data from your assessment has been saved to the Curious database, and a PDF report has been e-mailed to ${recipientEmail}.</p>
+      <p>You can manually download and view the report below, if needed.</p>
   `;
 
-  exportResults(true); // ✅ Generate & upload the report, but do not download it
+  // ✅ Ensure report generation is complete
+  await exportResults();  // ✅ Wait for reportBlob generation
 
-  // ✅ Add button for manual download
-  const exportButton = document.createElement("button");
-  exportButton.textContent = "Manual Download";
-  exportButton.addEventListener("click", downloadReport); // ✅ Trigger manual download
-  assessmentContainer.appendChild(exportButton);
-}
+  console.log("🛠 Debug: Checking reportBlob before upload:", reportBlob);
+  if (!reportBlob) {
+      console.error("❌ Report Blob is null! Cannot upload PDF.");
+      return;
+  }
+
+  const fileName = `Welfare_assessment-${assessment_id}.pdf`;
+  fileUrl = await uploadToR2(reportBlob, fileName);  // ✅ Assign to global variable
+  console.log("🛠 Debug: Received fileUrl from R2:", fileUrl);
+
+  if (!fileUrl) {
+      console.error("❌ Failed to upload report, skipping database save.");
+      return;
+  }
+
+  console.log("📤 Submitting welfare assessment with file URL:", fileUrl);
+  
+  // ✅ Ensure `fileUrl` is correctly passed
+  await submitWelfareAssessment(fileUrl);  // ✅ No need to pass fileUrl as an argument
+  }
 
 async function uploadToR2(pdfBlob, fileName) {
   console.log("📤 Uploading PDF to R2...");
+
+  // Ensure pdfBlob is a valid Blob
+  if (!(pdfBlob instanceof Blob)) {
+    console.error("❌ Error: Invalid PDF Blob, skipping upload.");
+    return null;
+  }
 
   const formData = new FormData();
   formData.append("file", pdfBlob, fileName);
@@ -211,7 +236,9 @@ async function uploadToR2(pdfBlob, fileName) {
     }
 
     console.log("✅ PDF uploaded successfully:", data.url);
-    return data.url; // ✅ Correctly returning the direct file URL
+    fileUrl = data.url;  // ✅ Ensure fileUrl is updated globally
+    console.log("✅ Global fileUrl updated:", fileUrl);
+    return fileUrl;
 
   } catch (error) {
     console.error("❌ Failed to upload PDF:", error.message, error);
@@ -236,7 +263,7 @@ async function exportResults() {
   doc.setFontSize(16);
   doc.text(`Animal Welfare Assessment`, 15, 20);
   doc.setFontSize(12);
-  doc.text(`${selectedAnimal}`, 15, 30);
+  doc.text(`Assessment ID: ${assessment_id} - ${selectedAnimal}`, 15, 30);
 
   doc.setFont("helvetica", "normal");
   doc.setFont("helvetica", "bold");
@@ -314,16 +341,44 @@ async function exportResults() {
   doc.text(`${welfareScore}%`, 47, yPos + 10);
   yPos += 30;
 
-  const date = new Date();
-  const shortDate = `${date.getDate().toString().padStart(2, '0')}${(date.getMonth() + 1).toString().padStart(2, '0')}${date.getFullYear()}`;
-  const time = `${date.getHours().toString().padStart(2, '0')}${date.getMinutes().toString().padStart(2, '0')}`;
-  const fileNameBase = `Welfare-assessment_${shortDate}-${time}`;
+  // Define the number of questions in the first section
+  const firstSectionLength = 5;
 
-  reportBlob = doc.output("blob"); // ✅ Store PDF Blob
-  csvBlob = new Blob([csvContent], { type: "text/csv" }); // ✅ Store CSV Blob
+  // Filter out issues that are not in the first section
+  const filteredWelfareIssues = welfareIssues.filter((issue, index) => index >= firstSectionLength);
+
+  if (filteredWelfareIssues.length > 0) {
+    if (yPos + (filteredWelfareIssues.length * 7 + 20) > pageHeight) {
+      doc.addPage();
+      yPos = 20;
+    }
+
+    doc.setFont("helvetica", "bold");
+    doc.text("Welfare Action Plan", 15, yPos);
+    doc.setFont("helvetica", "normal");
+    yPos += 10;
+    doc.text("The following items need addressing:", 15, yPos);
+    yPos += 10;
+
+    filteredWelfareIssues.forEach(issue => {
+      if (yPos > pageHeight - 10) {
+        doc.addPage();
+        yPos = 20;
+      }
+      doc.text("- " + issue, 20, yPos);
+      yPos += 7;
+    });
+  }
+
+  // ✅ These were outside the function before - moving them inside
+  reportBlob = doc.output("blob"); 
+  console.log("✅ PDF Blob Generated:", reportBlob);
+  csvBlob = new Blob([csvContent], { type: "text/csv" });
+
+  console.log("✅ PDF & CSV Generated");
 
   // ✅ Upload PDF to Cloudflare R2
-  const fileName = `${fileNameBase}.pdf`;
+  const fileName = `Welfare_assessment-${assessment_id}.pdf`;
   try {
     const formData = new FormData();
     formData.append("file", reportBlob, fileName);
@@ -343,14 +398,14 @@ async function exportResults() {
     }
 
     console.log("✅ File uploaded successfully to R2:", responseData.url);
-    const fileLink = responseData.url; // Ensure the correct link is used
+    const fileLink = responseData.url;
 
-    const recipientEmail = await getSiteEmail(); // Fetch dynamically
+    const recipientEmail = await getSiteEmail();
 
     const emailPayload = {
       recipient: recipientEmail,
       subject: `🔔 New Welfare Assessment: ${selectedAnimal}`,
-      message: `A welfare assessment for ${selectedAnimal} has just been completed by ${document.getElementById("auditor-name").value}!\n\nDownload the report here: ${fileLink}`
+      message: `A welfare assessment (ID ${assessment_id}) for ${selectedAnimal} has just been completed by ${document.getElementById("auditor-name").value}!\n\nDownload the report here: ${fileLink}`
     };
 
     const emailResponse = await fetch("https://welfare-assessment-reports.hello-e9b.workers.dev/send-email", {
@@ -360,18 +415,18 @@ async function exportResults() {
     });
 
     if (!emailResponse.ok) {
-      const errorText = await emailResponse.text(); // Read response for more details
+      const errorText = await emailResponse.text();
       throw new Error(`Email send failed: ${emailResponse.statusText}, Response: ${errorText}`);
     }
 
     console.log("✅ Email sent successfully");
 
   } catch (error) {
-    console.error("❌ Error processing upload or email:", error);
+    console.error("❌ Error processing upload or email:", error);const fileUrl = await uploadToR2(reportBlob, fileName);
   }
-}
+} // ✅ Closing `exportResults()`
 
-async function submitWelfareAssessment() {
+async function submitWelfareAssessment(fileUrl) {
   console.log("📤 Sending welfare assessment to database...");
 
   const pathSegments = window.location.pathname.split("/");
@@ -381,28 +436,46 @@ async function submitWelfareAssessment() {
       return;
   }
 
+  if (!fileUrl) {
+    console.error("❌ Error: fileUrl is missing! Cannot submit assessment.");
+    return;
+}
+
   const endTime = new Date();
 
   const assessmentData = {
       site_id: siteId,
-      animal: selectedAnimal,
-      assessment_id: Date.now(), // Unique ID for this assessment
-      auditor_name: document.getElementById("auditor-name").value,
-      auditor_role: document.getElementById("auditor-role").value,
-      start_time: startTime.toISOString(),  // Capture start time in ISO format
-      end_time: endTime.toISOString(),      // Capture end time in ISO format
-      responses
-  };
+      animal: selectedAnimal || "Unknown",
+      assessment_id: assessment_id || Date.now(),
+      auditor_name: document.getElementById("auditor-name")?.value.trim().length >= 3 
+        ? document.getElementById("auditor-name").value 
+        : "Unknown",
+      auditor_role: document.getElementById("auditor-role")?.value.trim().length >= 3 
+        ? document.getElementById("auditor-role").value 
+        : "Unknown",      start_time: startTime ? startTime.toISOString() : null,  
+      end_time: endTime.toISOString(),
+      responses: responses.length ? responses : [{ question: "N/A", answer: "N/A", evidence: "" }],  // ✅ Ensures at least one response
+      file_url: fileUrl ? fileUrl : "MISSING_FILE_URL"
+     };
+
+  if (!fileUrl) {
+    console.error("❌ Error: fileUrl is missing before sending the request!");
+    return;  // Stop the function if fileUrl is missing
+}
+
+console.log("📄 Payload being sent:", assessmentData);
 
   try {
-      const response = await fetch("https://save-welfare-assessments.hello-e9b.workers.dev/", {
+      const response = await fetch("https://save-welfare-assessments.hello-e9b.workers.dev/save", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(assessmentData)
       });
 
+      const responseText = await response.text(); // ✅ Capture the full server response
       if (!response.ok) {
-          throw new Error(`HTTP error! Status: ${response.status}`);
+          console.error(`❌ Server responded with ${response.status}: ${responseText}`);
+          throw new Error(`HTTP error! ${response.status} - ${responseText}`);
       }
 
       console.log("✅ Welfare assessment saved to database successfully!");
@@ -465,20 +538,15 @@ function downloadReport() {
     return;
   }
 
-  const date = new Date();
-  const shortDate = `${date.getDate().toString().padStart(2, '0')}${(date.getMonth() + 1).toString().padStart(2, '0')}${date.getFullYear()}`;
-  const time = `${date.getHours().toString().padStart(2, '0')}${date.getMinutes().toString().padStart(2, '0')}`;
-  const fileNameBase = `Welfare-assessment_${shortDate}-${time}`;
-
   const zip = new JSZip();
-  zip.file(`${fileNameBase}.pdf`, reportBlob);
-  zip.file(`${fileNameBase}.csv`, csvBlob);
+  zip.file(`Welfare_assessment-${assessment_id}.pdf`, reportBlob);
+  zip.file(`Welfare_assessment-${assessment_id}.csv`, csvBlob);
 
   zip.generateAsync({ type: "blob" }).then((zipBlob) => {
     const zipUrl = URL.createObjectURL(zipBlob);
     const downloadAnchor = document.createElement("a");
     downloadAnchor.href = zipUrl;
-    downloadAnchor.download = `${fileNameBase}.zip`;
+    downloadAnchor.download = `Curious-WA-${assessment_id}.zip`;
     document.body.appendChild(downloadAnchor);
     downloadAnchor.click();
     document.body.removeChild(downloadAnchor);
@@ -487,17 +555,3 @@ function downloadReport() {
 
   console.log("✅ Report downloaded successfully.");
 }
-
-      // Open species list page
-      if (captureWelfareAssessment) {
-        captureWelfareAssessment.addEventListener("click", () => {
-            window.location.href = "./assessment.html";
-        });
-    }
-
-        // Open species list page
-        if (viewHistoricWelfareAssessments) {
-          viewHistoricWelfareAssessments.addEventListener("click", () => {
-              window.location.href = "./assessment-history.html";
-          });
-      }
