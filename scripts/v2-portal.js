@@ -11,6 +11,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const viewAnalyticsButton = document.getElementById("view-analytics");
     const viewIDDemoButton = document.getElementById("test-capture");
     const logoutButton = document.getElementById("logout-button");
+    const captureWelfareAssessment = document.getElementById("welfare-assessment-tool");
+    const viewHistoricWelfareAssessments = document.getElementById("welfare-assessment-history");
+  
 
     // Load site information from config.json
 fetch(configUrl)
@@ -192,12 +195,26 @@ if (siteInfoContent) {
         });
     }
 
-    // Open species list page
+    // Open Fish ID demo page
     if (viewIDDemoButton) {
       viewIDDemoButton.addEventListener("click", () => {
           window.location.href = "./capture.html";
       });
   }
+
+      // Open Welfare Assessment history  page
+      if (viewHistoricWelfareAssessments) {
+        viewHistoricWelfareAssessments.addEventListener("click", () => {
+            window.location.href = "./assessment-history.html";
+        });
+    }
+
+        // Start welfare assessment button
+        if (captureWelfareAssessment) {
+          captureWelfareAssessment.addEventListener("click", () => {
+              window.location.href = "./assessment.html";
+          });
+      }
 
         // // Open analytics page
         // if (viewAnalyticsButton) {
