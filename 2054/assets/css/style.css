@@ -851,3 +851,39 @@ opacity: 0.8; /* Dim slightly for visual feedback */
   #close-wifi-dialog:hover {
     background: #e04b4b;
   }
+/* Center the vote container */
+.vote-container {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Centers horizontally */
+  margin-top: 15px;
+  gap: 8px; /* Space between button and count */
+}
+
+/* Style the upvote button */
+.upvote-button {
+  font-size: 1rem; /* Smaller font size */
+  padding: 6px 12px; /* Compact padding */
+  background: #18236e; /* Dark background */
+  color: #fff; /* White text */
+  border: none;
+  border-radius: 8px; /* Rounded edges */
+  cursor: pointer;
+  transition: background 0.2s ease-in-out;
+}
+
+.upvote-button:hover {
+  background: #18236e; /* Slightly lighter on hover */
+}
+
+.upvote-button:disabled {
+  background: #555; /* Greyed out when disabled */
+  cursor: default;
+}
+
+/* Style the vote count */
+.vote-count {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #18236e; /* White text */
+}
