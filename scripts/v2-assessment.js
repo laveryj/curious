@@ -18,10 +18,6 @@ document.addEventListener("DOMContentLoaded", async () => {
   const auditorRole = document.getElementById("auditor-role");
   const auditorForm = document.getElementById("auditor-form");
 
-  const captureWelfareAssessment = document.getElementById("welfare-assessment-tool");
-  const viewHistoricWelfareAssessments = document.getElementById("welfare-assessment-history");
-
-
   if (!auditorForm) {
     console.error("❌ ERROR: #auditor-form not found! Check HTML structure.");
     return;
