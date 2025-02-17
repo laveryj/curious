@@ -22,18 +22,7 @@
     "linkColor": "#2e3884"
   },
 "talkTimes": [
-  { "name": "Penguin Feed", "time": "11:30", "days": ["Daily"] },
-  { "name": "Dino Tour", "time": "12:00", "days": ["Weekends"] },
-  { "name": "Macaque Talk", "time": "13:15", "days": ["Weekends"] },
-  { "name": "Meerkat Feed", "time": "13:30", "days": ["Daily"] },
-  { "name": "Clownfish Talk", "time": "14:15", "days": ["Weekends"] },
-  { "name": "Piranha Talk", "time": "14:30", "days": ["Weekends"] },
-  { "name": "Mongoose Feed", "time": "15:00", "days": ["Daily"] },
-  { "name": "Meerkat Feed", "time": "15:15", "days": ["Daily"] },
-  { "name": "Penguin Feed", "time": "15:30", "days": ["Daily"] }
 ],
   "experiences": [
-    { "name": "Penguin feed", "price": "£100.00", "link": "https://buy.myonlinebooking.co.uk/sealife/sessions.aspx?tid=94" },
-    { "name": "Meerkat feed", "price": "£100.00", "link": "https://buy.myonlinebooking.co.uk/sealife/sessions.aspx?tid=88" }
   ]
 }
