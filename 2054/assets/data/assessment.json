@@ -37,13 +37,20 @@
           "notes": false
         },
         {
-        "question": "Are there audio-based interactives nearby?",
-        "options": [
-          "No",
-          "Yes"
-      ],
-        "notes": false
-      },
+          "question": "Are there audio-based interactives nearby?",
+          "options": [
+            "No",
+            "Yes"
+        ],
+          "notes": false
+        },        {
+          "question": "Has there been any construction or noisy building work nearby today?",
+          "options": [
+            "No",
+            "Yes"
+        ],
+          "notes": false
+        },
       {
         "question": "Are there artificial lights pointing towards the enclosure, either static or moving/flashing?",
         "options": [
