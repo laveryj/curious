@@ -214,7 +214,7 @@ async function uploadToR2(pdfBlob, fileName) {
   formData.append("file", pdfBlob, fileName);
 
   try {
-    const response = await fetch("https://welfare-assessment-reports.hello-e9b.workers.dev/upload", {
+    const response = await fetch("https://get-curio.us/api/welfare-assessment-reports/upload", {
       method: "POST",
       body: formData,
     });
@@ -379,7 +379,7 @@ async function exportResults() {
     const formData = new FormData();
     formData.append("file", reportBlob, fileName);
 
-    const uploadResponse = await fetch("https://welfare-assessment-reports.hello-e9b.workers.dev/upload", {
+    const uploadResponse = await fetch("https://get-curio.us/api/welfare-assessment-reports/upload", {
       method: "POST",
       body: formData
     });
@@ -404,7 +404,7 @@ async function exportResults() {
       message: `A welfare assessment (ID ${assessment_id}) for ${selectedAnimal} has just been completed by ${document.getElementById("auditor-name").value}!\n\nDownload the report here: ${fileLink}`
     };
 
-    const emailResponse = await fetch("https://welfare-assessment-reports.hello-e9b.workers.dev/send-email", {
+    const emailResponse = await fetch("https://get-curio.us/api/welfare-assessment-reports/send-email", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(emailPayload),
@@ -462,7 +462,7 @@ async function submitWelfareAssessment(fileUrl) {
 console.log("📄 Payload being sent:", assessmentData);
 
   try {
-      const response = await fetch("https://save-welfare-assessments.hello-e9b.workers.dev/save", {
+      const response = await fetch("https://get-curio.us/api/save-welfare-assessments/save", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(assessmentData)
@@ -514,7 +514,7 @@ async function getSiteEmail() {
 //     };
 
 //     // ✅ Send the email
-//     const response = await fetch("https://welfare-assessment-reports.hello-e9b.workers.dev/send-email", {
+//     const response = await fetch("https://get-curio.us/api/welfare-assessment-reports/send-email", {
 //       method: "POST",
 //       headers: { "Content-Type": "application/json" },
 //       body: JSON.stringify(emailData),

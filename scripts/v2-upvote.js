@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     // Fetch existing vote count from Cloudflare KV
     async function fetchVoteCount() {
       try {
-        const response = await fetch(`https://upvote-tracker.hello-e9b.workers.dev/vote?key=${voteKey}`);
+        const response = await fetch(`https://get-curio.us/api/upvote-tracker/vote?key=${voteKey}`);
         if (!response.ok) throw new Error("Failed to fetch vote count");
         const data = await response.json();
         voteCount.textContent = data.count || 0;
@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       try {
         console.log("Submitting vote with key:", voteKey); // Debugging log
 
-        const response = await fetch(`https://upvote-tracker.hello-e9b.workers.dev/vote`, {
+        const response = await fetch(`https://get-curio.us/api/upvote-tracker/vote`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ key: voteKey.trim() }), // Ensure key is properly formatted
