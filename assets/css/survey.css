@@ -3,8 +3,8 @@ body.hidden {
 }
 
 header {
-  background-color: #d35c18; /* Theme header color */
-  color: #292929; /* Theme text color */
+  /* background-color: #d35c18; Theme header color */
+  /* color: #292929; Theme text color */
 }
 
 a {
@@ -33,6 +33,7 @@ a {
   display: inline-block;
   color: white;
   border: none;
+  background-color: #18236e; /* Match site button background */
   border-radius: 5px;
   padding: 10px 20px;
   font-size: 1rem;
@@ -112,6 +113,15 @@ a {
   background-color: #ff9800; /* Orange */
   border-color: #f57c00;
   color: white;
+  flex: 1 1 45%; /* Each button takes ~48% of the row */
+  max-width: 220px; /* Optional: Prevents buttons from being too wide */
+  width: 80%; /* Ensures full width inside flexbox */
+}
+
+.option-btn:not([data-answer="Yes"]):not([data-answer="No"]):not([data-answer="N/W"]):not([data-answer="N/A"]) {
+  background-color: #ccc; /* Neutral grey */
+  color: #333;
+  border: 1px solid #aaa;
   flex: 1 1 45%; /* Each button takes ~48% of the row */
   max-width: 220px; /* Optional: Prevents buttons from being too wide */
   width: 80%; /* Ensures full width inside flexbox */
@@ -203,7 +213,7 @@ button, input[type="button"], input[type="submit"] {
   pointer-events: none;
 }
 
-#notes {
+#evidence {
   width: 90%;
   height: 100px;
   font-size: 16px;
@@ -214,8 +224,8 @@ button, input[type="button"], input[type="submit"] {
 }
 
 @media (max-width: 600px) {
-  #notes {
-    height: 50px; /* Bigger notes box for mobile */
+  #evidence {
+    height: 50px; /* Bigger evidence box for mobile */
   }
 }
 
@@ -227,5 +237,5 @@ button, input[type="button"], input[type="submit"] {
 
 .survey-container .options,
 #next-button {
-  margin-top: auto; /* Ensures consistent placement */
+  margin-top: auto; Ensures consistent placement
 }
