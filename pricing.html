@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <!-- <base href="/curious/"> -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Curious - a digital interpretation platform for zoos & aquariums</title>
+  <meta name="description" content="Curious is the ultimate digital interpretation platform for zoos and aquariums, designed to captivate your visitors. A stunning digital guidebook in its own right, Curious brings powerful analytics, seamless upselling tools, and AI-driven recognition software. Curious transforms how you connect with your audience—making every visit unforgettable.">
+  <meta name="keywords" content="digital guide, guidebook, guide book, interpretation, exhibits, zoo, aquarium, museum, QR codes">
+
+  <!-- Open Graph Meta Tags (for social media sharing) -->
+  <meta property="og:title" content="Welcome to Curious">
+  <meta property="og:description" content="Explore exhibits with ease using our innovative digital guide for zoos and aquariums.">
+  <meta property="og:image" content="/assets/images/og-image.png">
+  <meta property="og:url" content="https://www.curious.example.com/">
+  <meta property="og:type" content="website">
+
+
+  <title>Get Curious | Home</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+  <!-- Inline Critical Theme Styles -->
+  <style>
+    body.hidden {
+      background-color: #a7a29c; /* This should be your theme's background color */
+      visibility: hidden; /* Hide until the script removes 'hidden' */
+    }
+    header {
+      background-color: #d35c18; /* Theme header color */
+      color: #292929; /* Theme text color */
+    }
+    a {
+      color: #292929; /* Theme link color */
+    }
+  </style>
+
+  <!-- Import the fallback styles -->
+  <link rel="stylesheet" href="/assets/css/style.css">
+  
+  <!-- Include the script to load the dynamic theme -->
+  <script src="/scripts/config.js" defer></script>
+  <script src="/scripts/fetch.js" defer></script>
+  <script src="/scripts/v2-pricing.js"></script>
+
+</head>
+
+<body class="hidden">
+  <header style="display: flex; justify-content: center; align-items: center;">
+    <img src="/assets/images/orig-logo.png" alt="Curious Logo" style="width: 120px; height: auto;">
+  </header>
+
+  <nav style="display: flex; justify-content: center; align-items: center; padding: 15px 20px;">
+
+    <ul style="list-style: none; display: flex; gap: 40px; margin: 0; padding: 0;">
+      <li><a href="/" style="text-decoration: none; color: #292929; font-weight: bold;">About</a></li>
+      <li><a href="/features.html" style="text-decoration: none; color: #292929; font-weight: bold;">Features</a></li>
+      <li><a href="/pricing.html" style="text-decoration: none; color: #292929; font-weight: bold;">Pricing</a></li>
+      <li><a href="/contact.html" style="text-decoration: none; color: #292929; font-weight: bold;">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- <main> -->
+  <main style="max-width: 1000px; margin: 0 auto; padding: 20px; justify-content: left;">
+    <h2>Pricing</h2>
+
+    <p>We charge a flat monthly fee for <b>unlimited usage</b>. In practice, that means you can have as many exhibits, species, and visitor page views as you like. Simply subscribe to the tier that best suits your needs, then configure your exhibits, add your species & unqique animals, then print out your QR codes and start using the platform straight away!
+    <br><br><br>
+    <b>Discover</b> – Give your visitors the ultimate experience by putting animal information right at their fingertips. Effortlessly enhance or replace your current exhibit signage with an engaging, modern solution that keeps them curious.
+    <br><br>
+    <b>Engage</b> – Bring your exhibits to life with a feature-packed digital guidebook. Delight visitors with stunning images, videos, audio guides, blogs, and quizzes. Showcase your team and send dynamic alerts for talks and feeds—all in one powerful platform.
+    <br><br>
+    <b>Accelerate</b> – Boost your revenue with in-app upsells for experiences, merchandise, and passes—or charge for Curious itself! Get rich analytics to track engagement and showcase top exhibits. Plus, impress visitors with a species finder that identifies animals from their photos.</p>
+    <br>
+
+      <div class="pricing-cards-container">
+      <!-- Free Plan -->
+      <div class="pricing-card">
+        <h3>Discover</h3>
+        <p><span id="Discover"></span>/month</p>
+        <ul>
+          <li><i class="fas fa-check-circle"></i> Rich spcecies profiles</li>
+          <li><i class="fas fa-check-circle"></i> Site map & information</li>
+          <li><i class="fas fa-check-circle"></i> Advertise talk times & feeds</li>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+        </ul>
+        <br>
+        <a href="signup-discover.html" class="button">Get Started</a>
+      </div>
+      
+      <!-- Standard Plan -->
+      <div class="pricing-card">
+        <h3>Engage</h3>
+        <p><span id="Engage"></span>/month</p>
+        <ul>
+          <li><i class="fas fa-check-circle"></i> All features of Discover, plus:</li>
+          <li><i class="fas fa-check-circle"></i> Built-in audio guide</li>
+          <li><i class="fas fa-check-circle"></i> Add videos, blogs & quizzes</li>
+          <li><i class="fas fa-check-circle"></i> "Meet the Team" profiles</li>
+          <br>
+          <br>
+        </ul>
+        <br>
+        <a href="signup-engage.html" class="button">Get Started</a>
+      </div>
+
+      <!-- Standard Plan -->
+      <div class="pricing-card">
+        <h3>Monetise</h3>
+        <p><span id="Monetise"></span>/month</p>
+        <ul>
+          <li><i class="fas fa-check-circle"></i> All features of Engage, plus:</li>
+          <li><i class="fas fa-check-circle"></i> Sell access to Curious</li>
+          <li><i class="fas fa-check-circle"></i> Upsell experiences & annual passes</li>
+          <li><i class="fas fa-check-circle"></i> Animal ID tool</li>
+          <li><i class="fas fa-check-circle"></i> View advanced analytics</li>
+          <br>
+        </ul>
+        <br>
+        <a href="signup-Monetise.html" class="button">Get Started</a>
+      </div>
+    </div>
+    
+    <br>
+    <br>
+ 
+    <h2>Get Curious</h2>
+    <p>
+      Ready to bring Curious to your zoo or aquarium? Email us at <a href="mailto:hello@get-curio.us">hello@get-curio.us</a> to schedule a demo or discuss your requirements. We’re excited to partner with you in creating unforgettable visitor experiences.
+    </p>
+    <br> 
+ 
+  </main>
+
+  <footer><small><b>Curious</b> is a trading name of <b>Josxph Limited</b> (15145694), incorporated in England and Wales at the registered address 82a James Carter Road, Mildenhall, Bury St. Edmunds, England, IP28 7DE.</small></footer>
+
+</body>
+
+</html>
