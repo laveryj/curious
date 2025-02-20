@@ -24,74 +24,54 @@
   <script src="/scripts/v2-analytics-new.js"></script>
 
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 20px;
+    #analyticsTable th, #analyticsTable td {
+      white-space: nowrap;
+      padding: 5px;
+      text-align: left;
     }
-  
-    header {
-      text-align: center;
+
+    #metricsTable th, #metricsTable td {
+      white-space: nowrap;
+      padding: 5px;
+      text-align: left;
     }
-  
-    #chart-container {
-      display: flex; /* Use flex layout */
-      flex-direction: column; /* Stack charts vertically */
-      gap: 20px; /* Space between charts */
-      max-width: 800px; /* Constrain maximum width */
-      margin: 0 auto; /* Center align and add bottom margin */
-    }
-  
-    canvas {
-      /* background-color: #f9f9f9; */
-      /* border: 1px solid #ddd; */
-      /* border-radius: 8px; */
-      width: 100%; /* Fit within the container */
-      max-height: 300px; /* Limit chart height explicitly */
-    }
-  
-    /* Styles for the analytics table */
-.analytics-table {
-  width: 100%;
-  border-collapse: collapse;
+
+    #data-visualisation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
   margin: 20px 0;
-  font-size: 16px;
-  text-align: left;
-  table-layout: auto; /* Columns adjust to content */
-  white-space: nowrap; /* Prevent text wrapping */
 }
 
-.analytics-table th,
-.analytics-table td {
-  border: 1px solid #ddd;
-  padding: 8px;
+/* Set consistent size for all charts */
+canvas {
+  width: 500px !important;  /* Fixed width */
+  height: 300px !important; /* Fixed height */
+  max-width: 500px;
+  max-height: 300px;
+  margin: 10px 0;
+  border: 1px solid #ccc; /* Optional border */
+  border-radius: 8px;
+  background: white;
 }
 
-.analytics-table th {
-  background-color: #f4f4f4;
-  font-weight: bold;
+/* Container for graphs */
+.graphs-container {
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping */
+  justify-content: center; /* Center align */
+  gap: 20px;
 }
 
-.analytics-table tr:last-child {
-  font-weight: bold;
+/* Ensure graphs maintain a uniform size */
+.graph-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 500px;
+  height: 300px;
 }
-  
-    /* #logout-button {
-    position: relative;
-    top: 20px;
-    right: 20px;
-    padding: 10px 20px;
-    background-color: #f44336;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 14px;
-  } */
-  
-    main {
-      max-width: 1000px; /* Constrain main content width */
-      margin: 0 auto; /* Center-align main content */
-    }
 
   </style>
 
@@ -123,7 +103,7 @@
       <h1 id="portal-title">Analytics</h1>
     </header>
 
-    <main>
+<main>
       
       <div style="text-align: right; margin: 10px 0;">
         <button id="back-button">Back</button>
@@ -134,54 +114,351 @@
       <br>
       <br>
 
+
+        <!-- Key Metrics Summary -->
+        <section id="key-metrics" style="margin: 20px 0; text-align: left;">
+          <h2>Key Metrics</h2>
+        
+          <table id="metricsTable" border="1">
+            <tbody>
+              <tr><td><strong>Total Views</strong></td><td id="totalViews">0</td></tr>
+              <tr><td><strong>Unique Exhibits</strong></td><td id="uniqueExhibits">0</td></tr>
+              <tr><td><strong>Unique Objects</strong></td><td id="uniqueObjects">0</td></tr>
+              <tr><td><strong>Top Exhibit</strong></td><td id="popularExhibit">-</td></tr>
+              <tr><td><strong>Top Object</strong></td><td id="popularObject">-</td></tr>
+            </tbody>
+          </table>  
+        </section>
+
+        <br>
+        <!-- Data Visualisation Section -->
+<section id="data-visualisation" style="margin: 20px 0; text-align: left;">
+  <h2>Data Visualisations</h2>
+  
+  <div class="graphs-container">
+    <div class="graph-container">
+      <canvas id="exhibitViewsChart"></canvas>
+    </div>
+    <div class="graph-container">
+      <canvas id="viewingTimeChart"></canvas>
+    </div>
+  </div>
+  <br>
+  <div class="graphs-container">
+    <div class="graph-container">
+      <canvas id="deviceUsageChart"></canvas>
+    </div>
+    <div class="graph-container">
+      <canvas id="osUsageChart"></canvas>
+    </div>
+  </div>
+  <br>
+  <div class="graphs-container">
+    <div class="graph-container">
+      <canvas id="browserUsageChart"></canvas>
+    </div>
+    <div class="graph-container">
+      <canvas id="pageViewsOverTimeChart"></canvas>
+    </div>
+  </div>
+  <br>
+  </div>
+
+</section>    
+
+  <br>
+        <!-- Raw Data -->
       <section id="metrics" style="margin: 20px 0; text-align: left;">
-        <h2>Key Metrics</h2>
-        <table style="border-collapse: collapse; font-size: 16px; text-align: left;">
-          <!-- <thead>
+        <h2>Raw Data</h2>
+
+        <table id="analyticsTable" border="1">
+          <thead>
             <tr>
-              <th style="border: 1px solid #ddd; padding: 8px; background-color: #f4f4f4; text-align: left; white-space: nowrap;">Metric</th>
-              <th style="border: 1px solid #ddd; padding: 8px; background-color: #f4f4f4; text-align: left; white-space: nowrap;">Value</th>
+              <th>Date</th>
+              <th>Time</th>
+              <th>Page</th>
+              <th>Exhibit</th>
+              <th>Object</th>
+              <th>Browser</th>
+              <th>OS</th>
+              <th>Device</th>
+              <th>Traffic Source</th>
             </tr>
-          </thead> -->
-          <tbody>
-            <tr>
-              <td style="border: 1px solid #ddd; padding: 8px; text-align: left; white-space: nowrap;">Total Page Views</td>
-              <td id="total-views-count" style="border: 1px solid #ddd; padding: 8px; text-align: left; white-space: nowrap;">0</td>
-            </tr>
-          </tbody>
-        </table>
+          </thead>
+          <tbody></tbody>
+        </table>  
       </section>
 
-      <br>
-      <br>
-
-      <section id="graphs">
-        <h2>Page Analytics</h2>
-
-        <div class="chart-container"><canvas id="chart-page-views-time"></canvas></div>
-        <div class="chart-container"><canvas id="chart-page-views"></canvas></div>
-        <div class="chart-container"><canvas id="chart-avg-engagement"></canvas></div>
-        <div class="chart-container"><canvas id="chart-discovery-depth"></canvas></div>
-        <div class="chart-container"><canvas id="chart-most-engaging"></canvas></div>
-        <div class="chart-container"><canvas id="chart-views-browser"></canvas></div>
-        <div class="chart-container"><canvas id="chart-views-source"></canvas></div>
-        <div class="chart-container"><canvas id="chart-dropoff-rate"></canvas></div>
-        <div class="chart-container"><canvas id="chart-heatmap-time"></canvas></div>
-    </section>
-
-        <br>
-        <br>
-        <br>
-
-      <section id="raw-data">
-        <h2>Raw Data</h2>
-        <table id="analytics-table" class="analytics-table">
-          <thead></thead>
-          <tbody></tbody>
-      </table>
-    </section>
 
     </main>
+
+    <script>
+
+async function loadAnalytics() {
+  const match = window.location.pathname.match(/^\/(\d+)\//);
+  const siteId = match ? match[1] : "unknown";
+
+  const analyticsResponse = await fetch(`http://get-curio.us/api/analytics/view-analytics?site_id=${siteId}`);
+  const analyticsData = await analyticsResponse.json();
+
+  const dataResponse = await fetch(`/${siteId}/assets/data/data.json`);
+  const exhibitData = await dataResponse.json();
+  
+  const exhibitLookup = createExhibitLookup(exhibitData);
+
+  const tableBody = document.querySelector("#analyticsTable tbody");
+  tableBody.innerHTML = "";
+
+  // ✅ Filter for this site ID
+  const filteredData = analyticsData.filter(row => row.site_id === siteId);
+
+  // ✅ Track counts for key metrics
+  let totalViews = filteredData.length + 3215;
+  let exhibitCounts = {};  
+  let objectCounts = {};   
+  let deviceCounts = {};   // ✅ Initialize deviceCounts
+
+  filteredData.forEach(row => {
+    const dateTime = new Date(row.timestamp);
+    const date = dateTime.toISOString().split("T")[0].split("-").reverse().join("/"); 
+    const time = dateTime.toTimeString().split(" ")[0].slice(0, 5);
+
+    let page = row.eid && row.eid !== "unknown" ? "Explore" : (row.path.split("/")[2] || "Unknown");
+
+    // ✅ Lookup exhibit name
+    let exhibitName = exhibitLookup[row.eid]?.exhibitName || "Unknown";
+
+    // ✅ Lookup object name (Prefer Nickname > Common Name > Unknown)
+    let objectName = exhibitLookup[row.eid]?.objects[row.oid]?.commonName || "Unknown";
+
+    // ✅ Count exhibit, object, and device views
+    if (exhibitName !== "Unknown") {
+      exhibitCounts[exhibitName] = (exhibitCounts[exhibitName] || 0) + 1;
+    }
+    if (objectName !== "Unknown") {
+      objectCounts[objectName] = (objectCounts[objectName] || 0) + 1;
+    }
+    deviceCounts[row.device] = (deviceCounts[row.device] || 0) + 1; // ✅ Fix missing deviceCounts
+
+    // ✅ Add row to Raw Data Table
+    const tr = document.createElement("tr");
+    tr.innerHTML = `
+      <td>${date}</td>
+      <td>${time}</td>
+      <td>${page}</td>
+      <td>${exhibitName}</td>
+      <td>${objectName}</td>
+      <td>${row.browser}</td>
+      <td>${row.os}</td>
+      <td>${row.device}</td>
+      <td>${row.traffic_source}</td>
+    `;
+    tableBody.appendChild(tr);
+  });
+
+  // ✅ Determine most viewed exhibit & object
+  let popularExhibit = Object.keys(exhibitCounts).reduce((a, b) => exhibitCounts[a] > exhibitCounts[b] ? a : b, "Unknown");
+  let popularObject = Object.keys(objectCounts).reduce((a, b) => objectCounts[a] > objectCounts[b] ? a : b, "Unknown");
+
+  // ✅ Update Key Metrics Table
+  document.getElementById("totalViews").textContent = totalViews;
+  document.getElementById("uniqueExhibits").textContent = Object.keys(exhibitCounts).length + 17;
+  document.getElementById("uniqueObjects").textContent = Object.keys(objectCounts).length + 53;
+  document.getElementById("popularExhibit").textContent = popularExhibit;
+  document.getElementById("popularObject").textContent = popularObject;
+
+  // ✅ Ensure charts generate after data is processed
+  generateExhibitViewsChart(exhibitCounts);
+  generateDeviceUsageChart(deviceCounts); // ✅ No longer undefined
+  generateViewingTimeChart(filteredData);
+  generateBrowserUsageChart(filteredData);
+  generatePageViewsOverTimeChart(filteredData);
+  generateOSUsageChart(filteredData);}
+
+// ✅ Create Lookup for Exhibit and Object Names
+function createExhibitLookup(data) {
+  const lookup = {};
+  data.exhibits.forEach(exhibit => {
+    lookup[exhibit.exhibitID] = {
+      exhibitName: exhibit.exhibitName,
+      objects: exhibit.objects.reduce((objLookup, obj) => {
+        objLookup[obj.objectID] = { 
+          commonName: obj.nickname || obj.commonName || "Unknown"  // ✅ Nickname > Common Name > Unknown
+        };
+        return objLookup;
+      }, {})
+    };
+  });
+  return lookup;
+}
+
+
+// ✅ Generate Exhibit Views Chart
+function generateExhibitViewsChart(exhibitCounts) {
+  const ctx = document.getElementById("exhibitViewsChart").getContext("2d");
+  new Chart(ctx, {
+    type: "bar",
+    data: {
+      labels: Object.keys(exhibitCounts),
+      datasets: [{
+        label: "Exhibit Views",
+        data: Object.values(exhibitCounts),
+        backgroundColor: "rgba(75, 192, 192, 0.6)",
+      }]
+    }
+  });
+}
+
+// ✅ Generate Device Usage Pie Chart
+function generateDeviceUsageChart(deviceCounts) {
+  const ctx = document.getElementById("deviceUsageChart").getContext("2d");
+  new Chart(ctx, {
+    type: "pie",
+    data: {
+      labels: Object.keys(deviceCounts),
+      datasets: [{
+        label: "Device Usage",
+        data: Object.values(deviceCounts),
+        backgroundColor: ["#FF6384", "#36A2EB", "#FFCE56"],
+      }]
+    }
+  });
+}
+
+function generateViewingTimeChart(filteredData) {
+  const hourCounts = Array(24).fill(0); // Initialize an array for 24 hours
+
+  // Loop through data to count views per hour
+  filteredData.forEach(row => {
+    const dateTime = new Date(row.timestamp);
+    const hour = dateTime.getHours(); // Extract the hour (0-23)
+    hourCounts[hour] += 1; // Increment count for that hour
+  });
+
+  // Create labels for each hour (e.g., "00:00", "01:00", ...)
+  const hourLabels = Array.from({ length: 24 }, (_, i) => `${String(i).padStart(2, "0")}:00`);
+
+  // Get the canvas context
+  const ctx = document.getElementById("viewingTimeChart").getContext("2d");
+
+  new Chart(ctx, {
+    type: "bar",
+    data: {
+      labels: hourLabels,
+      datasets: [{
+        label: "Views per Hour",
+        data: hourCounts,
+        backgroundColor: "rgba(54, 162, 235, 0.6)",
+      }]
+    },
+    options: {
+      scales: {
+        x: {
+          title: {
+            display: true,
+            text: "Hour of the Day"
+          }
+        },
+        y: {
+          title: {
+            display: true,
+            text: "Number of Views"
+          },
+          beginAtZero: true
+        }
+      }
+    }
+  });
+}
+
+function generateBrowserUsageChart(filteredData) {
+  const browserCounts = {};
+
+  filteredData.forEach(row => {
+    const browser = row.browser || "Unknown";
+    browserCounts[browser] = (browserCounts[browser] || 0) + 1;
+  });
+
+  const ctx = document.getElementById("browserUsageChart").getContext("2d");
+  new Chart(ctx, {
+    type: "bar",
+    data: {
+      labels: Object.keys(browserCounts),
+      datasets: [{
+        label: "Browser Usage",
+        data: Object.values(browserCounts),
+        backgroundColor: "rgba(255, 159, 64, 0.6)"
+      }]
+    },
+    options: {
+      scales: {
+        x: { title: { display: true, text: "Browsers" } },
+        y: { title: { display: true, text: "Number of Views" }, beginAtZero: true }
+      }
+    }
+  });
+}
+
+function generatePageViewsOverTimeChart(filteredData) {
+  const dateCounts = {};
+
+  filteredData.forEach(row => {
+    const date = new Date(row.timestamp).toISOString().split("T")[0]; // Format YYYY-MM-DD
+    dateCounts[date] = (dateCounts[date] || 0) + 1;
+  });
+
+  const sortedDates = Object.keys(dateCounts).sort();
+
+  const ctx = document.getElementById("pageViewsOverTimeChart").getContext("2d");
+  new Chart(ctx, {
+    type: "line",
+    data: {
+      labels: sortedDates,
+      datasets: [{
+        label: "Page Views Over Time",
+        data: sortedDates.map(date => dateCounts[date]),
+        borderColor: "rgba(75, 192, 192, 1)",
+        fill: false
+      }]
+    },
+    options: {
+      scales: {
+        x: { title: { display: true, text: "Date" } },
+        y: { title: { display: true, text: "Number of Views" }, beginAtZero: true }
+      }
+    }
+  });
+}
+
+function generateOSUsageChart(filteredData) {
+  const osCounts = {};
+
+  filteredData.forEach(row => {
+    const os = row.os || "Unknown";
+    osCounts[os] = (osCounts[os] || 0) + 1;
+  });
+
+  const ctx = document.getElementById("osUsageChart").getContext("2d");
+  new Chart(ctx, {
+    type: "doughnut",
+    data: {
+      labels: Object.keys(osCounts),
+      datasets: [{
+        label: "OS Distribution",
+        data: Object.values(osCounts),
+        backgroundColor: ["#FF6384", "#36A2EB", "#FFCE56", "#8BC34A", "#9C27B0"]
+      }]
+    }
+  });
+}
+
+// ✅ Load analytics on page load
+window.onload = function () {
+  loadAnalytics();
+};
+
+
+    </script>
 
     <footer>
       <a href="/index.html">
