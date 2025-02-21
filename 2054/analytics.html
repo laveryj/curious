@@ -21,7 +21,7 @@
   <script src="/scripts/v2-config.js" defer></script>
   <script src="/scripts/auth.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script src="/scripts/v2-analytics-new.js"></script>
+  <!-- <script src="/scripts/v2-analytics-new.js"></script> -->
 
   <style>
     #analyticsTable th, #analyticsTable td {
@@ -198,7 +198,7 @@ async function loadAnalytics() {
   const match = window.location.pathname.match(/^\/(\d+)\//);
   const siteId = match ? match[1] : "unknown";
 
-  const analyticsResponse = await fetch(`http://get-curio.us/api/analytics/view-analytics?site_id=${siteId}`);
+  const analyticsResponse = await fetch(`https://get-curio.us/api/analytics/view-analytics?site_id=${siteId}`);
   const analyticsData = await analyticsResponse.json();
 
   const dataResponse = await fetch(`/${siteId}/assets/data/data.json`);
