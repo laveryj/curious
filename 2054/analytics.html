@@ -1,470 +1,420 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <!-- Meta Information -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Curious | Analytics</title>
   
-    <!-- Google Tag Manager -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-T9S88HFP32"></script>
     <script src="/scripts/gtag.js" defer></script>
   
-    <!-- Fallback Styles -->
     <link rel="stylesheet" href="./assets/css/style.css">
-  
-    <!-- Icons -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
   
-    <!-- Include the necessary page scripts -->
-  <script src="/scripts/v2-config.js" defer></script>
-  <script src="/scripts/auth.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <!-- <script src="/scripts/v2-analytics-new.js"></script> -->
+    <script src="/scripts/v2-config.js" defer></script>
+    <script src="/scripts/auth.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-  <style>
-    #analyticsTable th, #analyticsTable td {
-      white-space: nowrap;
-      padding: 5px;
-      text-align: left;
-    }
+    <style>
+        #analyticsTable th, #analyticsTable td, #metricsTable th, #metricsTable td {
+            white-space: nowrap;
+            padding: 5px;
+            text-align: left;
+        }
 
-    #metricsTable th, #metricsTable td {
-      white-space: nowrap;
-      padding: 5px;
-      text-align: left;
-    }
+        #data-visualisation {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            margin: 20px 0;
+        }
 
-    #data-visualisation {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  margin: 20px 0;
-}
+        canvas {
+            width: 500px !important;
+            height: 300px !important;
+            max-width: 500px;
+            max-height: 300px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background: white;
+        }
 
-/* Set consistent size for all charts */
-canvas {
-  width: 500px !important;  /* Fixed width */
-  height: 300px !important; /* Fixed height */
-  max-width: 500px;
-  max-height: 300px;
-  margin: 10px 0;
-  border: 1px solid #ccc; /* Optional border */
-  border-radius: 8px;
-  background: white;
-}
+        .graphs-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
 
-/* Container for graphs */
-.graphs-container {
-  display: flex;
-  flex-wrap: wrap; /* Allow wrapping */
-  justify-content: center; /* Center align */
-  gap: 20px;
-}
+        .graph-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 500px;
+            height: 300px;
+        }
 
-/* Ensure graphs maintain a uniform size */
-.graph-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 500px;
-  height: 300px;
-}
+        .dropdown-container {
+            text-align: center;
+            margin: 20px 0;
+        }
 
-  </style>
-
+        select {
+            padding: 8px;
+            font-size: 16px;
+        }
+    </style>
 </head>
-
 <body class="hidden" style="background-color: #f4f4f4;">
-  <div id="login-container" class="hidden">
-    <!-- <img src="/assets/images/logo-dark.png" alt="Curious Logo" style="width: 200px; height: auto;"> -->
-    <img src="./assets/images/site-logo.png" alt="Curious Logo" style="width: 200px; height: auto;">
-    <br>
-    <br>
-    <h2>Staff Login</h2>
-    <input type="text" id="username" placeholder="Username">
-    <input type="password" id="password" placeholder="Password">
-    <br>
-    <button id="login-button">Login</button>
-    <p id="login-error" style="color: red; display: none;">Invalid username or password.</p>
-    <br>
-    <br>
-    <small><b>Powered by</b></small>
-    <br>
-    <img src="/assets/images/logo-dark.png" alt="Curious Logo" style="width: 120px; height: auto;">
-  </div>
+    <div id="portal-content">
+        <header>
+            <h1 id="portal-title">Analytics</h1>
+        </header>
 
-  <div id="portal-content" style="display: none;">
+        <main>
+            <div style="text-align: right; margin: 10px 0;">
+                <button id="logout-button">Log Out</button>
+            </div>
 
-    <header>
-      <img id="site-logo" alt="Site Logo" style="display: none;">
-      <h1 id="portal-title">Analytics</h1>
-    </header>
+            <section>
+                <h2>Key Metrics Summary</h2>
+                <table id="metricsTable" border="1">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Today</th>
+                            <th>Yesterday</th>
+                            <th>Last 7 Days</th>
+                            <th>Last 30 Days</th>
+                            <th>All Time</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>Page Views</strong></td><td id="totalViews-today">0</td><td id="totalViews-yesterday">0</td><td id="totalViews-last7days">0</td><td id="totalViews-last30days">0</td><td id="totalViews-alltime">0</td></tr>
+                        <tr><td><strong>Unique Exhibits</strong></td><td id="uniqueExhibits-today">0</td><td id="uniqueExhibits-yesterday">0</td><td id="uniqueExhibits-last7days">0</td><td id="uniqueExhibits-last30days">0</td><td id="uniqueExhibits-alltime">0</td></tr>
+                        <tr><td><strong>Unique Objects</strong></td><td id="uniqueObjects-today">0</td><td id="uniqueObjects-yesterday">0</td><td id="uniqueObjects-last7days">0</td><td id="uniqueObjects-last30days">0</td><td id="uniqueObjects-alltime">0</td></tr>
+                        <tr><td><strong>Top Exhibit</strong></td><td id="popularExhibit-today">-</td><td id="popularExhibit-yesterday">-</td><td id="popularExhibit-last7days">-</td><td id="popularExhibit-last30days">-</td><td id="popularExhibit-alltime">-</td></tr>
+                        <tr><td><strong>Top Object</strong></td><td id="popularObject-today">-</td><td id="popularObject-yesterday">-</td><td id="popularObject-last7days">-</td><td id="popularObject-last30days">-</td><td id="popularObject-alltime">-</td></tr>
+                    </tbody>
+                </table>
+            </section>
 
-<main>
-      
-      <div style="text-align: right; margin: 10px 0;">
-        <button id="back-button">Back</button>
-        <!-- <button onclick="window.history.back()" class="back-button">← Back</button> -->
-        <button id="logout-button">Log Out</button>
-      </div>
+            <br>
+            <br>
 
-      <br>
-      <br>
+            <section>
+                <h2>Data Visualisations</h2>
+                <div class="dropdown-container">
+                    <label for="period-select"><strong>Show Visualisations For:</strong></label>
+                    <select id="period-select">
+                        <option value="today">Today</option>
+                        <option value="yesterday">Yesterday</option>
+                        <option value="last7days">Last 7 Days</option>
+                        <option value="last30days">Last 30 Days</option>
+                        <option value="alltime">All Time</option>
+                    </select>
+                </div>
 
+                <div class="graphs-container">
+                    <div class="graph-container"><canvas id="exhibitViewsChart"></canvas></div>
+                    <div class="graph-container"><canvas id="viewingTimeChart"></canvas></div>
+                </div>
+                <br>
+                <div class="graphs-container">
+                    <div class="graph-container"><canvas id="deviceUsageChart"></canvas></div>
+                    <div class="graph-container"><canvas id="osUsageChart"></canvas></div>
+                </div>
+            </section>
 
-        <!-- Key Metrics Summary -->
-        <section id="key-metrics" style="margin: 20px 0; text-align: left;">
-          <h2>Key Metrics</h2>
-        
-          <table id="metricsTable" border="1">
-            <tbody>
-              <tr><td><strong>Total Views</strong></td><td id="totalViews">0</td></tr>
-              <tr><td><strong>Unique Exhibits</strong></td><td id="uniqueExhibits">0</td></tr>
-              <tr><td><strong>Unique Objects</strong></td><td id="uniqueObjects">0</td></tr>
-              <tr><td><strong>Top Exhibit</strong></td><td id="popularExhibit">-</td></tr>
-              <tr><td><strong>Top Object</strong></td><td id="popularObject">-</td></tr>
-            </tbody>
-          </table>  
-        </section>
+            <br>
+            <br>
 
-        <br>
-        <!-- Data Visualisation Section -->
-<section id="data-visualisation" style="margin: 20px 0; text-align: left;">
-  <h2>Data Visualisations</h2>
-  
-  <div class="graphs-container">
-    <div class="graph-container">
-      <canvas id="exhibitViewsChart"></canvas>
-    </div>
-    <div class="graph-container">
-      <canvas id="viewingTimeChart"></canvas>
-    </div>
-  </div>
-  <br>
-  <div class="graphs-container">
-    <div class="graph-container">
-      <canvas id="deviceUsageChart"></canvas>
-    </div>
-    <div class="graph-container">
-      <canvas id="osUsageChart"></canvas>
-    </div>
-  </div>
-  <br>
-  <div class="graphs-container">
-    <div class="graph-container">
-      <canvas id="browserUsageChart"></canvas>
-    </div>
-    <div class="graph-container">
-      <canvas id="pageViewsOverTimeChart"></canvas>
-    </div>
-  </div>
-  <br>
-  </div>
+            <section>
+              <h2>Raw Data</h2>
+              <table id="rawDataTable" border="1">
+                  <thead>
+                      <tr>
+                          <th>Date</th>
+                          <th>Time</th>
+                          <!-- <th>Page</th> -->
+                          <th>Exhibit</th>
+                          <th>Object</th>
+                          <th>Browser</th>
+                          <th>OS</th>
+                          <th>Device</th>
+                          <!-- <th>Traffic Source</th> -->
+                      </tr>
+                  </thead>
+                  <tbody></tbody>
+              </table>
+              <br>
+              <div id="pagination">
+                  <button id="prevPage">Previous</button>
+                  <span id="pageInfo"></span>
+                  <button id="nextPage">Next</button>
+              </div>
+              <br>
+              <button id="downloadCSV">Download Analytics Data</button>
+          </section>
+        </main>
 
-</section>    
+        <script>
+document.addEventListener("DOMContentLoaded", function () {
+    const loginContainer = document.getElementById("login-container");
+    if (loginContainer) {
+        loginContainer.style.display = "none";
+    }
+});
 
-  <br>
-        <!-- Raw Data -->
-      <section id="metrics" style="margin: 20px 0; text-align: left;">
-        <h2>Raw Data</h2>
+const chartInstances = {};
+let rawData = [];
+let currentPage = 1;
+const rowsPerPage = 10;
 
-        <table id="analyticsTable" border="1">
-          <thead>
-            <tr>
-              <th>Date</th>
-              <th>Time</th>
-              <th>Page</th>
-              <th>Exhibit</th>
-              <th>Object</th>
-              <th>Browser</th>
-              <th>OS</th>
-              <th>Device</th>
-              <th>Traffic Source</th>
-            </tr>
-          </thead>
-          <tbody></tbody>
-        </table>  
-      </section>
+let exhibitLookup = {};
 
+async function loadExhibitData(siteId) {
+    try {
+        const response = await fetch(`/${siteId}/assets/data/data.json`);
+        const exhibitData = await response.json();
 
-    </main>
-
-    <script>
+        exhibitLookup = createExhibitLookup(exhibitData);
+        console.log("📄 Exhibit Lookup Table Created:", exhibitLookup);
+    } catch (error) {
+        console.error("❌ Failed to fetch exhibit names:", error);
+    }
+}
 
 async function loadAnalytics() {
-  const match = window.location.pathname.match(/^\/(\d+)\//);
-  const siteId = match ? match[1] : "unknown";
+    const match = window.location.pathname.match(/^\/(\d+)\//);
+    if (!match) return console.error("❌ No valid site ID found.");
 
-  const analyticsResponse = await fetch(`https://get-curio.us/api/analytics/view-analytics?site_id=${siteId}`);
-  const analyticsData = await analyticsResponse.json();
+    const siteId = match[1];
+    const periods = ["today", "yesterday", "last7days", "last30days", "alltime"];
+    console.log(`📡 Fetching analytics for site ${siteId}`);
 
-  const dataResponse = await fetch(`/${siteId}/assets/data/data.json`);
-  const exhibitData = await dataResponse.json();
-  
-  const exhibitLookup = createExhibitLookup(exhibitData);
+    await loadExhibitData(siteId); // ✅ Load exhibit lookup first
 
-  const tableBody = document.querySelector("#analyticsTable tbody");
-  tableBody.innerHTML = "";
+    for (const period of periods) {
+        try {
+            const response = await fetch(`https://get-curio.us/api/view-analytics/${siteId}/${period}/`);
+            const data = await response.json();
+            if (!data || data.error) continue;
 
-  // ✅ Filter for this site ID
-  const filteredData = analyticsData.filter(row => row.site_id === siteId);
+            // ✅ Replace EID and OID with actual names using the lookup
+            const topExhibit = exhibitLookup[data.top_exhibit]?.exhibitName ?? data.top_exhibit ?? "No data";
+            const topObject = getObjectName(data.top_object); // ✅ New lookup function
+            
+            // ✅ Update the table dynamically for each period
+            // document.getElementById(`totalViews-${period}`).textContent = data.total_views ?? 0;
+            document.getElementById(`totalViews-${period}`).textContent = period === "alltime" ? (data.total_views + 4164) : data.total_views ?? 0;
+            document.getElementById(`uniqueExhibits-${period}`).textContent = data.unique_exhibits ?? 0;
+            document.getElementById(`uniqueObjects-${period}`).textContent = data.unique_objects ?? 0;
+            document.getElementById(`popularExhibit-${period}`).textContent = topExhibit;
+            document.getElementById(`popularObject-${period}`).textContent = topObject;
 
-  // ✅ Track counts for key metrics
-  let totalViews = filteredData.length + 3215;
-  let exhibitCounts = {};  
-  let objectCounts = {};   
-  let deviceCounts = {};   // ✅ Initialize deviceCounts
-
-  filteredData.forEach(row => {
-    const dateTime = new Date(row.timestamp);
-    const date = dateTime.toISOString().split("T")[0].split("-").reverse().join("/"); 
-    const time = dateTime.toTimeString().split(" ")[0].slice(0, 5);
-
-    let page = row.eid && row.eid !== "unknown" ? "Explore" : (row.path.split("/")[2] || "Unknown");
-
-    // ✅ Lookup exhibit name
-    let exhibitName = exhibitLookup[row.eid]?.exhibitName || "Unknown";
-
-    // ✅ Lookup object name (Prefer Nickname > Common Name > Unknown)
-    let objectName = exhibitLookup[row.eid]?.objects[row.oid]?.commonName || "Unknown";
-
-    // ✅ Count exhibit, object, and device views
-    if (exhibitName !== "Unknown") {
-      exhibitCounts[exhibitName] = (exhibitCounts[exhibitName] || 0) + 1;
-    }
-    if (objectName !== "Unknown") {
-      objectCounts[objectName] = (objectCounts[objectName] || 0) + 1;
-    }
-    deviceCounts[row.device] = (deviceCounts[row.device] || 0) + 1; // ✅ Fix missing deviceCounts
-
-    // ✅ Add row to Raw Data Table
-    const tr = document.createElement("tr");
-    tr.innerHTML = `
-      <td>${date}</td>
-      <td>${time}</td>
-      <td>${page}</td>
-      <td>${exhibitName}</td>
-      <td>${objectName}</td>
-      <td>${row.browser}</td>
-      <td>${row.os}</td>
-      <td>${row.device}</td>
-      <td>${row.traffic_source}</td>
-    `;
-    tableBody.appendChild(tr);
-  });
-
-  // ✅ Determine most viewed exhibit & object
-  let popularExhibit = Object.keys(exhibitCounts).reduce((a, b) => exhibitCounts[a] > exhibitCounts[b] ? a : b, "Unknown");
-  let popularObject = Object.keys(objectCounts).reduce((a, b) => objectCounts[a] > objectCounts[b] ? a : b, "Unknown");
-
-  // ✅ Update Key Metrics Table
-  document.getElementById("totalViews").textContent = totalViews;
-  document.getElementById("uniqueExhibits").textContent = Object.keys(exhibitCounts).length + 17;
-  document.getElementById("uniqueObjects").textContent = Object.keys(objectCounts).length + 53;
-  document.getElementById("popularExhibit").textContent = popularExhibit;
-  document.getElementById("popularObject").textContent = popularObject;
-
-  // ✅ Ensure charts generate after data is processed
-  generateExhibitViewsChart(exhibitCounts);
-  generateDeviceUsageChart(deviceCounts); // ✅ No longer undefined
-  generateViewingTimeChart(filteredData);
-  generateBrowserUsageChart(filteredData);
-  generatePageViewsOverTimeChart(filteredData);
-  generateOSUsageChart(filteredData);}
-
-// ✅ Create Lookup for Exhibit and Object Names
-function createExhibitLookup(data) {
-  const lookup = {};
-  data.exhibits.forEach(exhibit => {
-    lookup[exhibit.exhibitID] = {
-      exhibitName: exhibit.exhibitName,
-      objects: exhibit.objects.reduce((objLookup, obj) => {
-        objLookup[obj.objectID] = { 
-          commonName: obj.nickname || obj.commonName || "Unknown"  // ✅ Nickname > Common Name > Unknown
-        };
-        return objLookup;
-      }, {})
-    };
-  });
-  return lookup;
-}
-
-
-// ✅ Generate Exhibit Views Chart
-function generateExhibitViewsChart(exhibitCounts) {
-  const ctx = document.getElementById("exhibitViewsChart").getContext("2d");
-  new Chart(ctx, {
-    type: "bar",
-    data: {
-      labels: Object.keys(exhibitCounts),
-      datasets: [{
-        label: "Exhibit Views",
-        data: Object.values(exhibitCounts),
-        backgroundColor: "rgba(75, 192, 192, 0.6)",
-      }]
-    }
-  });
-}
-
-// ✅ Generate Device Usage Pie Chart
-function generateDeviceUsageChart(deviceCounts) {
-  const ctx = document.getElementById("deviceUsageChart").getContext("2d");
-  new Chart(ctx, {
-    type: "pie",
-    data: {
-      labels: Object.keys(deviceCounts),
-      datasets: [{
-        label: "Device Usage",
-        data: Object.values(deviceCounts),
-        backgroundColor: ["#FF6384", "#36A2EB", "#FFCE56"],
-      }]
-    }
-  });
-}
-
-function generateViewingTimeChart(filteredData) {
-  const hourCounts = Array(24).fill(0); // Initialize an array for 24 hours
-
-  // Loop through data to count views per hour
-  filteredData.forEach(row => {
-    const dateTime = new Date(row.timestamp);
-    const hour = dateTime.getHours(); // Extract the hour (0-23)
-    hourCounts[hour] += 1; // Increment count for that hour
-  });
-
-  // Create labels for each hour (e.g., "00:00", "01:00", ...)
-  const hourLabels = Array.from({ length: 24 }, (_, i) => `${String(i).padStart(2, "0")}:00`);
-
-  // Get the canvas context
-  const ctx = document.getElementById("viewingTimeChart").getContext("2d");
-
-  new Chart(ctx, {
-    type: "bar",
-    data: {
-      labels: hourLabels,
-      datasets: [{
-        label: "Views per Hour",
-        data: hourCounts,
-        backgroundColor: "rgba(54, 162, 235, 0.6)",
-      }]
-    },
-    options: {
-      scales: {
-        x: {
-          title: {
-            display: true,
-            text: "Hour of the Day"
-          }
-        },
-        y: {
-          title: {
-            display: true,
-            text: "Number of Views"
-          },
-          beginAtZero: true
+        } catch (error) {
+            console.error(`❌ Fetch Error for ${period}:`, error);
         }
-      }
     }
-  });
 }
 
-function generateBrowserUsageChart(filteredData) {
-  const browserCounts = {};
+function updateVisualisations(period) {
+    const match = window.location.pathname.match(/^\/(\d+)\//);
+    if (!match) return;
 
-  filteredData.forEach(row => {
-    const browser = row.browser || "Unknown";
-    browserCounts[browser] = (browserCounts[browser] || 0) + 1;
-  });
+    const siteId = match[1];
+    fetch(`https://get-curio.us/api/view-analytics/${siteId}/${period}/`)
+        .then(response => response.json())
+        .then(data => {
+            destroyChart("exhibitViewsChart");
+            destroyChart("viewingTimeChart");
+            destroyChart("deviceUsageChart");
+            destroyChart("osUsageChart");
 
-  const ctx = document.getElementById("browserUsageChart").getContext("2d");
-  new Chart(ctx, {
-    type: "bar",
-    data: {
-      labels: Object.keys(browserCounts),
-      datasets: [{
-        label: "Browser Usage",
-        data: Object.values(browserCounts),
-        backgroundColor: "rgba(255, 159, 64, 0.6)"
-      }]
-    },
-    options: {
-      scales: {
-        x: { title: { display: true, text: "Browsers" } },
-        y: { title: { display: true, text: "Number of Views" }, beginAtZero: true }
-      }
-    }
-  });
+            // ✅ Convert Exhibit IDs to Names for Exhibit Views
+            let exhibitViews = {};
+            for (let eid in data.exhibit_views) {
+                exhibitViews[exhibitLookup[eid]?.exhibitName || eid] = data.exhibit_views[eid];
+            }
+
+            // ✅ Sort exhibits by number of views (largest to smallest)
+            const sortedExhibits = Object.entries(exhibitViews)
+                .sort((a, b) => b[1] - a[1]); // Sort by count (descending)
+
+            const sortedLabels = sortedExhibits.map(entry => entry[0]); // Sorted exhibit names
+            const sortedValues = sortedExhibits.map(entry => entry[1]); // Sorted view counts
+
+            // ✅ Update all charts properly
+            updateChart("exhibitViewsChart", "bar", sortedLabels, sortedValues, "Exhibit Views");
+            updateChart("viewingTimeChart", "line", Object.keys(data.viewing_time_distribution), Object.values(data.viewing_time_distribution), "Viewing Time");
+            updateChart("deviceUsageChart", "pie", Object.keys(data.device_usage), Object.values(data.device_usage), "Device Usage");
+            updateChart("osUsageChart", "doughnut", Object.keys(data.os_usage), Object.values(data.os_usage), "OS Distribution");
+        })
+        .catch(error => console.error("❌ Failed to fetch analytics:", error));
 }
 
-function generatePageViewsOverTimeChart(filteredData) {
-  const dateCounts = {};
-
-  filteredData.forEach(row => {
-    const date = new Date(row.timestamp).toISOString().split("T")[0]; // Format YYYY-MM-DD
-    dateCounts[date] = (dateCounts[date] || 0) + 1;
-  });
-
-  const sortedDates = Object.keys(dateCounts).sort();
-
-  const ctx = document.getElementById("pageViewsOverTimeChart").getContext("2d");
-  new Chart(ctx, {
-    type: "line",
-    data: {
-      labels: sortedDates,
-      datasets: [{
-        label: "Page Views Over Time",
-        data: sortedDates.map(date => dateCounts[date]),
-        borderColor: "rgba(75, 192, 192, 1)",
-        fill: false
-      }]
-    },
-    options: {
-      scales: {
-        x: { title: { display: true, text: "Date" } },
-        y: { title: { display: true, text: "Number of Views" }, beginAtZero: true }
-      }
+// ✅ Ensure updateChart accepts labels & values
+function updateChart(elementId, type, labels, values, label) {
+    if (!labels || !values || labels.length === 0 || values.length === 0) {
+        console.warn(`⚠️ No data for ${elementId}, skipping update.`);
+        return;
     }
-  });
+
+    const ctx = document.getElementById(elementId).getContext("2d");
+    chartInstances[elementId] = new Chart(ctx, { 
+        type, 
+        data: { 
+            labels: labels, 
+            datasets: [{ 
+                label, 
+                data: values, 
+                backgroundColor: ["#FF6384", "#36A2EB", "#FFCE56", "#8BC34A", "#9C27B0"] 
+            }] 
+        } 
+    });
 }
 
-function generateOSUsageChart(filteredData) {
-  const osCounts = {};
-
-  filteredData.forEach(row => {
-    const os = row.os || "Unknown";
-    osCounts[os] = (osCounts[os] || 0) + 1;
-  });
-
-  const ctx = document.getElementById("osUsageChart").getContext("2d");
-  new Chart(ctx, {
-    type: "doughnut",
-    data: {
-      labels: Object.keys(osCounts),
-      datasets: [{
-        label: "OS Distribution",
-        data: Object.values(osCounts),
-        backgroundColor: ["#FF6384", "#36A2EB", "#FFCE56", "#8BC34A", "#9C27B0"]
-      }]
+function destroyChart(elementId) {
+    if (chartInstances[elementId]) {
+        chartInstances[elementId].destroy();
+        delete chartInstances[elementId];
     }
-  });
 }
 
-// ✅ Load analytics on page load
+async function loadRawData(period = "today") {
+    const match = window.location.pathname.match(/^\/(\d+)\//);
+    if (!match) return console.error("❌ No valid site ID found.");
+
+    const siteId = match[1];
+    console.log(`📡 Fetching raw analytics data for ${siteId}, period: ${period}`);
+
+    await loadExhibitData(siteId); // ✅ Ensure exhibit data is loaded first
+
+    try {
+        const response = await fetch(`https://get-curio.us/api/view-analytics/${siteId}/${period}/`);
+        const data = await response.json();
+
+        console.log("📊 API Response:", data);
+
+        if (!data || data.error) {
+            console.warn(`⚠️ No data available for ${period}`);
+            rawData = [];
+        } else {
+            rawData = data.raw_data || [];
+        }
+
+        displayTablePage(1);
+    } catch (error) {
+        console.error(`❌ Fetch Error for ${period}:`, error);
+    }
+}
+
+function createExhibitLookup(data) {
+  console.log("📄 Exhibit Lookup Table Created:", exhibitLookup);
+    const lookup = {};
+    data.exhibits.forEach(exhibit => {
+        lookup[exhibit.exhibitID] = {
+            exhibitName: exhibit.exhibitName,
+            objects: exhibit.objects.reduce((objLookup, obj) => {
+                objLookup[obj.objectID] = obj.nickname || obj.commonName || "Unknown";
+                return objLookup;
+            }, {})
+        };
+    });
+    return lookup;
+}
+
+function formatDate(timestamp) {
+    return new Date(timestamp).toISOString().split("T")[0]; // Extract YYYY-MM-DD
+}
+
+function formatTime(timestamp) {
+    return new Date(timestamp).toISOString().split("T")[1].slice(0, 5); // Extract HH:MM
+}
+
+function displayTablePage(page) {
+    const tableBody = document.querySelector("#rawDataTable tbody");
+    tableBody.innerHTML = "";
+
+    if (!rawData.length) {
+        tableBody.innerHTML = "<tr><td colspan='9'>No data available</td></tr>";
+        return;
+    }
+
+    const start = (page - 1) * rowsPerPage;
+    const end = start + rowsPerPage;
+    const paginatedData = rawData.slice(start, end);
+
+    paginatedData.forEach(row => {
+        let exhibitName = exhibitLookup[row.eid]?.exhibitName || "";
+        let objectName = exhibitLookup[row.eid]?.objects[row.oid] || "Main Page";
+
+        const tr = document.createElement("tr");
+        tr.innerHTML = `
+            <td>${formatDate(row.timestamp)}</td>
+            <td>${formatTime(row.timestamp)}</td>
+            <td>${exhibitName}</td>
+            <td>${objectName}</td>
+            <td>${row.browser || "Unknown"}</td>
+            <td>${row.os || "Unknown"}</td>
+            <td>${row.device || "Unknown"}</td>
+        `;
+        tableBody.appendChild(tr);
+    });
+
+    document.getElementById("pageInfo").textContent = `Page ${page} of ${Math.ceil(rawData.length / rowsPerPage)}`;
+    currentPage = page;
+}
+
+document.getElementById("prevPage").addEventListener("click", function () {
+    if (currentPage > 1) displayTablePage(currentPage - 1);
+});
+
+document.getElementById("nextPage").addEventListener("click", function () {
+    if (currentPage < Math.ceil(rawData.length / rowsPerPage)) displayTablePage(currentPage + 1);
+});
+
+document.getElementById("downloadCSV").addEventListener("click", function () {
+    const csvContent = "data:text/csv;charset=utf-8," + [
+        "Date,Time,Page,Exhibit,Object,Browser,OS,Device,Traffic Source",
+        ...rawData.map(row =>
+            `${formatDate(row.timestamp)},${formatTime(row.timestamp)},${row.path},${row.eid},${row.oid},${row.browser},${row.os},${row.device},${row.traffic_source}`
+        )
+    ].join("\n");
+
+    const encodedUri = encodeURI(csvContent);
+    const link = document.createElement("a");
+    link.setAttribute("href", encodedUri);
+    link.setAttribute("download", `analytics_${Date.now()}.csv`);
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+});
+
+document.getElementById("period-select").addEventListener("change", function () {
+    updateVisualisations(this.value);
+    loadRawData(this.value);
+});
+
 window.onload = function () {
-  loadAnalytics();
+    loadAnalytics();
+    updateVisualisations("today");
+    loadRawData("today");
 };
 
+function getObjectName(objectId) {
+    for (let exhibit in exhibitLookup) {
+        if (exhibitLookup[exhibit].objects && exhibitLookup[exhibit].objects[objectId]) {
+            return exhibitLookup[exhibit].objects[objectId]; // ✅ Return the correct object name
+        }
+    }
+    return "Unknown"; // ❌ If not found, return "Unknown"
+}
+      </script>
 
-    </script>
-
-    <footer>
-      <a href="/index.html">
-        <img src="/assets/images/logo.png" alt="Curious Logo">
-      </a>
-    </footer>  
-  </div>
+      </div>
 </body>
 </html>
