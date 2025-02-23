@@ -115,6 +115,7 @@
                         <option value="last30days">Last 30 Days</option>
                         <option value="alltime">All Time</option>
                     </select>
+                    <p>NB. Visualisations are only active for page views since the feature went live. Older page views will not be graphed.</p>
                 </div>
 
                 <div class="graphs-container">
@@ -264,6 +265,10 @@ function updateChart(elementId, type, labels, values, label) {
     }
 
     const ctx = document.getElementById(elementId).getContext("2d");
+
+    // Calculate total value for percentage calculation
+    const total = values.reduce((sum, value) => sum + value, 0);
+
     chartInstances[elementId] = new Chart(ctx, { 
         type, 
         data: { 
@@ -273,7 +278,20 @@ function updateChart(elementId, type, labels, values, label) {
                 data: values, 
                 backgroundColor: ["#FF6384", "#36A2EB", "#FFCE56", "#8BC34A", "#9C27B0"] 
             }] 
-        } 
+        },
+        options: {
+            plugins: {
+                tooltip: {
+                    callbacks: {
+                        label: function(tooltipItem) {
+                            let value = tooltipItem.raw;
+                            let percentage = ((value / total) * 100).toFixed(1); // 1 decimal place
+                            return ` ${percentage}% (${value} views)`; // Shows "23 views (15.2%)"
+                        }
+                    }
+                }
+            }
+        }
     });
 }
 
