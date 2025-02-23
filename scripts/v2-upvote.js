@@ -3,8 +3,8 @@ document.addEventListener("DOMContentLoaded", async () => {
     const exhibitId = urlParams.get("EID");
     const speciesId = urlParams.get("OID");
     
-    if (!exhibitId) return; // Ensure an exhibit ID is present
-  
+    if (!exhibitId || !speciesId) return; // Ensure it's a species page (OID must be present)
+      
     // Determine the unique key for voting
     const voteKey = `EID=[${exhibitId}]OID=[${speciesId || "None"}]`;
 
