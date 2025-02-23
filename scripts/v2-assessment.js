@@ -401,7 +401,7 @@ async function exportResults() {
     const emailPayload = {
       recipient: recipientEmail,
       subject: `🔔 New Welfare Assessment: ${selectedAnimal}`,
-      message: `A welfare assessment (ID ${assessment_id}) for ${selectedAnimal} has just been completed by ${document.getElementById("auditor-name").value}!\n\nDownload the report here: ${fileLink}`
+      message: `A welfare assessment (ID ${assessment_id}) for ${selectedAnimal} has just been completed by ${document.getElementById("auditor-name").value}!\n\nDownload the report here: ${fileLink} or view all saved welfare assessments here: https://get-curio.us/${siteId}/assessment-history.html`
     };
 
     const emailResponse = await fetch("https://get-curio.us/api/welfare-assessment-reports/send-email", {
@@ -420,7 +420,7 @@ async function exportResults() {
   } catch (error) {
     console.error("❌ Error processing upload or email:", error);const fileUrl = await uploadToR2(reportBlob, fileName);
   }
-} // ✅ Closing `exportResults()`
+}
 
 async function submitWelfareAssessment(fileUrl) {
   console.log("📤 Sending welfare assessment to database...");
