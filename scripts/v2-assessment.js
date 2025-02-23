@@ -176,6 +176,12 @@ async function showResults() {
       <p>The data from your assessment has been saved to the Curious database, and a PDF report has been e-mailed to ${recipientEmail}.</p>
       <p>You can manually download and view the report below, if needed.</p>
   `;
+ 
+    // Add Export button
+    const exportButton = document.createElement("button");
+    exportButton.textContent = "Download Results";
+    exportButton.addEventListener("click", downloadReport);
+    assessmentContainer.appendChild(exportButton);
 
   // ✅ Ensure report generation is complete
   await exportResults();  // ✅ Wait for reportBlob generation
@@ -400,8 +406,10 @@ async function exportResults() {
 
     const emailPayload = {
       recipient: recipientEmail,
+      // recipient: 'hello@get-curio.us',
       subject: `🔔 New Welfare Assessment: ${selectedAnimal}`,
-      message: `A welfare assessment (ID ${assessment_id}) for ${selectedAnimal} has just been completed by ${document.getElementById("auditor-name").value}!\n\nDownload the report here: ${fileLink} or view all saved welfare assessments here: https://get-curio.us/${siteId}/assessment-history.html`
+      // message: `A welfare assessment (ID ${assessment_id}) for ${selectedAnimal} has just been completed by ${document.getElementById("auditor-name").value}!\n\nDownload the report here: ${fileLink} or view all saved welfare assessments here: https://get-curio.us/${siteId}/assessment-history.html`
+      message: `A welfare assessment (ID ${assessment_id}) for ${selectedAnimal} has just been completed by ${document.getElementById("auditor-name").value}!\n\nDownload the report here: ${fileLink}`
     };
 
     const emailResponse = await fetch("https://get-curio.us/api/welfare-assessment-reports/send-email", {
