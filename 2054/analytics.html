@@ -127,6 +127,11 @@
                     <div class="graph-container"><canvas id="deviceUsageChart"></canvas></div>
                     <div class="graph-container"><canvas id="osUsageChart"></canvas></div>
                 </div>
+                <br>
+                <div class="graphs-container">
+                    <div class="graph-container"><canvas id="deviceBrandsChart"></canvas></div>
+                    <div class="graph-container"><canvas id="languagesChart"></canvas></div>
+                </div>
             </section>
 
             <br>
@@ -222,39 +227,120 @@ async function loadAnalytics() {
     }
 }
 
+function processAnalyticsData(rawData) {
+    if (!rawData || !Array.isArray(rawData) || rawData.length === 0) {
+        console.warn("⚠️ No analytics data available.");
+        return { total_views: 0, device_brands: {}, languages: {} };
+    }
+
+    let totalViews = rawData.length;
+    let deviceBrands = {};
+    let languages = {};
+
+    // Language code to full name mapping
+    const languageMap = {
+        "en": "English",
+        "en-gb": "English",
+        "en-us": "United States",
+        "es": "Spanish",
+        "fr": "French",
+        "de": "German",
+        "it": "Italian",
+        "nl": "Dutch",
+        "ru": "Russian",
+        "zh": "Chinese",
+        "ja": "Japanese",
+        "ko": "Korean",
+        "pt": "Portuguese",
+        "ar": "Arabic",
+        "hi": "Hindi",
+        "tr": "Turkish",
+        "pl": "Polish",
+        "sv": "Swedish",
+        "no": "Norwegian",
+        "fi": "Finnish",
+        "da": "Danish",
+        "he": "Hebrew",
+        "th": "Thai",
+        "id": "Indonesian",
+        "vi": "Vietnamese",
+        "cs": "Czech",
+        "hu": "Hungarian",
+        "ro": "Romanian",
+        "el": "Greek",
+        "uk": "Ukrainian",
+        "bg": "Bulgarian",
+        "hr": "Croatian",
+        "sr": "Serbian",
+        "sk": "Slovak",
+        "sl": "Slovenian",
+        "lt": "Lithuanian",
+        "lv": "Latvian",
+        "et": "Estonian",
+        "fa": "Persian",
+        "ms": "Malay",
+        "tl": "Filipino",
+        "unknown": "Unknown"
+    };
+
+    rawData.forEach(row => {
+        let brand = row.device_brand?.trim() || "Unknown";
+        let langCode = row.language ? row.language.trim().toLowerCase().split('-')[0] : "unknown"; // ✅ Convert to lowercase before lookup
+        let langName = languageMap[langCode] || "Unknown"; // Convert code to full name
+
+        deviceBrands[brand] = (deviceBrands[brand] || 0) + 1;
+        languages[langName] = (languages[langName] || 0) + 1;
+    });
+
+    return {
+        total_views: totalViews,
+        device_brands: deviceBrands,
+        languages: languages
+    };
+}
+
 function updateVisualisations(period) {
     const match = window.location.pathname.match(/^\/(\d+)\//);
     if (!match) return;
 
     const siteId = match[1];
     fetch(`https://get-curio.us/api/view-analytics/${siteId}/${period}/`)
-        .then(response => response.json())
-        .then(data => {
-            destroyChart("exhibitViewsChart");
-            destroyChart("viewingTimeChart");
-            destroyChart("deviceUsageChart");
-            destroyChart("osUsageChart");
+    .then(response => response.json())
+    .then(data => {
+        if (!data) return console.warn("⚠️ No data returned from API.");
 
-            // ✅ Convert Exhibit IDs to Names for Exhibit Views
-            let exhibitViews = {};
-            for (let eid in data.exhibit_views) {
-                exhibitViews[exhibitLookup[eid]?.exhibitName || eid] = data.exhibit_views[eid];
-            }
+        destroyChart("exhibitViewsChart");
+        destroyChart("viewingTimeChart");
+        destroyChart("deviceUsageChart");
+        destroyChart("osUsageChart");
+        destroyChart("deviceBrandsChart");
+        destroyChart("languagesChart");
 
-            // ✅ Sort exhibits by number of views (largest to smallest)
-            const sortedExhibits = Object.entries(exhibitViews)
-                .sort((a, b) => b[1] - a[1]); // Sort by count (descending)
+        // ✅ Convert Exhibit IDs to Names
+        let exhibitViews = {};
+        for (let eid in data.exhibit_views) {
+            exhibitViews[exhibitLookup[eid]?.exhibitName || eid] = data.exhibit_views[eid];
+        }
 
-            const sortedLabels = sortedExhibits.map(entry => entry[0]); // Sorted exhibit names
-            const sortedValues = sortedExhibits.map(entry => entry[1]); // Sorted view counts
+        // ✅ Sort exhibits by views (largest to smallest)
+        const sortedExhibits = Object.entries(exhibitViews)
+            .sort((a, b) => b[1] - a[1]);
 
-            // ✅ Update all charts properly
-            updateChart("exhibitViewsChart", "bar", sortedLabels, sortedValues, "Exhibit Views");
-            updateChart("viewingTimeChart", "line", Object.keys(data.viewing_time_distribution), Object.values(data.viewing_time_distribution), "Viewing Time");
-            updateChart("deviceUsageChart", "pie", Object.keys(data.device_usage), Object.values(data.device_usage), "Device Usage");
-            updateChart("osUsageChart", "doughnut", Object.keys(data.os_usage), Object.values(data.os_usage), "OS Distribution");
-        })
-        .catch(error => console.error("❌ Failed to fetch analytics:", error));
+        const sortedLabels = sortedExhibits.map(entry => entry[0]); // Exhibit names
+        const sortedValues = sortedExhibits.map(entry => entry[1]); // View counts
+
+        // ✅ Process new analytics data (Device Brands & Languages)
+        const analyticsProcessed = processAnalyticsData(data.raw_data || []);
+
+        // ✅ Update charts with the new data
+        updateChart("exhibitViewsChart", "bar", sortedLabels, sortedValues, "Exhibit Views");
+        updateChart("viewingTimeChart", "line", Object.keys(data.viewing_time_distribution), Object.values(data.viewing_time_distribution), "Hourly Activity");
+        updateChart("deviceUsageChart", "pie", Object.keys(data.device_usage), Object.values(data.device_usage), "Device Usage");
+        updateChart("osUsageChart", "doughnut", Object.keys(data.os_usage), Object.values(data.os_usage), "OS Distribution");
+        updateChart("deviceBrandsChart", "pie", Object.keys(analyticsProcessed.device_brands), Object.values(analyticsProcessed.device_brands), "Mobile Device Brands");
+        updateChart("languagesChart", "doughnut", Object.keys(analyticsProcessed.languages), Object.values(analyticsProcessed.languages), "Browser Languages");
+    })
+    .catch(error => console.error("❌ Failed to fetch analytics:", error));
 }
 
 // ✅ Ensure updateChart accepts labels & values
@@ -266,7 +352,7 @@ function updateChart(elementId, type, labels, values, label) {
 
     const ctx = document.getElementById(elementId).getContext("2d");
 
-    // Calculate total value for percentage calculation
+    // Calculate total for percentages
     const total = values.reduce((sum, value) => sum + value, 0);
 
     chartInstances[elementId] = new Chart(ctx, { 
@@ -285,8 +371,8 @@ function updateChart(elementId, type, labels, values, label) {
                     callbacks: {
                         label: function(tooltipItem) {
                             let value = tooltipItem.raw;
-                            let percentage = ((value / total) * 100).toFixed(1); // 1 decimal place
-                            return ` ${percentage}% (${value} views)`; // Shows "23 views (15.2%)"
+                            let percentage = ((value / total) * 100).toFixed(1);
+                            return ` ${percentage}% (${value} views)`;
                         }
                     }
                 }
