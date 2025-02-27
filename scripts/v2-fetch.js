@@ -176,17 +176,18 @@ function handleExhibitView(data, exhibitId) {
 
     switch (exhibitMode) {
       case "audio":
-        updateTitleAndContent(`Listen: ${exhibitData["exhibitName"]} | ${siteName}`);
+        // updateTitleAndContent(`Listen: ${exhibitData["exhibitName"]}`);
+        updateTitleAndContent(`Audio Guide: ${siteName}`);
         renderAudio(exhibitData);
         break;
 
       case "video":
-        updateTitleAndContent(`Watch: ${exhibitData["exhibitName"]} | ${siteName}`);
+        updateTitleAndContent(`Watch: ${exhibitData["exhibitName"]}`);
         renderVideo(exhibitData); // Call a function to render video content
         break;
 
       case "blog":
-        updateTitleAndContent(`Blog: ${exhibitData["exhibitName"]} | ${siteName}`);
+        updateTitleAndContent(`Blog: ${exhibitData["exhibitName"]}`);
         renderBlog(exhibitData); // Call a function to render blog content
         break;
 
@@ -413,7 +414,7 @@ function renderAudio(exhibit) {
   content.innerHTML = "";
 
   // Add exhibit name
-  const title = document.createElement("h2");
+  const title = document.createElement("h3");
   title.textContent = `You're listening to the audio guide for: "${exhibit.exhibitName}"`;
   content.appendChild(title);
 
@@ -423,9 +424,12 @@ function renderAudio(exhibit) {
   content.appendChild(audioContainer); // Move it inside the content container
 
   // Add the description below the audio container
+  const decriptionTitle = document.createElement("strong");
   const description = document.createElement("p");
+  decriptionTitle.textContent = "Audio Description:";
   description.textContent = longDescription || "We recommend using headphones to get the most out of this audio guide.";
   description.style.marginTop = "20px"; // Optional: Add some spacing
+  content.appendChild(decriptionTitle);
   content.appendChild(description);
 
   // Audio functionality
