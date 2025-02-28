@@ -266,9 +266,9 @@ function renderExhibit(objects, exhibitId) {
     const subheading = isAnimal
       ? `(${item["commonName"]}, <em>${item["scientificName"]}</em>)`
       : `(<em>${item["scientificName"]}</em>)`;
-    const description = isAnimal
-      ? `<p>${item["personalityProfile"] || "Profile not available"}</p>`
-      : `<p>${item["shortDescription"] || "Description not available"}</p>`;
+      const description = isAnimal
+      ? `<p>${item["personalityProfile"] || item["shortDescription"] || ""}</p>`
+      : `<p>${item["shortDescription"] || ""}</p>`;
 
     // Create the card
     const card = document.createElement("div");
@@ -332,13 +332,17 @@ function renderSpecies(species) {
   <h3 style="margin-top: 5; margin-bottom: 10px;"><i>${species.scientificName}</i></h3>
 `;
 
-if (species["personalityProfile"]) {
+if (species["nickname"]) {
   detailsHTML += `<br><h3 style="margin-bottom: 5px;">Animal Profile:</h3><br>`;
+}
+if (species["nickname"]) {
   detailsHTML += `<p style="margin: 2px 0;"><b>Name:</b> ${species["nickname"]}</p>`;
-  detailsHTML += `<p style="margin: 2px 0;"><b>About:</b> ${species["personalityProfile"]}</p>`;
 }
 if (species["age"]) {
   detailsHTML += `<p style="margin: 2px 0;"><b>Age:</b> ${species["age"]}</p>`;
+}
+if (species["personalityProfile"]) {
+  detailsHTML += `<p style="margin: 2px 0;"><b>About:</b> ${species["personalityProfile"]}</p>`;
 }
 if (species["size"]) {
   detailsHTML += `<p style="margin: 2px 0;"><b>Size:</b> ${species["size"]}</p>`;
@@ -346,7 +350,7 @@ if (species["size"]) {
 if (species["weight"]) {
   detailsHTML += `<p style="margin: 2px 0;"><b>Weight:</b> ${species["weight"]}</p>`;
 }
-if (species["personalityProfile"]) {
+if (species["nickname"]) {
   detailsHTML += `<br><br><h3 style="margin-bottom: 5px;">Species Factfile:</h3>`;
 }
 detailsHTML += `
