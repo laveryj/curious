@@ -1,5 +1,5 @@
 {
-  "dateCreated": "2025-02-28T12:11:11.535Z",
+  "dateCreated": "2025-03-01T00:32:03.883Z",
   "exhibits": [
     {
       "exhibitID": "C1",
@@ -2662,9 +2662,9 @@
           "shortDescription": "A species of Carpet Shark",
           "longDescription": "These sharks feed on small fish and invertebrates in the coral reefs and sandy flats around the tropical western Pacific Ocean, Indian Ocean, and the Red Sea. They are nocturnal and spend most of the day resting on the seafloor. They actively hunt at night for molluscs, crustaceans, and small bony fish inside holes and crevices in the reefs.",
           "age": "2",
-          "size": "1.1m long",
+          "size": "",
           "weight": "",
-          "personalityProfile": "Xena was born at Oceanopolis, and her favourite food is prawn!",
+          "personalityProfile": "",
           "funFact": "Zebra sharks are often mistaken for leopard sharks. This is because when they are born they have dark brown and white bars across their bodies. But, when they are older their bodies are light yellow with small dark spots.",
           "conservationStatus": "Endangered",
           "conservationInfo": "",
@@ -2678,7 +2678,7 @@
         },
         {
           "hidden": "FALSE",
-          "prioritise": "FALSE",
+          "prioritise": "TRUE",
           "objectID": "82B",
           "objectType": "Animal",
           "nickname": "Ripley",
