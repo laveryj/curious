@@ -11,8 +11,8 @@ a {
 }
 
 .quiz-card {
-  background-color: white;
-  border: 1px solid #ddd;
+  background-color: rgba(255, 255, 255, 0.498);
+  /* border: 1px solid #ddd; */
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   padding: 20px;
