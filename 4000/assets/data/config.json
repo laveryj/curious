@@ -1,5 +1,5 @@
 {
-"siteName": "Leamington Spa Art Gallery and Museum",
+"siteName": "Pier Aquarium",
 "siteid": "4000",
 "databaseid": "https://docs.google.com/spreadsheets/d/1oycqE4vnVg1cM36i8RgoJMgXkNvK8jS3YfPnWnnGG44/export?format=csv",
 "status": "Active",
@@ -13,11 +13,11 @@
   "email": "",
   "phone": "",
   "theme": {
-    "logoPath": "assets/images/site-logo.jpeg",
-    "backgroundColor": "#ffffff",
-    "headerColor": "#2e3884",
+    "logoPath": "assets/images/pier-aquarium.png",
+    "backgroundColor": "#b8bec1",
+    "headerColor": "#20666c",
     "cardColor": "#efefef",
-    "textColor": "#2e3884",
+    "textColor": "#20666c",
     "buttonTextColor": "#ffffff",
     "linkColor": "#2e3884"
   },
