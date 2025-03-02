@@ -1,7 +1,7 @@
 {
   "siteName": "Sealife Adventure",
   "siteid": "2054",
-  "databaseid": "https://docs.google.com/spreadsheets/d/1cCSNg47mUUk1Y7g-azx4dqI3dAN7Q7VFF1i9NNdcO-Y/export?format=csv",
+  "databaseid": "",
   "status": "Active",
   "company": "Miller Leisure Ltd",
   "address": "Eastern Esplanade, Southend-on-Sea, SS1 2ER",
@@ -15,12 +15,12 @@
   "phone": "+44 1234 567890",
   "theme": {
     "logoPath": "assets/images/site-logo.png",
-    "backgroundColor": "#9ce2fc",
-    "headerColor": "#18236e",
-    "cardColor": "#92c0d1",
-    "textColor": "#18236e",
+    "backgroundColor": "#3d784c",
+    "headerColor": "#174e24",
+    "cardColor": "#92d1a1",
+    "textColor": "#ffffff",
     "buttonTextColor": "#ffffff",
-    "linkColor": "#18236e"
+    "linkColor": "#174e24"
   },
 "talkTimes": [
   { "name": "Penguin Feed", "time": "11:30", "days": ["Daily"] },
