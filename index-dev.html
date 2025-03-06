@@ -282,6 +282,9 @@
       <!-- Clients -->
       <!-- <div id="import-partial-clients"></div> -->
 
+      <!-- Views -->
+      <div id="import-partial-views"></div>
+
       <!-- How it Works -->
       <div id="import-partial-howItWorks"></div>
 
@@ -326,5 +329,92 @@
 
     <!-- Import javascript -->
     <script src="images/scripts.js" defer></script>
+    <script>
+      document.getElementById("contactForm").addEventListener("submit", async function (event) {
+          event.preventDefault(); // Prevent default form submission
+      
+          const formData = new FormData(this);
+          const data = {};
+          formData.forEach((value, key) => data[key] = value);
+      
+          console.log("🔍 Sending data:", JSON.stringify(data, null, 2));  // Debugging output
+      
+          try {
+              const response = await fetch("https://get-curio.us/api/contact-form/send-email", { 
+                  method: "POST",
+                  headers: { "Content-Type": "application/json" },
+                  body: JSON.stringify(data)
+              });
+      
+              const responseText = await response.text();
+              console.log("✅ Raw Response:", responseText); // Log full response
+      
+              const responseData = JSON.parse(responseText);
+      
+              if (response.ok && responseData.success) {
+                  alert("Message sent successfully!");
+                  this.reset();
+              } else {
+                  console.error("❌ API Error:", responseData);
+                  alert("Error sending message. Please try again.");
+              }
+          } catch (error) {
+              console.error("❌ Fetch Error:", error);
+              alert("Error sending message. Please try again.");
+          }
+      });
+
+      document.addEventListener("DOMContentLoaded", () => {
+  const configUrl = "./assets/data/config.json"; // Path to the config.json file
+
+  fetch(configUrl)
+    .then((response) => response.json())
+    .then((config) => {
+      handleAuthentication(config.user, config.password);
+    })
+    .catch((error) => {
+      console.error("Error loading configuration:", error);
+    });
+
+  function handleAuthentication(username, password) {
+    const loginContainer = document.querySelector(".wow.fadeInUp");
+    const portalContent = document.getElementById("portal-content"); // Ensure this exists in your HTML
+    const loginButton = document.querySelector("button[type='submit']");
+    const loginError = document.createElement("p");
+
+    loginError.textContent = "Invalid username or password!";
+    loginError.style.color = "red";
+    loginError.style.display = "none";
+    loginError.style.textAlign = "center";
+    loginContainer.appendChild(loginError);
+
+    // Check if the user is already logged in
+    if (localStorage.getItem("authToken")) {
+      if (loginContainer) loginContainer.style.display = "none";
+      if (portalContent) portalContent.style.display = "block";
+      return;
+    }
+
+    if (loginContainer) loginContainer.style.display = "block";
+    if (portalContent) portalContent.style.display = "none";
+
+    loginButton.addEventListener("click", (event) => {
+      event.preventDefault(); // Prevent form submission
+
+      const enteredUsername = document.querySelector("input[type='email']").value.trim();
+      const enteredPassword = document.querySelector("input[type='password']").value.trim();
+
+      if (enteredUsername === username && enteredPassword === password) {
+        localStorage.setItem("authToken", "authenticated");
+
+        if (loginContainer) loginContainer.style.display = "none";
+        if (portalContent) portalContent.style.display = "block";
+      } else {
+        loginError.style.display = "block";
+      }
+    });
+  }
+});
+      </script>
   <script defer src="bundle.js"></script></body>
 </html>

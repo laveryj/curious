@@ -1680,6 +1680,12 @@ body{
 .pb-\[50px\]{
   padding-bottom: 50px;
 }
+.pt-\[40px\]{
+  padding-top: 40px;
+}
+.pb-\[25px\]{
+  padding-bottom: 25px;
+}
 .pt-20{
   padding-top: 5rem;
 }
@@ -1739,16 +1745,16 @@ body{
   font-size: 1.875rem;
   line-height: 2.25rem;
 }
+.text-2xl{
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
 .text-xs{
   font-size: 0.75rem;
   line-height: 1rem;
 }
 .text-\[40px\]{
   font-size: 40px;
-}
-.text-2xl{
-  font-size: 1.5rem;
-  line-height: 2rem;
 }
 .font-bold{
   font-weight: 700;
@@ -2209,6 +2215,10 @@ body{
     font-size: 22px;
   }
 
+  .md\:text-\[24px\]{
+    font-size: 24px;
+  }
+
   .md\:text-\[38px\]{
     font-size: 38px;
   }
@@ -2609,6 +2619,14 @@ body{
 
   .xl\:text-\[26px\]{
     font-size: 26px;
+  }
+
+  .xl\:text-\[40px\]{
+    font-size: 40px;
+  }
+
+  .xl\:text-\[36px\]{
+    font-size: 36px;
   }
 }
 

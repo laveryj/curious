@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-  var sections = ["features", "footer", "contact", "pricing", "header", "hero", "about1", "about2", "about3", "about4", "about5", "screenshots", "testemonials", "callToAction", "blog", "clients", "faq", "howItWorks"];
+  var sections = ["features", "footer", "contact", "pricing", "header", "hero", "about1", "about2", "about3", "about4", "about5", "screenshots", "testemonials", "callToAction", "blog", "clients", "faq", "howItWorks", "views"];
   sections.forEach(function (section) {
     fetch("../partials/section-".concat(section, ".html")).then(function (response) {
       return response.text();
