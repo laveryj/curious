@@ -33,11 +33,26 @@
 
   <script>
     const loggedInSiteId = sessionStorage.getItem("authSiteId");
+    const authToken = sessionStorage.getItem("authToken");
     const currentPath = window.location.pathname;
     const expectedPath = `/${loggedInSiteId}/portal.html`;
   
-    if (!sessionStorage.getItem("authToken") || currentPath !== expectedPath) {
+    console.log("Checking authentication...");
+    console.log("Stored Site ID:", loggedInSiteId);
+    console.log("Stored Auth Token:", authToken);
+    console.log("Current Path:", currentPath);
+    console.log("Expected Path:", expectedPath);
+  
+    if (!authToken || currentPath !== expectedPath) {
+      console.warn("User is not authenticated or incorrect path. Redirecting to sign-in...");
       window.location.href = "/signin.html";
+    } else {
+      console.log("User is authenticated. Showing portal...");
+      document.addEventListener("DOMContentLoaded", () => {
+        document.body.classList.remove("hidden"); 
+        document.getElementById("login-container").style.display = "none";
+        document.getElementById("portal-content").style.display = "block";
+      });
     }
   </script>
 

@@ -1,41 +1,64 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const configUrl = "./assets/data/config.json"; // Path to the config.json file
-  
-    fetch(configUrl)
-        .then((response) => response.json())
-        .then((config) => {
-            handleAuthentication(config.user, config.password, config.siteid);
-        })
-        .catch((error) => {
-            console.error("Error loading configuration:", error);
-        });
-  
-    function handleAuthentication(username, password, siteid) {
-        const loginError = document.getElementById("login-error");
-  
-        // Check if user is already logged in
-        if (sessionStorage.getItem("authToken")) {
-            const savedSiteId = sessionStorage.getItem("authSiteId");
-            window.location.href = `/${savedSiteId}/portal.html`;
+    // List of known site IDs to check
+    const siteIds = ["2054", "3001", "4020", "5005"]; // Add all site IDs here
+
+    console.log("Starting authentication process...");
+
+    function tryNextSite(index, enteredUsername, enteredPassword) {
+        if (index >= siteIds.length) {
+            console.warn("No matching site found for this username.");
+            document.getElementById("login-error").style.display = "block";
             return;
         }
-  
-        document.querySelector("form").addEventListener("submit", (event) => {
-            event.preventDefault();
-  
-            const enteredUsername = document.getElementById("username").value;
-            const enteredPassword = document.getElementById("password").value;
-  
-            if (enteredUsername === username && enteredPassword === password) {
-                // Store login state and site ID
-                sessionStorage.setItem("authToken", "authenticated");
-                sessionStorage.setItem("authSiteId", siteid);
-  
-                // Redirect to site-specific portal
-                window.location.href = `/${siteid}/portal.html`;
-            } else {
-                loginError.style.display = "block";
-            }
-        });
+
+        const siteid = siteIds[index];
+        const configUrl = `/${siteid}/assets/data/config.json`;
+
+        console.log(`Checking site: ${siteid}, fetching: ${configUrl}`);
+
+        fetch(configUrl)
+            .then((response) => {
+                if (!response.ok) {
+                    console.warn(`Site ${siteid} config not found, skipping...`);
+                    tryNextSite(index + 1, enteredUsername, enteredPassword);
+                    return;
+                }
+                return response.json();
+            })
+            .then((config) => {
+                if (!config) return;
+
+                console.log(`Checking credentials for site ${siteid}`);
+                if (enteredUsername === config.user) {
+                    if (enteredPassword === config.password) {
+                        console.log(`Login successful for site ${siteid}. Redirecting...`);
+                        sessionStorage.setItem("authToken", "authenticated");
+                        sessionStorage.setItem("authSiteId", siteid);
+                        window.location.href = `/${siteid}/portal.html`;
+                    } else {
+                        console.warn(`Incorrect password for site ${siteid}`);
+                        document.getElementById("login-error").style.display = "block";
+                    }
+                } else {
+                    console.log(`Username not found in site ${siteid}, checking next site...`);
+                    tryNextSite(index + 1, enteredUsername, enteredPassword);
+                }
+            })
+            .catch((error) => {
+                console.error(`Error checking site ${siteid}:`, error);
+                tryNextSite(index + 1, enteredUsername, enteredPassword);
+            });
     }
-  });
+
+    document.querySelector("form").addEventListener("submit", (event) => {
+        event.preventDefault();
+
+        const enteredUsername = document.getElementById("username").value;
+        const enteredPassword = document.getElementById("password").value;
+
+        console.log("User entered:", enteredUsername);
+        console.log("Starting site scan...");
+
+        tryNextSite(0, enteredUsername, enteredPassword);
+    });
+});

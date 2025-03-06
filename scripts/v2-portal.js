@@ -224,13 +224,10 @@ if (siteInfoContent) {
         // }
         
         // Add event listener for the logout button
-        logoutButton.addEventListener("click", () => {
-            console.log("Logging out...");
-            sessionStorage.clear();
-            localStorage.clear();
-            console.log("Session storage cleared:", sessionStorage);
-            console.log("Local storage cleared:", localStorage);
-            window.location.href = "./portal.html";
+        document.getElementById("logout-button").addEventListener("click", () => {
+          sessionStorage.removeItem("authToken");
+          sessionStorage.removeItem("authSiteId");
+          window.location.href = "/signin.html";
         });
 
 });
