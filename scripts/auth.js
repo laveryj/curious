@@ -49,18 +49,24 @@ document.addEventListener("DOMContentLoaded", () => {
             });
     }
 
-    document.addEventListener("DOMContentLoaded", () => {
-        const form = document.querySelector("form");
-        if (form) {
-            form.addEventListener("submit", (event) => {
-                event.preventDefault();
-                console.log("Login form submitted...");
-                // Authentication logic here
-            });
-        } else {
-            console.warn("No login form found. Skipping event listener.");
-        }
-    });
+    // Ensure form exists before adding an event listener
+    const form = document.querySelector("form");
+    if (form) {
+        form.addEventListener("submit", (event) => {
+            event.preventDefault();
+
+            const enteredUsername = document.getElementById("username").value;
+            const enteredPassword = document.getElementById("password").value;
+
+            console.log("User entered:", enteredUsername);
+            console.log("Starting site scan...");
+
+            tryNextSite(0, enteredUsername, enteredPassword);
+        });
+    } else {
+        console.warn("No login form found. Skipping event listener.");
+    }
+});
 
     document.querySelector("form").addEventListener("submit", (event) => {
         event.preventDefault();
@@ -73,4 +79,3 @@ document.addEventListener("DOMContentLoaded", () => {
 
         tryNextSite(0, enteredUsername, enteredPassword);
     });
-});
