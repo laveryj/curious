@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sign In | Appline Tailwind App Landing Template</title>
-  <link rel="icon" href="favicon.ico"><link href="style.css" rel="stylesheet"></head>
+  </head>
   <!-- <body class="bg-white dark:bg-black">   -->
   <body class="flex flex-col min-h-screen bg-white dark:bg-black">
 
@@ -21,12 +21,12 @@
               class="block max-w-[145px] sm:max-w-[180px]"
             >
               <img
-                src="images/logo.png"
+                src="images/logo/logo.png"
                 alt="logo"
                 class="block dark:hidden"
               />
               <img
-                src="images/logo.png"
+                src="images/logo/logo.png"
                 alt="logo"
                 class="hidden dark:block"
               />
@@ -366,8 +366,9 @@
                   Your Email
                 </label> -->
                 <input
-                  type="email"
-                  placeholder="E-mail"
+                  type="text"
+                  id="username"
+                  placeholder="Customer ID"
                   class="w-full rounded-md border border-stroke bg-white py-3 px-6 text-base font-medium text-body outline-none focus:border-primary focus:shadow-input dark:border-stroke-dark dark:bg-black dark:text-white dark:focus:border-primary"
                 />
               </div>
@@ -381,6 +382,7 @@
                 </label> -->
                 <input
                   type="password"
+                  id="password"
                   placeholder="Password"
                   class="w-full rounded-md border border-stroke bg-white py-3 px-6 text-base font-medium text-body outline-none focus:border-primary focus:shadow-input dark:border-stroke-dark dark:bg-black dark:text-white dark:focus:border-primary"
                 />
@@ -443,6 +445,7 @@
               >
                 Sign In
               </button>
+              <p id="login-error" style="color: red; display: none;">Invalid username or password.</p>
             </form>
           </div>
         </div>
@@ -835,5 +838,5 @@
       ></span>
     </a>
     <!-- ======= Back To Top End ======= -->
-  <script defer src="bundle.js"></script></body>
+  </body>
 </html>

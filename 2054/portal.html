@@ -31,6 +31,16 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
 
+  <script>
+    const loggedInSiteId = sessionStorage.getItem("authSiteId");
+    const currentPath = window.location.pathname;
+    const expectedPath = `/${loggedInSiteId}/portal.html`;
+  
+    if (!sessionStorage.getItem("authToken") || currentPath !== expectedPath) {
+      window.location.href = "/signin.html";
+    }
+  </script>
+
 </head>
 
 <body class="hidden">

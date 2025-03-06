@@ -1,44 +1,41 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const configUrl = "./assets/data/config.json"; // Path to the config.json file
-
-  fetch(configUrl)
-      .then((response) => response.json())
-      .then((config) => {
-          handleAuthentication(config.user, config.password);
-      })
-      .catch((error) => {
-          console.error("Error loading configuration:", error);
-      });
-
-  function handleAuthentication(username, password) {
-      const loginContainer = document.getElementById("login-container");
-      const portalContent = document.getElementById("portal-content");
-      const loginButton = document.getElementById("login-button");
-      const loginError = document.getElementById("login-error");
-
-      // Check if the user is already logged in
-      if (sessionStorage.getItem("authToken")) {
-          loginContainer.style.display = "none";
-          portalContent.style.display = "block";
-          return;
-      }
-
-      loginContainer.style.display = "flex";
-      portalContent.style.display = "none";
-
-      loginButton.addEventListener("click", () => {
-          const enteredUsername = document.getElementById("username").value;
-          const enteredPassword = document.getElementById("password").value;
-
-          if (enteredUsername === username && enteredPassword === password) {
-              // Store the login state in sessionStorage
-              sessionStorage.setItem("authToken", "authenticated");
-
-              loginContainer.style.display = "none";
-              portalContent.style.display = "block";
-          } else {
-              loginError.style.display = "block";
-          }
-      });
-  }
-});
+    const configUrl = "./assets/data/config.json"; // Path to the config.json file
+  
+    fetch(configUrl)
+        .then((response) => response.json())
+        .then((config) => {
+            handleAuthentication(config.user, config.password, config.siteid);
+        })
+        .catch((error) => {
+            console.error("Error loading configuration:", error);
+        });
+  
+    function handleAuthentication(username, password, siteid) {
+        const loginError = document.getElementById("login-error");
+  
+        // Check if user is already logged in
+        if (sessionStorage.getItem("authToken")) {
+            const savedSiteId = sessionStorage.getItem("authSiteId");
+            window.location.href = `/${savedSiteId}/portal.html`;
+            return;
+        }
+  
+        document.querySelector("form").addEventListener("submit", (event) => {
+            event.preventDefault();
+  
+            const enteredUsername = document.getElementById("username").value;
+            const enteredPassword = document.getElementById("password").value;
+  
+            if (enteredUsername === username && enteredPassword === password) {
+                // Store login state and site ID
+                sessionStorage.setItem("authToken", "authenticated");
+                sessionStorage.setItem("authSiteId", siteid);
+  
+                // Redirect to site-specific portal
+                window.location.href = `/${siteid}/portal.html`;
+            } else {
+                loginError.style.display = "block";
+            }
+        });
+    }
+  });
