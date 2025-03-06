@@ -67,15 +67,3 @@ document.addEventListener("DOMContentLoaded", () => {
         console.warn("No login form found. Skipping event listener.");
     }
 });
-
-    document.querySelector("form").addEventListener("submit", (event) => {
-        event.preventDefault();
-
-        const enteredUsername = document.getElementById("username").value;
-        const enteredPassword = document.getElementById("password").value;
-
-        console.log("User entered:", enteredUsername);
-        console.log("Starting site scan...");
-
-        tryNextSite(0, enteredUsername, enteredPassword);
-    });
