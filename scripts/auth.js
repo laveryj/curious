@@ -1,70 +1,45 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const siteIds = ["2054", "3001", "4020", "5005"]; // List of known site IDs
+    console.log("🔐 Authentication script loaded");
 
-    console.log("Starting authentication process...");
-
-    function tryNextSite(index, enteredUsername, enteredPassword) {
-        if (index >= siteIds.length) {
-            console.warn("No matching site found for this username.");
-            document.getElementById("login-error").style.display = "block";
-            return;
-        }
-
-        const siteid = siteIds[index];
-        // const configUrl = `/${siteid}/assets/data/config.json`; // Ensure siteid is in the path
-        const configUrl = `/2054/assets/data/config.json`; // Ensure siteid is in the path
-
-        console.log(`Checking site: ${siteid}, fetching: ${configUrl}`);
-
-        fetch(configUrl)
-            .then((response) => {
-                if (!response.ok) {
-                    console.warn(`Site ${siteid} config not found, skipping...`);
-                    tryNextSite(index + 1, enteredUsername, enteredPassword);
-                    return;
-                }
-                return response.json();
-            })
-            .then((config) => {
-                if (!config) return;
-
-                console.log(`Checking credentials for site ${siteid}`);
-                if (enteredUsername === config.user) {
-                    if (enteredPassword === config.password) {
-                        console.log(`Login successful for site ${siteid}. Redirecting...`);
-                        sessionStorage.setItem("authToken", "authenticated");
-                        sessionStorage.setItem("authSiteId", siteid);
-                        window.location.href = `/${siteid}/portal.html`;
-                    } else {
-                        console.warn(`Incorrect password for site ${siteid}`);
-                        document.getElementById("login-error").style.display = "block";
-                    }
-                } else {
-                    console.log(`Username not found in site ${siteid}, checking next site...`);
-                    tryNextSite(index + 1, enteredUsername, enteredPassword);
-                }
-            })
-            .catch((error) => {
-                console.error(`Error checking site ${siteid}:`, error);
-                tryNextSite(index + 1, enteredUsername, enteredPassword);
-            });
-    }
-
-    // Ensure form exists before adding an event listener
     const form = document.querySelector("form");
-    if (form) {
-        form.addEventListener("submit", (event) => {
-            event.preventDefault();
-
-            const enteredUsername = document.getElementById("username").value;
-            const enteredPassword = document.getElementById("password").value;
-
-            console.log("User entered:", enteredUsername);
-            console.log("Starting site scan...");
-
-            tryNextSite(0, enteredUsername, enteredPassword);
-        });
-    } else {
-        console.warn("No login form found. Skipping event listener.");
+    if (!form) {
+        console.warn("⚠️ No login form found.");
+        return;
     }
+
+    form.addEventListener("submit", async (event) => {
+        event.preventDefault();
+
+        const enteredUsername = document.getElementById("username").value.trim();
+        const enteredPassword = document.getElementById("password").value.trim();
+        const loginError = document.getElementById("login-error");
+
+        console.log("📝 User entered:", enteredUsername);
+
+        try {
+            const response = await fetch("https://get-curio.us/api/auth/", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ username: enteredUsername, password: enteredPassword }),
+            });
+
+            if (!response.ok) {
+                console.warn("❌ Invalid login");
+                loginError.style.display = "block";
+                return;
+            }
+
+            const data = await response.json();
+            console.log("✅ Login successful:", data);
+
+            // Store auth token and site ID
+            sessionStorage.setItem("authToken", data.token);
+            sessionStorage.setItem("authSiteId", data.siteid);
+
+            // Redirect to the correct portal
+            window.location.href = `/${data.siteid}/portal.html`;
+        } catch (error) {
+            console.error("⚠️ Authentication error:", error);
+        }
+    });
 });
