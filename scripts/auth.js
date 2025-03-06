@@ -11,7 +11,8 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         const siteid = siteIds[index];
-        const configUrl = `./${siteid}/assets/data/config.json`; // Ensure siteid is in the path
+        // const configUrl = `/${siteid}/assets/data/config.json`; // Ensure siteid is in the path
+        const configUrl = `/2054/assets/data/config.json`; // Ensure siteid is in the path
 
         console.log(`Checking site: ${siteid}, fetching: ${configUrl}`);
 
