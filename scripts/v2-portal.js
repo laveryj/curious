@@ -217,11 +217,11 @@ if (siteInfoContent) {
       }
 
         // // Open analytics page
-        // if (viewAnalyticsButton) {
-        //     viewAnalyticsButton.addEventListener("click", () => {
-        //         window.location.href = "./analytics.html";
-        //     });
-        // }
+        if (viewAnalyticsButton) {
+            viewAnalyticsButton.addEventListener("click", () => {
+                window.location.href = "./analytics.html";
+            });
+        }
         
         // Add event listener for the logout button
         document.getElementById("logout-button").addEventListener("click", () => {
