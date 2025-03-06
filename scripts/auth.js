@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     // List of known site IDs to check
-    const siteIds = ["2054", "3001", "4020", "5005"]; // Add all site IDs here
+    const siteIds = ["2054", "0000", "0001", "0002", "4000"]; // Add all site IDs here
 
     console.log("Starting authentication process...");
 
