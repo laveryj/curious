@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         const siteid = siteIds[index];
-        const configUrl = `/${siteid}/assets/data/config.json`; // Ensures siteid is included in path
+        const configUrl = `/${siteid}/assets/data/config.json`; // Ensure siteid is in the path
 
         console.log(`Checking site: ${siteid}, fetching: ${configUrl}`);
 
@@ -48,6 +48,19 @@ document.addEventListener("DOMContentLoaded", () => {
                 tryNextSite(index + 1, enteredUsername, enteredPassword);
             });
     }
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const form = document.querySelector("form");
+        if (form) {
+            form.addEventListener("submit", (event) => {
+                event.preventDefault();
+                console.log("Login form submitted...");
+                // Authentication logic here
+            });
+        } else {
+            console.warn("No login form found. Skipping event listener.");
+        }
+    });
 
     document.querySelector("form").addEventListener("submit", (event) => {
         event.preventDefault();
