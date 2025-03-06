@@ -1,0 +1,241 @@
+body.hidden {
+  background-color: #a7a29c; /* This should be your theme's background color */
+}
+
+header {
+  /* background-color: #d35c18; Theme header color */
+  /* color: #292929; Theme text color */
+}
+
+a {
+  color: #292929; /* Theme link color */
+}
+
+.assessment-card {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  max-width: 600px; /* Ensures it doesn't exceed 600px */
+  width: 88%; /* Makes it responsive on smaller screens */
+  margin: 20px auto;
+  text-align: center;
+}
+
+.assessment-card h1 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.assessment-card button {
+  display: inline-block;
+  color: white;
+  border: none;
+  background-color: #18236e; /* Match site button background */
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.assessment-card button:hover {
+  /* background-color: #0056b3; */
+}
+
+.assessment-container {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+
+.assessment-container .question {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.assessment-container .options {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px; /* Space between buttons */
+  margin-top: 15px;
+}
+
+/* ✅ Updated styling for the option buttons */
+.assessment-container .option-btn {
+  flex: 1 1 45%; /* Each button takes up ~45% of the row */
+  max-width: 150px; /* Prevent buttons from becoming too wide */
+  padding: 12px;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  background-color: #f8f9fa; /* Light grey background */
+  color: #333;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+/* ✅ Style each button differently */
+.assessment-container .option-btn[data-answer="Yes"] {
+  background-color: #4caf50; /* Green */
+  color: white;
+  border-color: #388e3c;
+  flex: 1 1 45%; /* Each button takes ~48% of the row */
+  max-width: 220px; /* Optional: Prevents buttons from being too wide */
+  width: 80%; /* Ensures full width inside flexbox */
+}
+
+.assessment-container .option-btn[data-answer="No"] {
+  background-color: #f44336; /* Red */
+  color: white;
+  border-color: #d32f2f;
+  flex: 1 1 45%; /* Each button takes ~48% of the row */
+  max-width: 220px; /* Optional: Prevents buttons from being too wide */
+  width: 80%; /* Ensures full width inside flexbox */
+}
+
+.assessment-container .option-btn[data-answer="N/A"] {
+  background-color: #2196f3; /* Blue */
+  color: white;  
+  border-color: #1976d2;
+  flex: 1 1 45%; /* Each button takes ~48% of the row */
+  max-width: 220px; /* Optional: Prevents buttons from being too wide */
+  width: 80%; /* Ensures full width inside flexbox */
+}
+
+.assessment-container .option-btn[data-answer="N/W"] {
+  background-color: #ff9800; /* Orange */
+  border-color: #f57c00;
+  color: white;
+  flex: 1 1 45%; /* Each button takes ~48% of the row */
+  max-width: 220px; /* Optional: Prevents buttons from being too wide */
+  width: 80%; /* Ensures full width inside flexbox */
+}
+
+.option-btn:not([data-answer="Yes"]):not([data-answer="No"]):not([data-answer="N/W"]):not([data-answer="N/A"]) {
+  background-color: #ccc; /* Neutral grey */
+  color: #333;
+  border: 1px solid #aaa;
+  flex: 1 1 45%; /* Each button takes ~48% of the row */
+  max-width: 220px; /* Optional: Prevents buttons from being too wide */
+  width: 80%; /* Ensures full width inside flexbox */
+}
+
+/* ✅ Hover effects */
+.assessment-container .option-btn:hover {
+  filter: brightness(90%);
+}
+
+/* ✅ Active (clicked) state */
+.assessment-container .option-btn:active {
+  transform: scale(0.95);
+}
+
+/* ✅ Ensure buttons are readable on mobile */
+@media (max-width: 600px) {
+  .assessment-container .option-btn {
+    flex: 1 1 100%; /* Each button takes full width on small screens */
+    max-width: none;
+  }
+}
+
+.assessment-container .results {
+  font-size: 1.2rem;
+  margin-top: 20px;
+}
+
+.confetti {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* ✅ Ensure labels inside the auditor form do NOT inherit button styles */
+#auditor-form label {
+  display: block;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: none !important;
+  margin-bottom: 5px;
+  cursor: default; /* Prevents labels from acting like buttons */
+  color: #333; /* Ensures readability */
+  background: none; /* Removes any accidental background color */
+  border: none; /* Ensures labels don't have button-like borders */
+  padding: 0;
+  text-align: left; /* Aligns label text to the left */
+}
+
+/* ✅ Style input fields and dropdown properly */
+#auditor-form input,
+#auditor-form select {
+  display: block;
+  width: 80%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  background: white;
+  cursor: text; /* Ensures correct cursor */
+}
+
+/* ✅ Ensure that buttons remain interactive while labels don't */
+#auditor-form button {
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* ✅ Prevent button styles from affecting labels */
+button, input[type="button"], input[type="submit"] {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+/* ✅ Prevent hover effects on labels */
+#auditor-form label:hover {
+  background: none;
+  text-decoration: none;
+}
+
+/* ✅ If labels still behave like buttons, explicitly remove pointer events */
+#auditor-form label[for] {
+  pointer-events: none;
+}
+
+#evidence {
+  width: 90%;
+  height: 100px;
+  font-size: 16px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  resize: vertical; /* Allows user resizing */
+}
+
+@media (max-width: 600px) {
+  #evidence {
+    height: 50px; /* Bigger evidence box for mobile */
+  }
+}
+
+
+.question-block p {
+  min-height: 80px; /* Reduce if needed */
+  margin-bottom: 10px; /* Adjust to fine-tune spacing */
+}
+
+.assessment-container .options,
+#next-button {
+  margin-top: auto; Ensures consistent placement
+}

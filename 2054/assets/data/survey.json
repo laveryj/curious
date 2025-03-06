@@ -1,0 +1,176 @@
+{
+  "questions": [
+    {
+      "section": "Experience",
+      "questions": [
+        {
+          "question": "What was your first impression when you arrived?",
+          "options": [
+            "Excellent",
+            "Good",
+            "Average",
+            "Poor"
+          ]
+        },
+        {
+          "question": "Did your visit meet your expectations?",
+          "options": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "question": "How would you rate your overall experience?",
+          "options": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Service",
+      "questions": [
+        {
+          "question": "What was the quality of service at the attractions?",
+          "options": [
+            "Excellent",
+            "Good",
+            "Average",
+            "Poor"
+          ]
+        },
+        {
+          "question": "What was the quality of service in shops?",
+          "options": [
+            "Excellent",
+            "Good",
+            "Average",
+            "Poor"
+          ]
+        },
+        {
+          "question": "How clean were the public toilets?",
+          "options": [
+            "Very Clean",
+            "Clean",
+            "Average",
+            "Dirty"
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Value for Money",
+      "questions": [
+        {
+          "question": "How good was the value for money at the attractions?",
+          "options": [
+            "Excellent",
+            "Good",
+            "Average",
+            "Poor"
+          ]
+        },
+        {
+          "question": "How good was the value for money in places to eat and drink?",
+          "options": [
+            "Excellent",
+            "Good",
+            "Average",
+            "Poor"
+          ]
+        }
+      ]
+    },
+    {
+      "section": "First Impressions",
+      "questions": [
+        {
+          "question": "What was your first impression when you entered the website?",
+          "options": [
+            "Excellent",
+            "Good",
+            "Average",
+            "Poor"
+          ]
+        },
+        {
+          "question": "How did you hear about us?",
+          "options": [
+            "Online Search",
+            "Social Media",
+            "Word of Mouth",
+            "Other"
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Issues",
+      "questions": [
+        {
+          "question": "Were you looking for anything that you could not find?",
+          "options": [
+            "Yes",
+            "No"
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Travel",
+      "questions": [
+        {
+          "question": "What primarily encouraged you to book this trip?",
+          "options": [
+            "Relaxation",
+            "Adventure",
+            "Business",
+            "Family Visit"
+          ]
+        },
+        {
+          "question": "Did you travel for leisure, business, or family matters?",
+          "options": [
+            "Leisure",
+            "Business",
+            "Family Matters"
+          ]
+        },
+        {
+          "question": "How important was finding a relaxing destination to you?",
+          "options": [
+            "Very Important",
+            "Somewhat Important",
+            "Not Important"
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Net Promoter Score",
+      "questions": [
+        {
+          "question": "On a scale of 0 to 10, how likely are you to recommend X to a friend?",
+          "options": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10"
+          ]
+        }
+      ]
+    }
+  ]
+}

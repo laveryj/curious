@@ -1,0 +1,28 @@
+{
+"siteName": "Pier Aquarium",
+"siteid": "4000",
+"databaseid": "https://docs.google.com/spreadsheets/d/1oycqE4vnVg1cM36i8RgoJMgXkNvK8jS3YfPnWnnGG44/export?format=csv",
+"status": "Active",
+"company": "Warwick District Council",
+"address": "Royal Pump Rooms, The Parade. Leamington Spa, CV32 4AA",
+  "contact": "",
+  "subscription": "Free",
+  "user": "",
+  "password": "",
+  "language": "English",
+  "email": "",
+  "phone": "",
+  "theme": {
+    "logoPath": "assets/images/pier-aquarium.png",
+    "backgroundColor": "#b8bec1",
+    "headerColor": "#20666c",
+    "cardColor": "#efefef",
+    "textColor": "#20666c",
+    "buttonTextColor": "#ffffff",
+    "linkColor": "#2e3884"
+  },
+"talkTimes": [
+],
+  "experiences": [
+  ]
+}

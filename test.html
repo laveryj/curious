@@ -1,0 +1,282 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test page</title>
+
+  <!-- Inline Critical Theme Styles -->
+  <style>
+    body.hidden {
+      background-color: #a7a29c; /* This should be your theme's background color */
+      visibility: hidden; /* Hide until the script removes 'hidden' */
+    }
+    header {
+      background-color: #d35c18; /* Theme header color */
+      color: #292929; /* Theme text color */
+    }
+    a {
+      color: #292929; /* Theme link color */
+    }
+
+    .quiz-card {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  width: 600px;
+  margin: 20px auto;
+  text-align: center;
+}
+
+.quiz-card h1 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.quiz-card button {
+  display: inline-block;
+  /* background-color: #007bff; */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.quiz-card button:hover {
+  /* background-color: #0056b3; */
+}
+
+.quiz-container {
+  display: none;
+  margin-top: 20px;
+}
+
+.quiz-container .question {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.quiz-container .options {
+  display: flex; /* Enable flexbox for horizontal layout */
+  flex-wrap: wrap; /* Allow wrapping to the next line if needed */
+  justify-content: center; /* Center-align the buttons */
+  gap: 10px; /* Add space between buttons */
+}
+
+.quiz-container .options button {
+  flex: 1 1 40%; /* Each button takes up 40% of the row */
+  max-width: 150px; /* Prevent buttons from becoming too wide */
+  padding: 10px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  /* background-color: #007bff; Default button color */
+  color: white;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.quiz-container .options button:hover {
+  /* background-color: #0056b3; Hover effect */
+}
+
+.quiz-container .results {
+  font-size: 1.2rem;
+  margin-top: 20px;
+}
+
+.confetti {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+}
+  </style>
+
+  <!-- Import the fallback styles -->
+  <link rel="stylesheet" href="/assets/css/style.css">
+  
+  <!-- Include the script to load the dynamic theme -->
+  <script src="/scripts/config.js" defer></script>
+  <script src="/scripts/fetch.js" defer></script>
+
+</head>
+
+<body class="hidden">
+  <header style="display: flex; justify-content: center; align-items: center;">
+    <img src="/assets/images/logo.png" alt="Curious Logo" style="width: 120px; height: auto;">
+  </header>
+
+  <!-- <Project Highlights> -->
+  <main style="max-width: 1200px; margin: 0 auto; padding: 20px;">
+    <div class="project-cards-container">
+      <!-- Ocean Tank Projects -->
+      <div class="project-card" style="background-color: #a0c4ff; color: #002b5a;">
+        <h3>Ocean Tank Rebuild</h3>
+        <b>SEA LIFE Blackpool</b>
+        <p class="explainer">A comprehensive rebuild to modernise and enhance the exhibit, improving both visitor experience and animal welfare through innovative designs.</p>
+      </div>
+      <div class="project-card" style="background-color: #a0c4ff; color: #002b5a;">
+        <h3>Ocean Tank Rebuild</h3>
+        <b>SEA LIFE Brighton</b>
+        <p class="explainer">A comprehensive rebuild to modernise and enhance the exhibit, improving both visitor experience and animal welfare through innovative designs.</p>
+      </div>
+      <div class="project-card" style="background-color: #a0c4ff; color: #002b5a;">
+        <h3>Ocean Tank Rebuild</h3>
+        <b>SEA LIFE Great Yarmouth</b>
+        <p class="explainer">A comprehensive rebuild to modernise and enhance the exhibit, improving both visitor experience and animal welfare through innovative designs.</p>
+      </div>
+      <div class="project-card" style="background-color: #a0c4ff; color: #002b5a;">
+        <h3>Ocean Tank Rebuild</h3>
+        <b>SEA LIFE Benalmádena</b>
+        <p class="explainer">A comprehensive rebuild to modernise and enhance the exhibit, improving both visitor experience and animal welfare through innovative designs.</p>
+      </div>
+      <div class="project-card" style="background-color: #a0c4ff; color: #002b5a;">
+        <h3>Ocean Tank Rebuild</h3>
+        <b>SEA LIFE Sydney</b>
+        <p class="explainer">A comprehensive rebuild to modernise and enhance the exhibit, improving both visitor experience and animal welfare through innovative designs.</p>
+      </div>
+    
+      <!-- Penguin Projects -->
+      <div class="project-card" style="background-color: #caffbf; color: #004a00;">
+        <h3>Little Penguin Project</h3>
+        <b>SEA LIFE Weymouth</b>
+        <p class="explainer">An innovative design to create a naturalistic penguin habitat, incorporating cutting-edge technology and sustainable materials for long-term success.</p>
+      </div>
+      <div class="project-card" style="background-color: #caffbf; color: #004a00;">
+        <h3>Gentoo & King Penguin Project</h3>
+        <b>SEA LIFE Paris</b>
+        <p class="explainer">An innovative design to create a naturalistic penguin habitat, incorporating cutting-edge technology and sustainable materials for long-term success.</p>
+      </div>
+      <div class="project-card" style="background-color: #caffbf; color: #004a00;">
+        <h3>Humboldt Penguin Project</h3>
+        <b>SEA LIFE Porto, Portugal</b>
+        <p class="explainer">An innovative design to create a naturalistic penguin habitat, incorporating cutting-edge technology and sustainable materials for long-term success.</p>
+      </div>
+    
+      <!-- Mammal Projects -->
+      <div class="project-card" style="background-color: #ffd6a5; color: #663c00;">
+        <h3>Sea Otter Project</h3>
+        <b>SEA LIFE Birmingham</b>
+        <p class="explainer">A new enclosure for improved animal welfare and visitor engagement, designed to meet the unique needs of sea otters in a controlled environment.</p>
+      </div>
+      <div class="project-card" style="background-color: #ffd6a5; color: #663c00;">
+        <h3>Amur Tiger Project</h3>
+        <b>Chessington World of Adventure</b>
+        <p class="explainer">A new enclosure for improved animal welfare and visitor engagement, designed to meet the unique needs of sea otters in a controlled environment.</p>
+      </div>
+      <div class="project-card" style="background-color: #ffd6a5; color: #663c00;">
+        <h3>Sea Lion Project</h3>
+        <b>Cornish Seal Sanctuary</b>
+        <p class="explainer">A new enclosure for improved animal welfare and visitor engagement, designed to meet the unique needs of sea otters in a controlled environment.</p>
+      </div>
+      <div class="project-card" style="background-color: #ffd6a5; color: #663c00;">
+        <h3>Seal Project</h3>
+        <b>SEA LIFE Blankenberge, Belgium</b>
+        <p class="explainer">A new enclosure for improved animal welfare and visitor engagement, designed to meet the unique needs of sea otters in a controlled environment.</p>
+      </div>
+    
+      <!-- Specialty Projects -->
+      <div class="project-card" style="background-color: #ffc6ff; color: #4a003c;">
+        <h3>Sea at Night Project</h3>
+        <b>SEA LIFE Busan, Korea</b>
+        <p class="explainer">A unique nocturnal-themed exhibit for an immersive visitor experience, combining advanced lighting systems and custom visual effects.</p>
+      </div>
+      <div class="project-card" style="background-color: #ffc6ff; color: #4a003c;">
+        <h3>Japanese Spider Crab Project</h3>
+        <b>SEA LIFE Manchester</b>
+        <p class="explainer">A unique nocturnal-themed exhibit for an immersive visitor experience, combining advanced lighting systems and custom visual effects.</p>
+      </div>
+      <div class="project-card" style="background-color: #ffc6ff; color: #4a003c;">
+        <h3>Hammerhead Project</h3>
+        <b>SEA LIFE Istanbul</b>
+        <p class="explainer">A unique nocturnal-themed exhibit for an immersive visitor experience, combining advanced lighting systems and custom visual effects.</p>
+      </div>
+      <div class="project-card" style="background-color: #ffc6ff; color: #4a003c;">
+        <h3>Jellyfish Project</h3>
+        <b>SEA LIFE London</b>
+        <p class="explainer">A unique nocturnal-themed exhibit for an immersive visitor experience, combining advanced lighting systems and custom visual effects.</p>
+      </div>
+    
+      <!-- Coral Project -->
+      <div class="project-card" style="background-color: #fdffb6; color: #5a5a00;">
+        <h3>Coral Kingdom Project</h3>
+        <b>SEA LIFE Speyer, Germany</b>
+        <p class="explainer">A vibrant and educational coral reef display, showcasing biodiversity while promoting conservation efforts through interactive elements.</p>
+      </div>
+    </div>
+
+
+
+<!-- Career highlights section (NEW) -->
+
+<!-- <section class="container wrapper section career-highlights m-b-lg">
+  <div style="max-width: 1200px; margin: 0 auto; padding: 20px; box-sizing: border-box;">
+    <h2 style="text-align: center; font-size: 2rem; margin-bottom: 1.5rem;">Career Highlights</h2>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; box-sizing: border-box;">
+      
+      <div style="display: flex; align-items: center; background-color: #ffffff; border-radius: 10px; padding: 20px; gap: 20px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+        <figure style="flex: 0 0 auto;">
+          <img src="assets/images/2.png" alt="Merlin Entertainments, plc" style="width: 100%; max-width: 120px; height: auto; border-radius: 50%;">
+        </figure>
+        <div style="flex: 1;">
+          <h3 style="font-weight: bold; font-size: 1.2rem; margin-bottom: 10px;">Global Research & Development Curator</h3>
+          <p style="font-weight: 600; color: black; background: #fdda45; display: inline-block; padding: 0.1rem 0.5rem; margin-bottom: 10px; font-size: 0.9rem;">Merlin Entertainments, plc</p>
+          <p style="font-size: 0.9rem; line-height: 1.4; color: #6e6e6e;">Leading innovation for the group of 57 SEA LIFE aquariums worldwide, implementing initiatives globally to drive improvements experientially & financially.</p>
+        </div>
+      </div>
+
+      <div style="display: flex; align-items: center; background-color: #ffffff; border-radius: 10px; padding: 20px; gap: 20px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+        <figure style="flex: 0 0 auto;">
+          <img src="assets/images/3.png" alt="European Project Curator" style="width: 100%; max-width: 120px; height: auto; border-radius: 50%;">
+        </figure>
+        <div style="flex: 1;">
+          <h3 style="font-weight: bold; font-size: 1.2rem; margin-bottom: 10px;">European Project Curator</h3>
+          <p style="font-weight: 600; color: black; background: #fdda45; display: inline-block; padding: 0.1rem 0.5rem; margin-bottom: 10px; font-size: 0.9rem;">Merlin Entertainments, plc</p>
+          <p style="font-size: 0.9rem; line-height: 1.4; color: #6e6e6e;">Leading major capital projects at the 34 SEA LIFE aquariums across Europe, including opening Penguin exhibits in the UK, France, and Portugal.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section> -->
+
+
+
+
+<div class="quiz-card">
+  <h1>Know your stuff?</h1>
+  <button id="start-button">Start Quiz</button>
+
+  <div class="quiz-container" id="quiz-container">
+    <div class="question" id="question"></div>
+    <div class="options" id="options"></div>
+    <div class="results" id="results"></div>
+  </div>
+  <canvas class="confetti" id="confetti"></canvas>
+</div>
+<script src="quiz.js"></script>
+
+
+
+</main>
+
+  <footer>
+    <small><b>Curious</b> is a trading name of <b>Josxph Limited</b> (15145694), incorporated in England and Wales at the registered address 82a James Carter Road, Mildenhall, Bury St. Edmunds, England, IP28 7DE.</small>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,18 @@
+{
+  "blogs": [
+        {
+          "title": "Conservation Efforts for Marine Life",
+          "author": "Hannah Miller",
+          "publishedDate": "2025-01-01",
+          "content": "There are seven species of sea turtle: Green, Hawksbill, Loggerhead, Leatherback, Olive ridley, Kemps ridley, Galápagos and Flatback Turtles are part of the reptile family as theyre cold-blooded. They are one of the oldest reptile groups, dating back more than 200 million years, meaning theyve been around since the time of dinosaurs! Some sea turtles live up to 80 years old, wow! Female sea turtles return to the same beaches where they were born to lay their eggs. This remarkable homing instinct helps ensure the survival of their species. Despite their resilience, sea turtles face numerous threats today, including habitat destruction, pollution, climate change, and poaching. Conservation efforts are crucial to protecting these magnificent creatures for future generations TURTLE RESCUE & REHABILITATION",
+          "readMoreURL": "https://example.com/conservation-blog"
+        },
+        {
+          "title": "The Secrets of Coral Reefs",
+          "author": "John Smith",
+          "publishedDate": "2025-01-05",
+          "content": "Coral reefs are some of the most diverse ecosystems on the planet...",
+          "readMoreURL": "https://example.com/coral-reefs"
+        }
+      ]
+}

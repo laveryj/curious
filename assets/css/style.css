@@ -1,0 +1,674 @@
+    body {
+      font-family: 'Open Sans', sans-serif;
+      background-color: #f2f2f2;
+      color: #292929;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    
+    header {
+      background-color: #d35c18;
+      color: #ffffff;
+      padding: 15px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+    }
+
+    header {
+      display: flex;
+      align-items: center; /* Vertically align items */
+      justify-content: flex-start; /* Align items to the left */
+    }
+    
+    #site-logo {
+      max-height: 100px;
+      margin-right: 15px;
+    }
+
+    header img {
+      max-height: 40px;
+      margin-right: 10px;
+      vertical-align: middle;
+    }
+    header h1 {
+      display: inline;
+      font-size: 1.5rem;
+    }
+    main {
+      padding: 20px;
+      flex: 1;
+    }
+    .card {
+      background: #d35c18;
+      padding: 15px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+    img {
+      width: 100px;
+      height: auto;
+      border-radius: 0px;
+      /* float: left; */
+      float: center;
+      margin-right: 0px;
+    }
+    footer {
+      background-color: #d35c18;
+      color: #ffffff;
+      text-align: center;
+      padding: 10px;
+      position: relative;
+    }
+
+    /* Styling for portal.html table format for site info */
+    table {
+      width: 35%; /* Narrower table width */
+      margin: 10px 0; /* Add vertical margin only */
+      border-collapse: collapse;
+      font-size: 1rem;
+      text-align: left; /* Align the table to the left */
+    }
+    
+    table th, table td {
+      padding: 10px;
+      border: 1px solid #ddd;
+    }
+    
+    table td:first-child {
+      font-weight: bold; /* Bold text for the left column */
+      width: 25%; /* Slightly narrower for the heading column */
+      text-align: right; /* Align content to the left */
+    }
+    
+    table td:last-child {
+      width: 70%; /* Wider for content */
+    }
+    
+    #site-info-content {
+      margin-bottom: 20px; /* Add space below the table */
+    }
+    
+    #payment-info {
+      clear: both; /* Ensure payment info appears below floated content */
+    }
+
+    body.loading {
+      visibility: hidden; /* Hide everything while loading */
+    }
+    
+    body.loaded {
+      visibility: visible; /* Show content after loading */
+    }
+
+
+/* Styling for portal.html table format for exhibit list */
+#exhibits-table {
+  /* width: 100%; Expand the table to fill the available width */
+  margin: 10px 0; /* Add vertical margin only */
+  border-collapse: collapse;
+  font-size: 1rem;
+  text-align: left; /* Default alignment for table content */
+}
+
+#exhibits-table th, #exhibits-table td {
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+#exhibits-table th {
+  text-align: center; /* Center align the table headers */
+  /* background-color: #f2f2f2; Optional: Add a light background for headers */
+  font-weight: bold; /* Bold text for headers */
+}
+
+#exhibits-table td:first-child {
+  width: 15%; /* Narrow width for ID column */
+  text-align: center; /* Center align content in the first column */
+}
+
+#exhibits-table td:nth-child(2) {
+  width: 50%; /* Wider width for Exhibit column */
+  text-align: left; /* Center align content in the first column */
+}
+
+#exhibits-table td:last-child {
+  width: 15%; /* Medium width for Active Species column */
+  text-align: center; /* Center align content in the last column */
+}
+
+#exhibits-table td a {
+  color: #1e90ff; /* Color for links */
+  /* text-decoration: none; Remove underline from links */
+}
+
+#exhibits-table td a:hover {
+  text-decoration: underline; /* Underline links on hover */
+}
+
+/* Stying for buttons */
+button {
+  border-radius: 8px; /* Rounded corners */
+  padding: 10px 20px; /* Add some padding */
+  color: #FFFFFF; /* Disabled text color */
+  font-size: 1rem; /* Standard font size */
+  font-family: 'Open Sans', sans-serif; /* Match theme font */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth hover effect */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+}
+
+button:hover {
+  filter: brightness(1.1); /* Slightly brighter on hover */
+  transform: scale(1.05); /* Slightly larger on hover */
+}
+
+button:disabled {
+  background-color: #E0E0E0; /* Disabled state color */
+  color: #A0A0A0; /* Disabled text color */
+  cursor: not-allowed; /* Disable pointer cursor */
+  box-shadow: none; /* Remove shadow */
+}
+
+button:active {
+  transform: scale(0.98); /* Pressed button effect */
+}
+
+/* Styling for the drop down */
+select {
+  color: var(--text-color, #000000); /* Match text color */
+  border-radius: 8px; /* Rounded corners */
+  padding: 10px 20px; /* Match button padding */
+  font-size: 1rem; /* Match button font size */
+  cursor: pointer; /* Pointer cursor for interactivity */
+  appearance: none; /* Remove default dropdown styling */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth hover effect */
+}
+
+select:hover {
+  filter: brightness(1.1); /* Slightly brighter on hover */
+  transform: scale(1.02); /* Slightly larger on hover */
+}
+
+select:focus {
+  outline: none; /* Remove default focus outline */
+  box-shadow: 0 0 5px var(--header-color, #d35c18); /* Add focus glow */
+}
+
+select option {
+  background-color: var(--background-color, #D83B01); /* Dropdown menu background */
+  color: var(--text-color, #FFFFFF); /* Dropdown menu text color */
+}
+
+
+/* Container for QR cards */
+.qr-cards-container {
+  display: flex;
+  justify-content: center; /* Center the cards horizontally */
+  gap: 20px; /* Add spacing between the cards */
+  margin: 20px auto; /* Add top and bottom margins */
+  flex-wrap: wrap; /* Allow cards to wrap on smaller screens */
+}
+
+/* Styling for each QR card */
+.qr-card {
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+  padding: 20px;
+  max-width: 300px; /* Adjust width for side-by-side layout */
+  text-align: center;
+  flex: 1; /* Allow cards to shrink or grow equally */
+  min-width: 200px; /* Ensure a minimum width for smaller screens */
+}
+
+/* Styling for QR code images */
+.qr-code-container img {
+  width: 150px;
+  height: auto;
+  margin-top: 10px;
+}
+
+/* Styling for headings */
+.qr-card h3 {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.qr-card h3 span {
+  font-size: 14px;
+  color: #777;
+}
+
+/* Styling for paragraphs */
+.qr-card p {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #555;
+  margin: 0;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .qr-cards-container {
+    flex-direction: column; /* Stack cards vertically */
+    gap: 15px;
+  }
+
+  .qr-card {
+    max-width: 100%; /* Take full width on smaller screens */
+  }
+}
+
+
+
+/* Container for project cards */
+.project-cards-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Three cards wide */
+  gap: 20px; /* Space between cards */
+  padding: 20px; /* Padding around the container */
+  margin: 0 auto; /* Center the container */
+  max-width: 1200px; /* Limit the container width */
+}
+
+/* Styling for each project card */
+.project-card {
+  display: flex;
+  flex-direction: column; /* Stack heading and subheading */
+  justify-content: space-between; /* Distribute space evenly */
+  align-items: flex-start; /* Align text to the left */
+  padding: 20px;
+  border-radius: 10px; /* Rounded corners */
+  height: 150px; /* Balanced height for the cards */
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  background-color: #f9f9f9; /* Default background */
+  font-family: Arial, sans-serif;
+  transition: transform 0.2s, box-shadow 0.2s; /* Add smooth hover effects */
+}
+
+/* Project card hover effect */
+.project-card:hover {
+  transform: translateY(-5px); /* Lift the card slightly */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
+}
+
+/* Styling for project card headings */
+.project-card h3 {
+  margin: 0 0 3px 0; /* Reduced space below the heading */
+  font-size: 20px; /* Slightly smaller heading */
+  font-weight: bold;
+  color: #333; /* Darker text colour */
+}
+
+/* Styling for project card subheadings */
+.project-card b {
+  margin: 0;
+  font-size: 16px;
+  color: #555; /* Muted text colour */
+  line-height: 1.5;
+}
+
+/* Styling for project card subheadings */
+.project-card p {
+  margin: 0;
+  font-size: 16px;
+  color: #555; /* Muted text colour */
+  line-height: 1.5;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .project-cards-container {
+    grid-template-columns: repeat(2, 1fr); /* Two cards wide on smaller screens */
+  }
+
+  .project-card {
+    height: 170px; /* Adjust height for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .project-cards-container {
+    grid-template-columns: 1fr; /* One card wide on very small screens */
+  }
+
+  .project-card {
+    height: auto; /* Allow height to adjust for smaller screens */
+  }
+}
+
+/* Container for customer cards */
+.client-cards-container {
+  display: flex;
+  justify-content: center; /* Center the cards horizontally */
+  gap: 20px; /* Add spacing between the cards */
+  margin: 20px auto; /* Add top and bottom margins */
+  flex-wrap: wrap; /* Allow cards to wrap on smaller screens */
+}
+
+/* Styling for each customer card */
+.client-card {
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #d35c18;
+  padding: 20px;
+  max-width: 300px; /* Adjust width for side-by-side layout */
+  text-align: center;
+  flex: 1; /* Allow cards to shrink or grow equally */
+  min-width: 200px; /* Ensure a minimum width for smaller screens */
+}
+
+/* Customer logo styling */
+.client-logo-container img {
+  width: 150px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+/* Styling for QR code images */
+.client-qr-code-container img {
+  width: 150px;
+  height: auto;
+  margin-top: 10px;
+}
+
+/* Styling for headings */
+.client-card h3 {
+  font-size: 18px;
+  color: #333;
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+
+/* Styling for paragraphs */
+.client-card p {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #555;
+  margin: 0;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .client-cards-container {
+    flex-direction: column; /* Stack cards vertically */
+    gap: 15px;
+  }
+
+  .client-card {
+    max-width: 100%; /* Take full width on smaller screens */
+  }
+}
+
+/* Styling for the pricing cards */
+.pricing-cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.pricing-card {
+  position: relative; /* Allows positioning of the banner inside the card */
+  background-color: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  width: 230px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.pricing-card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  width: 100%; /* Ensure the card takes up available space */
+  max-width: 300px; /* Or set a specific width, like 300px */
+}
+
+.most-popular-banner {
+  position: absolute;
+  top: 10px;
+  right: -25px; /* Adjusted for a shorter banner */
+  transform: rotate(45deg);
+  background-color: #ff9800;
+  color: white;
+  font-size: 0.6rem;
+  font-weight: bold;
+  padding: 5px 8px; /* Reduced padding to make the banner shorter */
+  text-transform: uppercase;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  white-space: nowrap; /* Prevents the text from breaking into multiple lines */
+}
+
+.pricing-card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+}
+
+.pricing-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.pricing-card p {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.pricing-card ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.pricing-card ul li {
+  margin-bottom: 10px;
+}
+
+/* Style buttons */
+button,
+.button {
+  display: inline-block;
+  background-color: #d35c18; /* Update to your desired button colour */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+  text-align: center;
+}
+
+/* Hover effect */
+button:hover,
+.button:hover {
+  background-color: #28a745; /* Darker shade for hover */
+}
+
+.pricing-card ul {
+  list-style: none; /* Remove default bullet points */
+  padding: 0;
+  margin: 0;
+}
+
+.pricing-card ul li {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.pricing-card ul li i {
+  color: #28a745; /* Green checkmark colour */
+  margin-right: 10px;
+}
+
+.pricing-calculator-container {
+  display: flex;
+  justify-content: center;
+  margin: 20px auto;
+}
+
+.calculator-input {
+  margin-top: 10px;
+}
+
+.benefit-list {
+  list-style: none; /* Remove default bullet points */
+  padding: 0;
+  margin: 0;
+}
+
+.benefit-list li {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.benefit-list li i {
+  color: #28a745; /* Green colour for the checkmarks */
+  margin-right: 10px; /* Space between the icon and text */
+  font-size: 1rem; /* Adjust icon size if needed */
+}
+
+.benefit-list li strong {
+  font-weight: bold;
+}
+
+/* CAPTURE CSS */
+.main-capture {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+label {
+  background-color: #d35c18;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  display: inline-block;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+}
+
+label:hover {
+  background-color: #D83B01;
+}
+
+#image-upload {
+  display: none; /* Hide file input */
+}
+
+#uploaded-image {
+  margin: 20px 0;
+  max-width: 300px;
+  border: 2px solid #d35c18;
+  border-radius: 5px;
+}
+
+#label-container {
+  margin: 20px auto; /* Centre the container horizontally */
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center; /* Centre text inside the container */
+  /* background-color: #fff; */
+  /* padding: 10px 20px; */
+  /* border: 2px solid #d35c18; */
+  /* border-radius: 8px; */
+  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); Add subtle shadow */
+}
+
+.uploaded-image {
+  margin: 20px 0;
+  max-width: 200px;
+  width: 100%; /* Ensures responsiveness */
+  border: 2px solid #d35c18;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  transition: transform 0.3s ease; /* Smooth animation for hover effect */
+}
+
+.uploaded-image:hover {
+  transform: scale(1.05); /* Slight zoom-in on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+}
+
+#camera-popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 500;
+  justify-content: center;
+  align-items: center;
+}
+
+#camera-feed {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+#close-popup {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.center {
+text-align: center; /* Centre align text inside */   
+}
+
+
+#qr-icon {
+  position: fixed; /* Keep it in the top-right corner */
+  top: 165px;
+  right: 7px;
+  cursor: pointer; /* Make it clickable */
+  z-index: 1100; /* Ensure it appears above other elements */
+  }
+
+#qr-icon img {
+width: 40px; /* Adjust icon size */
+height: 40px;
+filter: invert(100%) brightness(100%);
+transition: transform 0.2s ease, opacity 0.2s ease; /* Add hover effects */
+}
+
+#qr-icon:hover img {
+transform: scale(1.1); /* Slightly enlarge on hover */
+opacity: 0.8; /* Dim slightly for visual feedback */
+}
+

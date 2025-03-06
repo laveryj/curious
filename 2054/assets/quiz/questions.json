@@ -1,0 +1,27 @@
+[
+  {
+    "question": "What is the largest species of shark?",
+    "correct": "Whale shark",
+    "options": ["Great white shark", "Whale shark", "Tiger shark"]
+  },
+  {
+    "question": "Which fish is known for changing its gender during its lifetime?",
+    "correct": "Clownfish",
+    "options": ["Seahorse", "Clownfish", "Angelfish"]
+  },
+  {
+    "question": "What type of animal is a jellyfish?",
+    "correct": "Cnidarian",
+    "options": ["Mollusk", "Cnidarian", "Crustacean"]
+  },
+  {
+    "question": "Which marine animal has the largest brain relative to its body size?",
+    "correct": "Octopus",
+    "options": ["Dolphin", "Octopus", "Sea lion"]
+  },
+  {
+    "question": "What is the main reason corals are dying in the ocean?",
+    "correct": "Climate change",
+    "options": ["Overfishing", "Pollution", "Climate change"]
+  }
+]
