@@ -1,0 +1,33 @@
+{
+  "siteName": "",
+  "siteid": "",
+  "databaseid": "",
+  "status": "",
+  "company": "",
+  "address": "",
+  "contact": "",
+  "subscription": "",
+  "user": "",
+  "password": "",
+  "language": "",
+  "email": "k",
+  "assessmentsEmail": "",
+  "phone": "",
+  "theme": {
+    "logoPath": "",
+    "backgroundColor": "#9ce2fc",
+    "headerColor": "#18236e",
+    "cardColor": "#92c0d1",
+    "textColor": "#18236e",
+    "buttonTextColor": "#ffffff",
+    "linkColor": "#18236e"
+  },
+"talkTimes": [
+],
+  "experiences": [
+  ],
+  "wifi": [
+    {
+    }
+  ]
+}

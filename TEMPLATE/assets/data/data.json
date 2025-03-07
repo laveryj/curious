@@ -1,0 +1,38 @@
+{
+  "dateCreated": "2025-03-07T12:11:00.283Z",
+  "exhibits": [
+    {
+      "exhibitID": "000",
+      "exhibitName": "Sample Exhibit",
+      "exhibitMode": "standard",
+      "exhibitStatus": "active",
+      "objects": [
+        {
+          "hidden": "FALSE",
+          "prioritise": "FALSE",
+          "objectID": "1",
+          "objectType": "Species",
+          "nickname": "",
+          "commonName": "Pollack",
+          "scientificName": "Pollachius pollachius",
+          "shortDescription": "A cold-water fish.",
+          "longDescription": "Pollack are a species of marine fish that are in the family Gadidae. This fish is common in the north-eastern parts of the Northern Atlantic. Adults can grow up to 130cm long and weigh up to 12.5kg, although more commonly their maximum length is 75cm.",
+          "age": "",
+          "size": "",
+          "weight": "",
+          "personalityProfile": "",
+          "funFact": "The pollock is a large member of the cod family and easily identified by its long lower jaw. They are common all around the coasts of the UK.",
+          "conservationStatus": "Least Concern",
+          "conservationInfo": "",
+          "primaryURL": "",
+          "primaryURLlabel": "",
+          "secondaryURL": "",
+          "secondaryURLlabel": "",
+          "ImageURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Pollachius_pollachius_aquarium.jpg/440px-Pollachius_pollachius_aquarium.jpg",
+          "AudioURL": "",
+          "VideoURL": ""
+        }
+      ]
+    }
+  ]
+}
