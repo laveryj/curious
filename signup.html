@@ -9,7 +9,7 @@
   <!-- <body class="bg-white dark:bg-black">   -->
   <body class="flex flex-col min-h-screen bg-white dark:bg-black">
 
-    <!-- ======= Header Start ======= -->
+
     <header
       class="navbar absolute top-0 left-0 z-50 w-full border-stroke bg-white duration-300 dark:border-stroke-dark dark:bg-black"
      >
@@ -260,118 +260,115 @@
         </div>
       </div>
     </header>
-    <!-- ======= Header End ======= -->
-
-    <!-- ======= Main Start ======= -->
-    <!-- <main> --> 
-       <main class="flex-grow">
-      <!-- ======= Sign in Start ======= -->
-      <!-- <section class="pt-[150px] pb-[110px] lg:pt-[220px]"> -->
-      <section class="pt-[200px] pb-[50px] lg:pt-[120px] lg:pb-[50px]">
-
-        <div class="container overflow-hidden lg:max-w-[1250px]">
-          <div
-            class="wow fadeInUp mx-auto w-full max-w-[520px] rounded-lg bg-[#F8FAFB] py-10 px-6 shadow-card dark:bg-[#15182A] dark:shadow-card-dark sm:p-[50px]"
-            data-wow-delay=".2s"
-          >
-
-            <div class="text-center">
-              <h3
-                class="mb-[10px] text-2xl font-bold text-black dark:text-white sm:text-[28px]"
-              >
-                Create your account
-              </h3>
-              <br>
- 
+    
+      <main class="flex-grow">
+        <section class="pt-[200px] pb-[50px] lg:pt-[120px] lg:pb-[50px]">
+  
+          <div class="container overflow-hidden lg:max-w-[1250px]">
+            <div
+              class="wow fadeInUp mx-auto w-full max-w-[520px] rounded-lg bg-[#F8FAFB] py-10 px-6 shadow-card dark:bg-[#15182A] dark:shadow-card-dark sm:p-[50px]"
+              data-wow-delay=".2s"
+            >
+  
+              <div class="text-center">
+                <h3
+                  class="mb-[10px] text-2xl font-bold text-black dark:text-white sm:text-[28px]"
+                >
+                  Create your account
+                </h3>
+                <br>
+   
+              </div>
+  
+              <form id="signup-form">
+                <div class="mb-5">
+                  <!-- <label
+                    for="name"
+                    class="mb-[10px] block text-sm text-black dark:text-white"
+                  >
+                    Name
+                  </label> -->
+                  <input
+                    type="text"
+                    id="name"
+                    placeholder="Your name"
+                    class="w-full rounded-md border border-stroke bg-white py-3 px-6 text-base font-medium text-body outline-none focus:border-primary focus:shadow-input dark:border-stroke-dark dark:bg-black dark:text-white dark:focus:border-primary"
+                  />
+                </div>
+              
+                <div class="mb-5">
+                  <!-- <label
+                    for="site-name"
+                    class="mb-[10px] block text-sm text-black dark:text-white"
+                  >
+                    Site Name
+                  </label> -->
+                  <input
+                    type="text"
+                    id="site-name"
+                    placeholder="Site name"
+                    class="w-full rounded-md border border-stroke bg-white py-3 px-6 text-base font-medium text-body outline-none focus:border-primary focus:shadow-input dark:border-stroke-dark dark:bg-black dark:text-white dark:focus:border-primary"
+                  />
+                </div>
+              
+                <div class="mb-5">
+                  <!-- <label
+                    for="company-name"
+                    class="mb-[10px] block text-sm text-black dark:text-white"
+                  >
+                    Company Name (if different)
+                  </label> -->
+                  <input
+                    type="text"
+                    id="company-name"
+                    placeholder="Company name (if different)"
+                    class="w-full rounded-md border border-stroke bg-white py-3 px-6 text-base font-medium text-body outline-none focus:border-primary focus:shadow-input dark:border-stroke-dark dark:bg-black dark:text-white dark:focus:border-primary"
+                  />
+                </div>
+              
+                <div class="mb-5">
+                  <!-- <label
+                    for="email"
+                    class="mb-[10px] block text-sm text-black dark:text-white"
+                  >
+                    E-mail
+                  </label> -->
+                  <input
+                    type="email"
+                    id="email"
+                    placeholder="E-mail address"
+                    class="w-full rounded-md border border-stroke bg-white py-3 px-6 text-base font-medium text-body outline-none focus:border-primary focus:shadow-input dark:border-stroke-dark dark:bg-black dark:text-white dark:focus:border-primary"
+                  />
+                </div>
+  
+                <div class="mb-5">
+                  <!-- <label
+                    for="email"
+                    class="mb-[10px] block text-sm text-black dark:text-white"
+                  >
+                    E-mail
+                  </label> -->
+                  <input
+                    type="password"
+                    id="password"
+                    placeholder="Choose a password"
+                    class="w-full rounded-md border border-stroke bg-white py-3 px-6 text-base font-medium text-body outline-none focus:border-primary focus:shadow-input dark:border-stroke-dark dark:bg-black dark:text-white dark:focus:border-primary"
+                  />
+                </div>
+              
+                <button
+                  type="submit"
+                  class="flex w-full justify-center rounded-md bg-primary p-3 text-base font-medium text-white hover:bg-opacity-90"
+                >
+                  Get Curious
+                </button>
+              </form>
             </div>
-
-            <form>
-              <div class="mb-5">
-                <!-- <label
-                  for="name"
-                  class="mb-[10px] block text-sm text-black dark:text-white"
-                >
-                  Name
-                </label> -->
-                <input
-                  type="text"
-                  placeholder="Enter your full name"
-                  class="w-full rounded-md border border-stroke bg-white py-3 px-6 text-base font-medium text-body outline-none focus:border-primary focus:shadow-input dark:border-stroke-dark dark:bg-black dark:text-white dark:focus:border-primary"
-                />
-              </div>
-            
-              <div class="mb-5">
-                <!-- <label
-                  for="site-name"
-                  class="mb-[10px] block text-sm text-black dark:text-white"
-                >
-                  Site Name
-                </label> -->
-                <input
-                  type="text"
-                  placeholder="Enter your zoo or aquarium name"
-                  class="w-full rounded-md border border-stroke bg-white py-3 px-6 text-base font-medium text-body outline-none focus:border-primary focus:shadow-input dark:border-stroke-dark dark:bg-black dark:text-white dark:focus:border-primary"
-                />
-              </div>
-            
-              <div class="mb-5">
-                <!-- <label
-                  for="company-name"
-                  class="mb-[10px] block text-sm text-black dark:text-white"
-                >
-                  Company Name (if different)
-                </label> -->
-                <input
-                  type="text"
-                  placeholder="Enter your company name"
-                  class="w-full rounded-md border border-stroke bg-white py-3 px-6 text-base font-medium text-body outline-none focus:border-primary focus:shadow-input dark:border-stroke-dark dark:bg-black dark:text-white dark:focus:border-primary"
-                />
-              </div>
-            
-              <div class="mb-5">
-                <!-- <label
-                  for="company-address"
-                  class="mb-[10px] block text-sm text-black dark:text-white"
-                >
-                  Company Address
-                </label> -->
-                <input
-                  type="text"
-                  placeholder="Enter your company address"
-                  class="w-full rounded-md border border-stroke bg-white py-3 px-6 text-base font-medium text-body outline-none focus:border-primary focus:shadow-input dark:border-stroke-dark dark:bg-black dark:text-white dark:focus:border-primary"
-                />
-              </div>
-            
-              <div class="mb-5">
-                <!-- <label
-                  for="email"
-                  class="mb-[10px] block text-sm text-black dark:text-white"
-                >
-                  E-mail
-                </label> -->
-                <input
-                  type="email"
-                  placeholder="Enter your e-mail"
-                  class="w-full rounded-md border border-stroke bg-white py-3 px-6 text-base font-medium text-body outline-none focus:border-primary focus:shadow-input dark:border-stroke-dark dark:bg-black dark:text-white dark:focus:border-primary"
-                />
-              </div>
-            
-              <button
-                type="submit"
-                class="flex w-full justify-center rounded-md bg-primary p-3 text-base font-medium text-white hover:bg-opacity-90"
-              >
-                Get Curious
-              </button>
-            </form>
           </div>
-        </div>
+  
+        </section>
+      </main>
 
-      </section>
-      <!-- ======= Sign in End ======= -->
-    </main>
-    <!-- ======= Main End ======= -->
-
-    <!-- ======= Footer Start ======= -->
     <footer>
       <!-- <div
         class="bg-[#F8FAFB] pt-[95px] pb-[46px] dark:bg-[#15182A]"
@@ -743,9 +740,7 @@
         </div>
       </div>
     </footer>
-    <!-- ======= Footer End ======= -->
 
-    <!-- ======= Back To Top Start ======= -->
     <a
       href="javascript:void(0)"
       class="back-to-top fixed bottom-8 right-8 left-auto z-[999] hidden h-10 w-10 items-center justify-center rounded-md bg-primary text-white shadow-md duration-300 ease-in-out hover:bg-opacity-80"
@@ -754,6 +749,81 @@
         class="mt-[6px] h-3 w-3 rotate-45 border-t border-l border-white"
       ></span>
     </a>
-    <!-- ======= Back To Top End ======= -->
   <script defer src="bundle.js"></script></body>
+  <script>
+    document.getElementById("signup-form").addEventListener("submit", async function(event) {
+        event.preventDefault();
+    
+        const name = document.getElementById("name").value;
+        const siteName = document.getElementById("site-name").value;
+        const companyName = document.getElementById("company-name").value || siteName; // Default to site name
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
+        
+        const urlParams = new URLSearchParams(window.location.search);
+        const subscription = urlParams.get("subscription") || "Free"; // Default to Free plan
+    
+        const requestData = {
+            site_name: siteName,
+            company: companyName,
+            email,
+            password,
+            contact: name, // ✅ Use name as contact
+            subscription
+        };
+    
+        try {
+  const response = await fetch("https://get-curio.us/api/onboarding/", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    mode: "cors",
+    body: JSON.stringify(requestData)
+  });
+
+  // ✅ Log the response before parsing
+  const text = await response.text();
+  console.log("Raw API Response:", text);
+
+  try {
+    const data = JSON.parse(text); // Parse JSON safely
+    console.log("Parsed Response:", data);
+
+    if (data.success) {
+      console.log(`Signup successful! Site ID: ${data.site_id}`);
+
+      // ✅ Ensure the second request completes before redirecting
+      const fileCreationResponse = await fetch("https://get-curio.us/api/create-user-files/", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        mode: "cors",
+        body: JSON.stringify({ site_id: data.site_id })
+      });
+
+      const fileCreationText = await fileCreationResponse.text();
+      console.log("File Creation API Response:", fileCreationText);
+
+      if (!fileCreationResponse.ok) {
+        alert(`Error creating user files: ${fileCreationText}`);
+        return;
+      }
+
+      // ✅ Redirect only after the second request succeeds
+      window.location.href = "/signin.html";
+    } else {
+      alert("Signup failed. Please try again.");
+    }
+  } catch (parseError) {
+    console.error("JSON Parsing Error:", parseError);
+    alert("Error processing response. Please try again.");
+  }
+} catch (error) {
+  console.error("Signup Error:", error);
+  alert("An error occurred during signup.");
+}
+    });
+</script>
 </html>
