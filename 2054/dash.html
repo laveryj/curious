@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Meta Information -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Curious | Portal</title>
+
+  <!-- Google Tag Manager -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-T9S88HFP32"></script>
+  <script src="/scripts/gtag.js" defer></script>
+
+   <!-- Icons -->
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+   <!-- Include the necessary page scripts -->
+   <!-- <script src="/scripts/config.js" defer></script> -->
+   <script src="/scripts/auth.js"></script>
+   <script src="/scripts/v2-portal.js"></script>
+   <script src="/scripts/v2-config.js" defer></script>
+   <!-- <script src="/scripts/v2-version.js" defer></script> -->
+ 
+   <!-- QR generator -->
+   <script src="/scripts/qrious.min.js"></script>
+ 
+   <!-- ZIP generator -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+
+  <!-- Fallback Styles -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <!-- Custom CSS -->
+  <style>
+    /* Main container setup */
+    #container {
+      display: flex;
+      min-height: 100vh;
+    }
+
+    /* Sidebar */
+    #sidebar {
+  width: 250px;
+  background-color: #1f2233;
+  color: #ecf0f1;
+  padding: 20px;
+  position: sticky;
+  top: 0;
+  left: 0;
+  bottom: 0; /* ✅ Ensures it stops at the footer */
+  display: flex;
+  flex-direction: column;
+}
+
+
+#sidebar ul {
+  list-style: none;
+  padding: 20px 0;
+  margin-top: 20px;
+  flex-grow: 1; /* ✅ Pushes the logout button down */
+  overflow-y: auto; /* ✅ Scrolls if content is too long */
+}
+
+.sidebar-footer {
+  text-align: center;
+  padding: 10px;
+  margin-top: auto; /* ✅ Pushes the footer down */
+
+}
+
+    #sidebar h2 {
+      font-size: 1.5em;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+
+    #sidebar ul li {
+      margin: 10px 0;
+    }
+
+    #sidebar ul li button {
+      display: block;
+      text-decoration: none;
+      color: #ecf0f1;
+      background: none;
+      border: none;
+      padding: 10px;
+      width: 100%;
+      text-align: left;
+      font-size: 1em;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    #sidebar ul li button:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    /* Logout button */
+    .sidebar-footer #logout-button {
+  background-color: #e74c3c;
+  color: white; /* ✅ Ensures text is white */
+  border: none;
+  padding: 12px;
+  width: 100%;
+  font-size: 1em;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.3s;
+  text-align: center;
+  display: block;
+}
+
+.sidebar-footer #logout-button:hover {
+  background-color: #c0392b; /* ✅ Darker red on hover */
+}
+
+/* Ensure main content starts below the header */
+header {
+  width: 100%;
+  background: #1f2233;
+  padding: 15px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+}
+
+#site-logo {
+  width: 110px; /* Adjust logo size */
+  height: auto;
+  margin-right: 30px; /* Space between logo and title */
+}
+
+/* Push main content down below the fixed header */
+#main-content {
+  margin-left: 25px; /* Matches sidebar width */
+  padding: 25px;
+  width: calc(100% - 25px);
+  margin-top: 100px; /* ✅ Pushes content down so it doesn't appear in the header */
+}
+
+/* Ensure all sections are hidden except the active one */
+.content-section {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Only show active section */
+.content-section.active {
+  display: block;
+  opacity: 1;
+}
+
+    /* Fade-in animation */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      #sidebar {
+        width: 200px;
+      }
+
+      #main-content {
+        margin-left: 200px;
+        width: calc(100% - 200px);
+      }
+    }
+
+    @media (max-width: 600px) {
+      #sidebar {
+        position: absolute;
+        width: 200px;
+        left: -200px;
+        transition: left 0.3s ease-in-out;
+      }
+
+      #sidebar.open {
+        left: 0;
+      }
+
+      #main-content {
+        margin-left: 0;
+        width: 100%;
+      }
+
+      /* Sidebar toggle button (for mobile) */
+      #sidebar-toggle {
+        position: fixed;
+        top: 15px;
+        left: 15px;
+        background: #2c3e50;
+        color: white;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+        z-index: 1000;
+      }
+    }
+
+    /* welfare assessments */
+    body {
+  background-color: #f4f4f4;
+  font-family: Arial, sans-serif;
+  margin: 0; /* ✅ Remove margin to avoid layout issues */
+  padding: 0;
+  display: flex; /* ✅ Makes body a flex container */
+  flex-direction: column; /* ✅ Ensures header, main, and footer stack */
+  min-height: 100vh; /* ✅ Ensures full viewport height */
+}
+    header {
+      text-align: left;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    h1 {
+      margin: 0;
+      font-size: 24px;
+    }
+
+    th, td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: left; /* Ensure left alignment */
+  white-space: nowrap; /* Prevent wrapping */
+}
+
+th {
+  background: #18236e; /* Darker blue for contrast */
+  color: white;
+  text-align: left;
+  font-weight: bold;
+}
+
+td {
+  font-weight: normal;
+}
+
+table {
+  width: 80%;
+  table-layout: fixed; /* Ensures uniform column widths */
+}
+
+th:nth-child(1), td:nth-child(1) { width: 12%; } /* ID */
+th:nth-child(2), td:nth-child(2) { width: 21%; } /* Animal */
+th:nth-child(3), td:nth-child(3) { width: 12%; } /* Auditor */
+th:nth-child(4), td:nth-child(4) { width: 12%; } /* Role */
+th:nth-child(5), td:nth-child(5) { width: 8%; } /* Date */
+th:nth-child(6), td:nth-child(6) { width: 5%; } /* Start */
+th:nth-child(7), td:nth-child(7) { width: 5%; } /* End */
+th:nth-child(8), td:nth-child(8) { width: 9%; } /* Report PDF */
+
+    .loading {
+      text-align: center;
+      font-size: 16px;
+      color: #666;
+    }
+    .error {
+      text-align: center;
+      font-size: 16px;
+      color: red;
+    }
+    .back-button {
+      display: inline-block;
+      margin: 10px 0;
+      padding: 8px 12px;
+      background: #18236e;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .back-button:hover {
+      background: #18236e;
+    }
+  </style>
+
+</head>
+
+<body>
+  <header>
+    <a href="get-started.html">
+      <img id="site-logo" alt="Site Logo" style="display: none;">
+    </a>
+    <h1>Admin Portal</h1>
+  </header>
+
+  <div id="container">
+    <!-- Sidebar -->
+    <aside id="sidebar">
+      <br>
+      <br>
+      <h2>Admin Portal</h2>
+      <ul>
+        <h4>GENERAL</h4>
+        <li><button class="nav-button" data-target="dashboard">Dashboard</button></li>
+        <li><button class="nav-button" data-target="exhibit-list">Exhibit Overview</button></li>
+        <li><button class="nav-button" data-target="analytics"> Visitor Analytics</button></li>
+      
+        <h4>TOOLS</h4>
+        <li><button class="nav-button" data-target="tools">Welfare Assessments</button></li>
+        <li><button class="nav-button" data-target="qrcodes">QR Code Generator</button></li>
+        <li><button class="nav-button" data-target="docs">Document Library</button></li>
+
+        <h4>SETTINGS</h4>
+        <li><button class="nav-button" data-target="site-info">Site Settings</button></li>
+        <li><button class="nav-button" data-target="theme">Theme Settings</button></li>
+        <li><button class="nav-button" data-target="payment">Payment Settings</button></li>
+        <li><button class="nav-button" data-target="payment-info">Invoice History</button></li>
+      </ul>
+      <div class="sidebar-footer">
+        <button id="logout-button" class="logout">Log Out</button>
+      </div>      
+    </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main id="main-content">
+      <section id="dashboard" class="content-section active">
+        <br>
+        <h2>Dashboard</h2>
+        <p>Welcome to the admin portal. Here you can manage your site settings, view analytics, and generate QR codes for exhibits.</p>
+        <p>Use the sidebar to navigate between different sections of the portal.</p>
+
+      </section>
+
+      <section id="site-info" class="content-section">
+        <br>
+        <h2>Site Information</h2>
+        <div id="site-info-content">
+          <!-- Content dynamically loaded -->
+        </div>
+      </section>
+
+      <section id="exhibit-list" class="content-section">
+        <br>
+        <h2>Exhibit Overview</h2>
+        <div style="text-align: right; margin: 10px 0;">
+          <button id="view-all-species">View All Species</button>
+        </div>
+        <p>The table below provides an overview of the active exhibits available to visitors.</p>
+        <table id="exhibits-table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Exhibit</th>
+              <th>Species</th>
+            </tr>
+          </thead>
+          <tbody id="exhibits-table-body">
+            <!-- Rows will be dynamically populated here -->
+          </tbody>
+        </table>
+        <!-- <br>
+        <p>If you want to view a list of all objects held in the database, you can do that here.</p>
+        <br>
+        <br> -->
+      </section>
+
+      <section id="payment-info" class="content-section">
+        <br>
+        <h2>Payment History</h2>
+        <p><i>[No payments]</i></p>
+      </section>
+
+      <section id="analytics" class="content-section">
+        <br>
+        <h2>Analytics Dashboard</h2>
+        <button id="view-analytics">View Analytics</button>
+      </section>
+
+      <section id="tools" class="content-section">
+        <br>
+        <h2>Assesment History</h2>
+        <div style="text-align: right; margin: 10px 0;">
+        <button id="welfare-assessment-tool">Start Welfare Assessment</button>
+        </div>
+        <br>
+        <div id="assessments-container">
+          <p id="status-message" class="loading">Loading assessments...</p>
+          <table id="assessments-table">
+            <thead>
+              <tr>
+                <th>Assessment ID</th>
+                <th>Animal</th>
+                <th>Auditor</th>
+                <th>Role</th>
+                <th>Date</th>
+                <th>Start</th>
+                <th>End</th>
+                <th>Report PDF</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Data will be inserted here dynamically -->
+            </tbody>
+          </table>
+        </div>
+        <br>
+        <button id="download-csv" style="display: none; margin-bottom: 15px;">Download Raw Data (CSV)</button>
+        <!-- <button id="welfare-assessment-tool">Capture a new Welfare Assessment</button> -->
+
+        <br>
+        <br>
+        <br>
+      </section>
+
+      <section id="qrcodes" class="content-section">
+        <br>
+        <h2>Generate QR Codes</h2>
+        <p>Generate a set of QR codes for all exhibits here:</p>
+        <button id="generate-all-qr">Generate QR Codes for All Exhibits</button>
+        <br>
+        <br>
+        <p>Generate a QR code for a specific exhibit below:</p>
+        <div>
+          <select id="exhibit-select">
+            <option value="">-- Select an Exhibit --</option>
+          </select>
+          <button id="generate-qr" disabled>Generate QR Code</button>
+        </div>
+        <br>
+        <canvas id="qr-code"></canvas>
+        <br>
+        <button id="download-qr" style="display: none;">Download this QR Code</button>
+      </section>
+
+      <section id="docs" class="content-section">
+        <br>
+        <h2>Documents</h2>
+        <ul id="docs-list"></ul>
+      </section>
+    </main>
+  </div>
+
+  <footer>
+    <a href="/index.html">
+      <img src="/assets/images/logo.png" alt="Curious Logo">
+    </a>
+  </footer>
+  
+</body>
+</html>
