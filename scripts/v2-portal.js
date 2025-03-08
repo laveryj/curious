@@ -510,3 +510,140 @@ document.addEventListener("DOMContentLoaded", () => {
         docsList.innerHTML = "<li>Error loading documents</li>";
       });
   });
+
+  // Welfare assessments
+
+  document.addEventListener("DOMContentLoaded", async () => {
+    console.log("📡 Fetching assessments...");
+    const statusMessage = document.getElementById("status-message");
+    const tableBody = document.querySelector("#assessments-table tbody");
+    const downloadButton = document.getElementById("download-csv");
+
+    try {
+      const response = await fetch("https://get-curio.us/api/view-welfare-assessments/");
+      if (!response.ok) throw new Error("Failed to load assessments");
+
+      const { data: assessments } = await response.json();
+      
+      tableBody.innerHTML = "";
+      statusMessage.style.display = "none"; // Hide loading message
+
+      if (assessments.length === 0) {
+        statusMessage.textContent = "No assessments available.";
+        statusMessage.classList.remove("loading");
+        statusMessage.classList.add("error");
+        return;
+      }
+
+      const groupedAssessments = {};
+      const allQuestions = new Set();
+
+      // Group assessments by assessment_id and collect unique questions
+      assessments.forEach(assessment => {
+        const id = assessment.assessment_id;
+        if (!groupedAssessments[id]) {
+          groupedAssessments[id] = {
+            AssessmentID: id,
+            Animal: assessment.animal,
+            Auditor: assessment.auditor_name,
+            Role: assessment.auditor_role,
+            Date: new Date(assessment.start_time).toLocaleDateString(),
+            Start: new Date(assessment.start_time).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
+            End: new Date(assessment.end_time).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
+            Questions: {},
+            ReportURL: assessment.file_url
+          };
+        }
+        groupedAssessments[id].Questions[assessment.question] = assessment.answer;
+        allQuestions.add(assessment.question);
+      });
+
+      // Convert Set to sorted array
+      const sortedQuestions = Array.from(allQuestions).sort();
+
+      // Create table rows dynamically
+      Object.values(groupedAssessments).forEach(assessment => {
+        const row = document.createElement("tr");
+        row.innerHTML = `
+          <td>${assessment.AssessmentID}</td>
+          <td>${assessment.Animal}</td>
+          <td>${assessment.Auditor}</td>
+          <td>${assessment.Role}</td>
+          <td>${assessment.Date}</td>
+          <td>${assessment.Start}</td>
+          <td>${assessment.End}</td>
+          <td>${assessment.ReportURL !== "No Report" ? `<a href="${assessment.ReportURL}" target="_blank">View Report</a>` : "No Report"}</td>
+        `;
+        tableBody.appendChild(row);
+      });
+
+      // Show download button
+      downloadButton.style.display = "block";
+      downloadButton.addEventListener("click", () => downloadCSV(groupedAssessments, sortedQuestions));
+
+    } catch (error) {
+      console.error("❌ Error loading assessments:", error);
+      statusMessage.textContent = "Error loading assessments. Please try again later.";
+      statusMessage.classList.remove("loading");
+      statusMessage.classList.add("error");
+    }
+  });
+
+  function downloadCSV(groupedAssessments, sortedQuestions) {
+let csvContent = "data:text/csv;charset=utf-8,";
+let headers = ["Assessment ID", "Animal", "Auditor", "Role", "Date", "Start", "End", ...sortedQuestions];
+
+// Convert header array to CSV format (comma-separated)
+csvContent += headers.map(h => `"${h}"`).join(",") + "\n";
+
+// Build CSV rows
+Object.values(groupedAssessments).forEach(assessment => {
+  let row = [
+    assessment.AssessmentID,
+    assessment.Animal,
+    assessment.Auditor,
+    assessment.Role,
+    assessment.Date,
+    assessment.Start,
+    assessment.End
+  ];
+
+  // Add answers in the correct question order
+  sortedQuestions.forEach(question => {
+    let answer = assessment.Questions[question] || ""; // Fill empty responses with blank
+    row.push(`"${answer}"`); // Enclose text in double quotes
+  });
+
+  csvContent += row.join(",") + "\n";
+});
+
+// Trigger CSV download
+const encodedUri = encodeURI(csvContent);
+const link = document.createElement("a");
+link.setAttribute("href", encodedUri);
+link.setAttribute("download", "Curious-Welfare_assessment_data.csv");
+document.body.appendChild(link);
+link.click();
+document.body.removeChild(link);
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  const buttons = document.querySelectorAll(".nav-button");
+  const sections = document.querySelectorAll(".content-section");
+
+  buttons.forEach(button => {
+    button.addEventListener("click", function (event) {
+      event.preventDefault(); // ✅ Stops default behavior
+
+      // Hide all sections
+      sections.forEach(section => section.classList.remove("active"));
+
+      // Get the target section and show it
+      const targetId = this.getAttribute("data-target");
+      document.getElementById(targetId).classList.add("active");
+    });
+  });
+
+// Scroll to top when the page loads
+window.scrollTo(0, 0);
+});
