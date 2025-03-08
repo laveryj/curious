@@ -1,0 +1,528 @@
+/* Main container setup */
+#container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar */
+#sidebar {
+    width: 250px;
+    background-color: #211702;
+    color: #ecf0f1;
+    padding: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    /* ✅ Ensures it stops at the footer */
+    display: flex;
+    flex-direction: column;
+}
+
+#sidebar ul {
+    list-style: none;
+    padding: 20px 0;
+    margin-top: 20px;
+    flex-grow: 1;
+    /* ✅ Pushes the logout button down */
+    overflow-y: auto;
+    /* ✅ Scrolls if content is too long */
+}
+
+.sidebar-footer {
+    text-align: center;
+    padding: 10px;
+}
+
+#sidebar h2 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+#sidebar ul li {
+    margin: 10px 0;
+}
+
+#sidebar ul li button {
+    display: block;
+    text-decoration: none;
+    color: #ecf0f1;
+    background: none;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    text-align: left;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#sidebar ul li button:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Logout button */
+.sidebar-footer #logout-button {
+    background-color: #e74c3c;
+    color: white;
+    /* ✅ Ensures text is white */
+    border: none;
+    padding: 12px;
+    width: 100%;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s;
+    text-align: center;
+    display: block;
+}
+
+.sidebar-footer #logout-button:hover {
+    background-color: #c0392b;
+    /* ✅ Darker red on hover */
+}
+
+/* Ensure main content starts below the header */
+header {
+    width: 100%;
+    background: #1f2233;
+    padding: 15px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+}
+
+#site-logo {
+    width: 150px;
+    /* Adjust logo size */
+    height: auto;
+    margin-right: 80px;
+    /* Space between logo and title */
+}
+
+/* Push main content down below the fixed header */
+#main-content {
+    margin-left: 300px;
+    /* Matches sidebar width */
+    padding: 20px;
+    width: calc(100% - 300px);
+    margin-top: 70px;
+    /* ✅ Pushes content down so it doesn't appear in the header */
+}
+
+/* Ensure all sections are hidden except the active one */
+.content-section {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* Only show active section */
+.content-section.active {
+    display: block;
+    opacity: 1;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    #sidebar {
+        width: 200px;
+    }
+
+    #main-content {
+        margin-left: 200px;
+        width: calc(100% - 200px);
+    }
+}
+
+@media (max-width: 600px) {
+    #sidebar {
+        position: absolute;
+        width: 200px;
+        left: -200px;
+        transition: left 0.3s ease-in-out;
+    }
+
+    #sidebar.open {
+        left: 0;
+    }
+
+    #main-content {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    /* Sidebar toggle button (for mobile) */
+    #sidebar-toggle {
+        position: fixed;
+        top: 15px;
+        left: 15px;
+        background: #2c3e50;
+        color: white;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+        z-index: 1000;
+    }
+}
+
+    #site-logo {
+        max-height: 100px;
+        margin-right: 15px;
+    }
+
+    header img {
+        max-height: 40px;
+        margin-right: 10px;
+        vertical-align: middle;
+    }
+
+    header h1 {
+        display: inline;
+        font-size: 1.5rem;
+    }
+
+    main {
+        padding: 20px;
+        flex: 1;
+    }
+
+    img {
+        width: 100px;
+        height: auto;
+        border-radius: 0px;
+        /* float: left; */
+        float: center;
+        margin-right: 0px;
+    }
+
+    footer {
+        background-color: #1f2233;
+        color: #ffffff;
+        text-align: center;
+        padding: 10px;
+        position: relative;
+    }
+
+    /* Styling for portal.html table format for site info */
+    table {
+        width: 35%;
+        /* Narrower table width */
+        margin: 10px 0;
+        /* Add vertical margin only */
+        border-collapse: collapse;
+        font-size: 1rem;
+        text-align: left;
+        /* Align the table to the left */
+    }
+
+    table th,
+    table td {
+        padding: 10px;
+        border: 1px solid #ddd;
+    }
+
+    table td:first-child {
+        font-weight: bold;
+        /* Bold text for the left column */
+        width: 25%;
+        /* Slightly narrower for the heading column */
+        text-align: right;
+        /* Align content to the left */
+    }
+
+    table td:last-child {
+        width: 70%;
+        /* Wider for content */
+    }
+
+    #site-info-content {
+        margin-bottom: 20px;
+        /* Add space below the table */
+    }
+
+    #payment-info {
+        clear: both;
+        /* Ensure payment info appears below floated content */
+    }
+
+    body.loading {
+        visibility: hidden;
+        /* Hide everything while loading */
+    }
+
+    body.loaded {
+        visibility: visible;
+        /* Show content after loading */
+    }
+
+
+    /* Styling for portal.html table format for exhibit list */
+    #exhibits-table {
+        /* width: 100%; Expand the table to fill the available width */
+        margin: 10px 0;
+        /* Add vertical margin only */
+        border-collapse: collapse;
+        font-size: 1rem;
+        text-align: left;
+        /* Default alignment for table content */
+    }
+
+    #exhibits-table th,
+    #exhibits-table td {
+        padding: 10px;
+        border: 1px solid #ddd;
+    }
+
+    #exhibits-table th {
+        text-align: center;
+        /* Center align the table headers */
+        /* background-color: #f2f2f2; Optional: Add a light background for headers */
+        font-weight: bold;
+        /* Bold text for headers */
+    }
+
+    #exhibits-table td:first-child {
+        width: 15%;
+        /* Narrow width for ID column */
+        text-align: center;
+        /* Center align content in the first column */
+    }
+
+    #exhibits-table td:nth-child(2) {
+        width: 50%;
+        /* Wider width for Exhibit column */
+        text-align: left;
+        /* Center align content in the first column */
+    }
+
+    #exhibits-table td:last-child {
+        width: 15%;
+        /* Medium width for Active Species column */
+        text-align: center;
+        /* Center align content in the last column */
+    }
+
+    #exhibits-table td a {
+        color: #1e90ff;
+        /* Color for links */
+        /* text-decoration: none; Remove underline from links */
+    }
+
+    #exhibits-table td a:hover {
+        text-decoration: underline;
+        /* Underline links on hover */
+    }
+
+    /* Stying for buttons */
+    button {
+        border-radius: 8px;
+        /* Rounded corners */
+        padding: 10px 20px;
+        /* Add some padding */
+        color: #FFFFFF;
+        /* Disabled text color */
+        font-size: 1rem;
+        /* Standard font size */
+        font-family: 'Open Sans', sans-serif;
+        /* Match theme font */
+        cursor: pointer;
+        /* Pointer cursor on hover */
+        transition: background-color 0.3s ease, transform 0.2s ease;
+        /* Smooth hover effect */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        /* Add subtle shadow */
+    }
+
+    button:hover {
+        filter: brightness(1.1);
+        /* Slightly brighter on hover */
+        transform: scale(1.05);
+        /* Slightly larger on hover */
+    }
+
+    button:disabled {
+        background-color: #E0E0E0;
+        /* Disabled state color */
+        color: #A0A0A0;
+        /* Disabled text color */
+        cursor: not-allowed;
+        /* Disable pointer cursor */
+        box-shadow: none;
+        /* Remove shadow */
+    }
+
+    button:active {
+        transform: scale(0.98);
+        /* Pressed button effect */
+    }
+
+    /* Styling for the drop down */
+    select {
+        color: var(--text-color, #000000);
+        /* Match text color */
+        border-radius: 8px;
+        /* Rounded corners */
+        padding: 10px 20px;
+        /* Match button padding */
+        font-size: 1rem;
+        /* Match button font size */
+        cursor: pointer;
+        /* Pointer cursor for interactivity */
+        appearance: none;
+        /* Remove default dropdown styling */
+        transition: background-color 0.3s ease, transform 0.2s ease;
+        /* Smooth hover effect */
+    }
+
+    select:hover {
+        filter: brightness(1.1);
+        /* Slightly brighter on hover */
+        transform: scale(1.02);
+        /* Slightly larger on hover */
+    }
+
+    select:focus {
+        outline: none;
+        /* Remove default focus outline */
+        box-shadow: 0 0 5px var(--header-color, #1f2233);
+        /* Add focus glow */
+    }
+
+    select option {
+        background-color: var(--background-color, #D83B01);
+        /* Dropdown menu background */
+        color: var(--text-color, #FFFFFF);
+        /* Dropdown menu text color */
+    }
+
+    body {
+        font-family: 'Open Sans', sans-serif;
+        background-color: #1f2233;
+        color: #ffffff;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+      
+      header {
+        background-color: #1f2233;
+        color: #ffffff;
+        padding: 15px;
+        text-align: center;
+        position: sticky;
+        top: 0;
+      }
+  
+      header {
+        display: flex;
+        align-items: center; /* Vertically align items */
+        justify-content: flex-start; /* Align items to the left */
+      }
+  
+      /* Styling for portal.html table format for site info */
+      table {
+        width: 35%; /* Narrower table width */
+        margin: 10px 0; /* Add vertical margin only */
+        border-collapse: collapse;
+        font-size: 1rem;
+        text-align: left; /* Align the table to the left */
+      }
+      
+      table th, table td {
+        padding: 10px;
+        border: 1px solid #ddd;
+      }
+      
+      table td:first-child {
+        font-weight: bold; /* Bold text for the left column */
+        width: 25%; /* Slightly narrower for the heading column */
+        text-align: right; /* Align content to the left */
+      }
+      
+      table td:last-child {
+        width: 70%; /* Wider for content */
+      }
+      
+      #site-info-content {
+        margin-bottom: 20px; /* Add space below the table */
+      }
+      
+      #payment-info {
+        clear: both; /* Ensure payment info appears below floated content */
+      }
+  
+      body.loading {
+        visibility: hidden; /* Hide everything while loading */
+      }
+      
+      body.loaded {
+        visibility: visible; /* Show content after loading */
+      }
+  
+  
+  /* Styling for portal.html table format for exhibit list */
+  #exhibits-table {
+    width: 35%; /*Expand the table to fill the available width */
+    margin: 10px 0; /* Add vertical margin only */
+    border-collapse: collapse;
+    font-size: 1rem;
+    text-align: left; /* Default alignment for table content */
+  }
+  
+  #exhibits-table th, #exhibits-table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+  }
+  
+  #exhibits-table th {
+    text-align: center; /* Center align the table headers */
+    /* background-color: #f2f2f2; Optional: Add a light background for headers */
+    font-weight: bold; /* Bold text for headers */
+  }
+  
+  #exhibits-table td:first-child {
+    width: 15%; /* Narrow width for ID column */
+    text-align: center; /* Center align content in the first column */
+  }
+  
+  #exhibits-table td:nth-child(2) {
+    width: 50%; /* Wider width for Exhibit column */
+    text-align: left; /* Center align content in the first column */
+  }
+  
+  #exhibits-table td:last-child {
+    width: 15%; /* Medium width for Active Species column */
+    text-align: center; /* Center align content in the last column */
+  }
+  
+  #exhibits-table td a {
+    color: #1e90ff; /* Color for links */
+    /* text-decoration: none; Remove underline from links */
+  }
+  
+  #exhibits-table td a:hover {
+    text-decoration: underline; /* Underline links on hover */
+  }
+  
