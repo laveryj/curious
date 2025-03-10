@@ -46,7 +46,7 @@ async function loadAnalytics() {
             
             // ✅ Update the table dynamically for each period
             // document.getElementById(`totalViews-${period}`).textContent = data.total_views ?? 0;
-            document.getElementById(`totalViews-${period}`).textContent = period === "alltime" ? (data.total_views + 4164) : data.total_views ?? 0;
+            document.getElementById(`totalViews-${period}`).textContent = period === "alltime" ? (data.total_views) : data.total_views ?? 0;
             document.getElementById(`uniqueExhibits-${period}`).textContent = data.unique_exhibits ?? 0;
             document.getElementById(`uniqueObjects-${period}`).textContent = data.unique_objects ?? 0;
             document.getElementById(`popularExhibit-${period}`).textContent = topExhibit;
